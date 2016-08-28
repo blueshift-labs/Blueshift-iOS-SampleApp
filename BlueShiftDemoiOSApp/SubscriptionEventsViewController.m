@@ -71,25 +71,25 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:NO];
 }
 
 - (IBAction)initializeButtonPressed:(id)sender {
     NSTimeInterval currentTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate];
-    [[BlueShift sharedInstance] trackSubscriptionInitializationForSubscriptionState:BlueShiftSubscriptionStateStart andCycleType:self.cycleType andCycleLength:self.cycleLength andSubscriptionType:self.currentSubscription andPrice:self.price andStartDate:currentTimeInterval];
+    [[BlueShift sharedInstance] trackSubscriptionInitializationForSubscriptionState:BlueShiftSubscriptionStateStart andCycleType:self.cycleType andCycleLength:self.cycleLength andSubscriptionType:self.currentSubscription andPrice:self.price andStartDate:currentTimeInterval canBatchThisEvent:YES];
     
 }
 
 - (IBAction)pauseButtonPressed:(id)sender {
-    [[BlueShift sharedInstance] trackSubscriptionPause];
+    [[BlueShift sharedInstance] trackSubscriptionPauseWithBatchThisEvent:YES];
 }
 
 - (IBAction)unPauseButtonPressed:(id)sender {
-    [[BlueShift sharedInstance] trackSubscriptionUnpause];
+    [[BlueShift sharedInstance] trackSubscriptionUnpauseWithBatchThisEvent:YES];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    [[BlueShift sharedInstance] trackSubscriptionCancel];
+    [[BlueShift sharedInstance] trackSubscriptionCancelWithBatchThisEvent:YES];
 }
 
 @end

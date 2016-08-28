@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <JSONModel/JSONModel.h>
-#import <JSONKit/JSONKit.h>
 #import "BfErrorCode.h"
 #import "Routes.h"
 #import <AFNetworking/AFNetworking.h>

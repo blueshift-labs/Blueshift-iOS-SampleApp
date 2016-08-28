@@ -30,7 +30,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:NO];
 }
 
 - (void)updateTextfieldWithIcons {
@@ -50,7 +50,7 @@
     [[BlueShiftUserInfo sharedUserInfo] save];
     [[BlueShiftUserInfo sharedUserInfo] setUnsubscribed:NO];
     
-    [[BlueShift sharedInstance] identifyUserWithEmail:[BlueShiftUserInfo sharedUserInfo].email andDetails:nil];
+    [[BlueShift sharedInstance] identifyUserWithEmail:[BlueShiftUserInfo sharedUserInfo].email andDetails:nil canBatchThisEvent:NO];
     [self performSegueWithIdentifier:kSegueShowHome sender:self];
     
 }

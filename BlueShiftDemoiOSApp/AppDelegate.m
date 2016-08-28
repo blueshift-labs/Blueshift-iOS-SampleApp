@@ -26,11 +26,20 @@
     
     [Fabric with:@[CrashlyticsKit]];
     
+    // Push Notification
+        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                        UIUserNotificationTypeBadge |
+                                                        UIUserNotificationTypeSound);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                 categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    
     // Obtain an instance of BlueShiftConfig ...
     BlueShiftConfig *config = [BlueShiftConfig config];
     
     // Set the api Key for the config ...
-    [config setApiKey:@"5be04919d8773728197f8bd0e2fedce2"];
+    [config setApiKey:@"0bcedd92238db589d8975462eb0a1c45"];
     
     // Set the applications launch Options for SDK to track ...
     [config setApplicationLaunchOptions:launchOptions];
@@ -40,12 +49,15 @@
     [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController/ProductCartViewController"]];
     [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/OfferViewController"]];
     
+    [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
+    
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];
-
     
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

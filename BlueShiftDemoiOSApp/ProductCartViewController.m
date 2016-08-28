@@ -24,7 +24,7 @@
     [self.navigationController setNavigationBarHidden:NO];
     
     BlueShiftProduct *product1 = [[BlueShiftProduct alloc] init];
-    [product1 setSku:@"ARJDRG100"];
+    [product1 setSku:@"PROM001"];
     [product1 setPrice:100];
     [product1 setQuantity:100];
 
@@ -49,12 +49,12 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self];
-    [[BlueShift sharedInstance] trackAddToCartWithSKU:@"ARJDRG100" andQuantity:100];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackAddToCartWithSKU:@"PROM002" andQuantity:100 canBatchThisEvent:YES];
 }
 
 - (IBAction)continueButtonPressed:(id)sender {
-    [[BlueShift sharedInstance] trackCheckOutCartWithProducts:self.productsArray andRevenue:100 andDiscount:40 andCoupon:@"free coupon"];
+    [[BlueShift sharedInstance] trackCheckOutCartWithProducts:self.productsArray andRevenue:100 andDiscount:40 andCoupon:@"FLAT20" canBatchThisEvent:NO];
     [self performSegueWithIdentifier:kSegueProductOrdered sender:self];
 }
 

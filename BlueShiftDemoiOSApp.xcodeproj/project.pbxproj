@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D7F77F0B1C3FE59DAA86207 /* libPods-BlueShiftDemoiOSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A2B28ED464C7B6C0FBBFE3 /* libPods-BlueShiftDemoiOSApp.a */; };
+		D9B18FF5270DB83F9F1433C0 /* libPods-BlueShiftDemoiOSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7F4FA0141675E2BB331E40 /* libPods-BlueShiftDemoiOSApp.a */; };
 		DC1B4B681A8BC49A00F2C579 /* NSString+BfStringHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B4B671A8BC49A00F2C579 /* NSString+BfStringHelpers.m */; };
 		DC1B4B6B1A8BC4C500F2C579 /* UIView+BfViewHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B4B6A1A8BC4C500F2C579 /* UIView+BfViewHelpers.m */; };
 		DC1B4B6E1A8BC4E900F2C579 /* NSArray+BfArrayHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B4B6D1A8BC4E900F2C579 /* NSArray+BfArrayHelpers.m */; };
@@ -52,8 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A7F4FA0141675E2BB331E40 /* libPods-BlueShiftDemoiOSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftDemoiOSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD6CC01D5C230ED3F3D2A18 /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.debug.xcconfig"; sourceTree = "<group>"; };
-		57A2B28ED464C7B6C0FBBFE3 /* libPods-BlueShiftDemoiOSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftDemoiOSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DBD6DA2C756FD2F43148DF /* Pods-BlueShiftDemoiOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.release.xcconfig"; sourceTree = "<group>"; };
 		DC1B4B5C1A8BC22800F2C579 /* Routes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Routes.h; sourceTree = "<group>"; };
 		DC1B4B5D1A8BC28500F2C579 /* StatusCodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusCodes.h; sourceTree = "<group>"; };
@@ -125,7 +125,6 @@
 		DC9C10911AB3359800167711 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		DCAE22551AA70C5300111C83 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DCAE22561AA70C5300111C83 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		DCBF36331A9CFC6C00F1C1C0 /* libBlueShift-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libBlueShift-iOS-SDK.a"; path = "BlueShiftSDK/libBlueShift-iOS-SDK.a"; sourceTree = "<group>"; };
 		DCC4136B1AA9BA0400A3E7C4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DCC5544C1A93456C00DD234B /* ProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListViewController.h; sourceTree = "<group>"; };
 		DCC5544D1A93456C00DD234B /* ProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListViewController.m; sourceTree = "<group>"; };
@@ -148,8 +147,8 @@
 				DC9C10901AB328F800167711 /* AVFoundation.framework in Frameworks */,
 				DCC4136C1AA9BA0400A3E7C4 /* CoreLocation.framework in Frameworks */,
 				DCAE22571AA70C5300111C83 /* Crashlytics.framework in Frameworks */,
-				7D7F77F0B1C3FE59DAA86207 /* libPods-BlueShiftDemoiOSApp.a in Frameworks */,
 				DCAE22581AA70C5300111C83 /* Fabric.framework in Frameworks */,
+				D9B18FF5270DB83F9F1433C0 /* libPods-BlueShiftDemoiOSApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +161,7 @@
 				DC9C10911AB3359800167711 /* ImageIO.framework */,
 				DC9C108F1AB328F800167711 /* AVFoundation.framework */,
 				DCC4136B1AA9BA0400A3E7C4 /* CoreLocation.framework */,
-				DCBF36331A9CFC6C00F1C1C0 /* libBlueShift-iOS-SDK.a */,
-				57A2B28ED464C7B6C0FBBFE3 /* libPods-BlueShiftDemoiOSApp.a */,
+				3A7F4FA0141675E2BB331E40 /* libPods-BlueShiftDemoiOSApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -516,6 +514,7 @@
 				DC3D9EF11A8A14B000177ABD /* Resources */,
 				D6B4996FC225406B198483C2 /* Copy Pods Resources */,
 				DCAE22541AA70B9500111C83 /* ShellScript */,
+				967963A593DB78C90E3C841F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -586,6 +585,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		967963A593DB78C90E3C841F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D6B4996FC225406B198483C2 /* Copy Pods Resources */ = {
@@ -698,8 +712,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -719,7 +733,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cfc8e207-c9df-410e-9abe-55f8100907b0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -742,8 +756,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -756,7 +770,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cfc8e207-c9df-410e-9abe-55f8100907b0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -769,33 +783,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
-					"\"${PODS_ROOT}/Headers/Public/JSONKit\"",
-					"\"${PODS_ROOT}/Headers/Public/JSONModel\"",
-					"\"${PODS_ROOT}/Headers/Public/MJPopupViewController\"",
-					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
-					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
-					"\"${PODS_ROOT}/Headers/Public/ViewDeck\"",
-					"$(inherited)",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BlueShiftDemoiOSApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/BlueShiftSDK",
-				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp;
 				PRODUCT_NAME = BlueShiftDemoiOSApp;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cfc8e207-c9df-410e-9abe-55f8100907b0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -806,33 +807,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
-					"\"${PODS_ROOT}/Headers/Public/JSONKit\"",
-					"\"${PODS_ROOT}/Headers/Public/JSONModel\"",
-					"\"${PODS_ROOT}/Headers/Public/MJPopupViewController\"",
-					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
-					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
-					"\"${PODS_ROOT}/Headers/Public/ViewDeck\"",
-					"$(inherited)",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BlueShiftDemoiOSApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/BlueShiftSDK",
-				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp;
 				PRODUCT_NAME = BlueShiftDemoiOSApp;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cfc8e207-c9df-410e-9abe-55f8100907b0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
