@@ -33,13 +33,16 @@ static BlueShiftRequestQueueStatus _requestQueueStatus = BlueShiftRequestQueueSt
     NSInteger retryAttemptsCount = requestOperation.retryAttemptsCount;
     BOOL isBatchEvent = requestOperation.isBatchEvent;
     
+    if (_requestQueueStatus == BlueShiftRequestQueueStatusBusy || [BlueShiftNetworkReachabilityManager networkConnected] == NO)  {
+        isBatchEvent = YES;
+    }
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
     dispatch_async(queue, ^{
         HttpRequestOperationEntity *httpRequestOperationEntity = [[HttpRequestOperationEntity alloc] initWithEntity:entity insertIntoManagedObjectContext:appDelegate.managedObjectContext];
         
         [httpRequestOperationEntity insertEntryWithMethod:httpMethod andParameters:parameters andURL:url andNextRetryTimeStamp:nextRetryTimeStamp andRetryAttemptsCount:retryAttemptsCount andIsBatchEvent:isBatchEvent];
         
-        if(!requestOperation.isBatchEvent) {
+        if(!isBatchEvent) {
             [BlueShiftRequestQueue processRequestsInQueue];
         }
     });
@@ -165,13 +168,10 @@ static BlueShiftRequestQueueStatus _requestQueueStatus = BlueShiftRequestQueueSt
                             BOOL deletedStatus = [context save:&saveError];
                             
                             if (deletedStatus == YES) {
-                                
-                                
                                 // request record is removed successfully from core data ...
                                 
                                 _requestQueueStatus = BlueShiftRequestQueueStatusAvailable;
-                                [BlueShiftRequestQueue processRequestsInQueue];
-                                
+                                //[BlueShiftRequestQueue processRequestsInQueue];
                             } else {
                                 
                                 
@@ -186,6 +186,7 @@ static BlueShiftRequestQueueStatus _requestQueueStatus = BlueShiftRequestQueueSt
                             NSInteger retryAttemptsCount = requestOperation.retryAttemptsCount;
                             requestOperation.retryAttemptsCount = retryAttemptsCount - 1;
                             requestOperation.nextRetryTimeStamp = [[[NSDate date] dateByAddingMinutes:kRequestRetryMinutesInterval] timeIntervalSince1970];
+                            requestOperation.isBatchEvent = YES;
                             
                             [context deleteObject:operationEntityToBeExecuted];
                             NSError *saveError = nil;

@@ -409,7 +409,7 @@
     }
     
     
-    [[BlueShift sharedInstance] trackEventForEventName:kEventAppOpen andParameters:parameters canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] trackEventForEventName:kEventAppOpen andParameters:parameters canBatchThisEvent:NO];
 }
 
 - (void)trackPushViewed {

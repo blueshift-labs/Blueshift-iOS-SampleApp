@@ -25,7 +25,7 @@
 #define kRequestTryMaximumLimit                 3
 
 // Defines the time interval for requests to be retried ...
-#define kRequestRetryMinutesInterval            5
+#define kRequestRetryMinutesInterval            1
 
 @interface BlueShiftRequestQueue : NSObject
 

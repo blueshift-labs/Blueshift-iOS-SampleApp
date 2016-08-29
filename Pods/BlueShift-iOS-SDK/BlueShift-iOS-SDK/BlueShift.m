@@ -238,7 +238,6 @@ static BlueShift *_sharedBlueShiftInstance = nil;
     if (products!=nil && products.count > 0) {
         NSMutableArray *productDictionaryMutableArray = [BlueShiftProduct productsDictionaryMutableArrayForProductsArray:products];
         [parameterMutableDictionary setObject:productDictionaryMutableArray forKey:@"products"];
-        
     }
     
     if (orderID) {
@@ -262,9 +261,7 @@ static BlueShift *_sharedBlueShiftInstance = nil;
     }
     
     [self trackEventForEventName:kEventPurchase andParameters:[parameterMutableDictionary copy] canBatchThisEvent:isBatchEvent];
-    
 }
-
 
 - (void)trackPurchaseCancelForOrderID:(NSString *)orderID canBatchThisEvent:(BOOL)isBatchEvent{
     [self trackPurchaseCancelForOrderID:orderID andParameters:nil canBatchThisEvent:isBatchEvent];
