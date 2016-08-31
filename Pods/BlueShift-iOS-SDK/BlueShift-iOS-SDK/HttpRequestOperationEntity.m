@@ -48,19 +48,7 @@
     self.isBatchEvent = isBatchEvent;
     
     NSError *error;
-    if (![context save:&error]) {
-        
-        
-        // unable to insert into core data ...
-        
-        NSLog(@"\n\n Error Queueing Request: %@ \n\n", [error localizedDescription]);
-    }
-    else {
-        
-        
-        // request inserted to queue successfully (Core Data) ...
-        
-    }
+    [context save:&error];
 }
 
 

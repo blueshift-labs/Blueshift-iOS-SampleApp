@@ -50,7 +50,7 @@
     [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController/ProductCartViewController"]];
     [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/OfferViewController"]];
     
-    [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
+    [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:90.0];
     
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];

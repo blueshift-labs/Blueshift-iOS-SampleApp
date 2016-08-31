@@ -17,9 +17,11 @@
 #import "BlueShiftRequestQueueStatus.h"
 #import "BlueShiftNetworkReachabilityManager.h"
 #import "NSDate+BlueShiftDateHelpers.h"
+#import "BlueShiftBatchRequestOperation.h"
 
 
 @class BlueShiftRequestOperation;
+@class BlueShiftBatchRequestOperation;
 
 // Defines the maximum number of requests that can be retried ...
 #define kRequestTryMaximumLimit                 3
@@ -41,7 +43,9 @@
 
 + (void)addRequestOperation:(BlueShiftRequestOperation *)requestOperation;
 
+// Method to add Batch Request Operation to Queue ....
 
++ (void)addBatchRequestOperation:(BlueShiftBatchRequestOperation *)requestOperation;
 
 // Method to set the request queue status explicity ...
 

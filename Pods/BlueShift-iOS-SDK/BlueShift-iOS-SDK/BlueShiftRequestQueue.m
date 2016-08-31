@@ -48,6 +48,16 @@ static BlueShiftRequestQueueStatus _requestQueueStatus = BlueShiftRequestQueueSt
     });
 }
 
++ (void)addBatchRequestOperation:(BlueShiftBatchRequestOperation *)requestOperation {
+    BlueShiftAppDelegate *appDelegate = (BlueShiftAppDelegate *)[UIApplication sharedApplication].delegate;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"BatchEventEntity" inManagedObjectContext:appDelegate.managedObjectContext];
+    NSArray *paramsArray = requestOperation.paramsArray;
+    NSInteger nextRetryTimeStamp = requestOperation.nextRetryTimeStamp;
+    NSInteger retryAttemptsCount = requestOperation.retryAttemptsCount;
+    
+    BatchEventEntity *batchEventEntity = [[BatchEventEntity alloc] initWithEntity:entity insertIntoManagedObjectContext:appDelegate.managedObjectContext];
+    [batchEventEntity insertEntryParametersList:paramsArray andNextRetryTimeStamp:nextRetryTimeStamp andRetryAttemptsCount:retryAttemptsCount];
+}
 
 // Method to add Request Operation to the Queue ...
 

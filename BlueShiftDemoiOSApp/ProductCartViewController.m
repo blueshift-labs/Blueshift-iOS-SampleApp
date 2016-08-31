@@ -50,7 +50,7 @@
     [super viewDidAppear:animated];
     
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
-    [[BlueShift sharedInstance] trackAddToCartWithSKU:@"PROM002" andQuantity:100 canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackAddToCartWithSKU:@"PROM002" andQuantity:100 canBatchThisEvent:YES];
 }
 
 - (IBAction)continueButtonPressed:(id)sender {
