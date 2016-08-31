@@ -79,7 +79,7 @@
     [[BlueShiftUserInfo sharedUserInfo] setUnsubscribed:YES];
     [[BlueShiftUserInfo sharedUserInfo] save];
     [self.navigationController setNavigationBarHidden:NO];
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
 
@@ -114,7 +114,7 @@
 
 - (IBAction)searchButtonPressed:(id)sender {
     NSArray *skuArray = @[@"78656F",@"AE5643",@"HJU766"];
-    [[BlueShift sharedInstance] trackProductSearchWithSkuArray:skuArray andNumberOfResults:4 andPageNumber:1 andQuery:self.searchTextField.text andFilters:@{@"filter1":@"values", @"filter2":@"values"} canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] trackProductSearchWithSkuArray:skuArray andNumberOfResults:4 andPageNumber:1 andQuery:self.searchTextField.text andFilters:@{@"filter1":@"values", @"filter2":@"values"} canBatchThisEvent:NO];
 }
 
 - (NSString *)messageBody

@@ -23,7 +23,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.offerImageView sd_setImageWithURL:[NSURL URLWithString:self.imageURL] placeholderImage:nil];
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
 

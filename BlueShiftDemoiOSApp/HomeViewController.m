@@ -31,7 +31,7 @@
     [super viewDidAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES];
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
 - (void)viewDidLoadIfDeviceLessThanOrEqualToIPhone5 {

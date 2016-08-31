@@ -142,7 +142,11 @@ static BlueShiftUserInfo *_sharedUserInfo = nil;
         blueShiftUserInfo.education = [currentUserInfoDictionary objectForKey:@"education"];
         blueShiftUserInfo.facebookID = [currentUserInfoDictionary objectForKey:@"facebook_id"];
         blueShiftUserInfo.gender = [currentUserInfoDictionary objectForKey:@"gender"];
-        blueShiftUserInfo.unsubscribed = [[currentUserInfoDictionary objectForKey:@"unsubscribed"] boolValue];
+        if([currentUserInfoDictionary objectForKey:@"unsubscribed"] == nil) {
+            blueShiftUserInfo.unsubscribed = false;
+        } else {
+            blueShiftUserInfo.unsubscribed = [[currentUserInfoDictionary objectForKey:@"unsubscribed"] boolValue];
+        }
         NSTimeInterval joinedAtTimeStamp = [[currentUserInfoDictionary objectForKey:@"joined_at"] doubleValue];
         
         if (joinedAtTimeStamp) {

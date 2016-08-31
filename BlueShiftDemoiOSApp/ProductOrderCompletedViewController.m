@@ -22,7 +22,7 @@
     self.navigationItem.title = @"Order Confirmed";
     [self.navigationController setNavigationBarHidden:NO];
     
-    [[BlueShift sharedInstance] trackProductsPurchased:self.productsArray withOrderID:@"ORD8908" andRevenue:100 andShippingCost:20 andDiscount:40 andCoupon:@"free coupon" canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] trackProductsPurchased:self.productsArray withOrderID:@"ORD8908" andRevenue:100 andShippingCost:20 andDiscount:40 andCoupon:@"free coupon" canBatchThisEvent:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +33,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
 /*

@@ -39,7 +39,8 @@
     BlueShiftConfig *config = [BlueShiftConfig config];
     
     // Set the api Key for the config ...
-    [config setApiKey:@"0bcedd92238db589d8975462eb0a1c45"];
+    // 0bcedd92238db589d8975462eb0a1c45
+    [config setApiKey:@"ae8087e9fb141de419ddbac09ed8b0a9"];
     
     // Set the applications launch Options for SDK to track ...
     [config setApplicationLaunchOptions:launchOptions];

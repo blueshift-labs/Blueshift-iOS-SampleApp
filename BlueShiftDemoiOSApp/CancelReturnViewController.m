@@ -51,8 +51,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackProductViewedWithSKU:@"ARJDRG100" andCategoryID:10 canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] trackProductViewedWithSKU:@"ARJDRG100" andCategoryID:10 canBatchThisEvent:NO];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -80,11 +80,11 @@
 
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    [[BlueShift sharedInstance] trackPurchaseCancelForOrderID:@"ORD100" canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] trackPurchaseCancelForOrderID:@"ORD100" canBatchThisEvent:NO];
 }
 
 - (IBAction)returnButtonPressed:(id)sender {
-    [[BlueShift sharedInstance] trackPurchaseReturnForOrderID:@"ORD100" andProducts:self.productsArray canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] trackPurchaseReturnForOrderID:@"ORD100" andProducts:self.productsArray canBatchThisEvent:NO];
 }
 
 @end

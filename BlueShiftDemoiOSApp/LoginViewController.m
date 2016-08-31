@@ -30,7 +30,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
 - (void)updateTextfieldWithIcons {
@@ -46,7 +46,7 @@
     
     NSString *email = self.emailTextField.text;
     [[BlueShiftUserInfo sharedUserInfo] setEmail:email];
-    [[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:@"178978789"];
+    [[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:[NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]]];
     [[BlueShiftUserInfo sharedUserInfo] save];
     [[BlueShiftUserInfo sharedUserInfo] setUnsubscribed:NO];
     
