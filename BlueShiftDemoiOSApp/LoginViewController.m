@@ -46,13 +46,34 @@
     
     NSString *email = self.emailTextField.text;
     [[BlueShiftUserInfo sharedUserInfo] setEmail:email];
-    [[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:[NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]]];
+    //[[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:[NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]]];
+    [[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:[self convertIntoAscii:self.emailTextField.text]];
     [[BlueShiftUserInfo sharedUserInfo] save];
     [[BlueShiftUserInfo sharedUserInfo] setUnsubscribed:NO];
     
     [[BlueShift sharedInstance] identifyUserWithEmail:[BlueShiftUserInfo sharedUserInfo].email andDetails:nil canBatchThisEvent:NO];
+    
+    if(self.emailTextField.text.length > 0) {
+        User *currentUser = [User currentUser];
+        currentUser.authToken = @"123456789";
+        currentUser.email = self.emailTextField.text;
+        //[currentUser save];
+    }
+    
     [self performSegueWithIdentifier:kSegueShowHome sender:self];
     
+}
+
+- (NSString *)convertIntoAscii:(NSString *)message {
+    
+    int length = 0;
+    NSString *ascii = @"";
+    while (length < message.length) {
+        int asc = [message characterAtIndex:length];
+        length = length + 1;
+        ascii = [NSString stringWithFormat:@"%@%d", ascii, asc];
+    }
+    return ascii;
 }
 
 - (IBAction)signUpPressed:(id)sender {

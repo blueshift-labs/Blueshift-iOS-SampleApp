@@ -16,11 +16,13 @@ static BlueShiftRequestQueueStatus _requestQueueStatus = BlueShiftRequestQueueSt
 
 // Method to start batch uploading
 + (void)startBatchUpload {
-    [NSTimer scheduledTimerWithTimeInterval:[[BlueShiftBatchUploadConfig sharedInstance] fetchBatchUploadTimer]
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[[BlueShiftBatchUploadConfig sharedInstance] fetchBatchUploadTimer]
                                      target:self
                                    selector:@selector(batchEventsUploadInBackground)
                                    userInfo:nil
                                     repeats:YES];
+    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 // Perform uploading task in background (inclues core data operations)

@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "User.h"
 
 @interface HomeViewController ()
 
@@ -19,7 +20,12 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title = @"Home";
-    
+    User *currentUser = [User currentUser];
+    if(currentUser.authToken == NULL) {
+        self.logoutButton.titleLabel.text = @"Login";
+    } else {
+        self.logoutButton.titleLabel.text = @"Logout";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +59,13 @@
 
 - (IBAction)subscriptionEventsButtonPressed:(id)sender {
     [self performSegueWithIdentifier:kSegueSubscriptionEvents sender:self];
+}
+
+- (IBAction)logoutButtonDidPressed:(id)sender {
+//    [User logout:^(BOOL status) {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }];
+[self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Navigation

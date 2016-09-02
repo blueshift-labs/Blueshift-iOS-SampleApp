@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="w5u-Jt-FRa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="w5u-Jt-FRa">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -23,9 +23,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="120" id="gVg-SS-vDo" userLabel="Product Cell" customClass="ProductCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gVg-SS-vDo" id="xvI-2x-iMY">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="82y-Mz-iwV">
@@ -124,9 +125,10 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" id="x62-69-Rbb" customClass="ProductCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x62-69-Rbb" id="C76-S6-3de">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Nr-wv-bmP">
@@ -407,11 +409,24 @@
                                     <constraint firstAttribute="trailing" secondItem="3HW-6l-WFg" secondAttribute="trailing" id="us3-Th-mHe"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwn-7F-bY0">
+                                <rect key="frame" x="500" y="30" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="K8a-zF-hgn"/>
+                                    <constraint firstAttribute="height" constant="30" id="z2W-Ac-6dh"/>
+                                </constraints>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonDidPressed:" destination="DXx-MZ-UBW" eventType="touchUpInside" id="7ea-r0-V5Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Lri-Mn-iDg" firstAttribute="leading" secondItem="ONu-zy-NRj" secondAttribute="leading" id="832-dh-FOF"/>
+                            <constraint firstItem="rwn-7F-bY0" firstAttribute="top" secondItem="SNF-zY-fT2" secondAttribute="bottom" constant="10" id="Apf-UP-Uj1"/>
                             <constraint firstItem="IpO-1M-HJK" firstAttribute="top" secondItem="Lri-Mn-iDg" secondAttribute="bottom" id="Czo-qw-whz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rwn-7F-bY0" secondAttribute="trailing" constant="20" id="OiH-3f-2SD"/>
                             <constraint firstAttribute="trailing" secondItem="Lri-Mn-iDg" secondAttribute="trailing" id="SBK-VN-xuv"/>
                             <constraint firstItem="Lri-Mn-iDg" firstAttribute="top" secondItem="ONu-zy-NRj" secondAttribute="top" id="fzB-or-fjE"/>
                         </constraints>
@@ -419,6 +434,7 @@
                     <connections>
                         <outlet property="contentView" destination="3HW-6l-WFg" id="9Uc-rd-KZZ"/>
                         <outlet property="contentViewWidthConstraint" destination="mZj-Hx-Q6C" id="w4x-iu-CaO"/>
+                        <outlet property="logoutButton" destination="rwn-7F-bY0" id="sXv-XG-eZS"/>
                         <segue destination="l0C-rg-HV8" kind="show" identifier="ShowProductListSegue" id="nBB-h8-pBU"/>
                         <segue destination="pt8-M1-fa3" kind="show" identifier="ShowMailingSubscriptionSegue" id="ET5-Hv-tq1"/>
                         <segue destination="Bke-Vp-x45" kind="show" identifier="ShowCancelReturnSegue" id="ZSl-6y-ARb"/>

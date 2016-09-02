@@ -408,7 +408,6 @@
         [parameterMutableDictionary addEntriesFromDictionary:parameters];
     }
     
-    
     [[BlueShift sharedInstance] trackEventForEventName:kEventAppOpen andParameters:parameters canBatchThisEvent:NO];
 }
 

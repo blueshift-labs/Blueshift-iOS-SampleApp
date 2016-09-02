@@ -17,9 +17,11 @@
 @property IBOutlet UIView *contentView;
 @property IBOutlet NSLayoutConstraint *contentViewWidthConstraint;
 
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 - (IBAction)productsButtonPressed:(id)sender;
 - (IBAction)cancelReturnButtonPressed:(id)sender;
 - (IBAction)mailingListSubscriptionButtonPressed:(id)sender;
 - (IBAction)subscriptionEventsButtonPressed:(id)sender;
+- (IBAction)logoutButtonDidPressed:(id)sender;
 
 @end

@@ -28,7 +28,7 @@
     [super viewDidAppear:animated];
     
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
-    [[BlueShift sharedInstance] trackProductViewedWithSKU:@"PROM002" andCategoryID:10 canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackProductViewedWithSKU:@"PROM002" andCategoryID:10 canBatchThisEvent:YES];
 }
 
 - (void)handlePushDictionary:(NSDictionary *)details {
