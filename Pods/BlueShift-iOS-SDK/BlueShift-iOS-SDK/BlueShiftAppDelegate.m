@@ -122,7 +122,8 @@
 
 - (void)handleRemoteNotification:(NSDictionary *)userInfo forApplicationState:(UIApplicationState)applicationState {
     NSString *pushCategory = [[userInfo objectForKey:@"aps"] objectForKey:@"category"];
-    self.pushAlertDictionary = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+    //self.pushAlertDictionary = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+    self.pushAlertDictionary = [userInfo objectForKey:@"aps"];
     NSDictionary *pushTrackParameterDictionary = [self pushTrackParameterDictionaryForPushDetailsDictionary:userInfo];
     
     // Way to handle push notification in three states
@@ -271,7 +272,8 @@
     // Handles the scenario when a push message action is selected ...
     // Differentiation is done on the basis of identifier of the push notification ...
     
-    NSDictionary *pushAlertDictionary = [[notification objectForKey:@"aps"] objectForKey:@"alert"];
+    //NSDictionary *pushAlertDictionary = [[notification objectForKey:@"aps"] objectForKey:@"alert"];
+    NSDictionary *pushAlertDictionary = [notification objectForKey:@"aps"];
     NSDictionary *pushDetailsDictionary = nil;
     if ([pushAlertDictionary isKindOfClass:[NSDictionary class]]) {
         pushDetailsDictionary = pushAlertDictionary;
@@ -385,7 +387,8 @@
 }
 
 - (NSDictionary *)pushTrackParameterDictionaryForPushDetailsDictionary:(NSDictionary *)pushDetailsDictionary {
-    NSDictionary *pushAlertDictionary = [[pushDetailsDictionary objectForKey:@"aps"] objectForKey:@"alert"];
+    //NSDictionary *pushAlertDictionary = [[pushDetailsDictionary objectForKey:@"aps"] objectForKey:@"alert"];
+    NSDictionary *pushAlertDictionary = [pushDetailsDictionary objectForKey:@"aps"];
     NSString *pushMessageID = [pushAlertDictionary objectForKey:@"id"];
     NSNumber *timeStamp = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
     NSMutableDictionary *pushTrackParametersMutableDictionary = [NSMutableDictionary dictionary];
