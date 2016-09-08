@@ -30,8 +30,7 @@
         blueShiftAlertView = [[BlueShiftAlertView alloc] initWithTitle:@"Notification Alert" message:pushMessage delegate:delegate cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Show", nil];
         blueShiftAlertView.alertViewContext = BlueShiftAlertViewContextNotificationCategoryOffer;
     } else {
-        blueShiftAlertView = [[BlueShiftAlertView alloc] initWithTitle:[pushAlertDictionary objectForKey:@"category"] message:pushMessage delegate:delegate cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
-        //blueShiftAlertView.alertViewContext = BlueShiftAlertViewContextNotificationCategoryOffer;
+        blueShiftAlertView = [[BlueShiftAlertView alloc] initWithTitle:@"Notification Alert" message:pushMessage delegate:delegate cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
     }
     
     return blueShiftAlertView;

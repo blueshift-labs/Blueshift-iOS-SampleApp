@@ -8,6 +8,7 @@
 #import "BlueShiftAppDelegate.h"
 #import "BlueShiftNotificationConstants.h"
 #import "BlueShiftAlertView.h"
+#import "BlueShiftHttpRequestBatchUpload.h"
 
 @implementation BlueShiftAppDelegate
 
@@ -98,6 +99,7 @@
     return YES;
 }
 
+
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     NSString *deviceTokenString = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
@@ -119,6 +121,7 @@
     [self handleRemoteNotification:userInfo forApplicationState:application.applicationState];
     handler(UIBackgroundFetchResultNewData);
 }
+
 
 - (void)handleRemoteNotification:(NSDictionary *)userInfo forApplicationState:(UIApplicationState)applicationState {
     NSString *pushCategory = [[userInfo objectForKey:@"aps"] objectForKey:@"category"];
@@ -323,12 +326,10 @@
     // Will have to handled by SDK .....
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    [self.oldDelegate applicationDidEnterBackground:application];
-}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     [self.oldDelegate applicationWillEnterForeground:application];
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -338,12 +339,32 @@
             [self.oldDelegate applicationDidBecomeActive:application];
         }
     }
-    
+    // Uploading previous Batch events if anything exists
+    //To make the code block asynchronous
+    [BlueShiftHttpRequestBatchUpload batchEventsUploadInBackground];
+
     // Will have to handled by SDK .....
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    
     [self.oldDelegate applicationWillTerminate:application];
+    
+    if([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)])
+    {
+        __block UIBackgroundTaskIdentifier background_task;
+        background_task = [application beginBackgroundTaskWithExpirationHandler:^ {
+            
+            //Clean up code. Tell the system that we are done.
+            [application endBackgroundTask: background_task];
+            background_task = UIBackgroundTaskInvalid;
+        }];
+        
+        // Uploading Batch events
+        //To make the code block asynchronous
+        [BlueShiftHttpRequestBatchUpload batchEventsUploadInBackground];
+    }
 }
 
 - (void) forwardInvocation:(NSInvocation *)anInvocation {

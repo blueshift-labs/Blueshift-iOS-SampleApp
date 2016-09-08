@@ -2,8 +2,7 @@
 //  BlueShiftHttpRequestBatchUpload.m
 //  BlueShift-iOS-SDK
 //
-//  Created by Shahas on 25/08/16.
-//  Copyright © 2016 Bullfinch Software. All rights reserved.
+//  Copyright (c) Blueshift. All rights reserved.
 //
 
 #import "BlueShiftHttpRequestBatchUpload.h"
@@ -16,19 +15,19 @@ static BlueShiftRequestQueueStatus _requestQueueStatus = BlueShiftRequestQueueSt
 
 // Method to start batch uploading
 + (void)startBatchUpload {
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[[BlueShiftBatchUploadConfig sharedInstance] fetchBatchUploadTimer]
+    [NSTimer scheduledTimerWithTimeInterval:[[BlueShiftBatchUploadConfig sharedInstance] fetchBatchUploadTimer]
                                      target:self
                                    selector:@selector(batchEventsUploadInBackground)
                                    userInfo:nil
                                     repeats:YES];
-    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 // Perform uploading task in background (inclues core data operations)
 + (void)batchEventsUploadInBackground {
     [self performSelectorInBackground:@selector(createAndUploadBatches) withObject:nil];
 }
+
+
 
 // Method to create and upload batches
 + (void)createAndUploadBatches {

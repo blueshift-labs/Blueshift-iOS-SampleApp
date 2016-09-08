@@ -52,7 +52,7 @@
     [super viewDidAppear:animated];
     
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
-    [[BlueShift sharedInstance] trackProductViewedWithSKU:@"ARJDRG100" andCategoryID:10 canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackProductViewedWithSKU:@"ARJDRG100" andCategoryID:10 canBatchThisEvent:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

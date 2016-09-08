@@ -56,7 +56,9 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Please Enable Location Service</string>
 	<key>UIBackgroundModes</key>
-	<array/>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>

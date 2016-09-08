@@ -22,6 +22,23 @@
     self.navigationItem.title = @"Order Confirmed";
     [self.navigationController setNavigationBarHidden:NO];
     
+    BlueShiftProduct *product1 = [[BlueShiftProduct alloc] init];
+    [product1 setSku:@"PROM001"];
+    [product1 setPrice:100];
+    [product1 setQuantity:100];
+    
+    BlueShiftProduct *product2 = [[BlueShiftProduct alloc] init];
+    [product2 setSku:@"SERSGQ100"];
+    [product2 setPrice:10];
+    [product2 setQuantity:14];
+    
+    BlueShiftProduct *product3 = [[BlueShiftProduct alloc] init];
+    [product3 setSku:@"FERWER345"];
+    [product3 setPrice:105];
+    [product3 setQuantity:108];
+    
+    self.productsArray = @[product1, product2, product3];
+    
     [[BlueShift sharedInstance] trackProductsPurchased:self.productsArray withOrderID:@"ORD8908" andRevenue:100 andShippingCost:20 andDiscount:40 andCoupon:@"free coupon" canBatchThisEvent:NO];
 }
 
