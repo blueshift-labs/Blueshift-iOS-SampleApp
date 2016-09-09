@@ -8,10 +8,9 @@ workspace 'BlueShiftDemoiOSApp.xcworkspace'
 target 'BlueShiftDemoiOSApp' do
   pod 'SVProgressHUD'
   pod 'JSONModel'
-  pod 'AFNetworking'
   pod 'ViewDeck', '~> 2.2.11'
   pod 'SDWebImage'
   pod 'IQKeyboardManager'
   pod 'MJPopupViewController'
-  pod 'BlueShift-iOS-SDK', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK'
+  pod 'BlueShift-iOS-SDK', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK', :branch => 'development'
 end
