@@ -26,10 +26,5 @@
   "public_header_files": "BlueShift-iOS-SDK/**/*.h",
   "resources": "BlueShift-iOS-SDK/**/*.{xcdatamodeld,xcdatamodel}",
   "frameworks": "CoreData",
-  "requires_arc": true,
-  "dependencies": {
-    "AFNetworking": [
-
-    ]
-  }
+  "requires_arc": true
 }

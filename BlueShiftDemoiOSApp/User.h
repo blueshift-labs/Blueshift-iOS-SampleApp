@@ -11,13 +11,11 @@
 #import <JSONModel/JSONModel.h>
 #import "BfErrorCode.h"
 #import "Routes.h"
-#import <AFNetworking/AFNetworking.h>
 #include <CommonCrypto/CommonDigest.h>
 #import "AppDelegate.h"
 #import "StatusCodes.h"
 #import "AppConstants.h"
 #import "NSString+BfStringHelpers.h"
-#import "AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.h"
 
 @interface User : JSONModel
 

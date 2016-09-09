@@ -27,7 +27,6 @@
 		DC1B4BAD1A8CE19B00F2C579 /* BfTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B4BAC1A8CE19B00F2C579 /* BfTextView.m */; };
 		DC1B4BB01A8CE21300F2C579 /* AttributedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B4BAF1A8CE21300F2C579 /* AttributedTextView.m */; };
 		DC1B4BB31A8CE7FF00F2C579 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B4BB21A8CE7FF00F2C579 /* User.m */; };
-		DC1B4BB61A8CE8D400F2C579 /* AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B4BB51A8CE8D400F2C579 /* AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.m */; };
 		DC1B4BB91A8CF20700F2C579 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B4BB81A8CF20700F2C579 /* ForgotPasswordViewController.m */; };
 		DC3D9EF91A8A14B000177ABD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3D9EF81A8A14B000177ABD /* main.m */; };
 		DC3D9EFC1A8A14B000177ABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3D9EFB1A8A14B000177ABD /* AppDelegate.m */; };
@@ -99,8 +98,6 @@
 		DC1B4BAF1A8CE21300F2C579 /* AttributedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedTextView.m; sourceTree = "<group>"; };
 		DC1B4BB11A8CE7FF00F2C579 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		DC1B4BB21A8CE7FF00F2C579 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		DC1B4BB41A8CE8D400F2C579 /* AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.h"; sourceTree = "<group>"; };
-		DC1B4BB51A8CE8D400F2C579 /* AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.m"; sourceTree = "<group>"; };
 		DC1B4BB71A8CF20700F2C579 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		DC1B4BB81A8CF20700F2C579 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		DC3D9EF31A8A14B000177ABD /* BlueShiftDemoiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueShiftDemoiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,8 +241,6 @@
 				DC1B4B6D1A8BC4E900F2C579 /* NSArray+BfArrayHelpers.m */,
 				DC1B4B661A8BC49A00F2C579 /* NSString+BfStringHelpers.h */,
 				DC1B4B671A8BC49A00F2C579 /* NSString+BfStringHelpers.m */,
-				DC1B4BB41A8CE8D400F2C579 /* AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.h */,
-				DC1B4BB51A8CE8D400F2C579 /* AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -651,7 +646,6 @@
 				DC1B4B9B1A8CD46F00F2C579 /* SplashViewController.m in Sources */,
 				DC9C10851AB1ACCF00167711 /* CancelReturnViewController.m in Sources */,
 				DC9C10881AB1B87E00167711 /* SubscriptionEventsViewController.m in Sources */,
-				DC1B4BB61A8CE8D400F2C579 /* AFHTTPRequestOperationManager+BfHTTPRequestOperationManagerHelpers.m in Sources */,
 				DC1B4BA71A8CE0F500F2C579 /* BfTextField.m in Sources */,
 				DC1B4BA11A8CD49000F2C579 /* BaseViewController.m in Sources */,
 				DC9C10821AB1981C00167711 /* MailingSubscriptionViewController.m in Sources */,
