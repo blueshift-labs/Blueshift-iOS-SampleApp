@@ -10,7 +10,8 @@ PODS:
   - ViewDeck (2.2.11)
 
 DEPENDENCIES:
-  - BlueShift-iOS-SDK (from `https://github.com/blueshift-labs/Blueshift-iOS-SDK`)
+  - BlueShift-iOS-SDK (from `https://github.com/blueshift-labs/Blueshift-iOS-SDK`,
+    branch `development`)
   - IQKeyboardManager
   - JSONModel
   - MJPopupViewController
@@ -20,11 +21,12 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   BlueShift-iOS-SDK:
+    :branch: development
     :git: https://github.com/blueshift-labs/Blueshift-iOS-SDK
 
 CHECKOUT OPTIONS:
   BlueShift-iOS-SDK:
-    :commit: e1db80d29fb40f0e3a2a48afa86059f1426cdc02
+    :commit: 7b2d3cea00e9116409fd684075f5462077d413cf
     :git: https://github.com/blueshift-labs/Blueshift-iOS-SDK
 
 SPEC CHECKSUMS:

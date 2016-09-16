@@ -32,18 +32,20 @@
         
         
         
-        NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
+        //NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970] * 10000;
         // NSTimeInterval is defined as double
-        NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
-        NSString *imageName = [NSString stringWithFormat:@"image_%@", timeStampObj];
+        //NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
+        NSString *attachmentName = [NSString stringWithFormat:@"attachment.mp4"];
         
         NSURL *baseURL = [NSURL fileURLWithPath:documentsDirectory];
-        NSURL *URL = [NSURL URLWithString:imageName relativeToURL:baseURL];
+        NSURL *URL = [NSURL URLWithString:attachmentName relativeToURL:baseURL];
         
-        NSString  *filePath = [URL absoluteString];
-        [data writeToFile:filePath atomically:YES];
+        NSString  *filePathToWrite = [NSString stringWithFormat:@"%@/%@", documentsDirectory, attachmentName];
+        
+        [data writeToFile:filePathToWrite atomically:YES];
         NSError *error3;
-        UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:imageName URL:URL options:nil error:&error3];
+
+        UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:attachmentName URL:URL options:nil error:&error3];
         NSLog(@"%@", error3);
         self.bestAttemptContent.attachments = @[attachment];
         self.contentHandler(self.bestAttemptContent);
