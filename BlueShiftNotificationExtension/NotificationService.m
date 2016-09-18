@@ -7,6 +7,7 @@
 //
 
 #import "NotificationService.h"
+#import <BlueShift-iOS-SDK/BlueShift.h>
 
 @interface NotificationService ()
 
@@ -21,39 +22,7 @@
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
     
-    // Modify the notification content here...
-    //self.bestAttemptContent.title = [NSString stringWithFormat:@"%@ [modified]", @"shahas"];
-    NSURL *url = [NSURL URLWithString:[request.content.userInfo objectForKey:@"my-attachment"]];
-    NSData *data = [[NSData alloc] initWithContentsOfURL: url];
-    if (data)
-    {
-        NSArray   *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString  *documentsDirectory = [paths objectAtIndex:0];
-        
-        
-        
-        //NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970] * 10000;
-        // NSTimeInterval is defined as double
-        //NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
-        NSString *attachmentName = [NSString stringWithFormat:@"attachment.mp4"];
-        
-        NSURL *baseURL = [NSURL fileURLWithPath:documentsDirectory];
-        NSURL *URL = [NSURL URLWithString:attachmentName relativeToURL:baseURL];
-        
-        NSString  *filePathToWrite = [NSString stringWithFormat:@"%@/%@", documentsDirectory, attachmentName];
-        
-        [data writeToFile:filePathToWrite atomically:YES];
-        NSError *error3;
-
-        UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:attachmentName URL:URL options:nil error:&error3];
-        NSLog(@"%@", error3);
-        self.bestAttemptContent.attachments = @[attachment];
-        self.contentHandler(self.bestAttemptContent);
-    }
-    
-
-    
-    
+    [[BlueShiftPushNotification sharedInstance] integratePushNotificationWithMediaAttachementsForRequest:request withContentHandler:contentHandler];
 }
 
 - (void)serviceExtensionTimeWillExpire {

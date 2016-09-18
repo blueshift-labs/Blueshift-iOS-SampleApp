@@ -5,6 +5,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 workspace 'BlueShiftDemoiOSApp.xcworkspace'
 
+link_with 'BlueShiftDemoiOSApp', 'BlueShiftNotificationExtension'
+
 target 'BlueShiftDemoiOSApp' do
   pod 'SVProgressHUD'
   pod 'JSONModel'
