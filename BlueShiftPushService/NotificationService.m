@@ -1,8 +1,8 @@
 //
 //  NotificationService.m
-//  BlueShiftNotificationExtension
+//  BlueShiftPushService
 //
-//  Created by Shahas on 15/09/16.
+//  Created by Shahas on 19/09/16.
 //  Copyright © 2016 Arjun K P. All rights reserved.
 //
 
@@ -22,7 +22,9 @@
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
     
-    [[BlueShiftPushNotification sharedInstance] integratePushNotificationWithMediaAttachementsForRequest:request withContentHandler:contentHandler];
+    // Modify the notification content here...
+    self.bestAttemptContent.attachments = [[BlueShiftPushNotification sharedInstance]integratePushNotificationWithMediaAttachementsForRequest:request];
+    self.contentHandler(self.bestAttemptContent);
 }
 
 - (void)serviceExtensionTimeWillExpire {

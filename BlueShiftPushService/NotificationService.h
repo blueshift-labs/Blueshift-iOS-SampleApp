@@ -1,8 +1,8 @@
 //
 //  NotificationService.h
-//  BlueShiftNotificationExtension
+//  BlueShiftPushService
 //
-//  Created by Shahas on 15/09/16.
+//  Created by Shahas on 19/09/16.
 //  Copyright © 2016 Arjun K P. All rights reserved.
 //
 
