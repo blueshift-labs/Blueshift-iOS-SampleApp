@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5D3BE0EA48688C32ABB2E8C2'
+               BlueprintIdentifier = '174EA34F4122F6DEFC78CF10'
                BlueprintName = 'BlueShift-iOS-SDK'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libBlueShift-iOS-SDK.a'>

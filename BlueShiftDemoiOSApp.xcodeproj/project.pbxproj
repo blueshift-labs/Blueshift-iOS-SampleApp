@@ -798,6 +798,7 @@
 /* Begin XCBuildConfiguration section */
 		550C02611D8B072A00DEAB4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD6CC01D5C230ED3F3D2A18 /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -822,6 +823,7 @@
 		};
 		550C02621D8B072A00DEAB4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4DBD6DA2C756FD2F43148DF /* Pods-BlueShiftDemoiOSApp.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -992,6 +994,7 @@
 				550C02621D8B072A00DEAB4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC3D9EEE1A8A14B000177ABD /* Build configuration list for PBXProject "BlueShiftDemoiOSApp" */ = {
 			isa = XCConfigurationList;

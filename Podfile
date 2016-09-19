@@ -15,4 +15,5 @@ target 'BlueShiftDemoiOSApp' do
   pod 'IQKeyboardManager'
   pod 'MJPopupViewController'
   pod 'BlueShift-iOS-SDK', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK', :branch=> 'development'
+  #pod 'BlueShift-iOS-SDK', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
 end

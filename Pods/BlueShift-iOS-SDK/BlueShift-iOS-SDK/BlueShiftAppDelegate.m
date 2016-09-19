@@ -204,7 +204,6 @@
     // Way to handle push notification in three states
     if (applicationState == UIApplicationStateActive) {
         
-
         if([[self.pushAlertDictionary objectForKey:@"notification_type"] isEqualToString:@"alert_box"]) {
             // Track notification view when app is open ...
             [self trackPushViewedWithParameters:pushTrackParameterDictionary];
@@ -461,6 +460,7 @@
                 break;
                 
             default:
+                [self trackAlertDismiss];
                 break;
         }
     } else if (alertViewContext == BlueShiftAlertViewContextNotificationCategoryCart) {
@@ -470,6 +470,7 @@
                 break;
                 
             default:
+                [self trackAlertDismiss];
                 break;
         }
     } else if (alertViewContext == BlueShiftAlertViewContextNotificationCategoryOffer) {
@@ -479,9 +480,14 @@
                 break;
                 
             default:
+                [self trackAlertDismiss];
                 break;
         }
     }
+}
+
+- (void)trackAlertDismiss {
+    [[BlueShift sharedInstance] trackEventForEventName:kEventDismissAlert andParameters:nil canBatchThisEvent:YES];
 }
 
 - (NSDictionary *)pushTrackParameterDictionaryForPushDetailsDictionary:(NSDictionary *)pushDetailsDictionary {

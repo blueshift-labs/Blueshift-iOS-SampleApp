@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BlueShift-iOS-SDK:
-    :commit: 7b2d3cea00e9116409fd684075f5462077d413cf
+    :commit: 6a9a3e8a22233a583a5bd2c3a75e6efa89f32edf
     :git: https://github.com/blueshift-labs/Blueshift-iOS-SDK
 
 SPEC CHECKSUMS:
