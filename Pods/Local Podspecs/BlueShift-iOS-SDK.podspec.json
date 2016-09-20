@@ -18,13 +18,25 @@
     "git": "https://github.com/blueshift-labs/BlueShift-iOS-SDK.git",
     "tag": "0.0.1"
   },
-  "source_files": [
-    "BlueShift-iOS-SDK",
-    "BlueShift-iOS-SDK/**/*.{h,m}"
-  ],
   "exclude_files": "Classes/Exclude",
   "public_header_files": "BlueShift-iOS-SDK/**/*.h",
+  "default_subspecs": "Core",
   "resources": "BlueShift-iOS-SDK/**/*.{xcdatamodeld,xcdatamodel}",
   "frameworks": "CoreData",
-  "requires_arc": true
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "BlueShift-iOS-SDK/**/*.{h,m}",
+      "exclude_files": [
+        "Classes/Exclude",
+        "BlueShift-iOS-SDK/BlueShiftPushNotification.{h,m}"
+      ]
+    },
+    {
+      "name": "AppExtension",
+      "source_files": "BlueShift-iOS-SDK/BlueShiftPushNotification.{h,m}",
+      "exclude_files": "Classes/Exclude"
+    }
+  ]
 }

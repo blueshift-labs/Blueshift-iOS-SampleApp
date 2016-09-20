@@ -1,5 +1,8 @@
 PODS:
-  - BlueShift-iOS-SDK (0.0.1)
+  - BlueShift-iOS-SDK (0.0.1):
+    - BlueShift-iOS-SDK/Core (= 0.0.1)
+  - BlueShift-iOS-SDK/AppExtension (0.0.1)
+  - BlueShift-iOS-SDK/Core (0.0.1)
   - IQKeyboardManager (3.2.1.1)
   - JSONModel (1.0.2)
   - MJPopupViewController (0.4)
@@ -10,8 +13,8 @@ PODS:
   - ViewDeck (2.2.11)
 
 DEPENDENCIES:
-  - BlueShift-iOS-SDK (from `https://github.com/blueshift-labs/Blueshift-iOS-SDK`,
-    branch `development`)
+  - BlueShift-iOS-SDK (from `/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK`)
+  - BlueShift-iOS-SDK/AppExtension (from `/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK`)
   - IQKeyboardManager
   - JSONModel
   - MJPopupViewController
@@ -21,16 +24,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   BlueShift-iOS-SDK:
-    :branch: development
-    :git: https://github.com/blueshift-labs/Blueshift-iOS-SDK
-
-CHECKOUT OPTIONS:
-  BlueShift-iOS-SDK:
-    :commit: 6a9a3e8a22233a583a5bd2c3a75e6efa89f32edf
-    :git: https://github.com/blueshift-labs/Blueshift-iOS-SDK
+    :path: "/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK"
 
 SPEC CHECKSUMS:
-  BlueShift-iOS-SDK: d830123447a64d203802684d7a3dd910c9a34ba5
+  BlueShift-iOS-SDK: 024c0630d8c0fb48f67230eaa43f5d267a80cf5a
   IQKeyboardManager: 6aeae6a2014d66461c48f6753dd693e92eaf6524
   JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
