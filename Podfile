@@ -5,7 +5,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 workspace 'BlueShiftDemoiOSApp.xcworkspace'
 
-link_with 'BlueShiftDemoiOSApp', 'BlueShiftNotificationExtension'
 
 target 'BlueShiftDemoiOSApp' do
   pod 'SVProgressHUD'
@@ -14,6 +13,9 @@ target 'BlueShiftDemoiOSApp' do
   pod 'SDWebImage'
   pod 'IQKeyboardManager'
   pod 'MJPopupViewController'
-  pod 'BlueShift-iOS-SDK', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK', :branch=> 'development'
-  #pod 'BlueShift-iOS-SDK', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
+  #pod 'BlueShift-iOS-SDK', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK', :branch=> 'development'
+  pod 'BlueShift-iOS-SDK', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
 end
+
+target 'BlueShiftPushService' do
+    pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
