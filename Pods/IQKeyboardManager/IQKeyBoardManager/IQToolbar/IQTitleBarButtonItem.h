@@ -1,7 +1,7 @@
 //
 //  IQTitleBarButtonItem.h
 // https://github.com/hackiftekhar/IQKeyboardManager
-// Copyright (c) 2013-14 Iftekhar Qurashi.
+// Copyright (c) 2013-15 Iftekhar Qurashi.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,19 +24,37 @@
 #import <Foundation/NSObjCRuntime.h>
 #import "IQKeyboardManagerConstants.h"
 #import "IQBarButtonItem.h"
-/*!
-    @author Iftekhar Qurashi
- 
-	@related hack.iftekhar@gmail.com
- 
-    @class IQTitleBarButtonItem
- 
-	@abstract BarButtonItem with title text.
+
+/**
+ BarButtonItem with title text.
  */
 @interface IQTitleBarButtonItem : IQBarButtonItem
 
-@property(nonatomic, strong) UIFont *font;  //Default is (system font 12.0 bold)
+/**
+ Font to be used in bar button. Default is (system font 12.0 bold).
+ */
+@property(nullable, nonatomic, strong) UIFont *font;
 
--(instancetype)initWithFrame:(CGRect)frame title:(NSString *)title NS_DESIGNATED_INITIALIZER;
+/**
+ Initialize with frame and title.
+ 
+ @param title Title of barButtonItem.
+ */
+-(nonnull instancetype)initWithTitle:(nullable NSString *)title NS_DESIGNATED_INITIALIZER;
+
+/**
+ Unavailable. Please use initWithFrame:title: method
+ */
+-(nonnull instancetype)init NS_UNAVAILABLE;
+
+/**
+ Unavailable. Please use initWithFrame:title: method
+ */
+-(nonnull instancetype)initWithCoder:(nullable NSCoder *)aDecoder NS_UNAVAILABLE;
+
+/**
+ Unavailable. Please use initWithFrame:title: method
+ */
++ (nonnull instancetype)new NS_UNAVAILABLE;
 
 @end

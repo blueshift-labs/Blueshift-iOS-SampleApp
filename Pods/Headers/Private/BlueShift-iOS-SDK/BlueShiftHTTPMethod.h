@@ -1,1 +1,1 @@
-../../../../../blueGitHub/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftHTTPMethod.h
+../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftHTTPMethod.h
