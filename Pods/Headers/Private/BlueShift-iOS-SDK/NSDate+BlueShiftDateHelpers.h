@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/NSDate+BlueShiftDateHelpers.h
+../../../../../blueGitHub/Blueshift-iOS-SDK/BlueShift-iOS-SDK/NSDate+BlueShiftDateHelpers.h

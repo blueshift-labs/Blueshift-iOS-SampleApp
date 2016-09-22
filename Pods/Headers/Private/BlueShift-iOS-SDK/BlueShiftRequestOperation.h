@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftRequestOperation.h
+../../../../../blueGitHub/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftRequestOperation.h

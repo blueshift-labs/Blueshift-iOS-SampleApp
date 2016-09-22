@@ -27,7 +27,7 @@
   "subspecs": [
     {
       "name": "Core",
-      "source_files": "BlueShift-iOS-SDK/**/*.{h,m}",
+      "source_files": "BlueShift-iOS-SDK/*.{h,m}",
       "exclude_files": [
         "Classes/Exclude",
         "BlueShift-iOS-SDK/BlueShiftPushNotification.{h,m}"
@@ -36,6 +36,11 @@
     {
       "name": "AppExtension",
       "source_files": "BlueShift-iOS-SDK/BlueShiftPushNotification.{h,m}",
+      "exclude_files": "Classes/Exclude"
+    },
+    {
+      "name": "AppExtension2",
+      "resources": "BlueShift-iOS-SDK/BlueShiftInterface.storyboard",
       "exclude_files": "Classes/Exclude"
     }
   ]
