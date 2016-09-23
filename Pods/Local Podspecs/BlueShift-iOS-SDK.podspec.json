@@ -30,7 +30,9 @@
       "source_files": "BlueShift-iOS-SDK/*.{h,m}",
       "exclude_files": [
         "Classes/Exclude",
-        "BlueShift-iOS-SDK/BlueShiftPushNotification.{h,m}"
+        "BlueShift-iOS-SDK/BlueShiftPushNotification.{h,m}",
+        "BlueShift-iOS-SDK/BlueShiftCarousalViewController.{h,m}",
+        "BlueShift-iOS-SDK/iCarousel.{h,m}"
       ]
     },
     {
@@ -40,6 +42,10 @@
     },
     {
       "name": "AppExtension2",
+      "source_files": [
+        "BlueShift-iOS-SDK/BlueShiftCarousalViewController.{h,m}",
+        "BlueShift-iOS-SDK/iCarousel.{h,m}"
+      ],
       "resources": "BlueShift-iOS-SDK/BlueShiftInterface.storyboard",
       "exclude_files": "Classes/Exclude"
     }
