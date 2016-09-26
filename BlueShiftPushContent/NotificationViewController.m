@@ -33,4 +33,10 @@
     [self showCarouselForNotfication:notification];
 }
 
+- (void)didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void (^)(UNNotificationContentExtensionResponseOption))completion {
+    [self setCarouselActionsForResponse:response completionHandler:^(UNNotificationContentExtensionResponseOption option) {
+        completion(option);
+    }];
+}
+
 @end
