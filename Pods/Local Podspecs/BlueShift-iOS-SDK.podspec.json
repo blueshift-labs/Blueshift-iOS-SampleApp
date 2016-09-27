@@ -21,7 +21,6 @@
   "exclude_files": "Classes/Exclude",
   "public_header_files": "BlueShift-iOS-SDK/**/*.h",
   "default_subspecs": "Core",
-  "resources": "BlueShift-iOS-SDK/**/*.{xcdatamodeld,xcdatamodel}",
   "frameworks": "CoreData",
   "requires_arc": true,
   "subspecs": [
@@ -33,20 +32,16 @@
         "BlueShift-iOS-SDK/BlueShiftPushNotification.{h,m}",
         "BlueShift-iOS-SDK/BlueShiftCarousalViewController.{h,m}",
         "BlueShift-iOS-SDK/iCarousel.{h,m}"
-      ]
+      ],
+      "resources": "BlueShift-iOS-SDK/**/*.{xcdatamodeld,xcdatamodel}"
     },
     {
       "name": "AppExtension",
-      "source_files": "BlueShift-iOS-SDK/BlueShiftPushNotification.{h,m}",
-      "exclude_files": "Classes/Exclude"
-    },
-    {
-      "name": "AppExtension2",
       "source_files": [
+        "BlueShift-iOS-SDK/BlueShiftPushNotification.{h,m}",
         "BlueShift-iOS-SDK/BlueShiftCarousalViewController.{h,m}",
         "BlueShift-iOS-SDK/iCarousel.{h,m}"
       ],
-      "resources": "BlueShift-iOS-SDK/BlueShiftInterface.storyboard",
       "exclude_files": "Classes/Exclude"
     }
   ]

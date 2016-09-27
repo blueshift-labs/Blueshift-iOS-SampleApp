@@ -22,5 +22,5 @@ target 'BlueShiftPushService' do
 end
 
 target 'BlueShiftPushContent' do
-    pod 'BlueShift-iOS-SDK/AppExtension2', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
+    pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
 end

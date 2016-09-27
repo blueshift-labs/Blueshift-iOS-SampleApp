@@ -33,20 +33,33 @@
 		<key>01C12622EB5CDA64FC108E518EB762B4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>EF6D88318751113F39061A2EEFAA2668</string>
+			<string>98782949FB5B2DA214632A8734F2619F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>021740FB5D753FB0EFD6DE7D6034EC11</key>
+		<key>02252278EC64C6A05AFA14B4386EE2E1</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>BatchEventEntity.m</string>
+			<string>BlueShiftDeepLink.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>022B20D5B3B2B82931822849F308150D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftTrackEvents.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -66,7 +79,7 @@
 		<key>0295B6E5435361BFDC9308F18AE9BB9D</key>
 		<dict>
 			<key>fileRef</key>
-			<string>DF1F6168F5FE29BD6DC8BAEFACB4D290</string>
+			<string>02252278EC64C6A05AFA14B4386EE2E1</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -95,7 +108,7 @@
 		<key>03E26299B14C4812E4F1502808F9AD3B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>9EE59E0713691603286F787EB14AABAB</string>
+			<string>8170F0A012CE67B01AC9E0FB87B5D5B8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -127,19 +140,6 @@
 				</array>
 			</dict>
 		</dict>
-		<key>04C0332B8EC3254C6E44C3DAED2FC838</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftNetworkReachabilityManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>04C170C261FEB787C2DE382C5D35A5E6</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -155,41 +155,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>04C3C307B96DD20427587996C8FAD4F5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>969018406E019F21D58D8C0C9F047794</string>
-				<string>CCCE01B0A382708E23444B297ADEEF55</string>
-				<string>B13821BEEA64EEF5DD52849FC7068874</string>
-				<string>173BFCB4B8208830AFFCA48D574F2559</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>path</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>04C4EDE15EA8930E28A4BF9D878BBC22</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftMacros.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>051352724C8435519D497D59271E22DE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>455038B50770BE9872EBD7B069BFD797</string>
+			<string>9F7EAB6931664277A525444162EC8A07</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -283,6 +252,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>059B20DE1CADCF47CAF7A43FA3BAF3C6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftCarousalViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>05C82D4D578B20A661293AE5454A9D74</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -297,6 +279,21 @@
 			<string>JSONModel/JSONModel/JSONModelError.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>07450BD47D6AF89521E9BBF0BB1B664F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E78212910B6E303EA338FAE4BF115C1D</string>
+				<string>EF52443AB11AD433ACB7C6C2405B19C8</string>
+				<string>47249BDD9D32136A960C54E2D7134674</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>07A13A1A667E864DB85E0FE46BA82438</key>
 		<dict>
@@ -324,6 +321,19 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>07D3602E3EE90D368D83AB6E15C9D9F5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftCarousalViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>08140FCD26404F5D6ABE7B223F8C1BED</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -349,6 +359,19 @@
 			<string>B8136DA912035982FDA28DD5628AB424</string>
 			<key>targetProxy</key>
 			<string>F07BF87104A463D474D924C4BD6D6668</string>
+		</dict>
+		<key>0A4D49BD7F76B5FC5AAF50EC324D78CF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftRequestOperationManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>0A5119342DD54D2ACD7F930036920CB5</key>
 		<dict>
@@ -407,47 +430,14 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>0C24BBCA2ADE9BCF4C0D9F316E37D55B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftSubscription.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0D032FFBA892B94BD967E2A69FCD4226</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>BlueShiftSDKDataModel.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>0DA9B86D69914C01EFAE61B778C02048</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B991859D52ECB7CFC8FF56DDBF599439</string>
+			<string>B3B3D6D569AA41111E9AE567FFADBD19</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>0DC5BC4378D6862AE8B17E78971ACF0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>17C952ACCA52ECBB0190125AD4A729F0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0DFFC7C3C3CCF3A4713F497CB08270FC</key>
+		<key>0DB480E7DEE80C95EFAA3FB3F4B90EE6</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -456,22 +446,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>BlueShiftConfig.h</string>
+			<string>BlueShiftAlertView.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>0E981723A0F1AC3EA7D6ACCEB7C5F6C9</key>
+		<key>0DC5BC4378D6862AE8B17E78971ACF0F</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>AB97BD3327B5783CA0316AFC998DF374</string>
-			</array>
+			<key>fileRef</key>
+			<string>17C952ACCA52ECBB0190125AD4A729F0</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>0EA49C064ED845D254E85C9B2B0E3FDC</key>
 		<dict>
@@ -488,7 +472,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>0FB51143F9A5B7B64744060EA1B094C9</key>
+		<key>0FB32508BAED95760B06D13076108AA6</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -497,7 +481,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>BlueShiftAppDelegate.h</string>
+			<string>BlueShiftPushParamDelegate.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -548,24 +532,10 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>116B7CAF809568E80D41F2E071803760</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>FE6C39D1A0036DB81083689820E6DF58</string>
-				<string>1564170A1278302E9E63B45C21768CE8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
 		<key>133070CC77BC3ECD5C4A8E1E8474E349</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C543A14D0B9D5B4E6554F3AA5FCA27A2</string>
+			<string>E1E97627B31C5D5AF9E35D7C1A1AD7E6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -579,7 +549,7 @@
 		<key>13735883FBDA454FF68E65FB26E90A71</key>
 		<dict>
 			<key>fileRef</key>
-			<string>F675A374DBDB1860740D0A4C25D0E51D</string>
+			<string>FDBF147904D0DD574080833AF1C60858</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -604,19 +574,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>1411EA8E9B6A133ADC15BC1F2450903A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftBatchRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>1428199A289206E9E6A5287DF606EC09</key>
 		<dict>
 			<key>fileRef</key>
@@ -631,6 +588,26 @@
 				</array>
 			</dict>
 		</dict>
+		<key>14467FCFFFA9B290ADB0960BE838BC61</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>059B20DE1CADCF47CAF7A43FA3BAF3C6</string>
+				<string>07D3602E3EE90D368D83AB6E15C9D9F5</string>
+				<string>B1583ACA99867F422A00716F24076300</string>
+				<string>52EA1BEAD30B56A1A7D632036DF7A3C1</string>
+				<string>F3114771ACD514FD5CDBAA78524AB551</string>
+				<string>1E1056C85D116D4D8270EB89E3C24057</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>BlueShift-iOS-SDK</string>
+			<key>path</key>
+			<string>BlueShift-iOS-SDK</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>145EB1FEF9A63E9700B48295168262B4</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -641,6 +618,19 @@
 			<string>sourcecode.c.h</string>
 			<key>path</key>
 			<string>SDWebImage-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>14A7EFAC227DC85520E13BC98EF3144D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftNetworkReachabilityManager.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -699,13 +689,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1564170A1278302E9E63B45C21768CE8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8CCE75B733FBA1C7C12010501AA22ADC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>15EE7868709312F1EDAFAD3A91A75D29</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -721,31 +704,22 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>17301BCE8DFB72DFF70582323CD1CD7D</key>
+		<key>1620D2309237DB1EE0B6E5CB062CFC8B</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>7BA349F6C6B4CBD5CFCEEBA20EE25BDF</string>
+				<string>288194DB70C1D9CE270E6F906ECE9C65</string>
+				<string>999B133FB33EF6FF18F2BE3CF4342594</string>
+				<string>C5DB703C8EDAC3E5A13AC607C1100739</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Development Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>173BFCB4B8208830AFFCA48D574F2559</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>BlueShift-iOS-SDK</string>
 			<key>path</key>
-			<string>iCarousel.m</string>
+			<string>/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK</string>
 			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>&lt;absolute&gt;</string>
 		</dict>
 		<key>1750B7FBB3CB07640B5ACD18AB96A774</key>
 		<dict>
@@ -827,7 +801,7 @@
 		<key>18294FA49D71A6E6F4BC42E08ED8AB0F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>DB6EBE7661560A13DA33E5A455D495E5</string>
+			<string>94E44653E170ED561190BA140718CD2A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -841,7 +815,7 @@
 		<key>185AFE726CCC156486F501630459D0A6</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>BCA5EDEDFA589D94D9CE0A05E27658F0</string>
+			<string>AA0270275FAA7E0D38145BF160026DFB</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>APPLICATION_EXTENSION_API_ONLY</key>
@@ -873,17 +847,6 @@
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Release</string>
-		</dict>
-		<key>18AF0F4A0BE02C1F00BF68F870AB3ABA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>BlueShiftInterface.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>18E90A14470A12526DDE0FC3E299600B</key>
 		<dict>
@@ -932,7 +895,7 @@
 		<key>1A83CD19B4A01DF379D4E9798D73E99C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A68B0555E4087025A4968BBDA9F8D732</string>
+			<string>FEEBA15A5BC9706953E655843A52B356</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -986,6 +949,19 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>1E1056C85D116D4D8270EB89E3C24057</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>iCarousel.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>1E6FE6BCE2F9BDDBF5C444E456BA8B1F</key>
 		<dict>
 			<key>fileRef</key>
@@ -1015,23 +991,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1FA05BB10D0B4EF066585E8FA46C08B5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftUserInfo.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>1FAA3F16DDF7C26638048F149EA7481B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B231839C6CC2F993FF0EE78BA7A4966A</string>
+			<string>D3BA76539B749125C448EEFEE113D602</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1045,7 +1008,7 @@
 		<key>1FBCDB4F98DD54817217639031DA2020</key>
 		<dict>
 			<key>fileRef</key>
-			<string>784B340DA4BC163ED66B64F5F3DDE88F</string>
+			<string>6665B020E9251668043452CCB928533B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1074,7 +1037,7 @@
 		<key>21B36B03BCC3DC2B45CDD8AE376395B9</key>
 		<dict>
 			<key>fileRef</key>
-			<string>98F46631531BB45EB6C7348F88C33C86</string>
+			<string>9CAED5411A1C4876D4065732A3561F49</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1090,6 +1053,19 @@
 			<string>SDWebImageDownloader.m</string>
 			<key>path</key>
 			<string>SDWebImage/SDWebImageDownloader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2202D5A9A39A7AD7F0187146F9292E39</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftMacros.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1139,7 +1115,7 @@
 		<key>25BF75BADD358F31BAFD800BACBEDD45</key>
 		<dict>
 			<key>fileRef</key>
-			<string>748716DDEC29D0FD47FC2984FFC4B9BA</string>
+			<string>BB0ADEF72D1B6F84A96FDAEF110AAD35</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1149,32 +1125,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>263EE3BBBD02C6A38581DF6CBFAB3EB8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>BlueShiftSDKDataModel.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>265C0A90B1371367CEE61EC82A1F1EC7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>HttpRequestOperationEntity.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>2713E0104113D08EF5DA4CEB55DF0A02</key>
 		<dict>
@@ -1218,33 +1168,20 @@
 		<key>27F4B9B8F2164387676AB5928DDB5B4E</key>
 		<dict>
 			<key>fileRef</key>
-			<string>265C0A90B1371367CEE61EC82A1F1EC7</string>
+			<string>61C4157354A3DB06DF4CA613750C1D9B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>28567C32D2120B2C05AEA633EE524305</key>
+		<key>288194DB70C1D9CE270E6F906ECE9C65</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>14467FCFFFA9B290ADB0960BE838BC61</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftDeviceData.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>28D37EAA444ECAEDE1858608CC1AF5C1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShift.m</string>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>AppExtension</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1332,6 +1269,13 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>2AF2052132A2CC3518AACAAE2511F07E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>480BEFAC5E484C2E3327EBE3AF0BB818</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>2B9C4AF26C92780B06605E94E1A7E277</key>
 		<dict>
 			<key>containerPortal</key>
@@ -1344,34 +1288,6 @@
 			<string>E89EA0620E22EDB775A7C107518644DD</string>
 			<key>remoteInfo</key>
 			<string>JSONModel</string>
-		</dict>
-		<key>2C6068F877BEC3F5DE3A1AF5A305B6BC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6A30AFF579B5B71F4C8DBE48B9502554</string>
-				<string>B1958841B067B5DE5ACEEA9371322304</string>
-				<string>866CEB57953D653E9C6856927567F032</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2C9B99C690FB887B126C02FB15BC549F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftPushNotification.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>2CAABEC96EE54742E1A4DEE5CCC173DF</key>
 		<dict>
@@ -1401,19 +1317,6 @@
 			<string>BFFE15CE7196415A03CBD6FDF13F95EC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>2D2161324BECAA406F83F27AB9229567</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftDeepLink.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
 		<dict>
@@ -1515,18 +1418,12 @@
 				</array>
 			</dict>
 		</dict>
-		<key>30D88466E775F22CCAA14C42FB17DAE0</key>
+		<key>30A74679BB4980ADD1D0A575794BD109</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>52EA1BEAD30B56A1A7D632036DF7A3C1</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>HttpRequestOperationEntity.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>30F56C50FCDB8EEA8730353ED0215461</key>
 		<dict>
@@ -1557,10 +1454,23 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>316D4A3DC9558DC7A6D0B8C59212314F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftRequestQueue.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>31C39B143D5524CAA49BBB8E78CC5A14</key>
 		<dict>
 			<key>fileRef</key>
-			<string>40240EBF4F316A877939F51F921C1967</string>
+			<string>F7553869854EAFFDE5322BCFD49729BB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1604,7 +1514,7 @@
 		<key>34C51E4F03AD1A38DB8F4A0AF4D7A18B</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>BB050CC109A28B205697B0362F7BA10A</string>
+			<string>BA3C038AA82843AD4705812D94656AE9</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
@@ -1675,6 +1585,19 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>37AB0CE58347833858D02BAB1C998730</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftUserInfo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>37DFF50BD515D9D14D633E14C1239073</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1696,9 +1619,9 @@
 			<string>D468852EAADE3639DAC639ADE69A3571</string>
 			<key>buildPhases</key>
 			<array>
-				<string>2C6068F877BEC3F5DE3A1AF5A305B6BC</string>
+				<string>92A738AA4DD68D794486BE7BA2E9738A</string>
 				<string>D9AFBB2F8A7B4D2FE8C8A631CA8EADE4</string>
-				<string>E05055D5DA244B7177E1FB86297E7246</string>
+				<string>60C34D11EEDDB8D7A5A03F8ACB3EF577</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1746,7 +1669,7 @@
 		<key>3B81DA293A5165BF9DE10270FDE80F73</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0C24BBCA2ADE9BCF4C0D9F316E37D55B</string>
+			<string>6ECD4B537F27611598375D6F2079CC56</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1763,24 +1686,6 @@
 			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
-		</dict>
-		<key>3CBFAFA0DA140F0C9105330A36F51189</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>263EE3BBBD02C6A38581DF6CBFAB3EB8</string>
-				<string>0D032FFBA892B94BD967E2A69FCD4226</string>
-			</array>
-			<key>currentVersion</key>
-			<string>263EE3BBBD02C6A38581DF6CBFAB3EB8</string>
-			<key>isa</key>
-			<string>XCVersionGroup</string>
-			<key>path</key>
-			<string>BlueShiftSDKDataModel.xcdatamodeld</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>versionGroupType</key>
-			<string>wrapper.xcdatamodel</string>
 		</dict>
 		<key>3D04B978FE170B01B86EB16CA5A476CA</key>
 		<dict>
@@ -1867,7 +1772,14 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>40240EBF4F316A877939F51F921C1967</key>
+		<key>40A2290C2C6D9038B56AC831916182BD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>20823AE7F69061B046B00E7A214FB700</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>40F36A69828256FE00117AAE48281D68</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1876,21 +1788,14 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>BlueShiftHttpRequestBatchUpload.m</string>
+			<string>BatchEventEntity.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>40A2290C2C6D9038B56AC831916182BD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>20823AE7F69061B046B00E7A214FB700</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>40F56FDC7B3CF49F2B1F7B112DC05A32</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A2548C1C1E8C2B1CFC242774E1A5074A</string>
+			<string>CA6375423AFD811C56CEC59688053DFC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1904,7 +1809,7 @@
 		<key>410BE08991C29E2279172567847FCD09</key>
 		<dict>
 			<key>fileRef</key>
-			<string>ACDB752FBD5B12AFFB4B9B638AB17A91</string>
+			<string>499BF9E6E56BB1C85A070A1BB2B43FEB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1928,27 +1833,27 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>41EC3DE4D0238C79387B6EE6109611B2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-BlueShiftPushService-BlueShift-iOS-SDK.xcconfig</string>
-			<key>path</key>
-			<string>../Pods-BlueShiftPushService-BlueShift-iOS-SDK/Pods-BlueShiftPushService-BlueShift-iOS-SDK.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>420DCF1711871D2DBB79AFEB0E739AFA</key>
 		<dict>
 			<key>fileRef</key>
 			<string>50C6DB210C8B07B25F1050F9F9B7AD6B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>4259224AE1FA1F115CBE24B06CEB7333</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>469057B8FE75BB5D407FC9346BB8EE52</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>BlueShift-iOS-SDK</string>
+			<key>path</key>
+			<string>BlueShift-iOS-SDK</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>42EE8060189FC59BD91093597AB70917</key>
 		<dict>
@@ -1992,29 +1897,16 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>44C93401FC56DBB4C27D7DB5BB831C13</key>
+		<key>44814C18E21855F6908FA9F24090AEC4</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>wrapper.xcdatamodel</string>
 			<key>path</key>
-			<string>BlueShiftHTTPMethod.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>455038B50770BE9872EBD7B069BFD797</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftRequestQueueStatus.h</string>
+			<string>BlueShiftSDKDataModel.xcdatamodel</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2050,6 +1942,24 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>469057B8FE75BB5D407FC9346BB8EE52</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>44814C18E21855F6908FA9F24090AEC4</string>
+				<string>F71F2FE99752BD716654134A08E793A4</string>
+			</array>
+			<key>currentVersion</key>
+			<string>44814C18E21855F6908FA9F24090AEC4</string>
+			<key>isa</key>
+			<string>XCVersionGroup</string>
+			<key>path</key>
+			<string>BlueShiftSDKDataModel.xcdatamodeld</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+			<key>versionGroupType</key>
+			<string>wrapper.xcdatamodel</string>
+		</dict>
 		<key>46AEA51B64D489D428F745FC13765680</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -2062,6 +1972,20 @@
 			<string>SVProgressHUD-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>47249BDD9D32136A960C54E2D7134674</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F3114771ACD514FD5CDBAA78524AB551</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>477C14A4AEA3CE8F19397312150B2023</key>
 		<dict>
@@ -2081,7 +2005,7 @@
 		<key>47EC0F65C3DE4D6A71B4CDB2B16D4FFC</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BE99AAE70B02941E6D83C4FCC226A6DC</string>
+			<string>FEA8853D4D54B83CCEEF08C689D81907</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2091,6 +2015,21 @@
 					<string>Public</string>
 				</array>
 			</dict>
+		</dict>
+		<key>480BEFAC5E484C2E3327EBE3AF0BB818</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-BlueShiftPushService-BlueShift-iOS-SDK-dummy.m</string>
+			<key>path</key>
+			<string>../Pods-BlueShiftPushService-BlueShift-iOS-SDK/Pods-BlueShiftPushService-BlueShift-iOS-SDK-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>4815FF4A3513F51C78EB131831DCC8BA</key>
 		<dict>
@@ -2124,7 +2063,7 @@
 		<key>490376192DF4CA218F6C2B4D8BAE14B3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>F79D4CB140C61BC50E94A178A41F2D67</string>
+			<string>A694571CA95383EBFBB5CB20D361CCA5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2134,6 +2073,19 @@
 					<string>Public</string>
 				</array>
 			</dict>
+		</dict>
+		<key>499BF9E6E56BB1C85A070A1BB2B43FEB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>4A0F220177D465375EDB0F379278B7DA</key>
 		<dict>
@@ -2156,10 +2108,23 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>4A81EB51FA00127C7FB7F2F98B221AFB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>4AD9C00002B3D4AC4DD77FDD988D9FAE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>878145907540DF9F06D9EA85510612E9</string>
+			<string>E5A5AC8081BFCBFDB678EADF1D05213C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2246,6 +2211,32 @@
 			<string>802D1314B81E24A4DA801B8963895C87</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>4DCB45DA845539DE8FC8B420FA943825</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftProduct.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4DFB31A06AA1BB4F6033A22CA07A05ED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShift.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>4E1D307E9AECECE1ABAB31BA05DB520B</key>
 		<dict>
@@ -2462,26 +2453,16 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>52409910149038CBF52F8BFE7454248F</key>
+		<key>52EA1BEAD30B56A1A7D632036DF7A3C1</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>BB050CC109A28B205697B0362F7BA10A</string>
-				<string>CD53EC398E166BCEE48F283BB961CF8B</string>
-				<string>5C595161036E798F2ED06A6F4426C5A4</string>
-				<string>BCA5EDEDFA589D94D9CE0A05E27658F0</string>
-				<string>92476BE7C042328C63AB0A0C607B318E</string>
-				<string>9D2A5882125CFFD4990B729F49879438</string>
-				<string>41EC3DE4D0238C79387B6EE6109611B2</string>
-				<string>8CCE75B733FBA1C7C12010501AA22ADC</string>
-				<string>73E0F6676D9B9C23FF05D7A9F04A97F0</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>../../Blueshift-iOS-SampleApp/Pods/Target Support Files/Pods-BlueShiftDemoiOSApp-BlueShift-iOS-SDK</string>
+			<string>BlueShiftPushNotification.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2573,6 +2554,19 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>55D1B57C2D3F6784786ADCBD025756FE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftStatusCodes.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>55DBDD8B7D446F1D618F303A9FB53209</key>
 		<dict>
 			<key>buildConfigurationList</key>
@@ -2597,19 +2591,6 @@
 			<string>1B8880DEB438097A30E2845284F8EA35</string>
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>55DDC8E52901D73B1F17605140A64587</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShift.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>56567E4093EDA3D580392940AAA7B0C7</key>
 		<dict>
@@ -2654,6 +2635,19 @@
 					<string>Public</string>
 				</array>
 			</dict>
+		</dict>
+		<key>5AC6EF99DEC5866F6AB3F36173743DBD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSNumber+BlueShiftHelpers.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>5B044A21B281821239EB5F0948A7D23C</key>
 		<dict>
@@ -2719,23 +2713,10 @@
 				</array>
 			</dict>
 		</dict>
-		<key>5C595161036E798F2ED06A6F4426C5A4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-BlueShiftDemoiOSApp-BlueShift-iOS-SDK-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>5CB28A9EFAEEB76BE566D6BA9DB9FE1D</key>
 		<dict>
 			<key>fileRef</key>
-			<string>60A677DE29B13544780E6742F12AE4E4</string>
+			<string>A244D2CAE0BEE7A04CC6079BD8553FBB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -2785,7 +2766,7 @@
 		<key>5FCF48EE696E66E3C47243269882928E</key>
 		<dict>
 			<key>fileRef</key>
-			<string>86E15764CB75D349B5B0FB2CF08F8085</string>
+			<string>B11683D40275B6F5B4A5609E7348C15D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -2806,23 +2787,25 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>60A677DE29B13544780E6742F12AE4E4</key>
+		<key>60C34D11EEDDB8D7A5A03F8ACB3EF577</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>64239516284CD5DEC4989FCDFC40B1F3</string>
+				<string>72664FEB48832A54CC4719247026D8C6</string>
+				<string>9CEB18E4D8F37256A6B07ACFAAC59A79</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSNumber+BlueShiftHelpers.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>6176B1BDBF0333270B343465C71004E5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>04C0332B8EC3254C6E44C3DAED2FC838</string>
+			<string>14A7EFAC227DC85520E13BC98EF3144D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2832,6 +2815,32 @@
 					<string>Public</string>
 				</array>
 			</dict>
+		</dict>
+		<key>61C4157354A3DB06DF4CA613750C1D9B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>HttpRequestOperationEntity.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>624E5BE07D090100166670AB257B0359</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BatchEventEntity.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>625B4EC54C2F01C948FA3C7D199D3CC8</key>
 		<dict>
@@ -2861,10 +2870,23 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>63445C11445A1B3849D3991804BD8B16</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4259224AE1FA1F115CBE24B06CEB7333</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>6381A7D243E74AC948097E3E32143EBC</key>
 		<dict>
 			<key>fileRef</key>
-			<string>72F3C2EECF4ADC6CA71060675A6F0DC0</string>
+			<string>022B20D5B3B2B82931822849F308150D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2890,6 +2912,27 @@
 			<string>SDWebImage</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>64239516284CD5DEC4989FCDFC40B1F3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>059B20DE1CADCF47CAF7A43FA3BAF3C6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>642548009A9B403374CF8620BC99299B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DC9630E975DEAC5AD21AEC861F58085A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>647E21CC5BC70D2E125455033539A43F</key>
 		<dict>
@@ -2948,16 +2991,16 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>66EC82F31FF528D8BDF9CEDAE744A4F8</key>
+		<key>6665B020E9251668043452CCB928533B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>BlueShiftAlertView.m</string>
+			<string>BlueShiftPushDelegate.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3023,13 +3066,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6A30AFF579B5B71F4C8DBE48B9502554</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CCCE01B0A382708E23444B297ADEEF55</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>6A9E0A9476480E46CEDD468AB40AC953</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -3043,35 +3079,6 @@
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>6B8099EB1546CC2156AE5E8241D5C128</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftUserInfo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C107D407B0C1A6ACC19904ECBCCDC5F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C0A6CE681015EBCA2541B9A73AAFDEAD</string>
-				<string>2C9B99C690FB887B126C02FB15BC549F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>path</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>6CA4651AC84BD19CA2AD677A3FDCE18B</key>
 		<dict>
@@ -3117,7 +3124,7 @@
 		<key>6EA2BEB1E25E0D76390D44D52B29C669</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C1C6DA1BC3D662E8BFE236D098439D89</string>
+			<string>316D4A3DC9558DC7A6D0B8C59212314F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3163,6 +3170,19 @@
 				</array>
 			</dict>
 		</dict>
+		<key>6ECD4B537F27611598375D6F2079CC56</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftSubscription.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>6F648273CE5EDB9B5475C8E25E98B187</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -3193,7 +3213,7 @@
 		<key>6F75F563ECDB99E05E3B1DDA878AAC49</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>41EC3DE4D0238C79387B6EE6109611B2</string>
+			<string>97474AE08178C72284FBC40979A3CF12</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>APPLICATION_EXTENSION_API_ONLY</key>
@@ -3229,7 +3249,7 @@
 		<key>707B337DDEBFB0FE464ED638D1BC6E60</key>
 		<dict>
 			<key>fileRef</key>
-			<string>55DDC8E52901D73B1F17605140A64587</string>
+			<string>789CB630F4E5523CC0B2D403FAF435BB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3372,7 +3392,7 @@
 		<key>71D3060DB575BB11121686712DB81670</key>
 		<dict>
 			<key>fileRef</key>
-			<string>66EC82F31FF528D8BDF9CEDAE744A4F8</string>
+			<string>DE5234BDE840757D3CD5D40B76D8CDE2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -3442,18 +3462,19 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>72F3C2EECF4ADC6CA71060675A6F0DC0</key>
+		<key>72664FEB48832A54CC4719247026D8C6</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>B1583ACA99867F422A00716F24076300</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftTrackEvents.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>7300042273FADC5D6A24FE4C0A32CB62</key>
 		<dict>
@@ -3470,31 +3491,67 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>73E0F6676D9B9C23FF05D7A9F04A97F0</key>
+		<key>7532E8EDEDDC11451851C0AED7667CDD</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>624E5BE07D090100166670AB257B0359</string>
+				<string>40F36A69828256FE00117AAE48281D68</string>
+				<string>789CB630F4E5523CC0B2D403FAF435BB</string>
+				<string>4DFB31A06AA1BB4F6033A22CA07A05ED</string>
+				<string>0DB480E7DEE80C95EFAA3FB3F4B90EE6</string>
+				<string>DE5234BDE840757D3CD5D40B76D8CDE2</string>
+				<string>4A81EB51FA00127C7FB7F2F98B221AFB</string>
+				<string>86A4C0D20BCE921EDA60AAF3B1C47BD9</string>
+				<string>94E44653E170ED561190BA140718CD2A</string>
+				<string>BBBCB5CF14E218247F08E2113CDDEDCE</string>
+				<string>BB0ADEF72D1B6F84A96FDAEF110AAD35</string>
+				<string>8170F0A012CE67B01AC9E0FB87B5D5B8</string>
+				<string>C4F8DC5641A0E00C315652DE792FD6D6</string>
+				<string>B11683D40275B6F5B4A5609E7348C15D</string>
+				<string>02252278EC64C6A05AFA14B4386EE2E1</string>
+				<string>D0F5F91E59E1F6F5E2B009534CF1F714</string>
+				<string>A47B854BBA911AC64E4922D7457AA9DA</string>
+				<string>98782949FB5B2DA214632A8734F2619F</string>
+				<string>F82B5BA5099A14F63BE8003F1F5CFCB7</string>
+				<string>CA6375423AFD811C56CEC59688053DFC</string>
+				<string>F7553869854EAFFDE5322BCFD49729BB</string>
+				<string>2202D5A9A39A7AD7F0187146F9292E39</string>
+				<string>14A7EFAC227DC85520E13BC98EF3144D</string>
+				<string>9CAED5411A1C4876D4065732A3561F49</string>
+				<string>D3BA76539B749125C448EEFEE113D602</string>
+				<string>4DCB45DA845539DE8FC8B420FA943825</string>
+				<string>FEEBA15A5BC9706953E655843A52B356</string>
+				<string>6665B020E9251668043452CCB928533B</string>
+				<string>0FB32508BAED95760B06D13076108AA6</string>
+				<string>499BF9E6E56BB1C85A070A1BB2B43FEB</string>
+				<string>FDBF147904D0DD574080833AF1C60858</string>
+				<string>0A4D49BD7F76B5FC5AAF50EC324D78CF</string>
+				<string>DBD46D137FE15FB1886F24F99022E0A1</string>
+				<string>316D4A3DC9558DC7A6D0B8C59212314F</string>
+				<string>B3B3D6D569AA41111E9AE567FFADBD19</string>
+				<string>9F7EAB6931664277A525444162EC8A07</string>
+				<string>E5A5AC8081BFCBFDB678EADF1D05213C</string>
+				<string>55D1B57C2D3F6784786ADCBD025756FE</string>
+				<string>E1E97627B31C5D5AF9E35D7C1A1AD7E6</string>
+				<string>6ECD4B537F27611598375D6F2079CC56</string>
+				<string>A694571CA95383EBFBB5CB20D361CCA5</string>
+				<string>022B20D5B3B2B82931822849F308150D</string>
+				<string>37AB0CE58347833858D02BAB1C998730</string>
+				<string>7AD843CC30FF281DDA4DE8FA26D11C39</string>
+				<string>EC005DCDF4DA4141B3C5448CC35ADDD7</string>
+				<string>61C4157354A3DB06DF4CA613750C1D9B</string>
+				<string>FEA8853D4D54B83CCEEF08C689D81907</string>
+				<string>97503788B21DB3786064A68F4D1B8F3F</string>
+				<string>5AC6EF99DEC5866F6AB3F36173743DBD</string>
+				<string>A244D2CAE0BEE7A04CC6079BD8553FBB</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Pods-BlueShiftPushService-BlueShift-iOS-SDK-prefix.pch</string>
+			<string>BlueShift-iOS-SDK</string>
 			<key>path</key>
-			<string>../Pods-BlueShiftPushService-BlueShift-iOS-SDK/Pods-BlueShiftPushService-BlueShift-iOS-SDK-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>748716DDEC29D0FD47FC2984FFC4B9BA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftBatchUploadConfig.h</string>
+			<string>BlueShift-iOS-SDK</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3550,7 +3607,7 @@
 		<key>7645CC85909C543C787BC7B9641D35B8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B7D749C425B9C2921EDE9127E5E93FC6</string>
+			<string>DBD46D137FE15FB1886F24F99022E0A1</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -3619,7 +3676,7 @@
 		<key>77060DDDFA6C9FC46E38260F0DA0641D</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>41EC3DE4D0238C79387B6EE6109611B2</string>
+			<string>97474AE08178C72284FBC40979A3CF12</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>APPLICATION_EXTENSION_API_ONLY</key>
@@ -3652,19 +3709,6 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>784B340DA4BC163ED66B64F5F3DDE88F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftPushDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>7850FBE497BA3CED2EBF09BE67BAD408</key>
 		<dict>
 			<key>fileRef</key>
@@ -3686,10 +3730,23 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>789CB630F4E5523CC0B2D403FAF435BB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShift.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>79A90AE8C8379963ACF36CB0A09AEC95</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>BCA5EDEDFA589D94D9CE0A05E27658F0</string>
+			<string>AA0270275FAA7E0D38145BF160026DFB</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>APPLICATION_EXTENSION_API_ONLY</key>
@@ -3722,10 +3779,39 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
+		<key>79DD5780BA67E65676EF041EC185B525</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9C7DCC2DD258D76651BF4EC369CADBB0</string>
+				<string>30A74679BB4980ADD1D0A575794BD109</string>
+				<string>B45C7A71C4FA037C5C01F8DE48016AFB</string>
+				<string>2AF2052132A2CC3518AACAAE2511F07E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7AD843CC30FF281DDA4DE8FA26D11C39</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftUserInfo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>7B38F22D2B7ED7FB32F319070CEE9DEA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8DC5B783543F3D672DDE1466F7F67895</string>
+			<string>0FB32508BAED95760B06D13076108AA6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3735,25 +3821,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>7BA349F6C6B4CBD5CFCEEBA20EE25BDF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9FE76C378069281190B5CC569CE8C6A5</string>
-				<string>A3E5F677C90761722CE9A33C4B0062D5</string>
-				<string>D53BB70661C56818E657E4A507EDE539</string>
-				<string>FCA4811D582E658C72C0B0AB4C8459B6</string>
-				<string>52409910149038CBF52F8BFE7454248F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>path</key>
-			<string>/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;absolute&gt;</string>
 		</dict>
 		<key>7BC6D945744E375ED4142B382587F5C8</key>
 		<dict>
@@ -3847,7 +3914,7 @@
 			<key>children</key>
 			<array>
 				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
-				<string>17301BCE8DFB72DFF70582323CD1CD7D</string>
+				<string>B40FBB498AD5B0BA25F145FD8E540A95</string>
 				<string>14B8B9B15ECBE87983FF987239AB2D7B</string>
 				<string>A8999B2599461E4A0B62EF7502252DCF</string>
 				<string>EFA9AB5BFEAF18F0E3E179D8E05F4DB2</string>
@@ -3963,6 +4030,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>8170F0A012CE67B01AC9E0FB87B5D5B8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftBatchUploadConfig.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>81E7E808681C59E1B2CC30CF293B264C</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -3988,7 +4068,7 @@
 		<key>822A62CD1D9390D9FF5BFB6FC49D360C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A1DA1036AEDBE9C891C7304B6061D4C4</string>
+			<string>4DCB45DA845539DE8FC8B420FA943825</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4031,7 +4111,7 @@
 		<key>8453D272722C24F228D0884585C4B500</key>
 		<dict>
 			<key>fileRef</key>
-			<string>F611296780C5BE789DAF103895F44ED7</string>
+			<string>5AC6EF99DEC5866F6AB3F36173743DBD</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4041,70 +4121,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>847F7D08A36E28885C1F8D6CE0BB3628</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AEB855F8114CED8EF119177E84C7DD39</string>
-				<string>021740FB5D753FB0EFD6DE7D6034EC11</string>
-				<string>55DDC8E52901D73B1F17605140A64587</string>
-				<string>28D37EAA444ECAEDE1858608CC1AF5C1</string>
-				<string>AD7B660777B8A900F67FF22C59C80A14</string>
-				<string>66EC82F31FF528D8BDF9CEDAE744A4F8</string>
-				<string>0FB51143F9A5B7B64744060EA1B094C9</string>
-				<string>E58420932669A43D35816384EE48E9D2</string>
-				<string>DB6EBE7661560A13DA33E5A455D495E5</string>
-				<string>1411EA8E9B6A133ADC15BC1F2450903A</string>
-				<string>748716DDEC29D0FD47FC2984FFC4B9BA</string>
-				<string>9EE59E0713691603286F787EB14AABAB</string>
-				<string>0DFFC7C3C3CCF3A4713F497CB08270FC</string>
-				<string>86E15764CB75D349B5B0FB2CF08F8085</string>
-				<string>DF1F6168F5FE29BD6DC8BAEFACB4D290</string>
-				<string>2D2161324BECAA406F83F27AB9229567</string>
-				<string>28567C32D2120B2C05AEA633EE524305</string>
-				<string>EF6D88318751113F39061A2EEFAA2668</string>
-				<string>44C93401FC56DBB4C27D7DB5BB831C13</string>
-				<string>A2548C1C1E8C2B1CFC242774E1A5074A</string>
-				<string>40240EBF4F316A877939F51F921C1967</string>
-				<string>04C4EDE15EA8930E28A4BF9D878BBC22</string>
-				<string>04C0332B8EC3254C6E44C3DAED2FC838</string>
-				<string>98F46631531BB45EB6C7348F88C33C86</string>
-				<string>B231839C6CC2F993FF0EE78BA7A4966A</string>
-				<string>A1DA1036AEDBE9C891C7304B6061D4C4</string>
-				<string>A68B0555E4087025A4968BBDA9F8D732</string>
-				<string>784B340DA4BC163ED66B64F5F3DDE88F</string>
-				<string>8DC5B783543F3D672DDE1466F7F67895</string>
-				<string>ACDB752FBD5B12AFFB4B9B638AB17A91</string>
-				<string>F675A374DBDB1860740D0A4C25D0E51D</string>
-				<string>CE869262998079160C4A984771262743</string>
-				<string>B7D749C425B9C2921EDE9127E5E93FC6</string>
-				<string>C1C6DA1BC3D662E8BFE236D098439D89</string>
-				<string>B991859D52ECB7CFC8FF56DDBF599439</string>
-				<string>455038B50770BE9872EBD7B069BFD797</string>
-				<string>878145907540DF9F06D9EA85510612E9</string>
-				<string>E66D0F0D84DCB7531F02DBF412057AD4</string>
-				<string>C543A14D0B9D5B4E6554F3AA5FCA27A2</string>
-				<string>0C24BBCA2ADE9BCF4C0D9F316E37D55B</string>
-				<string>F79D4CB140C61BC50E94A178A41F2D67</string>
-				<string>72F3C2EECF4ADC6CA71060675A6F0DC0</string>
-				<string>6B8099EB1546CC2156AE5E8241D5C128</string>
-				<string>1FA05BB10D0B4EF066585E8FA46C08B5</string>
-				<string>30D88466E775F22CCAA14C42FB17DAE0</string>
-				<string>265C0A90B1371367CEE61EC82A1F1EC7</string>
-				<string>BE99AAE70B02941E6D83C4FCC226A6DC</string>
-				<string>A25F49664828B70CF8486E6E14240AD3</string>
-				<string>F611296780C5BE789DAF103895F44ED7</string>
-				<string>60A677DE29B13544780E6742F12AE4E4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>path</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>8491CD66AA06B7163BDFFCA74D0EE562</key>
 		<dict>
@@ -4184,14 +4200,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>866CEB57953D653E9C6856927567F032</key>
-		<dict>
-			<key>fileRef</key>
-			<string>92476BE7C042328C63AB0A0C607B318E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>86E15764CB75D349B5B0FB2CF08F8085</key>
+		<key>86A4C0D20BCE921EDA60AAF3B1C47BD9</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4200,20 +4209,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>BlueShiftConfig.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>878145907540DF9F06D9EA85510612E9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftRoutes.h</string>
+			<string>BlueShiftAppDelegate.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -4249,7 +4245,7 @@
 		<key>8811ECA216F0DB5C3EF406A6A6C465F1</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0FB51143F9A5B7B64744060EA1B094C9</string>
+			<string>4A81EB51FA00127C7FB7F2F98B221AFB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4290,7 +4286,7 @@
 		<key>89E489AD78AA0C43468B793D1CE06579</key>
 		<dict>
 			<key>fileRef</key>
-			<string>04C4EDE15EA8930E28A4BF9D878BBC22</string>
+			<string>2202D5A9A39A7AD7F0187146F9292E39</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4340,10 +4336,17 @@
 			<key>targetProxy</key>
 			<string>4E1D307E9AECECE1ABAB31BA05DB520B</string>
 		</dict>
+		<key>8A709309F3BEE34476C2AB9D4A0A1890</key>
+		<dict>
+			<key>fileRef</key>
+			<string>07D3602E3EE90D368D83AB6E15C9D9F5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>8AF645EE4736929694E476F031816DD5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>30D88466E775F22CCAA14C42FB17DAE0</string>
+			<string>EC005DCDF4DA4141B3C5448CC35ADDD7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4373,47 +4376,6 @@
 			<string>Pods-BlueShiftPushContent-resources.sh</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8CCE75B733FBA1C7C12010501AA22ADC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>Pods-BlueShiftPushService-BlueShift-iOS-SDK-dummy.m</string>
-			<key>path</key>
-			<string>../Pods-BlueShiftPushService-BlueShift-iOS-SDK/Pods-BlueShiftPushService-BlueShift-iOS-SDK-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8DC5B783543F3D672DDE1466F7F67895</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftPushParamDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8E290A77A9169A58C05E96322DCCE33A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>905DC515ECE6F8B7F7AE9297BE19D908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
 		</dict>
 		<key>8F346FFBDC3C91CB8B975ACD8F2E93D5</key>
 		<dict>
@@ -4476,34 +4438,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>905DC515ECE6F8B7F7AE9297BE19D908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C0A6CE681015EBCA2541B9A73AAFDEAD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>906CF8FA337DCA7CDF03AE9980CD2B8E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B13821BEEA64EEF5DD52849FC7068874</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
 		<key>910AFB9C9182174E22B0BF55B45D7B78</key>
 		<dict>
 			<key>fileRef</key>
@@ -4550,20 +4484,21 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>92476BE7C042328C63AB0A0C607B318E</key>
+		<key>92A738AA4DD68D794486BE7BA2E9738A</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8A709309F3BEE34476C2AB9D4A0A1890</string>
+				<string>93D69A7B96E9D38EA5AA51AFEDCE07BC</string>
+				<string>ECD67986E876EB516DCE567D91FB6173</string>
+				<string>642548009A9B403374CF8620BC99299B</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>Pods-BlueShiftPushContent-BlueShift-iOS-SDK-dummy.m</string>
-			<key>path</key>
-			<string>../Pods-BlueShiftPushContent-BlueShift-iOS-SDK/Pods-BlueShiftPushContent-BlueShift-iOS-SDK-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>92AE97F20ACF32C7800E7215927783C0</key>
 		<dict>
@@ -4587,6 +4522,13 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>93D69A7B96E9D38EA5AA51AFEDCE07BC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52EA1BEAD30B56A1A7D632036DF7A3C1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>94622B8CCE21182F139DD61D642D6B37</key>
 		<dict>
 			<key>fileRef</key>
@@ -4594,7 +4536,7 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>969018406E019F21D58D8C0C9F047794</key>
+		<key>94E44653E170ED561190BA140718CD2A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4603,7 +4545,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>BlueShiftCarousalViewController.h</string>
+			<string>BlueShiftBatchRequestOperation.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -4619,6 +4561,34 @@
 			<string>PBXGroup</string>
 			<key>name</key>
 			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>97474AE08178C72284FBC40979A3CF12</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-BlueShiftPushService-BlueShift-iOS-SDK.xcconfig</string>
+			<key>path</key>
+			<string>../Pods-BlueShiftPushService-BlueShift-iOS-SDK/Pods-BlueShiftPushService-BlueShift-iOS-SDK.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>97503788B21DB3786064A68F4D1B8F3F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSDate+BlueShiftDateHelpers.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -4640,9 +4610,22 @@
 		<key>9877C797B6788D1E028B3B62424CE157</key>
 		<dict>
 			<key>fileRef</key>
-			<string>021740FB5D753FB0EFD6DE7D6034EC11</string>
+			<string>40F36A69828256FE00117AAE48281D68</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>98782949FB5B2DA214632A8734F2619F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftDeviceData.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>98A3A0141DA63AF3B430B5908C329D96</key>
 		<dict>
@@ -4655,19 +4638,6 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
-		</dict>
-		<key>98F46631531BB45EB6C7348F88C33C86</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftNetworkReachabilityManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>9988D99628B493C176835A03F57B4B21</key>
 		<dict>
@@ -4694,6 +4664,20 @@
 				</array>
 			</dict>
 		</dict>
+		<key>999B133FB33EF6FF18F2BE3CF4342594</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7532E8EDEDDC11451851C0AED7667CDD</string>
+				<string>63445C11445A1B3849D3991804BD8B16</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Core</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>9A1E1E70F79BB8874D06086C7F2FCCBE</key>
 		<dict>
 			<key>explicitFileType</key>
@@ -4712,7 +4696,7 @@
 		<key>9ADB635F1A0B6AFECBEDA8D86C910206</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1411EA8E9B6A133ADC15BC1F2450903A</string>
+			<string>BBBCB5CF14E218247F08E2113CDDEDCE</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -4751,6 +4735,26 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>9C7DCC2DD258D76651BF4EC369CADBB0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>07D3602E3EE90D368D83AB6E15C9D9F5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9CAED5411A1C4876D4065732A3561F49</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftNetworkReachabilityManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>9CB370C4C69E4395150B7C7E32E82EEC</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -4772,6 +4776,20 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>9CEB18E4D8F37256A6B07ACFAAC59A79</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F3114771ACD514FD5CDBAA78524AB551</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
 		<key>9D010E79B863357F2EA8C637FD241525</key>
 		<dict>
 			<key>explicitFileType</key>
@@ -4787,7 +4805,7 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>9D2A5882125CFFD4990B729F49879438</key>
+		<key>9F7EAB6931664277A525444162EC8A07</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4795,36 +4813,8 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Pods-BlueShiftPushContent-BlueShift-iOS-SDK-prefix.pch</string>
 			<key>path</key>
-			<string>../Pods-BlueShiftPushContent-BlueShift-iOS-SDK/Pods-BlueShiftPushContent-BlueShift-iOS-SDK-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9EE59E0713691603286F787EB14AABAB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftBatchUploadConfig.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FE76C378069281190B5CC569CE8C6A5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6C107D407B0C1A6ACC19904ECBCCDC5F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>AppExtension</string>
+			<string>BlueShiftRequestQueueStatus.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -4888,20 +4878,20 @@
 		<key>A1B311FA3448407158A294B5A384C86D</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A25F49664828B70CF8486E6E14240AD3</string>
+			<string>97503788B21DB3786064A68F4D1B8F3F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>A1DA1036AEDBE9C891C7304B6061D4C4</key>
+		<key>A244D2CAE0BEE7A04CC6079BD8553FBB</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>BlueShiftProduct.h</string>
+			<string>NSNumber+BlueShiftHelpers.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -4927,32 +4917,6 @@
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>A2548C1C1E8C2B1CFC242774E1A5074A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftHttpRequestBatchUpload.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A25F49664828B70CF8486E6E14240AD3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSDate+BlueShiftDateHelpers.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>A2C2A133F6580CA480748BECEBEF602A</key>
 		<dict>
@@ -4991,17 +4955,16 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>A3E5F677C90761722CE9A33C4B0062D5</key>
+		<key>A47B854BBA911AC64E4922D7457AA9DA</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>04C3C307B96DD20427587996C8FAD4F5</string>
-				<string>0E981723A0F1AC3EA7D6ACCEB7C5F6C9</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>AppExtension2</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftDeviceData.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5012,16 +4975,16 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>A68B0555E4087025A4968BBDA9F8D732</key>
+		<key>A694571CA95383EBFBB5CB20D361CCA5</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>BlueShiftProduct.m</string>
+			<string>BlueShiftSubscriptionState.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5050,6 +5013,19 @@
 			<string>IQTitleBarButtonItem.h</string>
 			<key>path</key>
 			<string>IQKeyBoardManager/IQToolbar/IQTitleBarButtonItem.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A7ABA1AB7A6AF4F8B448BD3B227F8436</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-BlueShiftDemoiOSApp-BlueShift-iOS-SDK-prefix.pch</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5106,7 +5082,7 @@
 		<key>A8C1F6C5D229E4D2FF085EBB9ECDFE90</key>
 		<dict>
 			<key>fileRef</key>
-			<string>28567C32D2120B2C05AEA633EE524305</string>
+			<string>A47B854BBA911AC64E4922D7457AA9DA</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -5145,6 +5121,21 @@
 			<string>Support Files</string>
 			<key>path</key>
 			<string>../Target Support Files/MJPopupViewController</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA0270275FAA7E0D38145BF160026DFB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-BlueShiftPushContent-BlueShift-iOS-SDK.xcconfig</string>
+			<key>path</key>
+			<string>../Pods-BlueShiftPushContent-BlueShift-iOS-SDK/Pods-BlueShiftPushContent-BlueShift-iOS-SDK.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5189,67 +5180,12 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>AB97BD3327B5783CA0316AFC998DF374</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>18AF0F4A0BE02C1F00BF68F870AB3ABA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>path</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>ACDB752FBD5B12AFFB4B9B638AB17A91</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>ACF3F87595D91727C119EC6A4555F4F7</key>
 		<dict>
 			<key>fileRef</key>
 			<string>D54365CD92B5583A85A0AD0AF34F4835</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>AD7B660777B8A900F67FF22C59C80A14</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftAlertView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>ADABF1D63A982C1AD7AF8088825E771D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>969018406E019F21D58D8C0C9F047794</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
 		</dict>
 		<key>AE22C3D51BC67E653078F4BA883BFCAA</key>
 		<dict>
@@ -5265,19 +5201,6 @@
 				</array>
 			</dict>
 		</dict>
-		<key>AEB855F8114CED8EF119177E84C7DD39</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BatchEventEntity.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>AF1F7FD626559EE0665EEA64CC08A5A6</key>
 		<dict>
 			<key>isa</key>
@@ -5292,7 +5215,7 @@
 		<key>AF3E70EF2F21E4392727684B11E00F4A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CE869262998079160C4A984771262743</string>
+			<string>0A4D49BD7F76B5FC5AAF50EC324D78CF</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -5319,7 +5242,7 @@
 		<key>AFC7408CDC8725EA74C8E312CE3E9BD4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1FA05BB10D0B4EF066585E8FA46C08B5</string>
+			<string>7AD843CC30FF281DDA4DE8FA26D11C39</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -5344,7 +5267,20 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>B13821BEEA64EEF5DD52849FC7068874</key>
+		<key>B11683D40275B6F5B4A5609E7348C15D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftConfig.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B1583ACA99867F422A00716F24076300</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -5353,7 +5289,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>iCarousel.h</string>
+			<string>BlueShiftPushNotification.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5383,26 +5319,6 @@
 			<string>SVProgressHUD.h</string>
 			<key>path</key>
 			<string>SVProgressHUD/SVProgressHUD.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B1958841B067B5DE5ACEEA9371322304</key>
-		<dict>
-			<key>fileRef</key>
-			<string>173BFCB4B8208830AFFCA48D574F2559</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B231839C6CC2F993FF0EE78BA7A4966A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftNotificationConstants.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5438,7 +5354,7 @@
 		<key>B3506BF26AD47CE1F611E355CA9072D1</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CD53EC398E166BCEE48F283BB961CF8B</string>
+			<string>C5AE10AB96B1629F362B8D8118B7B534</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -5515,6 +5431,19 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
+		<key>B3B3D6D569AA41111E9AE567FFADBD19</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftRequestQueue.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>B3C4CA48B12B551950E1D379DCCB5D36</key>
 		<dict>
 			<key>isa</key>
@@ -5525,6 +5454,26 @@
 			<string>5B044A21B281821239EB5F0948A7D23C</string>
 			<key>targetProxy</key>
 			<string>9B690092BF86993A7F96BFF254CAFA86</string>
+		</dict>
+		<key>B40FBB498AD5B0BA25F145FD8E540A95</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1620D2309237DB1EE0B6E5CB062CFC8B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Development Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B45C7A71C4FA037C5C01F8DE48016AFB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1E1056C85D116D4D8270EB89E3C24057</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>B46A031E01AA6EBC45214F0B17BC4979</key>
 		<dict>
@@ -5572,7 +5521,7 @@
 		<key>B68F65DB59CB2A485CB7E3EAF3916087</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2D2161324BECAA406F83F27AB9229567</string>
+			<string>D0F5F91E59E1F6F5E2B009534CF1F714</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -5589,19 +5538,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>B7D749C425B9C2921EDE9127E5E93FC6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftRequestOperationManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>B7E4A427F219BBE56BB6B23B039522FF</key>
 		<dict>
 			<key>fileRef</key>
@@ -5615,9 +5551,9 @@
 			<string>42EE8060189FC59BD91093597AB70917</string>
 			<key>buildPhases</key>
 			<array>
-				<string>116B7CAF809568E80D41F2E071803760</string>
+				<string>79DD5780BA67E65676EF041EC185B525</string>
 				<string>F6DAFF79E146461C45985663D9AAD0F6</string>
-				<string>8E290A77A9169A58C05E96322DCCE33A</string>
+				<string>07450BD47D6AF89521E9BBF0BB1B664F</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -5774,16 +5710,16 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>B991859D52ECB7CFC8FF56DDBF599439</key>
+		<key>BA3C038AA82843AD4705812D94656AE9</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>BlueShiftRequestQueue.m</string>
+			<string>Pods-BlueShiftDemoiOSApp-BlueShift-iOS-SDK.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5844,16 +5780,16 @@
 				</array>
 			</dict>
 		</dict>
-		<key>BB050CC109A28B205697B0362F7BA10A</key>
+		<key>BB0ADEF72D1B6F84A96FDAEF110AAD35</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
+			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>Pods-BlueShiftDemoiOSApp-BlueShift-iOS-SDK.xcconfig</string>
+			<string>BlueShiftBatchUploadConfig.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5872,6 +5808,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>BBBCB5CF14E218247F08E2113CDDEDCE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftBatchRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>BBD328CB078818CA0C07BABD7340DDD4</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -5884,21 +5833,6 @@
 			<string>SDWebImageCompat.h</string>
 			<key>path</key>
 			<string>SDWebImage/SDWebImageCompat.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BCA5EDEDFA589D94D9CE0A05E27658F0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-BlueShiftPushContent-BlueShift-iOS-SDK.xcconfig</string>
-			<key>path</key>
-			<string>../Pods-BlueShiftPushContent-BlueShift-iOS-SDK/Pods-BlueShiftPushContent-BlueShift-iOS-SDK.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5964,19 +5898,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>BE99AAE70B02941E6D83C4FCC226A6DC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSDate+BlueShiftDateHelpers.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>BF3DCD2A4FB2B2485451E66345581905</key>
 		<dict>
 			<key>baseConfigurationReference</key>
@@ -6038,7 +5959,7 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>C0A6CE681015EBCA2541B9A73AAFDEAD</key>
+		<key>C19A63515F569F48ED10E825D1B51F84</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -6046,8 +5967,10 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Pods-BlueShiftPushService-BlueShift-iOS-SDK-prefix.pch</string>
 			<key>path</key>
-			<string>BlueShiftPushNotification.h</string>
+			<string>../Pods-BlueShiftPushService-BlueShift-iOS-SDK/Pods-BlueShiftPushService-BlueShift-iOS-SDK-prefix.pch</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -6084,19 +6007,6 @@
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Release</string>
-		</dict>
-		<key>C1C6DA1BC3D662E8BFE236D098439D89</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftRequestQueue.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>C2346BA1E7EE668B1FD329A68ACA8943</key>
 		<dict>
@@ -6158,7 +6068,7 @@
 		<key>C40A1C390D0DA0E06A4E6F386CAC6D9E</key>
 		<dict>
 			<key>fileRef</key>
-			<string>28D37EAA444ECAEDE1858608CC1AF5C1</string>
+			<string>4DFB31A06AA1BB4F6033A22CA07A05ED</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -6182,6 +6092,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>C4F8DC5641A0E00C315652DE792FD6D6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftConfig.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>C5358191F100DAC76C16A86F2B10822F</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -6195,16 +6118,39 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C543A14D0B9D5B4E6554F3AA5FCA27A2</key>
+		<key>C5AE10AB96B1629F362B8D8118B7B534</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>BlueShiftSubscription.h</string>
+			<string>Pods-BlueShiftDemoiOSApp-BlueShift-iOS-SDK-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C5DB703C8EDAC3E5A13AC607C1100739</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA3C038AA82843AD4705812D94656AE9</string>
+				<string>C5AE10AB96B1629F362B8D8118B7B534</string>
+				<string>A7ABA1AB7A6AF4F8B448BD3B227F8436</string>
+				<string>AA0270275FAA7E0D38145BF160026DFB</string>
+				<string>DC9630E975DEAC5AD21AEC861F58085A</string>
+				<string>E22D8F63D09DC2BC9F74AF69DC694C32</string>
+				<string>97474AE08178C72284FBC40979A3CF12</string>
+				<string>480BEFAC5E484C2E3327EBE3AF0BB818</string>
+				<string>C19A63515F569F48ED10E825D1B51F84</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../../Blueshift-iOS-SampleApp/Pods/Target Support Files/Pods-BlueShiftDemoiOSApp-BlueShift-iOS-SDK</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -6423,7 +6369,7 @@
 		<key>C9AE9C31068D830BE997230EACE640EA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>44C93401FC56DBB4C27D7DB5BB831C13</string>
+			<string>F82B5BA5099A14F63BE8003F1F5CFCB7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -6452,7 +6398,7 @@
 		<key>CA0EA7C7A9A81E5297C59D0B4FD132EE</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>BB050CC109A28B205697B0362F7BA10A</string>
+			<string>BA3C038AA82843AD4705812D94656AE9</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
@@ -6482,6 +6428,19 @@
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Debug</string>
+		</dict>
+		<key>CA6375423AFD811C56CEC59688053DFC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftHttpRequestBatchUpload.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>CB28E0371C5C33E69F5E601DF788B69D</key>
 		<dict>
@@ -6538,7 +6497,7 @@
 		<key>CC730A7BFF7276EEAFF6E268856B2A49</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0DFFC7C3C3CCF3A4713F497CB08270FC</string>
+			<string>C4F8DC5641A0E00C315652DE792FD6D6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -6562,19 +6521,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>CCCE01B0A382708E23444B297ADEEF55</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftCarousalViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>CD00EF817F826B58E88B88FC8E7E7641</key>
 		<dict>
 			<key>isa</key>
@@ -6585,19 +6531,6 @@
 			<string>7D5D51C15B5FDBC4573ED1D64863432B</string>
 			<key>targetProxy</key>
 			<string>07A13A1A667E864DB85E0FE46BA82438</string>
-		</dict>
-		<key>CD53EC398E166BCEE48F283BB961CF8B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-BlueShiftDemoiOSApp-BlueShift-iOS-SDK-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>CE1F7B63C2417A186516611F7CE64F41</key>
 		<dict>
@@ -6633,40 +6566,12 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>CE869262998079160C4A984771262743</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftRequestOperationManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>CEEB68722A0E8FB73696F5FC2E84AA27</key>
 		<dict>
 			<key>fileRef</key>
 			<string>E2C0DA3ECCAA2990AA3E9B93514CFA7B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF4178274AF37E413B198E8F573B88AD</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3CBFAFA0DA140F0C9105330A36F51189</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>path</key>
-			<string>BlueShift-iOS-SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>CF8A0A67DC914BC13B306AB0620A3A91</key>
 		<dict>
@@ -6737,10 +6642,23 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>D0F5F91E59E1F6F5E2B009534CF1F714</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftDeepLink.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>D2675D366E4D738ED618CDB160F3B960</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E58420932669A43D35816384EE48E9D2</string>
+			<string>86A4C0D20BCE921EDA60AAF3B1C47BD9</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -6786,6 +6704,19 @@
 			<string>libSDWebImage.a</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>D3BA76539B749125C448EEFEE113D602</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftNotificationConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D3FEF5173D44CEA4956C89614C08BFC6</key>
 		<dict>
@@ -6900,19 +6831,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>D53BB70661C56818E657E4A507EDE539</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>847F7D08A36E28885C1F8D6CE0BB3628</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Core</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>D54365CD92B5583A85A0AD0AF34F4835</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -6995,7 +6913,7 @@
 		<key>D5F4511E7CFFA571B7622A564FBC3959</key>
 		<dict>
 			<key>fileRef</key>
-			<string>AEB855F8114CED8EF119177E84C7DD39</string>
+			<string>624E5BE07D090100166670AB257B0359</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -7077,25 +6995,40 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>DB6EBE7661560A13DA33E5A455D495E5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftBatchRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>DB8999CAE436BCEEBB613E466F313DB4</key>
 		<dict>
 			<key>fileRef</key>
 			<string>2A69031AE92D63DDBF7992252596E263</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>DBD46D137FE15FB1886F24F99022E0A1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftRequestOperationManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DC9630E975DEAC5AD21AEC861F58085A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-BlueShiftPushContent-BlueShift-iOS-SDK-dummy.m</string>
+			<key>path</key>
+			<string>../Pods-BlueShiftPushContent-BlueShift-iOS-SDK/Pods-BlueShiftPushContent-BlueShift-iOS-SDK-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>DCC40028F7C610D5AFBA362D0CCC9B5A</key>
 		<dict>
@@ -7122,6 +7055,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>DE5234BDE840757D3CD5D40B76D8CDE2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftAlertView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>DEEAAFA8A89B9D782CA3D58F5A25165C</key>
 		<dict>
 			<key>fileRef</key>
@@ -7135,19 +7081,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>DF1F6168F5FE29BD6DC8BAEFACB4D290</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftDeepLink.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>DF352FE063E8E7E6B0EA922718F95256</key>
 		<dict>
@@ -7177,20 +7110,6 @@
 				</array>
 			</dict>
 		</dict>
-		<key>E05055D5DA244B7177E1FB86297E7246</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>ADABF1D63A982C1AD7AF8088825E771D</string>
-				<string>906CF8FA337DCA7CDF03AE9980CD2B8E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
 		<key>E0C214E30781863DCF670D5DD85BC5AC</key>
 		<dict>
 			<key>fileRef</key>
@@ -7202,6 +7121,34 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
+		</dict>
+		<key>E1E97627B31C5D5AF9E35D7C1A1AD7E6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftSubscription.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E22D8F63D09DC2BC9F74AF69DC694C32</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Pods-BlueShiftPushContent-BlueShift-iOS-SDK-prefix.pch</string>
+			<key>path</key>
+			<string>../Pods-BlueShiftPushContent-BlueShift-iOS-SDK/Pods-BlueShiftPushContent-BlueShift-iOS-SDK-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>E23B7FABC8D3000F6ADEC134A9748940</key>
 		<dict>
@@ -7295,20 +7242,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>E58420932669A43D35816384EE48E9D2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E66D0F0D84DCB7531F02DBF412057AD4</key>
+		<key>E5A5AC8081BFCBFDB678EADF1D05213C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -7317,7 +7251,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>BlueShiftStatusCodes.h</string>
+			<string>BlueShiftRoutes.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -7384,6 +7318,20 @@
 				</array>
 			</dict>
 		</dict>
+		<key>E78212910B6E303EA338FAE4BF115C1D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>059B20DE1CADCF47CAF7A43FA3BAF3C6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
 		<key>E7B362F9E3E8E6B20BAA29FF597D7550</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -7433,7 +7381,7 @@
 		<key>E9C58C9841A941EF899DEE69DEFB7A3A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>AD7B660777B8A900F67FF22C59C80A14</string>
+			<string>0DB480E7DEE80C95EFAA3FB3F4B90EE6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -7520,6 +7468,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>EC005DCDF4DA4141B3C5448CC35ADDD7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>HttpRequestOperationEntity.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>EC65ED887912512E85AC18B4F909C474</key>
 		<dict>
 			<key>fileRef</key>
@@ -7533,6 +7494,13 @@
 					<string>Public</string>
 				</array>
 			</dict>
+		</dict>
+		<key>ECD67986E876EB516DCE567D91FB6173</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1E1056C85D116D4D8270EB89E3C24057</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>ED4B2BEF57B650FB44AC17219274FF23</key>
 		<dict>
@@ -7556,18 +7524,19 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>EF6D88318751113F39061A2EEFAA2668</key>
+		<key>EF52443AB11AD433ACB7C6C2405B19C8</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>B1583ACA99867F422A00716F24076300</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftDeviceData.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
 		</dict>
 		<key>EFA9AB5BFEAF18F0E3E179D8E05F4DB2</key>
 		<dict>
@@ -7689,6 +7658,19 @@
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
 		</dict>
+		<key>F3114771ACD514FD5CDBAA78524AB551</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>iCarousel.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>F347259A20F468FB18B1443745F1E582</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -7714,7 +7696,7 @@
 		<key>F3BDE5DAED22BDAB0CE60E0046B4F892</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E66D0F0D84DCB7531F02DBF412057AD4</string>
+			<string>55D1B57C2D3F6784786ADCBD025756FE</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -7747,19 +7729,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>F611296780C5BE789DAF103895F44ED7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSNumber+BlueShiftHelpers.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>F643D6D0EEFCBE982637DB64DE123EA2</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -7770,19 +7739,6 @@
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
 			<string>MJPopupViewController-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F675A374DBDB1860740D0A4C25D0E51D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BlueShiftRequestOperation.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -7813,6 +7769,32 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>F71F2FE99752BD716654134A08E793A4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.xcdatamodel</string>
+			<key>path</key>
+			<string>BlueShiftSDKDataModel.xcdatamodel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7553869854EAFFDE5322BCFD49729BB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftHttpRequestBatchUpload.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>F75A86B0E22AE27DD7221AA01E508AE3</key>
 		<dict>
 			<key>children</key>
@@ -7834,19 +7816,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>F79D4CB140C61BC50E94A178A41F2D67</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BlueShiftSubscriptionState.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>F80CB02BC0C2CEBDD826312B75F954F9</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -7863,7 +7832,7 @@
 		<key>F8166F4FC93280C86E8854D9F22D253E</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6B8099EB1546CC2156AE5E8241D5C128</string>
+			<string>37AB0CE58347833858D02BAB1C998730</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -7873,6 +7842,19 @@
 					<string>Public</string>
 				</array>
 			</dict>
+		</dict>
+		<key>F82B5BA5099A14F63BE8003F1F5CFCB7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BlueShiftHTTPMethod.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F8D5360D3641EB2F1335A83AFE4CA477</key>
 		<dict>
@@ -7944,19 +7926,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>FCA4811D582E658C72C0B0AB4C8459B6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CF4178274AF37E413B198E8F573B88AD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>FD9BC62B0F6AAAE9FF7126C485928E6D</key>
 		<dict>
 			<key>children</key>
@@ -7974,12 +7943,31 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>FE6C39D1A0036DB81083689820E6DF58</key>
+		<key>FDBF147904D0DD574080833AF1C60858</key>
 		<dict>
-			<key>fileRef</key>
-			<string>2C9B99C690FB887B126C02FB15BC549F</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FEA8853D4D54B83CCEEF08C689D81907</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSDate+BlueShiftDateHelpers.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>FEA8CF40CF0478110CDD1BA9D7DB37FD</key>
 		<dict>
@@ -7987,6 +7975,19 @@
 			<string>D93D5AA2F7823CACDA7F35832C442721</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>FEEBA15A5BC9706953E655843A52B356</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BlueShiftProduct.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>FF4FA1E0C8BA393C18E2AF4F388EA1F8</key>
 		<dict>
