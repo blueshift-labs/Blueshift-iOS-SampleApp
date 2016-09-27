@@ -14,13 +14,15 @@ target 'BlueShiftDemoiOSApp' do
   pod 'IQKeyboardManager'
   pod 'MJPopupViewController'
   pod 'BlueShift-iOS-SDK', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
-  #pod 'BlueShift-iOS-SDK', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
+  #pod 'BlueShift-iOS-SDK', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git', :branch=> 'development'
 end
 
 target 'BlueShiftPushService' do
     pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
+    #pod 'BlueShift-iOS-SDK/AppExtension', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git', :branch=> 'development'
 end
 
 target 'BlueShiftPushContent' do
     pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/shahas/Desktop/blueGitHub/Blueshift-iOS-SDK'
+    #pod 'BlueShift-iOS-SDK/AppExtension', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git', :branch=> 'development'
 end
