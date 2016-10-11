@@ -29,7 +29,15 @@
     
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
     [[BlueShift sharedInstance] trackProductViewedWithSKU:@"PROM002" andCategoryID:10 canBatchThisEvent:YES];
+    //[[BlueShift sharedInstance] trackEventForEventName:@"test1" canBatchThisEvent:NO];
+    NSDictionary *params = @{
+                             @"name":@"shahas",
+                             @"des":@"soft:engg"
+                             };
+    [[BlueShift sharedInstance] trackEventForEventName:@"test1" andParameters:@{@"param1" : @"value1",
+                                                                                @"param2" : @[@"arr1", @"arr2"]} canBatchThisEvent:NO];
 }
+
 
 - (void)handlePushDictionary:(NSDictionary *)details {
     NSString *mrp = [details objectForKey:@"mrp"];

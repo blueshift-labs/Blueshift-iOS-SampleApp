@@ -76,8 +76,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [[BlueShiftUserInfo sharedUserInfo] setUnsubscribed:NO];
-    [[BlueShiftUserInfo sharedUserInfo] save];
+    [[BlueShiftUserInfo sharedInstance] setUnsubscribed:NO];
+    [[BlueShiftUserInfo sharedInstance] save];
     [self.navigationController setNavigationBarHidden:NO];
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }

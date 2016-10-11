@@ -12,8 +12,6 @@
 
 @interface NotificationViewController () <UNNotificationContentExtension>
 
-@property IBOutlet UILabel *label;
-
 
 @end
 

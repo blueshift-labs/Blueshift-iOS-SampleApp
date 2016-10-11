@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DB8BB70497E340EBBA1B1E8E'
+               BlueprintIdentifier = 'DE20A91DDB83FE50528FFC04'
                BlueprintName = 'Pods-BlueShiftPushService-BlueShift-iOS-SDK'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-BlueShiftPushService-BlueShift-iOS-SDK.a'>

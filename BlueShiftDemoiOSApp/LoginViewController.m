@@ -45,14 +45,14 @@
 - (IBAction)signInPressed:(id)sender {
     
     NSString *email = self.emailTextField.text;
-    [[BlueShiftUserInfo sharedUserInfo] setEmail:email];
+    [[BlueShiftUserInfo sharedInstance] setEmail:email];
     //[[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:[NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]]];
     NSString *customerID = [self md5HexDigest:self.emailTextField.text];
-    [[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:customerID];
-    [[BlueShiftUserInfo sharedUserInfo] setUnsubscribed:NO];
-    [[BlueShiftUserInfo sharedUserInfo] save];
+    [[BlueShiftUserInfo sharedInstance] setRetailerCustomerID:customerID];
+    [[BlueShiftUserInfo sharedInstance] setUnsubscribed:NO];
+    [[BlueShiftUserInfo sharedInstance] save];
     
-    [[BlueShift sharedInstance] identifyUserWithEmail:[BlueShiftUserInfo sharedUserInfo].email andDetails:nil canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] identifyUserWithEmail:[BlueShiftUserInfo sharedInstance].email andDetails:nil canBatchThisEvent:NO];
     
     if(self.emailTextField.text.length > 0) {
         User *currentUser = [User currentUser];
