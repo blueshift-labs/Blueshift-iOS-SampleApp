@@ -13,6 +13,7 @@
 #import "UIView+BfViewHelpers.h"
 #import <BlueShift-iOS-SDK/BlueShiftRequestOperation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "DeckViewController.h"
 
 @interface LoginViewController ()
 
@@ -61,8 +62,16 @@
         //[currentUser save];
     }
     
-    [self performSegueWithIdentifier:kSegueShowHome sender:self];
+    //[self performSegueWithIdentifier:kSegueShowHome sender:self];
+    [self pushHomePage];
     
+}
+
+- (void)pushHomePage {
+    //pushing home page through deckview controller
+    
+    DeckViewController *deckViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"DeckViewController"];
+    [self.navigationController pushViewController:deckViewController animated:YES];
 }
 
 - (NSString*)md5HexDigest:(NSString*)input {

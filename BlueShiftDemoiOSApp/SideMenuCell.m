@@ -18,7 +18,6 @@
     if(option == NULL) {
         return;
     }
-    [self.optionImageView setImage:[UIImage imageNamed:[option valueForKey:@"image"]]];
     self.optionTitle.text = [option valueForKey:@"title"];
 }
 
@@ -26,7 +25,6 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-    [self.optionBackgroundImageView setHidden:(!selected)];
 }
 
 @end

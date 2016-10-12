@@ -24,14 +24,30 @@
         Side Menu Option Format ...
         @{@"title": @"Option Title", @"action": @"showFunctionName", @"image": @"optionImage", @"cellType":@"SideMenuCell"},
     */
+    NSDictionary *option1 = @{
+                              @"title":@"Products"
+                              };
+    NSDictionary *option2 = @{
+                              @"title":@"Return/Cancel"
+                              };
+    NSDictionary *option3 = @{
+                              @"title":@"Mailing list subscription"
+                              };
+    NSDictionary *option4 = @{
+                              @"title":@"Subscription Event"
+                              };
+    NSDictionary *option5 = @{
+                              @"title":@"Logout"
+                              };
     
     self.options =  @[
-                      
+                      option1, option2, option3, option4, option5
                       ];
-    
+    /*
     self.menuTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
     [self.menuTableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
+     */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,17 +63,11 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *option = self.options[indexPath.row];
-    NSString *cellType = [option objectForKey:@"cellType"];
-    NSString *cellIdentifier;
     
-    if([cellType isEqualToString:@"SideMenuCell"]) {
-        cellIdentifier = @"SideMenuCell";
-    }
-    
-    SideMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    SideMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SideMenuCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    cell.option = option;
+    [cell setOption:option];
     
     return cell;
 }
