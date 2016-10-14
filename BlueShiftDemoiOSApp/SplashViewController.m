@@ -7,6 +7,8 @@
 //
 
 #import "SplashViewController.h"
+#import "DeckViewController.h"
+#import "LoginViewController.h"
 
 @interface SplashViewController ()
 
@@ -28,7 +30,7 @@
 - (void)redirectWithAnimation {
     __strong SplashViewController *this = self;
     
-    double delayInSeconds = 2.0;
+    double delayInSeconds = 1.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [this redirect];
@@ -37,11 +39,23 @@
 
 - (void)redirect {
     User *currentUser = [User currentUser];
-    if(currentUser.authToken == NULL) {
-        [self performSegueWithIdentifier:kSegueShowLogin sender:self];
+    if(currentUser.authToken == NULL || [currentUser.authToken isEqualToString:@""]) {
+        [self pushLoginPage];
     } else {
-        [self performSegueWithIdentifier:kSegueShowHome sender:self];
+        [self pushHomePage];
     }
+}
+
+- (void)pushHomePage {
+    //pushing home page through deckview controller
+    
+    DeckViewController *deckViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"DeckViewController"];
+    [self.navigationController pushViewController:deckViewController animated:YES];
+}
+
+- (void)pushLoginPage {
+    LoginViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 /*

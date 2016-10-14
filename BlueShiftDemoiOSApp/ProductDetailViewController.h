@@ -9,8 +9,19 @@
 #import <UIKit/UIKit.h>
 #import <BlueShift-iOS-SDK/BlueShift.h>
 
-@interface ProductDetailViewController : UIViewController<BlueShiftPushDelegate>
+@interface ProductDetailViewController : UIViewController<BlueShiftPushDelegate, UIGestureRecognizerDelegate>
+
+@property NSDictionary *data;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *skuLabel;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (weak, nonatomic) IBOutlet UIButton *quantityButton;
 
 - (IBAction)buyButtonPressed:(id)sender;
+- (IBAction)quantityButtonDidPressed:(id)sender;
+- (IBAction)addToCartButtonDidPressed:(id)sender;
 
 @end

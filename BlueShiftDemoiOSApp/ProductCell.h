@@ -11,6 +11,9 @@
 @interface ProductCell : UITableViewCell
 
 @property IBOutlet UIImageView *productImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+
 
 - (void)setOption:(NSDictionary*)option;
 

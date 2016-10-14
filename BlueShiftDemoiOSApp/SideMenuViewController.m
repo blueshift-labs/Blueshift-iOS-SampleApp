@@ -25,23 +25,28 @@
         @{@"title": @"Option Title", @"action": @"showFunctionName", @"image": @"optionImage", @"cellType":@"SideMenuCell"},
     */
     NSDictionary *option1 = @{
-                              @"title":@"Products"
+                              @"title":@"Products",
+                              @"action":@"showProduct"
                               };
     NSDictionary *option2 = @{
-                              @"title":@"Return/Cancel"
+                              @"title":@"Return/Cancel",
+                              @"action":@"showCancelReturn"
                               };
     NSDictionary *option3 = @{
-                              @"title":@"Mailing list subscription"
+                              @"title":@"Mailing list subscription",
+                              @"action":@"showMailSubscription"
                               };
     NSDictionary *option4 = @{
-                              @"title":@"Subscription Event"
+                              @"title":@"Subscription Event",
+                              @"action":@"showSubscriptionEvent"
                               };
     NSDictionary *option5 = @{
-                              @"title":@"Logout"
+                              @"title":@"Logout",
+                              @"action":@"logout"
                               };
     
     self.options =  @[
-                      option1, option2, option3, option4, option5
+                      option2, option3, option4, option5
                       ];
     /*
     self.menuTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -74,7 +79,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 70;
 }
 
 

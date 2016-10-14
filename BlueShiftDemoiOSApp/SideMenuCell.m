@@ -8,6 +8,7 @@
 
 #import "SideMenuCell.h"
 
+
 @implementation SideMenuCell
 
 - (void)awakeFromNib {
@@ -26,5 +27,6 @@
 
     // Configure the view for the selected state
 }
+
 
 @end

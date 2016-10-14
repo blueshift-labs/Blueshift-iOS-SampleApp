@@ -59,7 +59,7 @@
         User *currentUser = [User currentUser];
         currentUser.authToken = @"123456789";
         currentUser.email = self.emailTextField.text;
-        //[currentUser save];
+        [currentUser save];
     }
     
     //[self performSegueWithIdentifier:kSegueShowHome sender:self];

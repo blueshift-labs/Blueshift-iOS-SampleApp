@@ -7,6 +7,9 @@
 //
 
 #import "ProductCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImage+BfImageHelpers.h"
+
 
 @implementation ProductCell
 
@@ -14,11 +17,22 @@
     // Initialization code
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.imageView.frame = CGRectMake(0,10,100,100);
+    //self.imageView.frame =
+}
+
 - (void)setOption:(NSDictionary *)option {
     if(option == NULL) {
         return;
     }
-    [self.productImageView setImage:[UIImage imageNamed:[option valueForKey:@"image"]]];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:[option objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"BookPlaceholder"]];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.titleLabel.text = [option objectForKey:@"name"];
+    self.priceLabel.text = [option objectForKey:@"price"];
+    self.imageView.layer.cornerRadius = 10;
+    self.imageView.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -26,5 +40,6 @@
 
     // Configure the view for the selected state
 }
+
 
 @end

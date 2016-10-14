@@ -10,9 +10,10 @@
 #import "SegueIdentifiers.h"
 #import "UIView+BfViewHelpers.h"
 #import <BlueShift-iOS-SDK/BlueShift.h>
+#import "ProductDetailViewController.h"
 
 @interface ProductListViewController ()
-
+@property NSDictionary *selectedData;
 @end
 
 @implementation ProductListViewController
@@ -24,34 +25,88 @@
     self.navigationItem.title = @"Product List";
     
     [self addEmailButtonToNavigationBar];
+    [self addSideMenuButtonToNavigationBar];
     
     self.products =  @[
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
+                      @{
+                          @"sku": @"9780140247732",
+                          @"name":@"Death of a Salesman",
+                          @"price":@"$20.00",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780140247732"
+                      },
+                      @{
+                          @"sku":@"9780140421996",
+                          @"name":@"Leaves of Grass",
+                          @"price":@"$13.00",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780140421996"
+                      },
+                      @{
+                          @"sku":@"9780140455113",
+                          @"name":@"The Republic (Plato)",
+                          @"price":@"$12.00",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780140455113"
+                      },
+                      @{
+                          @"sku":@"9780142410370",
+                          @"name":@"Matilda",
+                          @"price":@"$6.99",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780142410370"
+                      },
+                      @{
+                          @"sku":@"9780143038412",
+                          @"name":@"Eat Pray Love",
+                          @"price":@"$17.00",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780143038412"
+                      },
+                      @{
+                          @"sku":@"9780307278821",
+                          @"name":@"Physics of the Impossible",
+                          @"price":@"$15.95",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780307278821"
+                      },
+                      @{
+                          @"sku":@"9780141325293",
+                          @"name":@"The Jungle Book",
+                          @"price":@"$5.99",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780141325293"
+                      },
+                      @{
+                          @"sku":@"9780142424179",
+                          @"name":@"The Fault in Our Stars",
+                          @"price":@"$12.99",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780142424179"
+                      },
+                      @{
+                          @"sku":@"9780143038580",
+                          @"name":@"The Omnivore's Dilemma",
+                          @"price":@"$18.00",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780143038580"
+                      },
+                      @{
+                          @"sku":@"9780142410387",
+                          @"name":@"The BFG",
+                          @"price":@"$7.99",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780142410387"
+                      },
+                      @{
+                          @"sku":@"9780143034759",
+                          @"name":@"Alexander Hamilton",
+                          @"price":@"$20.00",
+                          @"image_url":@"https://images.randomhouse.com/cover/9780143034759"
+                      }
                       ];
     
-    self.productListTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-    [self.productListTableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
-    [self updateProductionListTableViewUI];
+    //self.productListTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    //NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+    //[self.productListTableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
+    //[self updateProductionListTableViewUI];
+}
+
+
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self.productListTableView reloadData];
 }
 
 - (void)addEmailButtonToNavigationBar {
@@ -61,6 +116,15 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.emailButton];
 }
+
+- (void)addSideMenuButtonToNavigationBar {
+    self.sideMenuButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
+    [self.sideMenuButton setBackgroundImage:[UIImage imageNamed:@"sideMenu"] forState:UIControlStateNormal];
+    [self.sideMenuButton addTarget:self action:@selector(sideMenuButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.sideMenuButton];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -80,6 +144,7 @@
     [[BlueShiftUserInfo sharedInstance] save];
     [self.navigationController setNavigationBarHidden:NO];
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
+    [self.productListTableView reloadData];
 }
 
 
@@ -97,7 +162,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.option = option;
-    
+    [cell layoutIfNeeded];
     return cell;
 }
 
@@ -109,6 +174,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *option = self.products[indexPath.row];
+    self.selectedData = option;
+    [[BlueShift sharedInstance] trackProductViewedWithSKU:[option objectForKey:@"sku"] andCategoryID:indexPath.row canBatchThisEvent:NO];
     [self performSegueWithIdentifier:kSegueShowProductDetail sender:self];
 }
 
@@ -123,6 +191,19 @@
     return [message copy];
 }
 
+- (void) toggleLeftViewAnimated:(BOOL)animated {
+    if (self.viewDeckController != NULL) {
+        [self.viewDeckController toggleLeftViewAnimated:animated completion:^(IIViewDeckController *controller, BOOL status) {
+            if (status == YES ) {
+                //[self.greyFadeView setHidden:NO];
+            }
+        }];
+    }
+}
+
+- (void)sideMenuButtonAction {
+    [self toggleLeftViewAnimated:YES];
+}
 - (void)mailButtonPressedAction {
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
@@ -166,14 +247,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    ProductDetailViewController *destinationController = segue.destinationViewController;
+    destinationController.data = self.selectedData;
 }
-*/
+
 
 @end

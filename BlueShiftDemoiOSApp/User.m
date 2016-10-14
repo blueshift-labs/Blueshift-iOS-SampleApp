@@ -18,22 +18,33 @@ static User *_currentUser = NULL;
 {
     if(_currentUser == NULL) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSString *json = [defaults stringForKey:@"savedUserJSON"];
-        if(json != NULL) {
-            _currentUser = [[User alloc] initWithString:json error:NULL];
+        NSDictionary *userDictionary = [defaults objectForKey:@"savedUserDictionary"];
+        if(userDictionary != NULL) {
+            _currentUser = [User parseUserDictionary:userDictionary];
         } else {
             _currentUser = [[User alloc] init];
+            _currentUser.authToken = @"";
+            _currentUser.email = @"";
         }
     }
-    
     return _currentUser;
 }
+
++ (User *)parseUserDictionary:(NSDictionary *)userDictionary {
+    User *user = [[User alloc] init];
+    if (user) {
+        user.authToken = [userDictionary objectForKey:@"auth_token"];
+        user.email = [userDictionary objectForKey:@"email"];
+    }
+    return user;
+}
+
 
 + (void)removeCurrentUser
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([User currentUser]) {
-        [defaults removeObjectForKey:@"savedUserJSON"];
+        [defaults removeObjectForKey:@"savedUserDictionary"];
         if ([defaults synchronize]==YES) {
             _currentUser = NULL;
         }
@@ -107,9 +118,20 @@ static User *_currentUser = NULL;
 
 - (void)save
 {
-    NSString *json = [self toJSONString];
+    NSDictionary *userDictionary = [self toDictionary];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:json forKey:@"savedUserJSON"];
+    [defaults setObject:userDictionary forKey:@"savedUserDictionary"];
+    [defaults synchronize];
+}
+
+- (NSDictionary *)toDictionary {
+    NSMutableDictionary *userMutableDictionary = [NSMutableDictionary dictionary];
+    if (self) {
+        
+        [userMutableDictionary setObject:self.email forKey:@"email"];
+        [userMutableDictionary setObject:self.authToken forKey:@"auth_token"];
+    }
+    return [userMutableDictionary copy];
 }
 
 - (void)update
