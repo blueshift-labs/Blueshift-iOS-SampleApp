@@ -54,6 +54,8 @@
     
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:90.0];
     
+    [config setAppGroupID:@"group.blueshift.app"];
+    
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];
     //[BlueShift autoIntegration];

@@ -21,6 +21,7 @@
     [super viewDidLoad];
     // Do any required interface initialization here.
     
+    self.appGroupID = @"group.blueshift.app";
 }
 
 - (void)viewDidAppear:(BOOL)animated {

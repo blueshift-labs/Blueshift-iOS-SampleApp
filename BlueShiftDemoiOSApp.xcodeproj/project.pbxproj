@@ -910,7 +910,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run ed105cb4133828fa8599a47d6e85ff53a2be62f9 6db0a58e6ea1532cc6994c229673436cd7662378c3a26bf50af3a71192bdf4eb";
+			shellScript = "";
 		};
 		F30DD8745A740D9993307C1B /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1099,7 +1099,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.BlueShiftPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "75f4ef7a-4474-42ec-b4c6-fa62acaa43da";
+				PROVISIONING_PROFILE = "b177f5eb-568c-4596-b3c2-b53dfa497598";
 				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Push Content Dev Pro Pro";
 				SKIP_INSTALL = YES;
 			};
@@ -1125,7 +1125,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.BlueShiftPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "75f4ef7a-4474-42ec-b4c6-fa62acaa43da";
+				PROVISIONING_PROFILE = "b177f5eb-568c-4596-b3c2-b53dfa497598";
 				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Push Content Dev Pro Pro";
 				SKIP_INSTALL = YES;
 			};
@@ -1170,7 +1170,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "484a062a-72a1-4bd8-995e-82bafb3e6558";
+				PROVISIONING_PROFILE = "8dddfafd-c264-42fd-b7dd-a0b748b0d875";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1208,7 +1208,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "484a062a-72a1-4bd8-995e-82bafb3e6558";
+				PROVISIONING_PROFILE = "8dddfafd-c264-42fd-b7dd-a0b748b0d875";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
