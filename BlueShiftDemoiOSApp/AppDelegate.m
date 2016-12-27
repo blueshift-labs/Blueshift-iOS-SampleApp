@@ -42,17 +42,17 @@
     // 0bcedd92238db589d8975462eb0a1c45
     // 5dfe3c9aee8b375bcc616079b08156d9
     // ae8087e9fb141de419ddbac09ed8b0a9
-    [config setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
+    [config setApiKey:@"ae8087e9fb141de419ddbac09ed8b0a9"];
     
     // Set the applications launch Options for SDK to track ...
     [config setApplicationLaunchOptions:launchOptions];
     
     // Set the Two Predefined DeepLinking URL's ...
-    //[config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController"]];
-    //[config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController/ProductCartViewController"]];
-    //[config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/OfferViewController"]];
+    [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController"]];
+    [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController/ProductCartViewController"]];
+    [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/OfferViewController"]];
     
-    [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:90.0];
+    [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
     // For Carousel deep linking
     [config setAppGroupID:@"group.blueshift.app"];
