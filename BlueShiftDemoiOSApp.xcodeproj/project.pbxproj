@@ -1019,8 +1019,8 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_TESTABILITY = YES;
@@ -1030,8 +1030,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.NotificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7e2bf89c-85a7-4f72-a310-48d51845931a";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift-Notification-Servive-Dev-Pro-Pro";
+				PROVISIONING_PROFILE = "c28ab714-ee0b-4f33-b8a3-96678d9a4544";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift App extension Ad Pro Pro";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1044,8 +1044,8 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FKABK7D68W;
@@ -1055,8 +1055,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.NotificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7e2bf89c-85a7-4f72-a310-48d51845931a";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift-Notification-Servive-Dev-Pro-Pro";
+				PROVISIONING_PROFILE = "c28ab714-ee0b-4f33-b8a3-96678d9a4544";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift App extension Ad Pro Pro";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1070,8 +1070,8 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushContent/BlueShiftPushContent.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_TESTABILITY = YES;
@@ -1081,8 +1081,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.BlueShiftPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b177f5eb-568c-4596-b3c2-b53dfa497598";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Push Content Dev Pro Pro";
+				PROVISIONING_PROFILE = "28b3f7c3-90f9-4712-9b92-ef2adc362649";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Push Content Adhoc Pro Pro";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1096,8 +1096,8 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushContent/BlueShiftPushContent.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FKABK7D68W;
@@ -1107,8 +1107,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.BlueShiftPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b177f5eb-568c-4596-b3c2-b53dfa497598";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Push Content Dev Pro Pro";
+				PROVISIONING_PROFILE = "28b3f7c3-90f9-4712-9b92-ef2adc362649";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Push Content Adhoc Pro Pro";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1130,8 +1130,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1152,7 +1152,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8dddfafd-c264-42fd-b7dd-a0b748b0d875";
+				PROVISIONING_PROFILE = "5e5feebc-cdc1-4c53-a4a5-d3a628390943";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1175,8 +1175,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1190,7 +1190,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "8dddfafd-c264-42fd-b7dd-a0b748b0d875";
+				PROVISIONING_PROFILE = "5e5feebc-cdc1-4c53-a4a5-d3a628390943";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1204,8 +1204,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftDemoiOSApp/BlueShiftDemoiOSApp.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
 				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1218,8 +1218,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp;
 				PRODUCT_NAME = "BlueShift Reads";
-				PROVISIONING_PROFILE = "8dddfafd-c264-42fd-b7dd-a0b748b0d875";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift-Dev-Pro-Pro";
+				PROVISIONING_PROFILE = "5e5feebc-cdc1-4c53-a4a5-d3a628390943";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Adhoc Pro Pro";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1231,8 +1231,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftDemoiOSApp/BlueShiftDemoiOSApp.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas kp (WAN6834J65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bullfinch Software Pvt Ltd (FKABK7D68W)";
 				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1245,8 +1245,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp;
 				PRODUCT_NAME = "BlueShift Reads";
-				PROVISIONING_PROFILE = "8dddfafd-c264-42fd-b7dd-a0b748b0d875";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift-Dev-Pro-Pro";
+				PROVISIONING_PROFILE = "5e5feebc-cdc1-4c53-a4a5-d3a628390943";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Adhoc Pro Pro";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

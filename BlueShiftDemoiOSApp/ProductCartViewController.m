@@ -16,7 +16,7 @@
 #define kMinimumScrollHeight    420.0
 
 @interface ProductCartViewController ()
-
+@property NSArray *blueShiftProducts;
 @end
 
 @implementation ProductCartViewController
@@ -62,6 +62,18 @@
     [[BlueShift sharedInstance] trackAddToCartWithSKU:@"PROM002" andQuantity:100 canBatchThisEvent:NO];
 }
 
+- (void)createBlueShiftProducts {
+    NSMutableArray *blueShiftProuducts = [[NSMutableArray alloc]init];
+    for(NSDictionary *item in self.products) {
+        BlueShiftProduct *product = [[BlueShiftProduct alloc] init];
+        [product setSku:[item objectForKey:@"sku"]];
+        [product setPrice: [[item objectForKey:@"price"] floatValue]];
+        [product setQuantity:(NSInteger)[item objectForKey:@"quantity"]];
+        [blueShiftProuducts addObject:product];
+    }
+    self.blueShiftProducts = blueShiftProuducts;
+}
+
 - (void)populateTableWithItems {
     self.products = [Cart sharedInstance];
     if(self.products.count > 0) {
@@ -94,7 +106,7 @@
 }
 
 - (IBAction)continueButtonPressed:(id)sender {
-    //[[BlueShift sharedInstance] trackCheckOutCartWithProducts:self.products andRevenue:100 andDiscount:40 andCoupon:@"FLAT20" canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackCheckOutCartWithProducts:self.blueShiftProducts andRevenue:100 andDiscount:40 andCoupon:@"FLAT20" canBatchThisEvent:NO];
     //[self pushOrderPage];
     [Cart clearCart];
     [[[UIAlertView alloc] initWithTitle:@"Order Confirmed" message:@"Your order placed sucessfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
@@ -107,13 +119,6 @@
 }
 
 - (void)handlePushDictionary:(NSDictionary *)details {
-    NSString *mrp = [details objectForKey:@"mrp"];
-    NSString *price = [details objectForKey:@"price"];
-    NSString *sku = [details objectForKey:@"sku"];
-    
-    NSString *alertMessage = [NSString stringWithFormat:@"Product Viewed Successfully. \n\n MRP -> %@ \n\n Price -> %@ \n\n SKU -> %@",mrp,price,sku];
-    
-    [[[UIAlertView alloc] initWithTitle:@"Product Viewed" message:alertMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

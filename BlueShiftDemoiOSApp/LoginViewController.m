@@ -49,7 +49,7 @@
     [[BlueShiftUserInfo sharedInstance] setEmail:email];
     //[[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:[NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]]];
     NSString *customerID = [self md5HexDigest:self.emailTextField.text];
-    [[BlueShiftUserInfo sharedInstance] setRetailerCustomerID:customerID];
+    //[[BlueShiftUserInfo sharedInstance] setRetailerCustomerID:customerID];
     //[[BlueShiftUserInfo sharedInstance] setUnsubscribed:NO];
     [[BlueShiftUserInfo sharedInstance] save];
     

@@ -27,7 +27,7 @@
 
     self.leftSize = screenWidth*0.3; // Size in (virtual) pixels, that is hidden of the side menu (and NOT the width of the menu)
     //[self setPanningMode:IIViewDeckNoPanning];
-    [self showProduct];
+    //[self showProduct];
 }
 
 - (void)didReceiveMemoryWarning {
