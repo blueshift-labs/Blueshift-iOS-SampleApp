@@ -13,6 +13,7 @@
 #import "ProductDetailViewController.h"
 #import "ProductListViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "Cart.h"
 
 @interface AppDelegate ()
 
@@ -42,14 +43,14 @@
     // 0bcedd92238db589d8975462eb0a1c45
     // 5dfe3c9aee8b375bcc616079b08156d9
     // ae8087e9fb141de419ddbac09ed8b0a9
-    [config setApiKey:@"ae8087e9fb141de419ddbac09ed8b0a9"];
+    [config setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
     
     // Set the applications launch Options for SDK to track ...
     [config setApplicationLaunchOptions:launchOptions];
     
     // Set the Two Predefined DeepLinking URL's ...
-    [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController"]];
-    [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController/ProductCartViewController"]];
+    [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductDetailViewController"]];
+    [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductCartViewController"]];
     [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/OfferViewController"]];
     
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
@@ -60,6 +61,8 @@
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];
     //[BlueShift autoIntegration];
+    
+    [Cart sharedInstance];
     
     return YES;
 }

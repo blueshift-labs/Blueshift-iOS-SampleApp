@@ -11,15 +11,17 @@
 #import "AttributedTextField.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import "DeckViewController.h"
+#import "BaseViewController.h"
 
 #define kDeviceTokenMailSubject   @"BlueShift Push Device Token"
 
-@interface ProductListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate, IIViewDeckControllerDelegate>
+@interface ProductListViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate, IIViewDeckControllerDelegate>
 
 @property IBOutlet UITableView *productListTableView;
 @property NSArray *products;
 
 @property UIButton *emailButton;
+@property UIButton *cartButton;
 @property UIButton *sideMenuButton;
 @property IBOutlet AttributedTextField *searchTextField;
 

@@ -11,6 +11,7 @@
 #import "UIView+BfViewHelpers.h"
 #import <BlueShift-iOS-SDK/BlueShift.h>
 #import "ProductDetailViewController.h"
+#import "Cart.h"
 
 @interface ProductListViewController ()
 @property NSDictionary *selectedData;
@@ -23,84 +24,10 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title = @"Product List";
-    
-    [self addEmailButtonToNavigationBar];
+    [self addNavigationBarButtons];
     [self addSideMenuButtonToNavigationBar];
     
-    self.products =  @[
-                      @{
-                          @"sku": @"9780140247732",
-                          @"name":@"Death of a Salesman",
-                          @"price":@"$20.00",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780140247732"
-                      },
-                      @{
-                          @"sku":@"9780140421996",
-                          @"name":@"Leaves of Grass",
-                          @"price":@"$13.00",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780140421996"
-                      },
-                      @{
-                          @"sku":@"9780140455113",
-                          @"name":@"The Republic (Plato)",
-                          @"price":@"$12.00",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780140455113"
-                      },
-                      @{
-                          @"sku":@"9780142410370",
-                          @"name":@"Matilda",
-                          @"price":@"$6.99",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780142410370"
-                      },
-                      @{
-                          @"sku":@"9780143038412",
-                          @"name":@"Eat Pray Love",
-                          @"price":@"$17.00",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780143038412"
-                      },
-                      @{
-                          @"sku":@"9780307278821",
-                          @"name":@"Physics of the Impossible",
-                          @"price":@"$15.95",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780307278821"
-                      },
-                      @{
-                          @"sku":@"9780141325293",
-                          @"name":@"The Jungle Book",
-                          @"price":@"$5.99",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780141325293"
-                      },
-                      @{
-                          @"sku":@"9780142424179",
-                          @"name":@"The Fault in Our Stars",
-                          @"price":@"$12.99",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780142424179"
-                      },
-                      @{
-                          @"sku":@"9780143038580",
-                          @"name":@"The Omnivore's Dilemma",
-                          @"price":@"$18.00",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780143038580"
-                      },
-                      @{
-                          @"sku":@"9780142410387",
-                          @"name":@"The BFG",
-                          @"price":@"$7.99",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780142410387"
-                      },
-                      @{
-                          @"sku":@"9780143034759",
-                          @"name":@"Alexander Hamilton",
-                          @"price":@"$20.00",
-                          @"image_url":@"https://images.randomhouse.com/cover/9780143034759"
-                      }
-                      ];
-    
-    //self.productListTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    //NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-    //[self.productListTableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
-    //[self updateProductionListTableViewUI];
-    
+    self.products =  [Cart fetchProducts];
 }
 
 
@@ -110,12 +37,26 @@
     [self.productListTableView reloadData];
 }
 
-- (void)addEmailButtonToNavigationBar {
+- (void)addNavigationBarButtons {
+    UIBarButtonItem *emailButton = [self addEmailButtonToNavigationBar];
+    UIBarButtonItem *cartButton = [self addCartBttonToNavigationBar];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:emailButton,cartButton,nil];
+}
+
+- (UIBarButtonItem *)addEmailButtonToNavigationBar {
     self.emailButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
     [self.emailButton setBackgroundImage:[UIImage imageNamed:@"EmailIcon.png"] forState:UIControlStateNormal];
     [self.emailButton addTarget:self action:@selector(mailButtonPressedAction) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.emailButton];
+    return [[UIBarButtonItem alloc] initWithCustomView:self.emailButton];
+}
+
+- (UIBarButtonItem *)addCartBttonToNavigationBar {
+    self.cartButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
+    [self.cartButton setBackgroundImage:[UIImage imageNamed:@"cartIcon"] forState:UIControlStateNormal];
+    [self.cartButton addTarget:self action:@selector(cartButtonPressedAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    return [[UIBarButtonItem alloc] initWithCustomView:self.cartButton];
 }
 
 - (void)addSideMenuButtonToNavigationBar {
@@ -220,6 +161,10 @@
     else {
         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Your Device is not configured to send Email" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
+}
+
+- (void)cartButtonPressedAction {
+    [self pushCartPage];
 }
 
 #pragma mark - Mail Delegates

@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "User.h"
+#import "DeckViewController.h"
 
 @interface HomeViewController ()
 
@@ -19,13 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = @"Home";
-    User *currentUser = [User currentUser];
-    if(currentUser.authToken == NULL) {
-        self.logoutButton.titleLabel.text = @"Login";
-    } else {
-        self.logoutButton.titleLabel.text = @"Logout";
-    }
+    DeckViewController *deckViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"DeckViewController"];
+    [self.navigationController pushViewController:deckViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,36 +32,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES];
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
-}
-
-- (void)viewDidLoadIfDeviceLessThanOrEqualToIPhone5 {
-    [self.contentViewWidthConstraint setConstant:kScreenWidthLessThanOrEqualToIPhone5];
-    [self.contentView layoutIfNeeded];
-}
-
-- (IBAction)productsButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:kSegueShowProductList sender:self];
-}
-
-- (IBAction)cancelReturnButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:kSegueCancelReturn sender:self];
-}
-
-- (IBAction)mailingListSubscriptionButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:kSegueMailingSubscription sender:self];
-}
-
-- (IBAction)subscriptionEventsButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:kSegueSubscriptionEvents sender:self];
-}
-
-- (IBAction)logoutButtonDidPressed:(id)sender {
-//    [User logout:^(BOOL status) {
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }];
-[self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController setNavigationBarHidden:YES];
+    //[[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
 #pragma mark - Navigation
@@ -74,9 +42,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    
-
 }
 
 

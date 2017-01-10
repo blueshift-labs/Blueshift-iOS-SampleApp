@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <BlueShift-iOS-SDK/BlueShift.h>
+#import "BaseViewController.h"
 
-@interface ProductDetailViewController : UIViewController<BlueShiftPushDelegate, UIGestureRecognizerDelegate>
+@interface ProductDetailViewController : BaseViewController<BlueShiftPushDelegate, UIGestureRecognizerDelegate>
 
 @property NSDictionary *data;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -23,5 +24,6 @@
 - (IBAction)buyButtonPressed:(id)sender;
 - (IBAction)quantityButtonDidPressed:(id)sender;
 - (IBAction)addToCartButtonDidPressed:(id)sender;
+- (IBAction)gotoCartButtonDidPressed:(id)sender;
 
 @end

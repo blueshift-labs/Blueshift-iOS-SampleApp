@@ -10,6 +10,7 @@
 #import "SegueIdentifiers.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIView+BfViewHelpers.h"
+#import "Cart.h"
 
 @interface ProductDetailViewController ()
 @property NSInteger quantity;
@@ -42,7 +43,7 @@
 - (void)initUIComponents {
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:[self.data objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"BookPlaceholder"]];
     self.nameLabel.text = [self.data objectForKey:@"name"];
-    self.priceLabel.text = [self.data objectForKey:@"price"];
+    self.priceLabel.text = [NSString stringWithFormat:@"$ %@", [self.data objectForKey:@"price"]];
     self.skuLabel.text = [self.data objectForKey:@"sku"];
     self.pickerView.hidden = true;
     [self.quantityButton setBorderColour:[UIColor blackColor] andBorderWidth:1.0];
@@ -64,13 +65,10 @@
 
 
 - (void)handlePushDictionary:(NSDictionary *)details {
-    NSString *mrp = [details objectForKey:@"mrp"];
-    NSString *price = [details objectForKey:@"price"];
     NSString *sku = [details objectForKey:@"sku"];
-    
-    NSString *alertMessage = [NSString stringWithFormat:@"Product Viewed Successfully. \n\n MRP -> %@ \n\n Price -> %@ \n\n SKU -> %@",mrp,price,sku];
-    
-    [[[UIAlertView alloc] initWithTitle:@"Product Viewed" message:alertMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    if(sku) {
+        self.data = [Cart fetchProduct:sku];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,6 +91,13 @@
 
 - (IBAction)addToCartButtonDidPressed:(id)sender {
     [[BlueShift sharedInstance] trackAddToCartWithSKU:[self.data objectForKey:@"sku"] andQuantity:self.quantity canBatchThisEvent:NO];
+    NSMutableDictionary *dictionary = [self.data mutableCopy];
+    [dictionary setObject:[NSNumber numberWithInteger:self.quantity] forKey:@"quantity"];
+    [Cart addToCard:dictionary];
+}
+
+- (IBAction)gotoCartButtonDidPressed:(id)sender {
+    [self pushCartPage];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
@@ -117,15 +122,5 @@
     [self.quantityButton setTitle:[NSString stringWithFormat:@"Quanity:%ld", row + 1] forState:UIControlStateHighlighted];
     self.quantity = row + 1;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

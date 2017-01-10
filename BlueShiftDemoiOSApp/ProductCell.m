@@ -15,6 +15,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
 }
 
 - (void)layoutSubviews {
@@ -30,7 +31,7 @@
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:[option objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"BookPlaceholder"]];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.titleLabel.text = [option objectForKey:@"name"];
-    self.priceLabel.text = [option objectForKey:@"price"];
+    self.priceLabel.text = [NSString stringWithFormat:@"$%@", [option objectForKey:@"price"]];
     self.imageView.layer.cornerRadius = 10;
     self.imageView.clipsToBounds = YES;
 }

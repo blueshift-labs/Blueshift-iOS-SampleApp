@@ -24,9 +24,10 @@
     self.centerController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"MainNavigationController"];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
-    
+
     self.leftSize = screenWidth*0.3; // Size in (virtual) pixels, that is hidden of the side menu (and NOT the width of the menu)
     //[self setPanningMode:IIViewDeckNoPanning];
+    [self showProduct];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +50,7 @@
 
 - (void)showMailSubscription {
     NSArray *viewControllerStoryBoardIDArray = @[
+                                                 @"ProductListViewController",
                                                  @"MailingSubscriptionViewController"
                                                  ];
     [self performTransitionUsingViewControllerStoryBoardIDArray:viewControllerStoryBoardIDArray];
@@ -56,6 +58,7 @@
 
 - (void)showCancelReturn {
     NSArray *viewControllerStoryBoardIDArray = @[
+                                                 @"ProductListViewController",
                                                  @"CancelReturnViewController"
                                                  ];
     [self performTransitionUsingViewControllerStoryBoardIDArray:viewControllerStoryBoardIDArray];
@@ -63,6 +66,7 @@
 
 - (void)showSubscriptionEvent {
     NSArray *viewControllerStoryBoardIDArray = @[
+                                                 @"ProductListViewController",
                                                  @"SubscriptionEventsViewController"
                                                  ];
     [self performTransitionUsingViewControllerStoryBoardIDArray:viewControllerStoryBoardIDArray];
@@ -84,8 +88,6 @@
     //[self.view.window.rootViewController presentViewController:loginViewController animated:YES completion:nil];
 }
 
-
-
 - (void)performTransitionUsingViewControllerStoryBoardIDArray:(NSArray *)viewControllerStoryBoardIDArray {
     // Method to perform deeplink using the path components array ...
     
@@ -96,7 +98,8 @@
     // Get the current story board for the root view controller ...
     UIStoryboard *storyboard = [[[UIApplication sharedApplication] delegate] window].rootViewController.storyboard;
     
-    NSMutableArray *viewControllers = [centerController.viewControllers mutableCopy];
+    //NSMutableArray *viewControllers = [centerController.viewControllers mutableCopy];
+    NSMutableArray *viewControllers = [[NSMutableArray alloc]init];
     for (NSString *storyboardID in viewControllerStoryBoardIDArray) {
         
         // Need to do a proper way to fetch valid view controllers here ...
