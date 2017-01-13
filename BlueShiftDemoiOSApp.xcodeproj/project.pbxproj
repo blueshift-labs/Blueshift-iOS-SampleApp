@@ -1030,7 +1030,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.NotificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c28ab714-ee0b-4f33-b8a3-96678d9a4544";
+				PROVISIONING_PROFILE = "e7b28417-adc2-470f-a7af-df693d0805bb";
 				PROVISIONING_PROFILE_SPECIFIER = "BlueShift App extension Ad Pro Pro";
 				SKIP_INSTALL = YES;
 			};
@@ -1055,7 +1055,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.NotificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c28ab714-ee0b-4f33-b8a3-96678d9a4544";
+				PROVISIONING_PROFILE = "e7b28417-adc2-470f-a7af-df693d0805bb";
 				PROVISIONING_PROFILE_SPECIFIER = "BlueShift App extension Ad Pro Pro";
 				SKIP_INSTALL = YES;
 			};
@@ -1081,7 +1081,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.BlueShiftPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "28b3f7c3-90f9-4712-9b92-ef2adc362649";
+				PROVISIONING_PROFILE = "f46d0cae-38f7-44b0-a4bd-b5714748986c";
 				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Push Content Adhoc Pro Pro";
 				SKIP_INSTALL = YES;
 			};
@@ -1107,7 +1107,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.BlueShiftPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "28b3f7c3-90f9-4712-9b92-ef2adc362649";
+				PROVISIONING_PROFILE = "f46d0cae-38f7-44b0-a4bd-b5714748986c";
 				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Push Content Adhoc Pro Pro";
 				SKIP_INSTALL = YES;
 			};
@@ -1152,7 +1152,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "5e5feebc-cdc1-4c53-a4a5-d3a628390943";
+				PROVISIONING_PROFILE = "5755dd22-1084-4aba-acc8-e49a1db24572";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1190,7 +1190,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "5e5feebc-cdc1-4c53-a4a5-d3a628390943";
+				PROVISIONING_PROFILE = "5755dd22-1084-4aba-acc8-e49a1db24572";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1218,7 +1218,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp;
 				PRODUCT_NAME = "BlueShift Reads";
-				PROVISIONING_PROFILE = "5e5feebc-cdc1-4c53-a4a5-d3a628390943";
+				PROVISIONING_PROFILE = "5755dd22-1084-4aba-acc8-e49a1db24572";
 				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Adhoc Pro Pro";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1245,7 +1245,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp;
 				PRODUCT_NAME = "BlueShift Reads";
-				PROVISIONING_PROFILE = "5e5feebc-cdc1-4c53-a4a5-d3a628390943";
+				PROVISIONING_PROFILE = "5755dd22-1084-4aba-acc8-e49a1db24572";
 				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Adhoc Pro Pro";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

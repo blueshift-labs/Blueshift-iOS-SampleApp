@@ -71,6 +71,15 @@
     }
 }
 
+- (void)handleCarouselPushDictionary:(NSDictionary *)details withSelectedIndex:(NSInteger)index {
+    NSArray *carouselItems = [details objectForKey:@"carousel_images"];
+    NSDictionary *selectedItem = [carouselItems objectAtIndex:index];
+    NSString *sku = [selectedItem objectForKey:@"sku"];
+    if(sku) {
+        self.data = [Cart fetchProduct:sku];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

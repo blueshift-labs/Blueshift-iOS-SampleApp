@@ -64,6 +64,12 @@
     
     [Cart sharedInstance];
     
+    [BlueShiftLiveContent fetchLiveContent:^(NSDictionary *dictionary) {
+        NSLog(@"data is %@", [dictionary objectForKey:@"data"]);
+    } failure:^(NSError *error) {
+        NSLog(@"error is %@", error);
+    }];
+    
     return YES;
 }
 
@@ -92,6 +98,9 @@
     [[BlueShift sharedInstance].appDelegate handleActionWithIdentifier:identifier forRemoteNotification:notification completionHandler:completionHandler];
 }
 
+//- (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithIndex:(NSInteger)index withDetails:(NSDictionary *)details {
+//    NSLog(@"index is %ld\n", (long)index);
+//}
 
 //- (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithDetails:(NSDictionary *)detalis andDeepLinkURL:(NSString *)url {
 //    NSLog(@"url is %@", url);
