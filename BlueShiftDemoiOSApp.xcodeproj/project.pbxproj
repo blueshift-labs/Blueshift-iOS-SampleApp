@@ -16,6 +16,7 @@
 		55BD2C241D92983500422869 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BD2C231D92983500422869 /* NotificationViewController.m */; };
 		55BD2C271D92983500422869 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BD2C251D92983500422869 /* MainInterface.storyboard */; };
 		55BD2C2B1D92983500422869 /* BlueShiftPushContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 55BD2C1C1D92983400422869 /* BlueShiftPushContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		55C7391A1E30ADD800A5EAE4 /* LiveContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C739191E30ADD800A5EAE4 /* LiveContentViewController.m */; };
 		55C957E01DAE7AF500073367 /* UIImage+BfImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C957DF1DAE7AF500073367 /* UIImage+BfImageHelpers.m */; };
 		55CBD3601E1F9CA60061C0CD /* CartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CBD35F1E1F9CA60061C0CD /* CartTableViewCell.m */; };
 		55CBD3631E1FDCA50061C0CD /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CBD3621E1FDCA50061C0CD /* Cart.m */; };
@@ -113,6 +114,8 @@
 		55BD2C231D92983500422869 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		55BD2C261D92983500422869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		55BD2C281D92983500422869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C739181E30ADD800A5EAE4 /* LiveContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveContentViewController.h; sourceTree = "<group>"; };
+		55C739191E30ADD800A5EAE4 /* LiveContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveContentViewController.m; sourceTree = "<group>"; };
 		55C957DE1DAE7AF500073367 /* UIImage+BfImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BfImageHelpers.h"; sourceTree = "<group>"; };
 		55C957DF1DAE7AF500073367 /* UIImage+BfImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BfImageHelpers.m"; sourceTree = "<group>"; };
 		55CBD35E1E1F9CA60061C0CD /* CartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTableViewCell.h; sourceTree = "<group>"; };
@@ -624,6 +627,8 @@
 				DC9C10871AB1B87E00167711 /* SubscriptionEventsViewController.m */,
 				DC9C10891AB1D34100167711 /* OfferViewController.h */,
 				DC9C108A1AB1D34100167711 /* OfferViewController.m */,
+				55C739181E30ADD800A5EAE4 /* LiveContentViewController.h */,
+				55C739191E30ADD800A5EAE4 /* LiveContentViewController.m */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -942,6 +947,7 @@
 				DC9C10881AB1B87E00167711 /* SubscriptionEventsViewController.m in Sources */,
 				DC1B4BA71A8CE0F500F2C579 /* BfTextField.m in Sources */,
 				DC1B4BA11A8CD49000F2C579 /* BaseViewController.m in Sources */,
+				55C7391A1E30ADD800A5EAE4 /* LiveContentViewController.m in Sources */,
 				55C957E01DAE7AF500073367 /* UIImage+BfImageHelpers.m in Sources */,
 				DC9C10821AB1981C00167711 /* MailingSubscriptionViewController.m in Sources */,
 				DC1B4BAA1A8CE10C00F2C579 /* AttributedTextField.m in Sources */,

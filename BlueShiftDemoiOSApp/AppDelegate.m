@@ -64,12 +64,6 @@
     
     [Cart sharedInstance];
     
-    [BlueShiftLiveContent fetchLiveContent:@"Editors_Picks_Json" success:^(NSDictionary *dictionary) {
-        NSLog(@"data is %@", [dictionary objectForKey:@"content"]);
-    } failure:^(NSError *error) {
-        NSLog(@"error is %@", error);
-    }];
-    
     return YES;
 }
 

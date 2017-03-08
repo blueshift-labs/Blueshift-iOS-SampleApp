@@ -64,17 +64,27 @@
 }
 
 
+- (void)fetchProductID:(NSString *)productID {
+    if(productID) {
+        self.data = [Cart fetchProduct:productID];
+    }
+
+}
+
+/*
 - (void)handlePushDictionary:(NSDictionary *)details {
-    NSString *sku = [details objectForKey:@"sku"];
+    NSString *sku = [details objectForKey:@"product_id"];
     if(sku) {
         self.data = [Cart fetchProduct:sku];
     }
 }
 
+ */
+
 - (void)handleCarouselPushDictionary:(NSDictionary *)details withSelectedIndex:(NSInteger)index {
-    NSArray *carouselItems = [details objectForKey:@"carousel_images"];
+    NSArray *carouselItems = [details objectForKey:@"carousel_elements"];
     NSDictionary *selectedItem = [carouselItems objectAtIndex:index];
-    NSString *sku = [selectedItem objectForKey:@"sku"];
+    NSString *sku = [selectedItem objectForKey:@"product_id"];
     if(sku) {
         self.data = [Cart fetchProduct:sku];
     }

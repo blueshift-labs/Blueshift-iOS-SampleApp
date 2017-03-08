@@ -25,8 +25,8 @@
         @{@"title": @"Option Title", @"action": @"showFunctionName", @"image": @"optionImage", @"cellType":@"SideMenuCell"},
     */
     NSDictionary *option1 = @{
-                              @"title":@"Products",
-                              @"action":@"showProduct"
+                              @"title":@"Live Content",
+                              @"action":@"showLiveContent"
                               };
     NSDictionary *option2 = @{
                               @"title":@"Return/Cancel",
@@ -46,7 +46,7 @@
                               };
     
     self.options =  @[
-                      option2, option3, option4, option5
+                      option1, option2, option3, option4, option5
                       ];
     /*
     self.menuTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];

@@ -48,6 +48,14 @@
     [self performTransitionUsingViewControllerStoryBoardIDArray:viewControllerStoryBoardIDArray];
 }
 
+- (void)showLiveContent {
+    NSArray *viewControllerStoryBoardIDArray = @[
+                                                 @"ProductListViewController",
+                                                 @"LiveContentViewController"
+                                                 ];
+    [self performTransitionUsingViewControllerStoryBoardIDArray:viewControllerStoryBoardIDArray];
+}
+
 - (void)showMailSubscription {
     NSArray *viewControllerStoryBoardIDArray = @[
                                                  @"ProductListViewController",
