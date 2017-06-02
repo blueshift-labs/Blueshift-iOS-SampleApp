@@ -15,6 +15,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Cart.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -28,25 +29,29 @@
     [Fabric with:@[CrashlyticsKit]];
     
     // Push Notification
-        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
-                                                        UIUserNotificationTypeBadge |
-                                                        UIUserNotificationTypeSound);
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
-                                                                                 categories:nil];
-        [application registerUserNotificationSettings:settings];
-        [application registerForRemoteNotifications];
+//        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+//                                                        UIUserNotificationTypeBadge |
+//                                                        UIUserNotificationTypeSound);
+//        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+//                                                                                 categories:nil];
+//        [application registerUserNotificationSettings:settings];
+//        [application registerForRemoteNotifications];
     
     // Obtain an instance of BlueShiftConfig ...
     BlueShiftConfig *config = [BlueShiftConfig config];
     
     // Set the api Key for the config ...
-    // 0bcedd92238db589d8975462eb0a1c45
-    // 5dfe3c9aee8b375bcc616079b08156d9
-    // ae8087e9fb141de419ddbac09ed8b0a9
     [config setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
     
     // Set the applications launch Options for SDK to track ...
-    [config setApplicationLaunchOptions:launchOptions];
+    //[config setApplicationLaunchOptions:launchOptions];
+    
+    // Disable BlueShift Push Notification
+    //[config setEnablePushNotification:NO];
+    // Disable BlueShift Analytics accessing location
+    //[config setEnableLocationAccess:NO];
+    // Disable BlueShift Analytics
+    //[config setEnableAnalytics:NO];
     
     // Set the Two Predefined DeepLinking URL's ...
     [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductDetailViewController"]];
@@ -91,6 +96,16 @@
   completionHandler: (void (^)()) completionHandler {
     [[BlueShift sharedInstance].appDelegate handleActionWithIdentifier:identifier forRemoteNotification:notification completionHandler:completionHandler];
 }
+
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+//    
+//}
+//
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+//    
+//}
+
+
 
 //- (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithIndex:(NSInteger)index withDetails:(NSDictionary *)details {
 //    NSLog(@"index is %ld\n", (long)index);

@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftNotificationConstants.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftNotificationConstants.h
