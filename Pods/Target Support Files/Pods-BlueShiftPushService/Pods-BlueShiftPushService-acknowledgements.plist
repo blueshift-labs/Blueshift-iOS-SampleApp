@@ -41,7 +41,7 @@ THE SOFTWARE.
 			<key>License</key>
 			<string>MIT</string>
 			<key>Title</key>
-			<string>BlueShift-iOS-SDK</string>
+			<string>BlueShift-iOS-Extension-SDK</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

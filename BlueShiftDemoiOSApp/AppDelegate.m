@@ -44,7 +44,7 @@
     [config setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
     
     // Set the applications launch Options for SDK to track ...
-    //[config setApplicationLaunchOptions:launchOptions];
+    [config setApplicationLaunchOptions:launchOptions];
     
     // Disable BlueShift Push Notification
     //[config setEnablePushNotification:NO];
@@ -114,6 +114,25 @@
 //- (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithDetails:(NSDictionary *)detalis andDeepLinkURL:(NSString *)url {
 //    NSLog(@"url is %@", url);
 //}
+
+- (void)pushCartPage {
+    //pushing cart page through deckview controller
+    
+    ProductCartViewController *cartViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"ProductCartViewController"];
+    UINavigationController *navController = (UINavigationController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
+    if(navController != nil && [navController respondsToSelector:@selector(popToRootViewControllerAnimated:)]) {
+        [navController popToRootViewControllerAnimated:NO];
+        
+        NSMutableArray *viewControllers = [navController.viewControllers mutableCopy];
+        [viewControllers addObject:cartViewController];
+        navController.viewControllers = viewControllers;
+    }
+}
+
+
+-(void) buyCategoryPushClickedWithDetails:(NSDictionary *)details {
+    [self pushCartPage];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

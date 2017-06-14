@@ -15,19 +15,22 @@ target 'BlueShiftDemoiOSApp' do
   pod 'MJPopupViewController'
   #pod 'BlueShift-iOS-SDK', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
   #pod 'BlueShift-iOS-SDK', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git'
-  #pod 'BlueShift-iOS-SDK'
+  pod 'BlueShift-iOS-SDK'
 end
 
 target 'BlueShiftPushService' do
+    #pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git'
     #pod 'BlueShift-iOS-SDK/AppExtension'
-    #pod 'BlueShift-iOS-Extension-SDK'
+    pod 'BlueShift-iOS-Extension-SDK'
 end
 
 target 'BlueShiftPushContent' do
+    #pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git'
     #pod 'BlueShift-iOS-SDK/AppExtension'
-    #pod 'BlueShift-iOS-Extension-SDK'
+    pod 'BlueShift-iOS-Extension-SDK'
+
 end

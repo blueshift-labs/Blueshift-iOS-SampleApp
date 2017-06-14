@@ -31,14 +31,23 @@
         }
         self.nextRetryTimeStamp = [NSNumber numberWithDouble:nextRetryTimeStamp];
         self.retryAttemptsCount = [NSNumber numberWithInteger:retryAttemptsCount];
-        [context performBlock:^{
-            NSError *error = nil;
-            [context save:&error];
-            [masterContext performBlock:^{
-                NSError *error = nil;
-                [masterContext save:&error];
-            }];
-        }];
+        @try {
+            if(context && [context isKindOfClass:[NSManagedObjectContext class]]) {
+                [context performBlock:^{
+                    NSError *error = nil;
+                    [context save:&error];
+                    if(masterContext && [masterContext isKindOfClass:[NSManagedObjectContext class]]) {
+                        [masterContext performBlock:^{
+                            NSError *error = nil;
+                            [masterContext save:&error];
+                        }];
+                    }
+                }];
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Caught exception %@", exception);
+        }
     } else {
         return ;
     }
@@ -54,7 +63,12 @@
             NSManagedObjectContext *context = appDelegate.batchEventManagedObjectContext;
             if(context != nil) {
                 NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-                [fetchRequest setEntity:[NSEntityDescription entityForName:@"BatchEventEntity" inManagedObjectContext:context]];
+                @try {
+                    [fetchRequest setEntity:[NSEntityDescription entityForName:@"BatchEventEntity" inManagedObjectContext:context]];
+                }
+                @catch (NSException *exception) {
+                    NSLog(@"Caught exception %@", exception);
+                }
                 if(fetchRequest.entity != nil) {
                     NSNumber *currentTimeStamp = [NSNumber numberWithDouble:[[[NSDate date] dateByAddingMinutes:kRequestRetryMinutesInterval] timeIntervalSince1970]];
                     NSPredicate *nextRetryTimeStampLessThanCurrentTimePredicate = [NSPredicate predicateWithFormat:@"nextRetryTimeStamp < %@", currentTimeStamp];

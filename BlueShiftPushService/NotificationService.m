@@ -7,7 +7,7 @@
 //
 
 #import "NotificationService.h"
-#import <BlueShift-iOS-SDK/BlueShiftPushNotification.h>
+#import <BlueShift-iOS-Extension-SDK/BlueShiftPushNotification.h>
 
 @interface NotificationService ()
 

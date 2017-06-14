@@ -28,6 +28,16 @@
     [self addSideMenuButtonToNavigationBar];
     
     self.products =  [Cart fetchProducts];
+    
+//        if ([[NSUserDefaults standardUserDefaults] integerForKey:@"FreshInstal"]==0) {
+//            NSDictionary *details = @{
+//                                      @"App install":@"SBL",
+//                                      };
+//            [[BlueShift sharedInstance] trackEventForEventName:@"bsft_newinstalls" andParameters:details canBatchThisEvent:YES];
+//            [[NSUserDefaults standardUserDefaults] setInteger:121 forKey:@"FreshInstal"];
+//            [[NSUserDefaults standardUserDefaults]synchronize];
+//        }
+    
 }
 
 

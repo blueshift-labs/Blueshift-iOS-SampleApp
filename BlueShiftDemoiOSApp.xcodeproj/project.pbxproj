@@ -712,33 +712,36 @@
 					55BD2C0B1D91990F00422869 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FKABK7D68W;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
 					55BD2C1B1D92983400422869 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FKABK7D68W;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
 					DC3D9EF21A8A14B000177ABD = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = FKABK7D68W;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1030,10 +1033,11 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = BlueShiftPushService/BlueShiftPushService.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BlueShiftPushService/Info.plist;
@@ -1041,8 +1045,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.NotificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "b041a06d-2625-4ae8-a4d7-3993f7e3c28d";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Service Ext Dev Pro Pro";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1055,19 +1059,20 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = BlueShiftPushService/BlueShiftPushService.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FKABK7D68W;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BlueShiftPushService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.NotificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "b041a06d-2625-4ae8-a4d7-3993f7e3c28d";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Service Ext Dev Pro Pro";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1084,7 +1089,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BlueShiftPushContent/Info.plist;
@@ -1092,8 +1097,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.BlueShiftPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "b80d1e46-6ee4-4e51-9c7f-d1e94884cf29";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Content Ext Dev Pro Pro";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1111,15 +1116,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FKABK7D68W;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BlueShiftPushContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp.BlueShiftPushContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "b80d1e46-6ee4-4e51-9c7f-d1e94884cf29";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Content Ext Dev Pro Pro";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1163,7 +1168,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8dddfafd-c264-42fd-b7dd-a0b748b0d875";
+				PROVISIONING_PROFILE = "bf25da0f-296f-4bb1-801c-5a4fb0f731ab";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1201,7 +1206,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "8dddfafd-c264-42fd-b7dd-a0b748b0d875";
+				PROVISIONING_PROFILE = "bf25da0f-296f-4bb1-801c-5a4fb0f731ab";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1217,7 +1222,7 @@
 				CODE_SIGN_ENTITLEMENTS = "BlueShiftDemoiOSApp/BlueShift Reads.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1229,8 +1234,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp;
 				PRODUCT_NAME = "BlueShift Reads";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "f9f3881d-154f-4d9c-b6d4-6a20c608a8bc";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Dev Pro Pro";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1244,7 +1249,7 @@
 				CODE_SIGN_ENTITLEMENTS = "BlueShiftDemoiOSApp/BlueShift Reads.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: shahas kp (WAN6834J65)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FKABK7D68W;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1256,8 +1261,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.demoapp;
 				PRODUCT_NAME = "BlueShift Reads";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "f9f3881d-154f-4d9c-b6d4-6a20c608a8bc";
+				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Dev Pro Pro";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

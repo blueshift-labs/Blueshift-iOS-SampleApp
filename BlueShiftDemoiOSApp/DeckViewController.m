@@ -83,6 +83,7 @@
 - (void)logout {
     [User logout:^(BOOL status) {
         if(status) {
+            [BlueShiftUserInfo removeCurrentUserInfo];
             [self showLoginPage];
         }
     }];
