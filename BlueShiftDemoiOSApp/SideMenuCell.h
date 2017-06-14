@@ -11,8 +11,7 @@
 @interface SideMenuCell : UITableViewCell
 
 @property IBOutlet UILabel *optionTitle;
-@property IBOutlet UIImageView *optionImageView;
-@property IBOutlet UIImageView *optionBackgroundImageView;
+
 
 - (void)setOption:(NSDictionary*)option;
 

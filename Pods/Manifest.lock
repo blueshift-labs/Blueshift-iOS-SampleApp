@@ -1,61 +1,37 @@
 PODS:
-  - AFNetworking (2.5.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.5.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.1)
-  - AFNetworking/Security (2.5.1)
-  - AFNetworking/Serialization (2.5.1)
-  - AFNetworking/UIKit (2.5.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-  - BlueShift-iOS-SDK (0.0.1):
-    - AFNetworking
-  - IQKeyboardManager (3.2.1.1)
-  - JSONKit (1.5pre)
-  - JSONModel (1.0.2)
+  - BlueShift-iOS-Extension-SDK (0.2.1)
+  - BlueShift-iOS-SDK (0.2.1):
+    - BlueShift-iOS-SDK/Core (= 0.2.1)
+  - BlueShift-iOS-SDK/Core (0.2.1)
+  - IQKeyboardManager (3.3.7)
+  - JSONModel (1.7.0)
   - MJPopupViewController (0.4)
-  - SDWebImage (3.7.1):
-    - SDWebImage/Core
-  - SDWebImage/Core (3.7.1)
-  - SVProgressHUD (1.1.2)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.1.2)
   - ViewDeck (2.2.11)
 
 DEPENDENCIES:
-  - AFNetworking
-  - BlueShift-iOS-SDK (from `~/Workspace/blueshift-ios-sdk/`)
+  - BlueShift-iOS-Extension-SDK
+  - BlueShift-iOS-SDK
   - IQKeyboardManager
-  - JSONKit
   - JSONModel
   - MJPopupViewController
   - SDWebImage
   - SVProgressHUD
   - ViewDeck (~> 2.2.11)
 
-EXTERNAL SOURCES:
-  BlueShift-iOS-SDK:
-    :path: ~/Workspace/blueshift-ios-sdk/
-
 SPEC CHECKSUMS:
-  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
-  BlueShift-iOS-SDK: c7450a9bb57641e630bafe3e2b55179765ef4cc0
-  IQKeyboardManager: 4e83eef847c6f5edbd670284e50c7e3d643ebdb5
-  JSONKit: efef3bbd3372ff33f96b9c6f34cf4fe18e74ab69
-  JSONModel: cbdef0fdff1cc70e913a860861d3072860efd3a1
-  MJPopupViewController: b087684832981731f3d11b7a2ae6293a9073e011
-  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
-  SVProgressHUD: da7a49e789af645d9279ffbca62318945a832438
-  ViewDeck: 2f38c054dfe8e69af4877c006785996faa277902
+  BlueShift-iOS-Extension-SDK: e0b14489ec16f098f128ff20104713cdb198e4c2
+  BlueShift-iOS-SDK: 6601c48343f22abc9dff35cf130cebec7fb1f33d
+  IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  ViewDeck: ce795f929d00d1e0fd63f61d79cc92a9ea050ec9
 
-COCOAPODS: 0.34.4
+PODFILE CHECKSUM: fd32cc03ba85ea95edc0c5005a79755ea933c8a1
+
+COCOAPODS: 1.2.1

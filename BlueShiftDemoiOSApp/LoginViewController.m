@@ -13,6 +13,7 @@
 #import "UIView+BfViewHelpers.h"
 #import <BlueShift-iOS-SDK/BlueShiftRequestOperation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "DeckViewController.h"
 
 @interface LoginViewController ()
 
@@ -30,7 +31,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
 - (void)updateTextfieldWithIcons {
@@ -45,14 +46,56 @@
 - (IBAction)signInPressed:(id)sender {
     
     NSString *email = self.emailTextField.text;
-    [[BlueShiftUserInfo sharedUserInfo] setEmail:email];
-    [[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:@"178978789"];
-    [[BlueShiftUserInfo sharedUserInfo] save];
-    [[BlueShiftUserInfo sharedUserInfo] setUnsubscribed:NO];
+    [[BlueShiftUserInfo sharedInstance] setEmail:email];
+    //[[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:[NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]]];
+    NSString *customerID = [self md5HexDigest:self.emailTextField.text];
+    //[[BlueShiftUserInfo sharedInstance] setRetailerCustomerID:customerID];
+    //[[BlueShiftUserInfo sharedInstance] setUnsubscribed:NO];
+    [[BlueShiftUserInfo sharedInstance] save];
     
-    [[BlueShift sharedInstance] identifyUserWithEmail:[BlueShiftUserInfo sharedUserInfo].email andDetails:nil];
-    [self performSegueWithIdentifier:kSegueShowHome sender:self];
+    [[BlueShift sharedInstance] identifyUserWithEmail:[BlueShiftUserInfo sharedInstance].email andDetails:nil canBatchThisEvent:NO];
     
+    if(self.emailTextField.text.length > 0) {
+        User *currentUser = [User currentUser];
+        currentUser.authToken = @"123456789";
+        currentUser.email = self.emailTextField.text;
+        [currentUser save];
+    }
+    
+    //[self performSegueWithIdentifier:kSegueShowHome sender:self];
+    [self pushHomePage];
+    
+}
+
+- (void)pushHomePage {
+    //pushing home page through deckview controller
+    
+    DeckViewController *deckViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"DeckViewController"];
+    [self.navigationController pushViewController:deckViewController animated:YES];
+}
+
+- (NSString*)md5HexDigest:(NSString*)input {
+    const char* str = [input UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(str, strlen(str), result);
+    
+    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH*2];
+    for(int i = 0; i<CC_MD5_DIGEST_LENGTH; i++) {
+        [ret appendFormat:@"%02x",result[i]];
+    }
+    return ret;
+}
+
+- (NSString *)convertIntoAscii:(NSString *)message {
+    
+    int length = 0;
+    NSString *ascii = @"";
+    while (length < message.length) {
+        int asc = [message characterAtIndex:length];
+        length = length + 1;
+        ascii = [NSString stringWithFormat:@"%@%d", ascii, asc];
+    }
+    return ascii;
 }
 
 - (IBAction)signUpPressed:(id)sender {

@@ -11,5 +11,11 @@
 @interface DeckViewController : IIViewDeckController
 
 - (void)showHome;
+- (void)showProduct;
+- (void)showLiveContent;
+- (void)showMailSubscription;
+- (void)showCancelReturn;
+- (void)showSubscriptionEvent;
+- (void)logout;
 
 @end

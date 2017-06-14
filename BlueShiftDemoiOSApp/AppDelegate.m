@@ -13,6 +13,8 @@
 #import "ProductDetailViewController.h"
 #import "ProductListViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "Cart.h"
+
 
 @interface AppDelegate ()
 
@@ -26,25 +28,110 @@
     
     [Fabric with:@[CrashlyticsKit]];
     
+    // Push Notification
+//        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+//                                                        UIUserNotificationTypeBadge |
+//                                                        UIUserNotificationTypeSound);
+//        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+//                                                                                 categories:nil];
+//        [application registerUserNotificationSettings:settings];
+//        [application registerForRemoteNotifications];
+    
     // Obtain an instance of BlueShiftConfig ...
     BlueShiftConfig *config = [BlueShiftConfig config];
     
     // Set the api Key for the config ...
-    [config setApiKey:@"5be04919d8773728197f8bd0e2fedce2"];
+    [config setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
     
     // Set the applications launch Options for SDK to track ...
     [config setApplicationLaunchOptions:launchOptions];
     
-    // Set the Two Predefined DeepLinking URL's ...
-    [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController"]];
-    [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/ProductListViewController/ProductDetailViewController/ProductCartViewController"]];
-    [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/HomeViewController/OfferViewController"]];
+    // Disable BlueShift Push Notification
+    //[config setEnablePushNotification:NO];
+    // Disable BlueShift Analytics accessing location
+    //[config setEnableLocationAccess:NO];
+    // Disable BlueShift Analytics
+    //[config setEnableAnalytics:NO];
     
+    // Set the Two Predefined DeepLinking URL's ...
+    [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductDetailViewController"]];
+    [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductCartViewController"]];
+    [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/OfferViewController"]];
+    
+    [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
+    
+    // For Carousel deep linking
+    [config setAppGroupID:@"group.blueshift.app"];
+
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];
-
+    //[BlueShift autoIntegration];
+    
+    [Cart sharedInstance];
     
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
+    [[BlueShift sharedInstance].appDelegate registerForRemoteNotification:deviceToken];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
+    [[BlueShift sharedInstance].appDelegate failedToRegisterForRemoteNotificationWithError:error];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
+    [[BlueShift sharedInstance].appDelegate handleRemoteNotification:userInfo forApplication:application fetchCompletionHandler:handler];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo {
+    [[BlueShift sharedInstance].appDelegate application:application handleRemoteNotification:userInfo];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(nonnull UILocalNotification *)notification {
+    [[BlueShift sharedInstance].appDelegate application:application handleLocalNotification:notification];
+}
+
+- (void)application:(UIApplication *) application handleActionWithIdentifier: (NSString *) identifier forRemoteNotification: (NSDictionary *) notification
+  completionHandler: (void (^)()) completionHandler {
+    [[BlueShift sharedInstance].appDelegate handleActionWithIdentifier:identifier forRemoteNotification:notification completionHandler:completionHandler];
+}
+
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+//    
+//}
+//
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+//    
+//}
+
+
+
+//- (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithIndex:(NSInteger)index withDetails:(NSDictionary *)details {
+//    NSLog(@"index is %ld\n", (long)index);
+//}
+
+//- (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithDetails:(NSDictionary *)detalis andDeepLinkURL:(NSString *)url {
+//    NSLog(@"url is %@", url);
+//}
+
+- (void)pushCartPage {
+    //pushing cart page through deckview controller
+    
+    ProductCartViewController *cartViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"ProductCartViewController"];
+    UINavigationController *navController = (UINavigationController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
+    if(navController != nil && [navController respondsToSelector:@selector(popToRootViewControllerAnimated:)]) {
+        [navController popToRootViewControllerAnimated:NO];
+        
+        NSMutableArray *viewControllers = [navController.viewControllers mutableCopy];
+        [viewControllers addObject:cartViewController];
+        navController.viewControllers = viewControllers;
+    }
+}
+
+
+-(void) buyCategoryPushClickedWithDetails:(NSDictionary *)details {
+    [self pushCartPage];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -55,6 +142,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[BlueShift sharedInstance].appDelegate appDidEnterBackground:application];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -63,6 +151,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[BlueShift sharedInstance].appDelegate appDidBecomeActive:application];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

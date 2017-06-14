@@ -10,9 +10,11 @@
 #import "SegueIdentifiers.h"
 #import "UIView+BfViewHelpers.h"
 #import <BlueShift-iOS-SDK/BlueShift.h>
+#import "ProductDetailViewController.h"
+#import "Cart.h"
 
 @interface ProductListViewController ()
-
+@property NSDictionary *selectedData;
 @end
 
 @implementation ProductListViewController
@@ -22,45 +24,59 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title = @"Product List";
+    [self addNavigationBarButtons];
+    [self addSideMenuButtonToNavigationBar];
     
-    [self addEmailButtonToNavigationBar];
+    self.products =  [Cart fetchProducts];
     
-    self.products =  @[
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                       @{ @"image" : @"SampleProductCell1" },
-                       @{ @"image" : @"SampleProductCell2" },
-                      ];
+//        if ([[NSUserDefaults standardUserDefaults] integerForKey:@"FreshInstal"]==0) {
+//            NSDictionary *details = @{
+//                                      @"App install":@"SBL",
+//                                      };
+//            [[BlueShift sharedInstance] trackEventForEventName:@"bsft_newinstalls" andParameters:details canBatchThisEvent:YES];
+//            [[NSUserDefaults standardUserDefaults] setInteger:121 forKey:@"FreshInstal"];
+//            [[NSUserDefaults standardUserDefaults]synchronize];
+//        }
     
-    self.productListTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-    [self.productListTableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
-    [self updateProductionListTableViewUI];
 }
 
-- (void)addEmailButtonToNavigationBar {
+
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self.productListTableView reloadData];
+}
+
+- (void)addNavigationBarButtons {
+    UIBarButtonItem *emailButton = [self addEmailButtonToNavigationBar];
+    UIBarButtonItem *cartButton = [self addCartBttonToNavigationBar];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:emailButton,cartButton,nil];
+}
+
+- (UIBarButtonItem *)addEmailButtonToNavigationBar {
     self.emailButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
     [self.emailButton setBackgroundImage:[UIImage imageNamed:@"EmailIcon.png"] forState:UIControlStateNormal];
     [self.emailButton addTarget:self action:@selector(mailButtonPressedAction) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.emailButton];
+    return [[UIBarButtonItem alloc] initWithCustomView:self.emailButton];
 }
+
+- (UIBarButtonItem *)addCartBttonToNavigationBar {
+    self.cartButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
+    [self.cartButton setBackgroundImage:[UIImage imageNamed:@"cartIcon"] forState:UIControlStateNormal];
+    [self.cartButton addTarget:self action:@selector(cartButtonPressedAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    return [[UIBarButtonItem alloc] initWithCustomView:self.cartButton];
+}
+
+- (void)addSideMenuButtonToNavigationBar {
+    self.sideMenuButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
+    [self.sideMenuButton setBackgroundImage:[UIImage imageNamed:@"sideMenu"] forState:UIControlStateNormal];
+    [self.sideMenuButton addTarget:self action:@selector(sideMenuButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.sideMenuButton];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -76,10 +92,11 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [[BlueShiftUserInfo sharedUserInfo] setUnsubscribed:YES];
-    [[BlueShiftUserInfo sharedUserInfo] save];
+    //[[BlueShiftUserInfo sharedInstance] setUnsubscribed:NO];
+    [[BlueShiftUserInfo sharedInstance] save];
     [self.navigationController setNavigationBarHidden:NO];
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
+    [self.productListTableView reloadData];
 }
 
 
@@ -97,7 +114,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.option = option;
-    
+    [cell layoutIfNeeded];
     return cell;
 }
 
@@ -109,12 +126,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *option = self.products[indexPath.row];
+    self.selectedData = option;
+    [[BlueShift sharedInstance] trackProductViewedWithSKU:[option objectForKey:@"sku"] andCategoryID:indexPath.row canBatchThisEvent:NO];
     [self performSegueWithIdentifier:kSegueShowProductDetail sender:self];
 }
 
 - (IBAction)searchButtonPressed:(id)sender {
     NSArray *skuArray = @[@"78656F",@"AE5643",@"HJU766"];
-    [[BlueShift sharedInstance] trackProductSearchWithSkuArray:skuArray andNumberOfResults:4 andPageNumber:1 andQuery:self.searchTextField.text andFilters:@{@"filter1":@"values", @"filter2":@"values"}];
+    [[BlueShift sharedInstance] trackProductSearchWithSkuArray:skuArray andNumberOfResults:4 andPageNumber:1 andQuery:self.searchTextField.text andFilters:@{@"filter1":@"values", @"filter2":@"values"} canBatchThisEvent:NO];
 }
 
 - (NSString *)messageBody
@@ -123,6 +143,19 @@
     return [message copy];
 }
 
+- (void) toggleLeftViewAnimated:(BOOL)animated {
+    if (self.viewDeckController != NULL) {
+        [self.viewDeckController toggleLeftViewAnimated:animated completion:^(IIViewDeckController *controller, BOOL status) {
+            if (status == YES ) {
+                //[self.greyFadeView setHidden:NO];
+            }
+        }];
+    }
+}
+
+- (void)sideMenuButtonAction {
+    [self toggleLeftViewAnimated:YES];
+}
 - (void)mailButtonPressedAction {
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
@@ -138,6 +171,10 @@
     else {
         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Your Device is not configured to send Email" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
+}
+
+- (void)cartButtonPressedAction {
+    [self pushCartPage];
 }
 
 #pragma mark - Mail Delegates
@@ -166,14 +203,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    ProductDetailViewController *destinationController = segue.destinationViewController;
+    destinationController.data = self.selectedData;
 }
-*/
+
 
 @end

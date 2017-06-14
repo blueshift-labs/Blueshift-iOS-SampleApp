@@ -9,10 +9,38 @@
 #import <UIKit/UIKit.h>
 #import <BlueShift-iOS-SDK/BlueShift.h>
 #import "ProductOrderCompletedViewController.h"
+#import "BaseViewController.h"
+#import "CartDelegate.h"
 
-@interface ProductCartViewController : UIViewController<BlueShiftPushDelegate>
+@interface ProductCartViewController : BaseViewController<BlueShiftPushDelegate, CartDelegate>
 
-@property NSArray *productsArray;
+// NSLayout Constraint
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewHeightConstraint;
+
+// UIViews
+@property (weak, nonatomic) IBOutlet UIView *priceView;
+@property (weak, nonatomic) IBOutlet UIView *addressView;
+@property (weak, nonatomic) IBOutlet UIView *cartEmptyView;
+
+// UITableView
+@property (weak, nonatomic) IBOutlet UITableView *itemsTableView;
+
+
+// UILabels
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *taxLabel;
+@property (weak, nonatomic) IBOutlet UILabel *shippingChargeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *finalTotalLabel;
+
+// UITextField
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
+@property (weak, nonatomic) IBOutlet UITextField *pinTextField;
+
+// Properties
+@property NSArray *products;
+
 
 - (IBAction)continueButtonPressed:(id)sender;
 

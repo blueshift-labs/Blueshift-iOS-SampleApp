@@ -22,15 +22,15 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
 - (IBAction)subscribeMailingListPressed:(id)sender {
-    [[BlueShift sharedInstance] trackEmailListSubscriptionForEmail:self.emailTextField.text];
+    [[BlueShift sharedInstance] trackEmailListSubscriptionForEmail:self.emailTextField.text canBatchThisEvent:NO];
 }
 
 - (IBAction)unSubscribeMailingListPressed:(id)sender {
-    [[BlueShift sharedInstance] trackEmailListUnsubscriptionForEmail:self.emailTextField.text];
+    [[BlueShift sharedInstance] trackEmailListUnsubscriptionForEmail:self.emailTextField.text canBatchThisEvent:NO];
 }
 
 @end

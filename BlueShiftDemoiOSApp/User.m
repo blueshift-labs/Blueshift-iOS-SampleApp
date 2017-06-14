@@ -18,22 +18,33 @@ static User *_currentUser = NULL;
 {
     if(_currentUser == NULL) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSString *json = [defaults stringForKey:@"savedUserJSON"];
-        if(json != NULL) {
-            _currentUser = [[User alloc] initWithString:json error:NULL];
+        NSDictionary *userDictionary = [defaults objectForKey:@"savedUserDictionary"];
+        if(userDictionary != NULL) {
+            _currentUser = [User parseUserDictionary:userDictionary];
         } else {
             _currentUser = [[User alloc] init];
+            _currentUser.authToken = @"";
+            _currentUser.email = @"";
         }
     }
-    
     return _currentUser;
 }
+
++ (User *)parseUserDictionary:(NSDictionary *)userDictionary {
+    User *user = [[User alloc] init];
+    if (user) {
+        user.authToken = [userDictionary objectForKey:@"auth_token"];
+        user.email = [userDictionary objectForKey:@"email"];
+    }
+    return user;
+}
+
 
 + (void)removeCurrentUser
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([User currentUser]) {
-        [defaults removeObjectForKey:@"savedUserJSON"];
+        [defaults removeObjectForKey:@"savedUserDictionary"];
         if ([defaults synchronize]==YES) {
             _currentUser = NULL;
         }
@@ -43,47 +54,47 @@ static User *_currentUser = NULL;
 
 + (void)signInWithEmail:(NSString *)email andPassword:(NSString *)password completionHandler:(void (^)(BOOL, BfErrorCode, NSString*))handler
 {
-    if(email == NULL || password == NULL) {
-        handler(NO, BfErrorCodeEmailPasswordWrong, @"Incorrect email/password");
-        return;
-    }
-    
-    User *currentUser = [User currentUser];
-    NSString *url = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteSignInWithEmail];
-    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-    NSMutableDictionary *params = [@{
-                                     @"user[email]": email,
-                                     @"user[password]": password,
-                                     } mutableCopy];
-    
-    if(currentUser.pushToken != NULL) {
-        [params setValue:currentUser.pushToken forKey:@"user[ios_token]"];
-    }
-    
-    [operationManager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSInteger statusCode = operation.response.statusCode;
-        NSNumber *status = @0;
-        BfErrorCode errorCode = BfErrorCodeUnknownError;
-        
-        if(statusCode==kStatusCodeSuccessfullResponse) {
-            [self parseLoginSuccessResponse:[responseObject objectForKey:@"user"]];
-            status = @1;
-            [User saveEmail:email andPassword:password];
-        }
-        
-        status = [NSNumber numberWithInt:[[responseObject objectForKey:@"success"] intValue]];
-        handler([status boolValue],errorCode, [responseObject objectForKey:@"error"]);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (operation.response.statusCode == kStatusCodeUnauthorized) {
-            handler(NO,BfErrorCodeEmailPasswordWrong,@"Incorrect email/password");
-        }
-        else if(operation.response.statusCode == kStatusCodeNoInternetConnection) {
-            handler(NO,BfErrorCodeNetworkError,nil);
-        }
-        else {
-            handler(NO,BfErrorCodeUnknownError,nil);
-        }
-    }];
+//    if(email == NULL || password == NULL) {
+//        handler(NO, BfErrorCodeEmailPasswordWrong, @"Incorrect email/password");
+//        return;
+//    }
+//    
+//    User *currentUser = [User currentUser];
+//    NSString *url = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteSignInWithEmail];
+//    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+//    NSMutableDictionary *params = [@{
+//                                     @"user[email]": email,
+//                                     @"user[password]": password,
+//                                     } mutableCopy];
+//    
+//    if(currentUser.pushToken != NULL) {
+//        [params setValue:currentUser.pushToken forKey:@"user[ios_token]"];
+//    }
+//    
+//    [operationManager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSInteger statusCode = operation.response.statusCode;
+//        NSNumber *status = @0;
+//        BfErrorCode errorCode = BfErrorCodeUnknownError;
+//        
+//        if(statusCode==kStatusCodeSuccessfullResponse) {
+//            [self parseLoginSuccessResponse:[responseObject objectForKey:@"user"]];
+//            status = @1;
+//            [User saveEmail:email andPassword:password];
+//        }
+//        
+//        status = [NSNumber numberWithInt:[[responseObject objectForKey:@"success"] intValue]];
+//        handler([status boolValue],errorCode, [responseObject objectForKey:@"error"]);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        if (operation.response.statusCode == kStatusCodeUnauthorized) {
+//            handler(NO,BfErrorCodeEmailPasswordWrong,@"Incorrect email/password");
+//        }
+//        else if(operation.response.statusCode == kStatusCodeNoInternetConnection) {
+//            handler(NO,BfErrorCodeNetworkError,nil);
+//        }
+//        else {
+//            handler(NO,BfErrorCodeUnknownError,nil);
+//        }
+//    }];
 }
 
 + (void)parseLoginSuccessResponse:(NSDictionary*)response
@@ -107,9 +118,20 @@ static User *_currentUser = NULL;
 
 - (void)save
 {
-    NSString *json = [self toJSONString];
+    NSDictionary *userDictionary = [self toDictionary];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:json forKey:@"savedUserJSON"];
+    [defaults setObject:userDictionary forKey:@"savedUserDictionary"];
+    [defaults synchronize];
+}
+
+- (NSDictionary *)toDictionary {
+    NSMutableDictionary *userMutableDictionary = [NSMutableDictionary dictionary];
+    if (self) {
+        
+        [userMutableDictionary setObject:self.email forKey:@"email"];
+        [userMutableDictionary setObject:self.authToken forKey:@"auth_token"];
+    }
+    return [userMutableDictionary copy];
 }
 
 - (void)update
@@ -169,57 +191,57 @@ static User *_currentUser = NULL;
 
 + (void)signUpWithUserDetails:(NSMutableDictionary *)userDetails andPhoto:(UIImage*)photo completionHandler:(void (^)(BOOL, BfErrorCode, NSString*))handler
 {
-    NSString *url = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteSignUpWithUserDetails];
-    
-    NSMutableDictionary *params = userDetails;
-    
-    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-    
-    [operationManager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        if(photo != NULL) {
-            NSData *photoData = UIImageJPEGRepresentation(photo, 0.8);
-            [formData appendPartWithFileData:photoData name:@"user[profile_attributes][image_attributes][file]" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
-        }
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        BfErrorCode errorCode = BfErrorCodeUnknownError;
-        NSNumber *status = [NSNumber numberWithInt:[[responseObject objectForKey:@"success"] intValue]];
-        handler([status boolValue],errorCode, [responseObject objectForKey:@"error"]);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Status code: %ld",(long)operation.response.statusCode);
-        handler(NO,BfErrorCodeUnknownError, nil);
-    }];
+//    NSString *url = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteSignUpWithUserDetails];
+//    
+//    NSMutableDictionary *params = userDetails;
+//    
+//    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+//    
+//    [operationManager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        if(photo != NULL) {
+//            NSData *photoData = UIImageJPEGRepresentation(photo, 0.8);
+//            [formData appendPartWithFileData:photoData name:@"user[profile_attributes][image_attributes][file]" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+//        }
+//    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        BfErrorCode errorCode = BfErrorCodeUnknownError;
+//        NSNumber *status = [NSNumber numberWithInt:[[responseObject objectForKey:@"success"] intValue]];
+//        handler([status boolValue],errorCode, [responseObject objectForKey:@"error"]);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Status code: %ld",(long)operation.response.statusCode);
+//        handler(NO,BfErrorCodeUnknownError, nil);
+//    }];
 }
 
 + (void)updateUserDetails:(NSMutableDictionary *)userDetails andPhoto:(UIImage*)photo completionHandler:(void (^)(BOOL, BfErrorCode, NSString*))handler
 {
-    User *currentUser = [User currentUser];
-    NSString *urlTemplate = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteGetUserDetails];
-    NSString *url = [urlTemplate stringByReplacingOccurrencesOfString:@"__USER_ID__" withString:currentUser.userID];
-    [userDetails setObject:currentUser.authToken forKey:@"user_token"];
-    [userDetails setObject:currentUser.email forKey:@"user_email"];
-    
-    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-    
-    [operationManager PUT:url parameters:userDetails constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        if(photo != NULL) {
-            NSData *photoData = UIImageJPEGRepresentation(photo, 0.8);
-            [formData appendPartWithFileData:photoData name:@"user[profile_attributes][image_attributes][file]" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
-        }
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self fetchUserDetailsWithCompletionHandler:^(BOOL status, BfErrorCode errorCode, NSString *errorMessage) {
-            if(status) {
-                handler(YES,BfErrorCodeUnknownError,nil);
-            }
-        }];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Status code: %ld",(long)operation.response.statusCode);
-        if(operation.response.statusCode == kStatusCodeNoInternetConnection) {
-            handler(NO,BfErrorCodeNetworkError,nil);
-        }
-        else {
-            handler(NO,BfErrorCodeUnknownError,nil);
-        }
-    }];
+//    User *currentUser = [User currentUser];
+//    NSString *urlTemplate = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteGetUserDetails];
+//    NSString *url = [urlTemplate stringByReplacingOccurrencesOfString:@"__USER_ID__" withString:currentUser.userID];
+//    [userDetails setObject:currentUser.authToken forKey:@"user_token"];
+//    [userDetails setObject:currentUser.email forKey:@"user_email"];
+//    
+//    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+//    
+//    [operationManager PUT:url parameters:userDetails constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        if(photo != NULL) {
+//            NSData *photoData = UIImageJPEGRepresentation(photo, 0.8);
+//            [formData appendPartWithFileData:photoData name:@"user[profile_attributes][image_attributes][file]" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+//        }
+//    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [self fetchUserDetailsWithCompletionHandler:^(BOOL status, BfErrorCode errorCode, NSString *errorMessage) {
+//            if(status) {
+//                handler(YES,BfErrorCodeUnknownError,nil);
+//            }
+//        }];
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Status code: %ld",(long)operation.response.statusCode);
+//        if(operation.response.statusCode == kStatusCodeNoInternetConnection) {
+//            handler(NO,BfErrorCodeNetworkError,nil);
+//        }
+//        else {
+//            handler(NO,BfErrorCodeUnknownError,nil);
+//        }
+//    }];
 }
 
 + (void)fetchUserDetailsWithCompletionHandler:(void(^)(BOOL,BfErrorCode, NSString *))handler {
@@ -227,62 +249,62 @@ static User *_currentUser = NULL;
     NSString *urlTemplate = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteGetUserDetails];
     NSString *url = [urlTemplate stringByReplacingOccurrencesOfString:@"__USER_ID__" withString:currentUser.userID];
     
-    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-    
-    NSMutableDictionary *params = [@{
-                                     @"user_token": currentUser.authToken,
-                                     @"user_email": currentUser.email
-                                     } mutableCopy];
-    
-    [operationManager GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        BfErrorCode errorCode = BfErrorCodeUnknownError;
-        if (operation.response.statusCode == kStatusCodeSuccessfullResponse) {
-            if (responseObject) {
-                NSDictionary *userDetails = (NSDictionary *)responseObject;
-                [User parseLoginSuccessResponse:userDetails];
-            }
-        }
-        handler(YES,errorCode, @"Error");
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSInteger statusCode = operation.response.statusCode;
-        BfErrorCode errorCode = BfErrorCodeUnknownError;
-        if (statusCode == kStatusCodeNoInternetConnection) {
-            errorCode = BfErrorCodeNetworkError;
-        }
-        
-        NSString *errorMessage = [NSString stringWithBfErrorCode:errorCode];
-        handler(NO,errorCode,errorMessage);
-    }];
+//    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+//    
+//    NSMutableDictionary *params = [@{
+//                                     @"user_token": currentUser.authToken,
+//                                     @"user_email": currentUser.email
+//                                     } mutableCopy];
+//    
+//    [operationManager GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        BfErrorCode errorCode = BfErrorCodeUnknownError;
+//        if (operation.response.statusCode == kStatusCodeSuccessfullResponse) {
+//            if (responseObject) {
+//                NSDictionary *userDetails = (NSDictionary *)responseObject;
+//                [User parseLoginSuccessResponse:userDetails];
+//            }
+//        }
+//        handler(YES,errorCode, @"Error");
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSInteger statusCode = operation.response.statusCode;
+//        BfErrorCode errorCode = BfErrorCodeUnknownError;
+//        if (statusCode == kStatusCodeNoInternetConnection) {
+//            errorCode = BfErrorCodeNetworkError;
+//        }
+//        
+//        NSString *errorMessage = [NSString stringWithBfErrorCode:errorCode];
+//        handler(NO,errorCode,errorMessage);
+//    }];
     
 }
 
 + (void)forgotPassword:(NSString*)email withCompletionHandler:(void (^)(BOOL, BfErrorCode, NSString *))handler {
     NSString *url = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteForgotPassword];
     
-    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
-    
-    NSMutableDictionary *params = [@{
-                                     @"user[email]":email,
-                                     } mutableCopy];
-    
-    [operationManager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        BOOL status = NO;
-        if (operation.response.statusCode == kStatusCodeSuccessfullResponse) {
-            status = YES;
-        }
-        
-        handler(status,BfErrorCodeUnknownError,@"Unknown Error");
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSInteger statusCode = operation.response.statusCode;
-        BfErrorCode errorCode = BfErrorCodeUnknownError;
-        if (statusCode == kStatusCodeNoInternetConnection) {
-            errorCode = BfErrorCodeNetworkError;
-        }
-        
-        NSString *errorMessage = [NSString stringWithBfErrorCode:errorCode];
-        handler(NO,errorCode,errorMessage);
-    }];
+//    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
+//    
+//    NSMutableDictionary *params = [@{
+//                                     @"user[email]":email,
+//                                     } mutableCopy];
+//    
+//    [operationManager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//        BOOL status = NO;
+//        if (operation.response.statusCode == kStatusCodeSuccessfullResponse) {
+//            status = YES;
+//        }
+//        
+//        handler(status,BfErrorCodeUnknownError,@"Unknown Error");
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSInteger statusCode = operation.response.statusCode;
+//        BfErrorCode errorCode = BfErrorCodeUnknownError;
+//        if (statusCode == kStatusCodeNoInternetConnection) {
+//            errorCode = BfErrorCodeNetworkError;
+//        }
+//        
+//        NSString *errorMessage = [NSString stringWithBfErrorCode:errorCode];
+//        handler(NO,errorCode,errorMessage);
+//    }];
 }
 
 @end

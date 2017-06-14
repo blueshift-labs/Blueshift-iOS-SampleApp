@@ -14,12 +14,4 @@
 
 @interface HomeViewController : BaseViewController<BaseViewControllerDelegate>
 
-@property IBOutlet UIView *contentView;
-@property IBOutlet NSLayoutConstraint *contentViewWidthConstraint;
-
-- (IBAction)productsButtonPressed:(id)sender;
-- (IBAction)cancelReturnButtonPressed:(id)sender;
-- (IBAction)mailingListSubscriptionButtonPressed:(id)sender;
-- (IBAction)subscriptionEventsButtonPressed:(id)sender;
-
 @end

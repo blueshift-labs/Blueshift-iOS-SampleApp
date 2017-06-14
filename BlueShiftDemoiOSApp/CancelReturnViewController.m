@@ -30,14 +30,25 @@
     
     
     self.products =  @[
-                            @{ @"image" : @"SampleProductCell1" },
-                            @{ @"image" : @"SampleProductCell2" }
+                       @{
+                           @"sku": @"9780140247732",
+                           @"name":@"Death of a Salesman",
+                           @"price":@"$20.00",
+                           @"image_url":@"https://images.randomhouse.com/cover/9780140247732"
+                           },
+                       @{
+                           @"sku":@"9780140421996",
+                           @"name":@"Leaves of Grass",
+                           @"price":@"$13.00",
+                           @"image_url":@"https://images.randomhouse.com/cover/9780140421996"
+                           }
+
                           ];
     
-    self.productListTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-    [self.productListTableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
-    [self updateProductsListTableViewUI];
+//    self.productListTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+//    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.productListTableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
+//    [self updateProductsListTableViewUI];
     
 }
 
@@ -51,8 +62,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self];
-    [[BlueShift sharedInstance] trackProductViewedWithSKU:@"ARJDRG100" andCategoryID:10];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] trackProductViewedWithSKU:@"ARJDRG100" andCategoryID:10 canBatchThisEvent:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -80,11 +91,11 @@
 
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    [[BlueShift sharedInstance] trackPurchaseCancelForOrderID:@"ORD100"];
+    [[BlueShift sharedInstance] trackPurchaseCancelForOrderID:@"ORD100" canBatchThisEvent:NO];
 }
 
 - (IBAction)returnButtonPressed:(id)sender {
-    [[BlueShift sharedInstance] trackPurchaseReturnForOrderID:@"ORD100" andProducts:self.productsArray];
+    [[BlueShift sharedInstance] trackPurchaseReturnForOrderID:@"ORD100" andProducts:self.productsArray canBatchThisEvent:NO];
 }
 
 @end

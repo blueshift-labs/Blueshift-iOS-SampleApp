@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "User.h"
+#import "DeckViewController.h"
 
 @interface HomeViewController ()
 
@@ -17,9 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.navigationItem.title = @"Home";
-    
+    DeckViewController *deckViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"DeckViewController"];
+    [self.navigationController pushViewController:deckViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,29 +31,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES];
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self];
-}
-
-- (void)viewDidLoadIfDeviceLessThanOrEqualToIPhone5 {
-    [self.contentViewWidthConstraint setConstant:kScreenWidthLessThanOrEqualToIPhone5];
-    [self.contentView layoutIfNeeded];
-}
-
-- (IBAction)productsButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:kSegueShowProductList sender:self];
-}
-
-- (IBAction)cancelReturnButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:kSegueCancelReturn sender:self];
-}
-
-- (IBAction)mailingListSubscriptionButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:kSegueMailingSubscription sender:self];
-}
-
-- (IBAction)subscriptionEventsButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:kSegueSubscriptionEvents sender:self];
+    //[self.navigationController setNavigationBarHidden:YES];
+    //[[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
 #pragma mark - Navigation
@@ -61,9 +41,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    
-
 }
 
 

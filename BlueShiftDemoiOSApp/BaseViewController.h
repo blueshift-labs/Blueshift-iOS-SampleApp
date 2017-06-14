@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+BfViewHelpers.h"
 
 @protocol BaseViewControllerDelegate <NSObject>
 
@@ -20,7 +21,8 @@
 @property (nonatomic,retain) id<BaseViewControllerDelegate> baseViewControllerDelegate;
 @property UIColor *borderColor;
 
-- (void)toggleLeftViewAnimated:(BOOL)animated;
+//- (void)toggleLeftViewAnimated:(BOOL)animated;
 - (void)setNavigationBarTitle:(NSString *)title;
+- (void)pushCartPage;
 
 @end

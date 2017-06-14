@@ -1,0 +1,41 @@
+//
+//  NotificationViewController.m
+//  BlueShiftPushContent
+//
+//  Created by Shahas on 21/09/16.
+//  Copyright © 2016 Arjun K P. All rights reserved.
+//
+
+#import "NotificationViewController.h"
+#import <UserNotifications/UserNotifications.h>
+#import <UserNotificationsUI/UserNotificationsUI.h>
+
+@interface NotificationViewController () <UNNotificationContentExtension>
+
+
+@end
+
+@implementation NotificationViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any required interface initialization here.
+    
+    self.appGroupID = @"group.blueshift.app";
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)didReceiveNotification:(UNNotification *)notification {
+    [self showCarouselForNotfication:notification];
+}
+
+- (void)didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void (^)(UNNotificationContentExtensionResponseOption))completion {
+    [self setCarouselActionsForResponse:response completionHandler:^(UNNotificationContentExtensionResponseOption option) {
+        completion(option);
+    }];
+}
+
+@end
