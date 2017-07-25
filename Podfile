@@ -5,7 +5,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 workspace 'BlueShiftDemoiOSApp.xcworkspace'
 
-
 target 'BlueShiftDemoiOSApp' do
   pod 'SVProgressHUD'
   pod 'JSONModel'

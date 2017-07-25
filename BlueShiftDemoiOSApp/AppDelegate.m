@@ -94,6 +94,10 @@
 
 - (void)application:(UIApplication *) application handleActionWithIdentifier: (NSString *) identifier forRemoteNotification: (NSDictionary *) notification
   completionHandler: (void (^)()) completionHandler {
+    if (![BlueShift sharedInstance].appDelegate) {
+        [BlueShift sharedInstance].appDelegate = [[BlueShiftAppDelegate alloc] init];
+        [BlueShift sharedInstance].appDelegate.oldDelegate = [UIApplication sharedApplication].delegate;
+    }
     [[BlueShift sharedInstance].appDelegate handleActionWithIdentifier:identifier forRemoteNotification:notification completionHandler:completionHandler];
 }
 
