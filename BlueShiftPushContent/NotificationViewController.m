@@ -29,13 +29,22 @@
 }
 
 - (void)didReceiveNotification:(UNNotification *)notification {
-    [self showCarouselForNotfication:notification];
+    if([self isBlueShiftCarouselPushNotification:notification]) {
+        [self showCarouselForNotfication:notification];
+    } else {    
+        // Perform your codes here
+    }
 }
 
 - (void)didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void (^)(UNNotificationContentExtensionResponseOption))completion {
-    [self setCarouselActionsForResponse:response completionHandler:^(UNNotificationContentExtensionResponseOption option) {
-        completion(option);
-    }];
+    //Place following codes after your code lines
+    if([self isBlueShiftCarouselActions:response]) {
+        [self setCarouselActionsForResponse:response completionHandler:^(UNNotificationContentExtensionResponseOption option) {
+            completion(option);
+        }];
+    } else {
+        
+    }
 }
 
 @end

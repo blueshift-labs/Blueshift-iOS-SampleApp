@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/iCarousel.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-Extension-SDK/iCarousel.h

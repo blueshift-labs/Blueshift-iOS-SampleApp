@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftDeepLink.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftDeepLink.h

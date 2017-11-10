@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftAlertView.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftAlertView.h
