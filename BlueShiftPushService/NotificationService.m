@@ -21,17 +21,22 @@
 - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
-    
+    //[[BlueShiftPushNotification sharedInstance] setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
     // Modify the notification content here...
-    self.bestAttemptContent.attachments = [[BlueShiftPushNotification sharedInstance] integratePushNotificationWithMediaAttachementsForRequest:request];
-    
+    if([[BlueShiftPushNotification sharedInstance] isBlueShiftPushNotification:request]) {
+        self.bestAttemptContent.attachments = [[BlueShiftPushNotification sharedInstance] integratePushNotificationWithMediaAttachementsForRequest:request];
+    } else {
+        // Your Custom code comes here
+    }
     self.contentHandler(self.bestAttemptContent);
 }
 
 - (void)serviceExtensionTimeWillExpire {
     // Called just before the extension will be terminated by the system.
     // Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.
-    self.bestAttemptContent.attachments = [BlueShiftPushNotification sharedInstance].attachments;
+    if([[BlueShiftPushNotification sharedInstance] hasBlueShiftAttachments]) {
+        self.bestAttemptContent.attachments = [BlueShiftPushNotification sharedInstance].attachments;
+    }
     self.contentHandler(self.bestAttemptContent);
 }
 

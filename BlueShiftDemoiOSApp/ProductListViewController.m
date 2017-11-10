@@ -40,6 +40,20 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self customEvents];
+}
+
+- (void)customEvents {
+    [[BlueShift sharedInstance] trackEventForEventName:@"first" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackEventForEventName:@"second" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackEventForEventName:@"third" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackEventForEventName:@"fourth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackEventForEventName:@"fifth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
+    [[BlueShift sharedInstance] trackEventForEventName:@"sixth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
+}
+
 
 
 - (void)viewDidLayoutSubviews {

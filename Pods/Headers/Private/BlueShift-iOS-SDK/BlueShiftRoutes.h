@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftRoutes.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftRoutes.h

@@ -74,6 +74,46 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
     [[BlueShift sharedInstance].appDelegate registerForRemoteNotification:deviceToken];
+//    UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
+//    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+//    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
+    // Creating custom category
+    UIMutableUserNotificationAction *openAction;
+    openAction = [[UIMutableUserNotificationAction alloc] init];
+    [openAction setActivationMode:UIUserNotificationActivationModeForeground];
+    [openAction setTitle:@"Open"];
+    [openAction setIdentifier:@"open"];
+    [openAction setDestructive:NO];
+    [openAction setAuthenticationRequired:NO];
+    
+    UIMutableUserNotificationCategory *customCategory;
+    customCategory = [[UIMutableUserNotificationCategory alloc] init];
+    [customCategory setIdentifier:@"custom_category"];
+    [customCategory setActions:@[openAction]
+                      forContext:UIUserNotificationActionContextDefault];
+    
+    
+    NSMutableSet *categories = (NSMutableSet*)[[[BlueShift sharedInstance] pushNotification] notificationCategories];
+    // Adding custom category to categories
+    [categories addObject:customCategory];
+    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
+//    UIMutableUserNotificationCategory *viewCartCategory = [[[BlueShift sharedInstance] pushNotification] viewCartCategory];
+//    UIMutableUserNotificationCategory *buyCategory = [[[BlueShift sharedInstance] pushNotification] buyCategory];
+//    UIMutableUserNotificationCategory *oneButtonAlertCategory = [[[BlueShift sharedInstance] pushNotification] oneButtonAlertCategory];
+//    UIMutableUserNotificationCategory *twoButtonAlertCategory = [[[BlueShift sharedInstance] pushNotification] twoButtonAlertCategory];
+//    UIMutableUserNotificationCategory *carouselCategory = [[[BlueShift sharedInstance] pushNotification] carouselCategory];
+//    UIMutableUserNotificationCategory *carouselAnimationCategory = [[[BlueShift sharedInstance] pushNotification] carouselAnimationCategory];
+//
+//    NSSet *categories = [NSSet setWithObjects:buyCategory, viewCartCategory, oneButtonAlertCategory, twoButtonAlertCategory, carouselCategory, carouselAnimationCategory, nil];
+//    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
+//    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+//    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+//    [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
@@ -94,6 +134,10 @@
 
 - (void)application:(UIApplication *) application handleActionWithIdentifier: (NSString *) identifier forRemoteNotification: (NSDictionary *) notification
   completionHandler: (void (^)()) completionHandler {
+    if (![BlueShift sharedInstance].appDelegate) {
+        [BlueShift sharedInstance].appDelegate = [[BlueShiftAppDelegate alloc] init];
+        [BlueShift sharedInstance].appDelegate.oldDelegate = [UIApplication sharedApplication].delegate;
+    }
     [[BlueShift sharedInstance].appDelegate handleActionWithIdentifier:identifier forRemoteNotification:notification completionHandler:completionHandler];
 }
 

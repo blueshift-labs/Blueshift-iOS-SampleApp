@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/HttpRequestOperationEntity.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/HttpRequestOperationEntity.h
