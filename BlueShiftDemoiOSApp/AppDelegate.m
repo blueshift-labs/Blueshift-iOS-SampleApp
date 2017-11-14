@@ -94,11 +94,13 @@
                       forContext:UIUserNotificationActionContextDefault];
     
     
-    NSMutableSet *categories = (NSMutableSet*)[[[BlueShift sharedInstance] pushNotification] notificationCategories];
+    NSSet *categories = [[[BlueShift sharedInstance] pushNotification] notificationCategories];
+    NSMutableSet *categoriesWithCustomCategory = [[NSMutableSet alloc] init];
     // Adding custom category to categories
-    [categories addObject:customCategory];
+    [categoriesWithCustomCategory addObject:customCategory];
+    [categoriesWithCustomCategory unionSet:categories];
     UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
-    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categoriesWithCustomCategory];
     [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
