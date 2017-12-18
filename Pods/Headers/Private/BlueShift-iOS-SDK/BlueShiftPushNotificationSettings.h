@@ -1,1 +1,1 @@
-../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftPushNotificationSettings.h
+../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftPushNotificationSettings.h
