@@ -52,7 +52,7 @@
     //[config setEnableLocationAccess:NO];
     // Disable BlueShift Analytics
     //[config setEnableAnalytics:NO];
-    
+    [config setEnableIDFAFetch: NO];
     // Set the Two Predefined DeepLinking URL's ...
     [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductDetailViewController"]];
     [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductCartViewController"]];
@@ -178,6 +178,10 @@
 
 -(void) buyCategoryPushClickedWithDetails:(NSDictionary *)details {
     [self pushCartPage];
+}
+
+-(void) handleCarouselPushForCategory:(NSString *)categoryName clickedWithIndex:(NSInteger)index withDetails:(NSDictionary *)details {
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

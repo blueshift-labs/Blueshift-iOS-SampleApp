@@ -1,1 +1,1 @@
-../../../../../Blueshift-iOS-SDK/BlueShift-iOS-Extension-SDK/BlueShiftAppExtension.h
+../../../BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/BlueShiftAppExtension.h

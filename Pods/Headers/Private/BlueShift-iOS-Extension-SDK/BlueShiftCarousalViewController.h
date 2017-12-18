@@ -1,1 +1,1 @@
-../../../../../Blueshift-iOS-SDK/BlueShift-iOS-Extension-SDK/BlueShiftCarousalViewController.h
+../../../BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/BlueShiftCarousalViewController.h

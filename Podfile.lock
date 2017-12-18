@@ -1,8 +1,8 @@
 PODS:
-  - BlueShift-iOS-Extension-SDK (0.2.9)
-  - BlueShift-iOS-SDK (0.2.9):
-    - BlueShift-iOS-SDK/Core (= 0.2.9)
-  - BlueShift-iOS-SDK/Core (0.2.9)
+  - BlueShift-iOS-Extension-SDK (0.3.2)
+  - BlueShift-iOS-SDK (0.3.2):
+    - BlueShift-iOS-SDK/Core (= 0.3.2)
+  - BlueShift-iOS-SDK/Core (0.3.2)
   - IQKeyboardManager (3.3.7)
   - JSONModel (1.7.0)
   - MJPopupViewController (0.4)
@@ -13,8 +13,8 @@ PODS:
   - ViewDeck (2.2.11)
 
 DEPENDENCIES:
-  - BlueShift-iOS-Extension-SDK (from `/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SDK`)
-  - BlueShift-iOS-SDK (from `/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SDK`)
+  - BlueShift-iOS-Extension-SDK
+  - BlueShift-iOS-SDK
   - IQKeyboardManager
   - JSONModel
   - MJPopupViewController
@@ -22,22 +22,16 @@ DEPENDENCIES:
   - SVProgressHUD
   - ViewDeck (~> 2.2.11)
 
-EXTERNAL SOURCES:
-  BlueShift-iOS-Extension-SDK:
-    :path: "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SDK"
-  BlueShift-iOS-SDK:
-    :path: "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SDK"
-
 SPEC CHECKSUMS:
-  BlueShift-iOS-Extension-SDK: 9d17c82b19097fcea5f7f850ebf8263fde3a5652
-  BlueShift-iOS-SDK: 96e8d8be76f765ce75a1284522a94124219f09fe
+  BlueShift-iOS-Extension-SDK: 51c3a196af3d75b69cefb8305d1a3454f6362e5f
+  BlueShift-iOS-SDK: 4aa7637fcef18f6f151f1233b1c8763ee0cde8f7
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
-  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   ViewDeck: ce795f929d00d1e0fd63f61d79cc92a9ea050ec9
 
-PODFILE CHECKSUM: 9071e33104c883139cd82a57b545762ea2f2f0e2
+PODFILE CHECKSUM: 5a6752e68ca5d19f74a636b4ad7ff3ebe9b3a3bd
 
 COCOAPODS: 1.2.1
