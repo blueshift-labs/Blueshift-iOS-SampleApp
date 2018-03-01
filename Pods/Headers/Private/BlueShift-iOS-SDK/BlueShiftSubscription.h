@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSubscription.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSubscription.h

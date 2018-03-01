@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/NSNumber+BlueShiftHelpers.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/NSNumber+BlueShiftHelpers.h

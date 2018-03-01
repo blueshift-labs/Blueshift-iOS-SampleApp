@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BatchEventEntity.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BatchEventEntity.h

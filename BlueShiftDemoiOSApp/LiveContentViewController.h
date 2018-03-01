@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "WebViewPopUp.h"
 
-@interface LiveContentViewController : BaseViewController
+@interface LiveContentViewController : BaseViewController<WebViewPopUpDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *slotTextField;
 @property (weak, nonatomic) IBOutlet UIButton *emailButton;
 @property (weak, nonatomic) IBOutlet UIButton *deviceIDButton;
 @property (weak, nonatomic) IBOutlet UIButton *customerIDButton;
 @property (weak, nonatomic) IBOutlet UITextView *responseTextView;
+@property WebViewPopUp *webViewPopUp;
 
 - (IBAction)emailButtonDidPressed:(id)sender;
 - (IBAction)deviceIDButtonDidPressed:(id)sender;
