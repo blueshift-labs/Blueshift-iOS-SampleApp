@@ -81,7 +81,15 @@
 
 - (void)fetchLiveContentByEmail {
     NSString *slot = self.slotTextField.text;
-    [BlueShiftLiveContent fetchLiveContentByEmail:slot success:^(NSDictionary *dictionary) {
+//    [BlueShiftLiveContent fetchLiveContentByEmail:slot success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
+    NSDictionary *context = @{
+                                @"seed_item_ids": @[@"9780307273482"]
+                                };
+    [BlueShiftLiveContent fetchLiveContentByEmail:slot withContext:context success:^(NSDictionary *dictionary) {
         [self doTheStuff:dictionary];
     } failure:^(NSError *error) {
         self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
@@ -90,7 +98,15 @@
 
 - (void)fetchLiveContentByCustomerID {
     NSString *slot = self.slotTextField.text;
-    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot success:^(NSDictionary *dictionary) {
+//    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
+    NSDictionary *context = @{
+                              @"seed_item_ids": @[@"9780307273482"]
+                              };
+    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot withContext:context success:^(NSDictionary *dictionary) {
         [self doTheStuff:dictionary];
     } failure:^(NSError *error) {
         self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
@@ -99,7 +115,15 @@
 
 - (void)fetchLiveContentByDeviceID {
     NSString *slot = self.slotTextField.text;
-    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot success:^(NSDictionary *dictionary) {
+//    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
+    NSDictionary *context = @{
+                              @"seed_item_ids": @[@"9780307273482"]
+                              };
+    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot withContext:context success:^(NSDictionary *dictionary) {
         [self doTheStuff:dictionary];
     } failure:^(NSError *error) {
         self.responseTextView.text = [NSString stringWithFormat:@"%@", error];

@@ -15,6 +15,7 @@ target 'BlueShiftDemoiOSApp' do
   pod 'BlueShift-iOS-SDK', :path=> '/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SDK'
   #pod 'BlueShift-iOS-SDK', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git', :branch=> 'alert_view_deprecated'
   #pod 'BlueShift-iOS-SDK'
+  #pod 'BlueShift-iOS-SDK'
   #pod 'BlueShift-iOS-SDK', :git => 'https://github.com/blueshift-labs/Blueshift-iOS-SDK', :branch => 'real_event_with_queue'
 end
 
