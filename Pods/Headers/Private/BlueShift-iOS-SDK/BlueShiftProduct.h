@@ -1,1 +1,0 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftProduct.h

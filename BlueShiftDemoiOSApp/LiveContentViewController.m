@@ -37,12 +37,14 @@
     self.isEmail = true;
     self.isCustomerID = false;
     self.isDeviceID = false;
-    self.slotTextField.text = @"Editors_Picks_Json";
+    //self.slotTextField.text = @"Editors_Picks_Json";
+    self.slotTextField.text = @"careinappmessagingslot";
     self.responseTextView.text = @"";
     [self.responseTextView setBorderColour:[UIColor lightGrayColor] andBorderWidth:1.0];
     [self.responseTextView setCornerRadius:10.0];
 }
 - (IBAction)emailButtonDidPressed:(id)sender {
+    [self dismissKeyboard];
     [self.emailButton setImage:[UIImage imageNamed:@"radioButton"] forState:UIControlStateNormal];
     [self.customerIDButton setImage:[UIImage imageNamed:@"radioButtonInactive"] forState:UIControlStateNormal];
     [self.deviceIDButton setImage:[UIImage imageNamed:@"radioButtonInactive"] forState:UIControlStateNormal];
@@ -52,6 +54,7 @@
 }
 
 - (IBAction)deviceIDButtonDidPressed:(id)sender {
+    [self dismissKeyboard];
     [self.emailButton setImage:[UIImage imageNamed:@"radioButtonInactive"] forState:UIControlStateNormal];
     [self.customerIDButton setImage:[UIImage imageNamed:@"radioButtonInactive"] forState:UIControlStateNormal];
     [self.deviceIDButton setImage:[UIImage imageNamed:@"radioButton"] forState:UIControlStateNormal];
@@ -62,6 +65,7 @@
 }
 
 - (IBAction)customerIDButtonDidPressed:(id)sender {
+    [self dismissKeyboard];
     [self.emailButton setImage:[UIImage imageNamed:@"radioButtonInactive"] forState:UIControlStateNormal];
     [self.customerIDButton setImage:[UIImage imageNamed:@"radioButton"] forState:UIControlStateNormal];
     [self.deviceIDButton setImage:[UIImage imageNamed:@"radioButtonInactive"] forState:UIControlStateNormal];
@@ -71,36 +75,96 @@
 
 }
 
+- (void)dismissKeyboard {
+    [self.slotTextField resignFirstResponder];
+}
+
 - (void)fetchLiveContentByEmail {
     NSString *slot = self.slotTextField.text;
-    [BlueShiftLiveContent fetchLiveContentByEmail:slot success:^(NSDictionary *dictionary) {
-        self.responseTextView.text = [NSString stringWithFormat:@"%@", dictionary];
-    } failure:^(NSError *error) {
-        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
-    }];
+//    [BlueShiftLiveContent fetchLiveContentByEmail:slot success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
+    NSDictionary *context = @{
+                                @"seed_item_ids": @[@"9780307273482"]
+                                };
+//    [BlueShiftLiveContent fetchLiveContentByEmail:slot withContext:context success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
 }
 
 - (void)fetchLiveContentByCustomerID {
     NSString *slot = self.slotTextField.text;
-    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot success:^(NSDictionary *dictionary) {
-        self.responseTextView.text = [NSString stringWithFormat:@"%@", dictionary];
-    } failure:^(NSError *error) {
-        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
-    }];
+//    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
+    NSDictionary *context = @{
+                              @"seed_item_ids": @[@"9780307273482"]
+                              };
+//    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot withContext:context success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
 }
 
 - (void)fetchLiveContentByDeviceID {
     NSString *slot = self.slotTextField.text;
-    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot success:^(NSDictionary *dictionary) {
-        self.responseTextView.text = [NSString stringWithFormat:@"%@", dictionary];
-    } failure:^(NSError *error) {
-        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
-    }];
+//    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
+    NSDictionary *context = @{
+                              @"seed_item_ids": @[@"9780307273482"]
+                              };
+//    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot withContext:context success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
 }
 
+- (void)doTheStuff:(NSDictionary *)dictionary {
+    if([self isHtmlContentExist:dictionary]) {
+        NSDictionary *content = [dictionary objectForKey:@"content"];
+        [self showInAppNotification:[content objectForKey:@"html_content"]];
+    }
+    self.responseTextView.text = [NSString stringWithFormat:@"%@", dictionary];
+}
 
+- (BOOL)isHtmlContentExist:(NSDictionary *)dictionary {
+    NSDictionary *content = [dictionary objectForKey:@"content"];
+    if (content && [content objectForKey:@"html_content"]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (void)showInAppNotification:(NSString *)htmlContent {
+    self.webViewPopUp = [WebViewPopUp create];
+    self.webViewPopUp.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [self.webViewPopUp laodWebView:htmlContent];
+    [self.view insertSubview:self.webViewPopUp aboveSubview:self.view];
+    self.webViewPopUp.webViewPopUpDelegate = self;
+}
+
+- (void)closeButtonTapped {
+    [self dismissInAppNotification];
+}
+
+- (void)dismissInAppNotification {
+    [self.webViewPopUp removeFromSuperview];
+}
 
 - (IBAction)fetchLiveContentButtonDidPressed:(id)sender {
+    [self dismissKeyboard];
     if(self.isEmail) {
         [self fetchLiveContentByEmail];
     } else if(self.isCustomerID) {

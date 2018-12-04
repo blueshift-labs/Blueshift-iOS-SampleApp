@@ -9,6 +9,8 @@
 #import "BlueShiftNotificationConstants.h"
 #import "BlueShiftHttpRequestBatchUpload.h"
 
+#define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 @implementation BlueShiftAppDelegate
 
 - (id) init {
@@ -24,13 +26,22 @@
 - (void) registerForNotification {
     
     if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
-        [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    } else {
-     
-     // Ignore the warning for now.
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+        if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
+            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+            center.delegate = self.userNotificationDelegate;
+            [center setNotificationCategories: [[[BlueShift sharedInstance] userNotification] notificationCategories]];
+            [center requestAuthorizationWithOptions:([[[BlueShift sharedInstance] userNotification] notificationTypes]) completionHandler:^(BOOL granted, NSError * _Nullable error){
+                if(!error){
+                    dispatch_async(dispatch_get_main_queue(), ^(void) {
+                        [[UIApplication sharedApplication] registerForRemoteNotifications];
+                    });
+                }
+            }];
+        } else {
+            UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
+            [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+            [[UIApplication sharedApplication] registerForRemoteNotifications];
+        }
     }
 }
 
@@ -130,6 +141,18 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
+- (void)presentInAppAlert:(NSDictionary *)userInfo {
+    // Track notification view when app is open ...
+    //[self trackPushViewedWithParameters:pushTrackParameterDictionary];
+    
+    // Handle push notification when the app is in active state...
+    UIViewController *topViewController = [self topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    BlueShiftAlertView *pushNotificationAlertView = [[BlueShiftAlertView alloc] init];
+    pushNotificationAlertView.alertControllerDelegate = (id<BlueShiftAlertControllerDelegate>)self;
+    UIAlertController *blueShiftAlertViewController = [pushNotificationAlertView alertViewWithPushDetailsDictionary:userInfo];
+    [topViewController presentViewController:blueShiftAlertViewController animated:YES completion:nil];
+}
+
 - (void)handleLocalNotification:(NSDictionary *)userInfo forApplicationState:(UIApplicationState)applicationState {
     NSString *pushCategory = [[userInfo objectForKey:@"aps"] objectForKey:@"category"];
     self.pushAlertDictionary = [userInfo objectForKey:@"aps"];
@@ -138,16 +161,7 @@
     
     // Way to handle push notification in three states
     if (applicationState == UIApplicationStateActive) {
-        
-        // Track notification view when app is open ...
-        //[self trackPushViewedWithParameters:pushTrackParameterDictionary];
-        
-        // Handle push notification when the app is in active state...
-        UIViewController *topViewController = [self topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
-        BlueShiftAlertView *pushNotificationAlertView = [[BlueShiftAlertView alloc] init];
-        pushNotificationAlertView.alertControllerDelegate = (id<BlueShiftAlertControllerDelegate>)self;
-        UIAlertController *blueShiftAlertViewController = [pushNotificationAlertView alertViewWithPushDetailsDictionary:userInfo];
-        [topViewController presentViewController:blueShiftAlertViewController animated:YES completion:nil];
+        [self presentInAppAlert:userInfo];
     } else {
         
         // Handle push notification when the app is in inactive or background state ...
@@ -227,7 +241,7 @@
     self.pushAlertDictionary = [userInfo objectForKey:@"aps"];
     self.userInfo = userInfo;
     NSDictionary *pushTrackParameterDictionary = [self pushTrackParameterDictionaryForPushDetailsDictionary:userInfo];
-    
+    [self trackAppOpenWithParameters:pushTrackParameterDictionary];
     // Way to handle push notification in three states
     if (applicationState == UIApplicationStateActive) {
         
@@ -379,8 +393,7 @@
 - (void)handleCategoryForPromotionUsingPushDetailsDictionary:(NSDictionary *)pushDetailsDictionary {
     // Track notification when the page is deeplinked ...
     NSDictionary *pushTrackParameterDictionary = [self pushTrackParameterDictionaryForPushDetailsDictionary:self.userInfo];
-    [self trackAppOpenWithParameters:pushTrackParameterDictionary];
-    
+    [self trackPushClickedWithParameters:pushTrackParameterDictionary];
     if ([self.oldDelegate respondsToSelector:@selector(promotionCategoryPushClickedWithDetails:)]) {
         // User already implemented the promotionCategoryPushClickedWithDetails: in App Delegate...
         
@@ -808,6 +821,14 @@
     return [pushTrackParametersMutableDictionary copy];
 }
 
+- (BOOL)isSendPushAnalytics {
+    if (self.userInfo && self.userInfo[@"bsft_seed_list_send"] && [self.userInfo[@"bsft_seed_list_send"] boolValue] == YES) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
 - (void)trackAppOpen {
     [self trackAppOpenWithParameters:nil];
 }
@@ -827,15 +848,16 @@
 }
 
 - (void)trackPushViewedWithParameters:(NSDictionary *)parameters {
-    
-    NSMutableDictionary *parameterMutableDictionary = [NSMutableDictionary dictionary];
-    
-    if (parameters) {
-        [parameterMutableDictionary addEntriesFromDictionary:parameters];
-        [parameterMutableDictionary setObject:@"delivered" forKey:@"a"];
+    if ([self isSendPushAnalytics]) {
+        NSMutableDictionary *parameterMutableDictionary = [NSMutableDictionary dictionary];
+        
+        if (parameters) {
+            [parameterMutableDictionary addEntriesFromDictionary:parameters];
+            [parameterMutableDictionary setObject:@"delivered" forKey:@"a"];
+        }
+        
+        [self trackPushEventWithParameters:parameterMutableDictionary canBatchThisEvent:NO];
     }
-    
-    [self trackPushEventWithParameters:parameterMutableDictionary canBatchThisEvent:NO];
 }
 
 - (void)trackPushClicked {
@@ -843,14 +865,16 @@
 }
 
 - (void)trackPushClickedWithParameters:(NSDictionary *)parameters {
-    NSMutableDictionary *parameterMutableDictionary = [NSMutableDictionary dictionary];
-    
-    if (parameters) {
-        [parameterMutableDictionary addEntriesFromDictionary:parameters];
-        [parameterMutableDictionary setObject:@"click" forKey:@"a"];
+    if ([self isSendPushAnalytics]) {
+        NSMutableDictionary *parameterMutableDictionary = [NSMutableDictionary dictionary];
+        
+        if (parameters) {
+            [parameterMutableDictionary addEntriesFromDictionary:parameters];
+            [parameterMutableDictionary setObject:@"click" forKey:@"a"];
+        }
+        
+        [self trackPushEventWithParameters:parameterMutableDictionary canBatchThisEvent:NO];
     }
-    
-    [self trackPushEventWithParameters:parameterMutableDictionary canBatchThisEvent:NO];
 }
 
 - (void)trackPushEventWithParameters:(NSDictionary *)parameters canBatchThisEvent:(BOOL)isBatchEvent{

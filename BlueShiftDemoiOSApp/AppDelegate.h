@@ -10,7 +10,7 @@
 #import <BlueShift-iOS-SDK/BlueShift.h>
 #import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, BlueShiftPushDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
