@@ -1,0 +1,509 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/build/Build/Products/Debug-iphoneos/BlueShift-iOS-Extension-SDK",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "BlueShiftAppExtension.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/BlueShiftAppExtension.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftCarousalViewController.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/BlueShiftCarousalViewController.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftPushAnalytics.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/BlueShiftPushAnalytics.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftPushNotification.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/BlueShiftPushNotification.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDKVersion.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/SDKVersion.h"
+        },
+        {
+          'type': 'file',
+          'name': "iCarousel.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/iCarousel.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/build/Build/Products/Debug-iphoneos/BlueShift-iOS-SDK",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "BatchEventEntity.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BatchEventEntity.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShift.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShift.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftAlertView.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftAlertView.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftAppData.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftAppData.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftAppDelegate.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftAppDelegate.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftBatchRequestOperation.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftBatchRequestOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftBatchUploadConfig.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftBatchUploadConfig.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftConfig.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftConfig.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftDeepLink.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftDeepLink.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftDeviceData.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftDeviceData.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftHTTPMethod.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftHTTPMethod.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftHttpRequestBatchUpload.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftHttpRequestBatchUpload.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftLiveContent.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftLiveContent.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftMacros.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftMacros.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftNetworkReachabilityManager.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftNetworkReachabilityManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftNotificationConstants.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftNotificationConstants.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftProduct.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftProduct.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftPushDelegate.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftPushDelegate.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftPushNotificationSettings.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftPushNotificationSettings.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftPushParamDelegate.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftPushParamDelegate.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftRequestOperation.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftRequestOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftRequestOperationManager.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftRequestOperationManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftRequestQueue.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftRequestQueue.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftRequestQueueStatus.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftRequestQueueStatus.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftRoutes.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftRoutes.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftStatusCodes.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftStatusCodes.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftSubscription.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSubscription.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftSubscriptionState.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSubscriptionState.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftTrackEvents.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftTrackEvents.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftUserInfo.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftUserInfo.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftUserNotificationCenterDelegate.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftUserNotificationCenterDelegate.h"
+        },
+        {
+          'type': 'file',
+          'name': "BlueShiftUserNotificationSettings.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftUserNotificationSettings.h"
+        },
+        {
+          'type': 'file',
+          'name': "HttpRequestOperationEntity.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/HttpRequestOperationEntity.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSDate+BlueShiftDateHelpers.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/NSDate+BlueShiftDateHelpers.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSNumber+BlueShiftHelpers.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/NSNumber+BlueShiftHelpers.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDKVersion.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/BlueShift-iOS-SDK/BlueShift-iOS-SDK/SDKVersion.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/build/Build/Products/Debug-iphoneos/IQKeyboardManager",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "IQBarButtonItem.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/IQToolbar/IQBarButtonItem.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQKeyboardManager.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/IQKeyboardManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQKeyboardManagerConstants.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/Constants/IQKeyboardManagerConstants.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQKeyboardManagerConstantsInternal.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/Constants/IQKeyboardManagerConstantsInternal.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQKeyboardReturnKeyHandler.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/IQKeyboardReturnKeyHandler.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQNSArray+Sort.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/Categories/IQNSArray+Sort.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQTextView.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/IQTextView/IQTextView.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQTitleBarButtonItem.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/IQToolbar/IQTitleBarButtonItem.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQToolbar.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/IQToolbar/IQToolbar.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQUIScrollView+Additions.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/Categories/IQUIScrollView+Additions.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQUITextFieldView+Additions.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/Categories/IQUITextFieldView+Additions.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQUIView+Hierarchy.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/Categories/IQUIView+Hierarchy.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQUIView+IQKeyboardToolbar.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQUIViewController+Additions.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/Categories/IQUIViewController+Additions.h"
+        },
+        {
+          'type': 'file',
+          'name': "IQUIWindow+Hierarchy.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/Categories/IQUIWindow+Hierarchy.h"
+        },
+        {
+          'type': 'file',
+          'name': "KeyboardManager.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/IQKeyboardManager/IQKeyBoardManager/KeyboardManager.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/build/Build/Products/Debug-iphoneos/JSONModel",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "JSONAPI.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONAPI.h"
+        },
+        {
+          'type': 'file',
+          'name': "JSONHTTPClient.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.h"
+        },
+        {
+          'type': 'file',
+          'name': "JSONKeyMapper.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONKeyMapper.h"
+        },
+        {
+          'type': 'file',
+          'name': "JSONModel+networking.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONModel+networking.h"
+        },
+        {
+          'type': 'file',
+          'name': "JSONModel.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/JSONModel/JSONModel/JSONModel/JSONModel.h"
+        },
+        {
+          'type': 'file',
+          'name': "JSONModelClassProperty.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/JSONModel/JSONModel/JSONModel/JSONModelClassProperty.h"
+        },
+        {
+          'type': 'file',
+          'name': "JSONModelError.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/JSONModel/JSONModel/JSONModel/JSONModelError.h"
+        },
+        {
+          'type': 'file',
+          'name': "JSONModelLib.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/JSONModel/JSONModel/JSONModelLib.h"
+        },
+        {
+          'type': 'file',
+          'name': "JSONValueTransformer.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONValueTransformer.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/build/Build/Products/Debug-iphoneos/MJPopupViewController",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MJPopupBackgroundView.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/MJPopupViewController/Source/MJPopupBackgroundView.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIViewController+MJPopupViewController.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/MJPopupViewController/Source/UIViewController+MJPopupViewController.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/build/Build/Products/Debug-iphoneos/SDWebImage",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "NSData+ImageContentType.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/NSData+ImageContentType.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDImageCache.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/SDImageCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageCompat.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/SDWebImageCompat.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDecoder.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/SDWebImageDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDownloader.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/SDWebImageDownloader.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDownloaderOperation.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageManager.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/SDWebImageManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageOperation.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/SDWebImageOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImagePrefetcher.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIButton+WebCache.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/UIButton+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+GIF.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/UIImage+GIF.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+MultiFormat.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+HighlightedWebCache.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+WebCache.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIView+WebCacheOperation.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/build/Build/Products/Debug-iphoneos/SVProgressHUD",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "SVIndefiniteAnimatedView.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SVProgressHUD/SVProgressHUD/SVIndefiniteAnimatedView.h"
+        },
+        {
+          'type': 'file',
+          'name': "SVProgressAnimatedView.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SVProgressHUD/SVProgressHUD/SVProgressAnimatedView.h"
+        },
+        {
+          'type': 'file',
+          'name': "SVProgressHUD.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.h"
+        },
+        {
+          'type': 'file',
+          'name': "SVRadialGradientLayer.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/SVProgressHUD/SVProgressHUD/SVRadialGradientLayer.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/build/Build/Products/Debug-iphoneos/ViewDeck",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "IISideController.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/ViewDeck/ViewDeck/IISideController.h"
+        },
+        {
+          'type': 'file',
+          'name': "IIViewDeckController.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/ViewDeck/ViewDeck/IIViewDeckController.h"
+        },
+        {
+          'type': 'file',
+          'name': "IIWrapController.h",
+          'external-contents': "/Users/Prometheus/Desktop/WorkSpace/BlueShift/Blueshift-iOS-SampleApp/Pods/ViewDeck/ViewDeck/IIWrapController.h"
+        }
+      ]
+    }
+  ]
+}

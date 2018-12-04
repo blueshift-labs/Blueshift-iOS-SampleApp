@@ -89,11 +89,11 @@
     NSDictionary *context = @{
                                 @"seed_item_ids": @[@"9780307273482"]
                                 };
-    [BlueShiftLiveContent fetchLiveContentByEmail:slot withContext:context success:^(NSDictionary *dictionary) {
-        [self doTheStuff:dictionary];
-    } failure:^(NSError *error) {
-        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
-    }];
+//    [BlueShiftLiveContent fetchLiveContentByEmail:slot withContext:context success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
 }
 
 - (void)fetchLiveContentByCustomerID {
@@ -106,11 +106,11 @@
     NSDictionary *context = @{
                               @"seed_item_ids": @[@"9780307273482"]
                               };
-    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot withContext:context success:^(NSDictionary *dictionary) {
-        [self doTheStuff:dictionary];
-    } failure:^(NSError *error) {
-        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
-    }];
+//    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot withContext:context success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
 }
 
 - (void)fetchLiveContentByDeviceID {
@@ -123,11 +123,11 @@
     NSDictionary *context = @{
                               @"seed_item_ids": @[@"9780307273482"]
                               };
-    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot withContext:context success:^(NSDictionary *dictionary) {
-        [self doTheStuff:dictionary];
-    } failure:^(NSError *error) {
-        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
-    }];
+//    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot withContext:context success:^(NSDictionary *dictionary) {
+//        [self doTheStuff:dictionary];
+//    } failure:^(NSError *error) {
+//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+//    }];
 }
 
 - (void)doTheStuff:(NSDictionary *)dictionary {

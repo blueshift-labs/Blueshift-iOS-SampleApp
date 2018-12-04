@@ -15,6 +15,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Cart.h"
 
+#define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 
 @interface AppDelegate ()
@@ -48,7 +49,7 @@
     [config setApplicationLaunchOptions:launchOptions];
     //[config setUserNotificationDelegate:self];
     // Disable BlueShift Push Notification
-    //[config setEnablePushNotification:NO];
+    [config setEnablePushNotification:NO];
     // Disable BlueShift Analytics accessing location
     //[config setEnableLocationAccess:NO];
     // Disable BlueShift Analytics
@@ -58,7 +59,7 @@
     [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductDetailViewController"]];
     [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductCartViewController"]];
     [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/OfferViewController"]];
-    
+    //[config setEnableAppOpenTrackEvent:NO];
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
     // For Carousel deep linking
@@ -66,7 +67,7 @@
 
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];
-    [BlueShift autoIntegration];
+    //[BlueShift autoIntegration];
     
     [Cart sharedInstance];
     
@@ -75,6 +76,29 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
     [[BlueShift sharedInstance].appDelegate registerForRemoteNotification:deviceToken];
+    
+    
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
+            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+            center.delegate = self;
+            [center setNotificationCategories: [[[BlueShift sharedInstance] userNotification] notificationCategories]];
+            [center requestAuthorizationWithOptions:([[[BlueShift sharedInstance] userNotification] notificationTypes]) completionHandler:^(BOOL granted, NSError * _Nullable error){
+                if(!error){
+                    dispatch_async(dispatch_get_main_queue(), ^(void) {
+                        [[UIApplication sharedApplication] registerForRemoteNotifications];
+                    });
+                }
+            }];
+        } else {
+            UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
+            [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+            [[UIApplication sharedApplication] registerForRemoteNotifications];
+        }
+    }
+    
+    
+    
 //    UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
 //    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
 //    [[UIApplication sharedApplication] registerForRemoteNotifications];
@@ -112,11 +136,11 @@
 //    UIMutableUserNotificationCategory *carouselCategory = [[[BlueShift sharedInstance] pushNotification] carouselCategory];
 //    UIMutableUserNotificationCategory *carouselAnimationCategory = [[[BlueShift sharedInstance] pushNotification] carouselAnimationCategory];
 //
-//    NSSet *categories = [NSSet setWithObjects:buyCategory, viewCartCategory, oneButtonAlertCategory, twoButtonAlertCategory, carouselCategory, carouselAnimationCategory, nil];
-//    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
-//    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
-//    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-//    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    NSSet *categories = [[NSSet alloc] init];
+    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 

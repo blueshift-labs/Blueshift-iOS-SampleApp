@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>application-identifier</key>
+	<string>UJ5HGWR9W8.com.blueshift.readsapp.BlueShiftPushContent</string>
+	<key>aps-environment</key>
+	<string>development</string>
+	<key>com.apple.developer.team-identifier</key>
+	<string>UJ5HGWR9W8</string>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.blueshift.readsapp</string>
+	</array>
+	<key>get-task-allow</key>
+	<true/>
+</dict>
+</plist>

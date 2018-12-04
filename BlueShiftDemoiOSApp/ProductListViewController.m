@@ -38,11 +38,17 @@
 //            [[NSUserDefaults standardUserDefaults]synchronize];
 //        }
     
+    [self registerForRemoteNotification];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self customEvents];
+}
+
+- (void)registerForRemoteNotification {
+    //[[SOME_CLASS sharedInstance].isRemotePushEnabled] = YES;
+    [[BlueShift sharedInstance].appDelegate registerForNotification];
 }
 
 - (void)customEvents {
