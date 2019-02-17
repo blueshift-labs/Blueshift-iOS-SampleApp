@@ -1,0 +1,1 @@
+../../../BlueShift-iOS-Extension-SDK/BlueShift-iOS-Extension-SDK/SDKVersion.h
