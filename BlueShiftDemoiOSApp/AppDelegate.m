@@ -14,6 +14,7 @@
 #import "ProductListViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "Cart.h"
+#import "BlueShiftDelegates.h"
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -54,7 +55,6 @@
     //[config setEnableLocationAccess:NO];
     // Disable BlueShift Analytics
     //[config setEnableAnalytics:NO];
-    [config setEnableIDFAFetch: NO];
     // Set the Two Predefined DeepLinking URL's ...
     [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductDetailViewController"]];
     [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductCartViewController"]];
@@ -64,6 +64,11 @@
     
     // For Carousel deep linking
     [config setAppGroupID:@"group.blueshift.app"];
+    
+    // BlueShiftDelegates is the class for handling BlueShiftPushDelegate delegate Callbacks
+    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
+    
+    [config setBlueShiftPushDelegate:blueShiftDelegatge];
 
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];
@@ -209,6 +214,10 @@
 
 
 -(void) buyCategoryPushClickedWithDetails:(NSDictionary *)details {
+    [self pushCartPage];
+}
+
+-(void) promotionCategoryPushClickedWithDetails:(NSDictionary *)details {
     [self pushCartPage];
 }
 

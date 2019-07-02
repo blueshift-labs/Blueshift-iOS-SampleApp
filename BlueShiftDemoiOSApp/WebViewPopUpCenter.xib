@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="F0r-FB-wv4" userLabel="Web View Pop Up Center" customClass="WebViewPopUp">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9D-FC-qia" userLabel="transparentView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <wkWebView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fsZ-1q-Wyx">
+                    <rect key="frame" x="37.5" y="200" width="300" height="267"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxK-W3-QMU">
+                    <rect key="frame" x="37.5" y="477" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="f9B-qL-C9o"/>
+                    </constraints>
+                    <state key="normal" title="Close">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="closeButtonDidTapped:" destination="F0r-FB-wv4" eventType="touchUpInside" id="aLc-98-dDk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fsZ-1q-Wyx" firstAttribute="width" secondItem="F0r-FB-wv4" secondAttribute="width" multiplier="0.8" id="9n1-bN-her"/>
+                <constraint firstItem="M9D-FC-qia" firstAttribute="top" secondItem="F0r-FB-wv4" secondAttribute="top" id="AA1-Mb-Yj4"/>
+                <constraint firstItem="fsZ-1q-Wyx" firstAttribute="centerY" secondItem="F0r-FB-wv4" secondAttribute="centerY" id="EQ2-NC-dkm"/>
+                <constraint firstItem="sxK-W3-QMU" firstAttribute="centerX" secondItem="F0r-FB-wv4" secondAttribute="centerX" id="Jft-rJ-hQj"/>
+                <constraint firstItem="fsZ-1q-Wyx" firstAttribute="height" secondItem="F0r-FB-wv4" secondAttribute="height" multiplier="0.4" id="Nrr-qf-ciH"/>
+                <constraint firstItem="M9D-FC-qia" firstAttribute="leading" secondItem="F0r-FB-wv4" secondAttribute="leading" id="W46-4S-l5i"/>
+                <constraint firstAttribute="bottom" secondItem="M9D-FC-qia" secondAttribute="bottom" id="WrS-0n-SBo"/>
+                <constraint firstItem="sxK-W3-QMU" firstAttribute="width" secondItem="fsZ-1q-Wyx" secondAttribute="width" id="eFi-nY-2Qw"/>
+                <constraint firstAttribute="trailing" secondItem="M9D-FC-qia" secondAttribute="trailing" id="lUp-gP-g8k"/>
+                <constraint firstItem="sxK-W3-QMU" firstAttribute="top" secondItem="fsZ-1q-Wyx" secondAttribute="bottom" constant="10" id="tQQ-oM-auP"/>
+                <constraint firstItem="fsZ-1q-Wyx" firstAttribute="centerX" secondItem="F0r-FB-wv4" secondAttribute="centerX" id="y6j-pD-xxG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="juP-5I-VTh"/>
+            <connections>
+                <outlet property="closeButton" destination="sxK-W3-QMU" id="zX5-v0-DLu"/>
+                <outlet property="webView" destination="fsZ-1q-Wyx" id="O8j-yT-oJq"/>
+            </connections>
+            <point key="canvasLocation" x="-628" y="-269"/>
+        </view>
+    </objects>
+</document>

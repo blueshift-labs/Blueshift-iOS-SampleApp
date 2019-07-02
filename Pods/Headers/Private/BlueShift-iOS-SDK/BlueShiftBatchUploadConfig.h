@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftBatchUploadConfig.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftBatchUploadConfig.h

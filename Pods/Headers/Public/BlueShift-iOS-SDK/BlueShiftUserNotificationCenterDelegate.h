@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftUserNotificationCenterDelegate.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftUserNotificationCenterDelegate.h

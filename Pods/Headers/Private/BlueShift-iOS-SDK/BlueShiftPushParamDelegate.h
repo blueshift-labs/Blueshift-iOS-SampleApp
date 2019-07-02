@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftPushParamDelegate.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftPushParamDelegate.h

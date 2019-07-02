@@ -21,7 +21,7 @@
 - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
-    //[[BlueShiftPushNotification sharedInstance] setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
+    [[BlueShiftPushNotification sharedInstance] setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
     // Modify the notification content here...
     if([[BlueShiftPushNotification sharedInstance] isBlueShiftPushNotification:request]) {
         self.bestAttemptContent.attachments = [[BlueShiftPushNotification sharedInstance] integratePushNotificationWithMediaAttachementsForRequest:request];

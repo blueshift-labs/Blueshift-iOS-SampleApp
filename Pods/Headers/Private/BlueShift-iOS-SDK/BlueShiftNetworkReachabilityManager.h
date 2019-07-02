@@ -1,1 +1,1 @@
-../../../BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftNetworkReachabilityManager.h
+../../../../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftNetworkReachabilityManager.h

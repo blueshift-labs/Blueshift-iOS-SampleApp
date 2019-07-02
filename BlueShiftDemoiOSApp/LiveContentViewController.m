@@ -89,11 +89,11 @@
     NSDictionary *context = @{
                                 @"seed_item_ids": @[@"9780307273482"]
                                 };
-//    [BlueShiftLiveContent fetchLiveContentByEmail:slot withContext:context success:^(NSDictionary *dictionary) {
-//        [self doTheStuff:dictionary];
-//    } failure:^(NSError *error) {
-//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
-//    }];
+    [BlueShiftLiveContent fetchLiveContentByEmail:slot withContext:context success:^(NSDictionary *dictionary) {
+        [self doTheStuff:dictionary];
+    } failure:^(NSError *error) {
+        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+    }];
 }
 
 - (void)fetchLiveContentByCustomerID {
@@ -106,11 +106,11 @@
     NSDictionary *context = @{
                               @"seed_item_ids": @[@"9780307273482"]
                               };
-//    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot withContext:context success:^(NSDictionary *dictionary) {
-//        [self doTheStuff:dictionary];
-//    } failure:^(NSError *error) {
-//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
-//    }];
+    [BlueShiftLiveContent fetchLiveContentByCustomerID:slot withContext:context success:^(NSDictionary *dictionary) {
+        [self doTheStuff:dictionary];
+    } failure:^(NSError *error) {
+        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+    }];
 }
 
 - (void)fetchLiveContentByDeviceID {
@@ -123,17 +123,19 @@
     NSDictionary *context = @{
                               @"seed_item_ids": @[@"9780307273482"]
                               };
-//    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot withContext:context success:^(NSDictionary *dictionary) {
-//        [self doTheStuff:dictionary];
-//    } failure:^(NSError *error) {
-//        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
-//    }];
+    [BlueShiftLiveContent fetchLiveContentByDeviceID:slot withContext:context success:^(NSDictionary *dictionary) {
+        [self doTheStuff:dictionary];
+    } failure:^(NSError *error) {
+        self.responseTextView.text = [NSString stringWithFormat:@"%@", error];
+    }];
 }
 
 - (void)doTheStuff:(NSDictionary *)dictionary {
     if([self isHtmlContentExist:dictionary]) {
         NSDictionary *content = [dictionary objectForKey:@"content"];
-        [self showInAppNotification:[content objectForKey:@"html_content"]];
+        NSString *htmlContent = [content objectForKey:@"html_content"];
+        NSString *position = [content objectForKey:@"position"];
+        [self showInAppNotification: htmlContent withPosition:position];
     }
     self.responseTextView.text = [NSString stringWithFormat:@"%@", dictionary];
 }
@@ -147,12 +149,26 @@
     }
 }
 
-- (void)showInAppNotification:(NSString *)htmlContent {
-    self.webViewPopUp = [WebViewPopUp create];
+- (void)showInAppNotification:(NSString *)htmlContent withPosition:(NSString *)position {
+    self.webViewPopUp = [self createPopUp:position];
     self.webViewPopUp.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.webViewPopUp laodWebView:htmlContent];
     [self.view insertSubview:self.webViewPopUp aboveSubview:self.view];
     self.webViewPopUp.webViewPopUpDelegate = self;
+}
+
+- (WebViewPopUp *)createPopUp:(NSString *)position {
+    if([position isEqualToString:@"full"]) {
+        return [WebViewPopUp createFullView];
+    } else if([position isEqualToString:@"top"]) {
+        return [WebViewPopUp createTopView];
+    } else if([position isEqualToString:@"center"]) {
+        return [WebViewPopUp createCenterView];
+    } else if([position isEqualToString:@"bottom"]) {
+        return [WebViewPopUp createBottomView];
+    } else {
+        return [WebViewPopUp createFullView];
+    }
 }
 
 - (void)closeButtonTapped {

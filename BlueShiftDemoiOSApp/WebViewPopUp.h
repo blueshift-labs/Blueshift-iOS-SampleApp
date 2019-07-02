@@ -24,6 +24,10 @@
 - (IBAction)closeButtonDidTapped:(id)sender;
 
 + (WebViewPopUp *)create;
++ (WebViewPopUp *)createFullView;
++ (WebViewPopUp *)createTopView;
++ (WebViewPopUp *)createCenterView;
++ (WebViewPopUp *)createBottomView;
 - (void)laodWebView:(NSString *)htmlString;
 
 @end
