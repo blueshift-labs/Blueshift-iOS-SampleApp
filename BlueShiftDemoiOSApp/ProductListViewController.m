@@ -26,7 +26,6 @@
     self.navigationItem.title = @"Product List";
     [self addNavigationBarButtons];
     [self addSideMenuButtonToNavigationBar];
-    
     self.products =  [Cart fetchProducts];
     
 //        if ([[NSUserDefaults standardUserDefaults] integerForKey:@"FreshInstal"]==0) {
@@ -43,7 +42,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     [self customEvents];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [[BlueShift sharedInstance] unregisterForInAppMessage];
 }
 
 - (void)registerForRemoteNotification {
@@ -59,8 +65,6 @@
     [[BlueShift sharedInstance] trackEventForEventName:@"fifth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
     [[BlueShift sharedInstance] trackEventForEventName:@"sixth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
 }
-
-
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
@@ -117,6 +121,7 @@
     [self.navigationController setNavigationBarHidden:NO];
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
     [self.productListTableView reloadData];
+    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductListViewController class])];
 }
 
 

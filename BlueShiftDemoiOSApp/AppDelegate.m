@@ -15,6 +15,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Cart.h"
 #import "BlueShiftDelegates.h"
+#import "BlueShiftInAppNotificationDelegate.h"
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -51,6 +52,7 @@
     //[config setUserNotificationDelegate:self];
     // Disable BlueShift Push Notification
     [config setEnablePushNotification:NO];
+    [config setEnableInAppNotification: YES];
     // Disable BlueShift Analytics accessing location
     //[config setEnableLocationAccess:NO];
     // Disable BlueShift Analytics
@@ -67,7 +69,6 @@
     
     // BlueShiftDelegates is the class for handling BlueShiftPushDelegate delegate Callbacks
     BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
-    
     [config setBlueShiftPushDelegate:blueShiftDelegatge];
 
     // Initialize the configuration ...
@@ -83,24 +84,24 @@
     [[BlueShift sharedInstance].appDelegate registerForRemoteNotification:deviceToken];
     
     
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
-            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-            center.delegate = self;
-            [center setNotificationCategories: [[[BlueShift sharedInstance] userNotification] notificationCategories]];
-            [center requestAuthorizationWithOptions:([[[BlueShift sharedInstance] userNotification] notificationTypes]) completionHandler:^(BOOL granted, NSError * _Nullable error){
-                if(!error){
-                    dispatch_async(dispatch_get_main_queue(), ^(void) {
-                        [[UIApplication sharedApplication] registerForRemoteNotifications];
-                    });
-                }
-            }];
-        } else {
-            UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
-            [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-            [[UIApplication sharedApplication] registerForRemoteNotifications];
-        }
-    }
+//    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+//        if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
+//            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+//            center.delegate = self;
+//            [center setNotificationCategories: [[[BlueShift sharedInstance] userNotification] notificationCategories]];
+//            [center requestAuthorizationWithOptions:([[[BlueShift sharedInstance] userNotification] notificationTypes]) completionHandler:^(BOOL granted, NSError * _Nullable error){
+//                if(!error){
+//                    dispatch_async(dispatch_get_main_queue(), ^(void) {
+//                        [[UIApplication sharedApplication] registerForRemoteNotifications];
+//                    });
+//                }
+//            }];
+//        } else {
+//            UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
+//            [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+//            [[UIApplication sharedApplication] registerForRemoteNotifications];
+//        }
+//    }
     
     
     

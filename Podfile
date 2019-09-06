@@ -12,7 +12,8 @@ target 'BlueShiftDemoiOSApp' do
   pod 'SDWebImage'
   pod 'IQKeyboardManager'
   pod 'MJPopupViewController'
-  pod 'BlueShift-iOS-SDK', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
+  pod 'BlueShift-iOS-SDK', :path=> '/Users/noufal/Desktop/Projects/Ios/BlueShift/Blueshift-iOS-SDK'
+  #pod 'BlueShift-iOS-SDK', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
   #pod 'BlueShift-iOS-SDK', :path=> '/Users/Prometheus/Desktop/Blueshift-iOS-SDK'
   #pod 'BlueShift-iOS-SDK', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git', :branch=> 'alert_view_deprecated'
   #pod 'BlueShift-iOS-SDK'
@@ -21,7 +22,8 @@ target 'BlueShiftDemoiOSApp' do
 end
 
 target 'BlueShiftPushService' do
-    pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
+  pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/noufal/Desktop/Projects/Ios/BlueShift/Blueshift-iOS-SDK'
+  #pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/Prometheus/Desktop/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git'
@@ -30,7 +32,8 @@ target 'BlueShiftPushService' do
 end
 
 target 'BlueShiftPushContent' do
-    pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
+  pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/noufal/Desktop/Projects/Ios/BlueShift/Blueshift-iOS-SDK'
+  #pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-Extension-SDK', :path=> '/Users/Prometheus/Desktop/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git'
