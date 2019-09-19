@@ -142,11 +142,11 @@
 //    UIMutableUserNotificationCategory *carouselCategory = [[[BlueShift sharedInstance] pushNotification] carouselCategory];
 //    UIMutableUserNotificationCategory *carouselAnimationCategory = [[[BlueShift sharedInstance] pushNotification] carouselAnimationCategory];
 //
-    NSSet *categories = [[NSSet alloc] init];
-    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
-    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
-    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
+//    NSSet *categories = [[NSSet alloc] init];
+//    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
+//    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+//    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+//    [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 
