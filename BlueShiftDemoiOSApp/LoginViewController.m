@@ -31,6 +31,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    UIColor *placeHoldercolor = [UIColor darkGrayColor];
+    [self emailTextField].attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: placeHoldercolor}];
+    
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 

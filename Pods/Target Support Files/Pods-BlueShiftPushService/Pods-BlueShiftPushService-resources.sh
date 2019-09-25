@@ -97,15 +97,15 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld"
-  install_resource "${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel"
-  install_resource "${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel"
+  install_resource "${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld"
+  install_resource "${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel"
+  install_resource "${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/BlueShift-iOS-Extension-SDK/BlueShiftBundle.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld"
-  install_resource "${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel"
-  install_resource "${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel"
+  install_resource "${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld"
+  install_resource "${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel"
+  install_resource "${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/BlueShift-iOS-Extension-SDK/BlueShiftBundle.bundle"
 fi
 

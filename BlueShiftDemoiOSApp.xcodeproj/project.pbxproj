@@ -103,7 +103,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		08B30D17230AC2EF00CADD73 /* InAppNotificationEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InAppNotificationEntity.m; sourceTree = "<group>"; };
 		0C34A66E28F11FD659876B99 /* libPods-BlueShiftPushContent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftPushContent.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46EFA5A656C51B4913C2F91D /* Pods-BlueShiftDemoiOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.release.xcconfig"; path = "Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.release.xcconfig"; sourceTree = "<group>"; };
 		550C02521D8AFE7400DEAB4F /* BlueShiftDemoiOSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueShiftDemoiOSApp.entitlements; sourceTree = "<group>"; };
@@ -594,7 +593,6 @@
 		DC3D9EEA1A8A14B000177ABD = {
 			isa = PBXGroup;
 			children = (
-				08B30D17230AC2EF00CADD73 /* InAppNotificationEntity.m */,
 				DCAE22551AA70C5300111C83 /* Crashlytics.framework */,
 				DCAE22561AA70C5300111C83 /* Fabric.framework */,
 				DC3D9EF51A8A14B000177ABD /* BlueShiftDemoiOSApp */,
@@ -872,17 +870,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp-resources.sh",
-				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
-				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
-				"${PODS_CONFIGURATION_BUILD_DIR}/BlueShift-iOS-SDK/BlueShiftBundle.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.momd",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
@@ -1064,8 +1056,8 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushService/BlueShiftPushService.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
+				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = UJ5HGWR9W8;
@@ -1092,8 +1084,8 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushService/BlueShiftPushService.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
+				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1120,8 +1112,8 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushContent/BlueShiftPushContent.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
+				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = UJ5HGWR9W8;
 				ENABLE_TESTABILITY = YES;
@@ -1146,8 +1138,8 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushContent/BlueShiftPushContent.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
+				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UJ5HGWR9W8;
@@ -1255,8 +1247,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "BlueShiftDemoiOSApp/BlueShift Reads.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
+				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
 				DEVELOPMENT_TEAM = UJ5HGWR9W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1284,8 +1276,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "BlueShiftDemoiOSApp/BlueShift Reads.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shahas koorimanil patiyil (ELQZC575VA)";
+				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
 				DEVELOPMENT_TEAM = UJ5HGWR9W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
