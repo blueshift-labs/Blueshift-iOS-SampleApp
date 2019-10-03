@@ -83,24 +83,24 @@
     [[BlueShift sharedInstance].appDelegate registerForRemoteNotification:deviceToken];
     
     
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
-            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-            center.delegate = self;
-            [center setNotificationCategories: [[[BlueShift sharedInstance] userNotification] notificationCategories]];
-            [center requestAuthorizationWithOptions:([[[BlueShift sharedInstance] userNotification] notificationTypes]) completionHandler:^(BOOL granted, NSError * _Nullable error){
-                if(!error){
-                    dispatch_async(dispatch_get_main_queue(), ^(void) {
-                        [[UIApplication sharedApplication] registerForRemoteNotifications];
-                    });
-                }
-            }];
-        } else {
-            UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
-            [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-            [[UIApplication sharedApplication] registerForRemoteNotifications];
-        }
-    }
+//    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+//        if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
+//            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+//            center.delegate = self;
+//            [center setNotificationCategories: [[[BlueShift sharedInstance] userNotification] notificationCategories]];
+//            [center requestAuthorizationWithOptions:([[[BlueShift sharedInstance] userNotification] notificationTypes]) completionHandler:^(BOOL granted, NSError * _Nullable error){
+//                if(!error){
+//                    dispatch_async(dispatch_get_main_queue(), ^(void) {
+//                        [[UIApplication sharedApplication] registerForRemoteNotifications];
+//                    });
+//                }
+//            }];
+//        } else {
+//            UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
+//            [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+//            [[UIApplication sharedApplication] registerForRemoteNotifications];
+//        }
+//    }
     
     
     
@@ -141,11 +141,11 @@
 //    UIMutableUserNotificationCategory *carouselCategory = [[[BlueShift sharedInstance] pushNotification] carouselCategory];
 //    UIMutableUserNotificationCategory *carouselAnimationCategory = [[[BlueShift sharedInstance] pushNotification] carouselAnimationCategory];
 //
-    NSSet *categories = [[NSSet alloc] init];
-    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
-    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
-    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
+//    NSSet *categories = [[NSSet alloc] init];
+//    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
+//    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+//    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
+//    [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 
