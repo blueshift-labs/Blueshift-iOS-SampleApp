@@ -65,7 +65,7 @@
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
     // For Carousel deep linking
-    [config setAppGroupID:@"group.blueshift.app"];
+    [config setAppGroupID:@"group.blueshift.readsapp"];
     
     // BlueShiftDelegates is the class for handling BlueShiftPushDelegate delegate Callbacks
     BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
