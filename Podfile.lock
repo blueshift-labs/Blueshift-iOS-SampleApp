@@ -1,4 +1,8 @@
 PODS:
+  - BlueShift-iOS-Extension-SDK (2.0.0)
+  - BlueShift-iOS-SDK (2.0.0):
+    - BlueShift-iOS-SDK/Core (= 2.0.0)
+  - BlueShift-iOS-SDK/Core (2.0.0)
   - IQKeyboardManager (6.0.3)
   - JSONModel (1.7.0)
   - MJPopupViewController (0.4)
@@ -9,6 +13,8 @@ PODS:
   - ViewDeck (2.2.11)
 
 DEPENDENCIES:
+  - BlueShift-iOS-Extension-SDK (from `/Users/noufal/Desktop/Projects/Ios/BlueShift/Blueshift-iOS-SDK`)
+  - BlueShift-iOS-SDK (from `/Users/noufal/Desktop/Projects/Ios/BlueShift/Blueshift-iOS-SDK`)
   - IQKeyboardManager
   - JSONModel
   - MJPopupViewController
@@ -25,7 +31,15 @@ SPEC REPOS:
     - SVProgressHUD
     - ViewDeck
 
+EXTERNAL SOURCES:
+  BlueShift-iOS-Extension-SDK:
+    :path: "/Users/noufal/Desktop/Projects/Ios/BlueShift/Blueshift-iOS-SDK"
+  BlueShift-iOS-SDK:
+    :path: "/Users/noufal/Desktop/Projects/Ios/BlueShift/Blueshift-iOS-SDK"
+
 SPEC CHECKSUMS:
+  BlueShift-iOS-Extension-SDK: cc1d35ba7089b41d374ea45494fafd16e8a2cd65
+  BlueShift-iOS-SDK: 26ce0a272a5d31f77b2d1ad6d753d417ccd4bffe
   IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
@@ -33,6 +47,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   ViewDeck: ce795f929d00d1e0fd63f61d79cc92a9ea050ec9
 
-PODFILE CHECKSUM: 662c4ec1846a0dad8b1ee63fc5969c5b20dffb46
+PODFILE CHECKSUM: 011f4e105c3c652e0b87f3306e54312b068cdaca
 
 COCOAPODS: 1.8.3

@@ -65,6 +65,8 @@
    // [[BlueShift sharedInstance] createInAppNotification:dictionary2];
    UIViewController *viewController = [self topViewController];
     printf("%s", viewController);
+    
+    //[[BlueShift sharedInstance] triggerInAppNotification];
 }
 
 

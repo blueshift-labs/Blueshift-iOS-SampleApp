@@ -679,6 +679,7 @@
 				55BD2C081D91990F00422869 /* Sources */,
 				55BD2C091D91990F00422869 /* Frameworks */,
 				55BD2C0A1D91990F00422869 /* Resources */,
+				E4E7B79D373620C33A44A3A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -697,6 +698,7 @@
 				55BD2C181D92983400422869 /* Sources */,
 				55BD2C191D92983400422869 /* Frameworks */,
 				55BD2C1A1D92983400422869 /* Resources */,
+				5CE1B9C044A901D97E3D8263 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -870,17 +872,49 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp-resources.sh",
+				"${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
+				"${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
+				"${PODS_CONFIGURATION_BUILD_DIR}/BlueShift-iOS-SDK/BlueShiftBundle.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.momd",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CE1B9C044A901D97E3D8263 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent-resources.sh",
+				"${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
+				"${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
+				"${PODS_CONFIGURATION_BUILD_DIR}/BlueShift-iOS-Extension-SDK/BlueShiftBundle.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.momd",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftBundle.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5F225A17C5502093FEEF18F5 /* [CP] Check Pods Manifest.lock */ = {
@@ -939,6 +973,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "";
+		};
+		E4E7B79D373620C33A44A3A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService-resources.sh",
+				"${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
+				"${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/../../../../Ios/BlueShift/Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
+				"${PODS_CONFIGURATION_BUILD_DIR}/BlueShift-iOS-Extension-SDK/BlueShiftBundle.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.momd",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftBundle.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

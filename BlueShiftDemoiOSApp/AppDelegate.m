@@ -53,6 +53,7 @@
     // Disable BlueShift Push Notification
     [config setEnablePushNotification:NO];
     [config setEnableInAppNotification: YES];
+    [config setInAppManualTriggerEnabled: YES];
     // Disable BlueShift Analytics accessing location
     //[config setEnableLocationAccess:NO];
     // Disable BlueShift Analytics
