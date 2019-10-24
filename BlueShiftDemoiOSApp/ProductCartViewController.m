@@ -51,9 +51,10 @@
     
     //[[BlueShift sharedInstance] triggerInAppNotification];
     //[[BlueShift sharedInstance] fetchInAppNotificationFromAPI];
-    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^(void){
-        [[BlueShift sharedInstance] displayInAppNotification];
-    }];
+//    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^(void){
+//        [[BlueShift sharedInstance] displayInAppNotification];
+//    }];
+    [[BlueShift sharedInstance] displayInAppNotification];
 }
 
 - (void)didReceiveMemoryWarning {
