@@ -28,7 +28,7 @@ target 'BlueShiftPushService' do
     #pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git'
     #pod 'BlueShift-iOS-SDK/AppExtension'
-    #pod 'BlueShift-iOS-Extension-SDK', '~> 1.0.2-beta1'
+    #pod 'BlueShift-iOS-Extension-SDK'
 end
 
 target 'BlueShiftPushContent' do
@@ -38,6 +38,6 @@ target 'BlueShiftPushContent' do
     #pod 'BlueShift-iOS-SDK/AppExtension', :path=> '/Users/Prometheus/Desktop/BlueShift/Blueshift-iOS-SDK'
     #pod 'BlueShift-iOS-SDK/AppExtension', :git=> 'https://github.com/blueshift-labs/Blueshift-iOS-SDK.git'
     #pod 'BlueShift-iOS-SDK/AppExtension'
-    #pod 'BlueShift-iOS-Extension-SDK', '~> 1.0.2-beta1'
+    #pod 'BlueShift-iOS-Extension-SDK'
 
 end

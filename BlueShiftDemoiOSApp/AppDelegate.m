@@ -15,7 +15,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Cart.h"
 #import "BlueShiftDelegates.h"
-#import "BlueShiftInAppNotificationDelegate.h"
+#import "BlueshiftInAppDelegate.h"
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -53,7 +53,7 @@
     // Disable BlueShift Push Notification
     [config setEnablePushNotification:NO];
     [config setEnableInAppNotification: YES];
-    [config setInAppManualTriggerEnabled: YES];
+    [config setInAppManualTriggerEnabled: NO];
     // Disable BlueShift Analytics accessing location
     //[config setEnableLocationAccess:NO];
     // Disable BlueShift Analytics
@@ -71,7 +71,10 @@
     // BlueShiftDelegates is the class for handling BlueShiftPushDelegate delegate Callbacks
     BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
     [config setBlueShiftPushDelegate:blueShiftDelegatge];
-
+    
+    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
+    [config setInAppNotificationDelegate:inappDelegate];
+    
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];
     //[BlueShift autoIntegration];
