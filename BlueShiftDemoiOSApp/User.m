@@ -247,7 +247,7 @@ static User *_currentUser = NULL;
 + (void)fetchUserDetailsWithCompletionHandler:(void(^)(BOOL,BfErrorCode, NSString *))handler {
     User *currentUser = [User currentUser];
     NSString *urlTemplate = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteGetUserDetails];
-    NSString *url = [urlTemplate stringByReplacingOccurrencesOfString:@"__USER_ID__" withString:currentUser.userID];
+    //NSString *url = [urlTemplate stringByReplacingOccurrencesOfString:@"__USER_ID__" withString:currentUser.userID];
     
 //    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
 //    
@@ -279,7 +279,7 @@ static User *_currentUser = NULL;
 }
 
 + (void)forgotPassword:(NSString*)email withCompletionHandler:(void (^)(BOOL, BfErrorCode, NSString *))handler {
-    NSString *url = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteForgotPassword];
+    //NSString *url = [NSString stringWithFormat:@"%@%@",kBaseURL,kRouteForgotPassword];
     
 //    AFHTTPRequestOperationManager *operationManager = [AFHTTPRequestOperationManager manager];
 //    
