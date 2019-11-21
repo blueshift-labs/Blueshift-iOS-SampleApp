@@ -18,22 +18,22 @@ target 'BlueShiftDemoiOSApp' do
   pod 'SDWebImage'
   pod 'IQKeyboardManager'
   pod 'MJPopupViewController'
-  pod 'BlueShift-iOS-SDK', :path => $bsftLocalPath
+#  pod 'BlueShift-iOS-SDK', :path => $bsftLocalPath
 #  pod 'BlueShift-iOS-SDK', :git => $bsftGitURL
 #  pod 'BlueShift-iOS-SDK', $bsftVersion
-#  pod 'BlueShift-iOS-SDK'
+  pod 'BlueShift-iOS-SDK'
 end
 
 target 'BlueShiftPushService' do
-  pod 'BlueShift-iOS-Extension-SDK', :path => $bsftLocalPath
+#  pod 'BlueShift-iOS-Extension-SDK', :path => $bsftLocalPath
 #  pod 'BlueShift-iOS-Extension-SDK', :git => $bsftGitURL
 #  pod 'BlueShift-iOS-Extension-SDK', $bsftVersion
-#  pod 'BlueShift-iOS-Extension-SDK'
+  pod 'BlueShift-iOS-Extension-SDK'
 end
 
 target 'BlueShiftPushContent' do
-  pod 'BlueShift-iOS-Extension-SDK', :path => $bsftLocalPath
+#  pod 'BlueShift-iOS-Extension-SDK', :path => $bsftLocalPath
 #  pod 'BlueShift-iOS-Extension-SDK', :git => $bsftGitURL
 #  pod 'BlueShift-iOS-Extension-SDK', $bsftVersion
-#  pod 'BlueShift-iOS-Extension-SDK'
+  pod 'BlueShift-iOS-Extension-SDK'
 end
