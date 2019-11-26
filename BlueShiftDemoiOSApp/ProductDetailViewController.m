@@ -31,6 +31,19 @@
     [self inApp];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductDetailViewController class])];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [[BlueShift sharedInstance] unregisterForInAppMessage];
+}
+
 - (void)inApp {
     NSDictionary *dictionary = @{
                                  @"type": @"html",
@@ -39,7 +52,7 @@
                                  @"height": @"60",
                                  @"position": @"bottom"
                                  };
-    [[BlueShift sharedInstance] createInAppNotification:dictionary];
+   // [[BlueShift sharedInstance] createInAppNotification:dictionary];
     
     NSDictionary *dictionary2 = @{
                                  @"type": @"html",
@@ -49,7 +62,37 @@
                                  @"position": @"center",
                                  @"shadow_backround": @YES
                                  };
-    [[BlueShift sharedInstance] createInAppNotification:dictionary2];
+   // [[BlueShift sharedInstance] createInAppNotification:dictionary2];
+   UIViewController *viewController = [self topViewController];
+    printf("%s", viewController);
+    
+    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^(void) {
+        [[BlueShift sharedInstance] displayInAppNotification];
+    }];
+}
+
+
+- (UIViewController*)topViewController {
+    return [self topViewControllerWithRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
+- (UIViewController*)topViewControllerWithRootViewController:(UIViewController*)viewController {
+    if ([self isKindOfClass:[UITabBarController class]]){
+        UITabBarController *tabBarController = (UITabBarController *)viewController;
+        return [self topViewControllerWithRootViewController:tabBarController.selectedViewController];
+    }
+    else if ([self isKindOfClass:[UINavigationController class]]){
+        UINavigationController *navigationController = (UINavigationController *)viewController;
+        return [self topViewControllerWithRootViewController: navigationController.visibleViewController];
+    }
+    else if (self.presentedViewController){
+        return [self topViewControllerWithRootViewController: viewController.presentedViewController];
+    }
+    else if (self.childViewControllers.count > 0){
+        return [self topViewControllerWithRootViewController: viewController.childViewControllers.lastObject];
+    }
+    
+    return viewController;
 }
 
 - (void)createTapGesture {
@@ -75,14 +118,6 @@
 - (void)tapGestureAction {
     self.pickerView.hidden = true;
     self.tapGesture.enabled = false;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
-    //[[BlueShift sharedInstance] trackProductViewedWithSKU:@"PROM002" andCategoryID:10 canBatchThisEvent:YES];
-    //[[BlueShift sharedInstance] trackEventForEventName:@"test1" canBatchThisEvent:NO];
 }
 
 

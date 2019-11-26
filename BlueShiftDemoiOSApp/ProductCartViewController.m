@@ -48,6 +48,13 @@
     
     //self.products = @[product1, product2, product3];
     [self populateTableWithItems];
+    
+    //[[BlueShift sharedInstance] triggerInAppNotification];
+    //[[BlueShift sharedInstance] fetchInAppNotificationFromAPI];
+//    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^(void){
+//        [[BlueShift sharedInstance] displayInAppNotification];
+//    }];
+    [[BlueShift sharedInstance] displayInAppNotification];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,7 +65,14 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductCartViewController class])];
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+     [[BlueShift sharedInstance] unregisterForInAppMessage];
 }
 
 - (void)createBlueShiftProducts {

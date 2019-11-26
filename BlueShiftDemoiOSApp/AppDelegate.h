@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <BlueShift-iOS-SDK/BlueShift.h>
+#import "BlueshiftInAppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, BlueShiftPushDelegate>

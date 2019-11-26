@@ -15,6 +15,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Cart.h"
 #import "BlueShiftDelegates.h"
+#import "BlueshiftInAppDelegate.h"
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -51,6 +52,9 @@
     //[config setUserNotificationDelegate:self];
     // Disable BlueShift Push Notification
     [config setEnablePushNotification:NO];
+    [config setEnableInAppNotification: YES];
+    [config setInAppManualTriggerEnabled: YES];
+    [config setInAppBackgroundFetchEnabled: YES];
     // Disable BlueShift Analytics accessing location
     //[config setEnableLocationAccess:NO];
     // Disable BlueShift Analytics
@@ -63,13 +67,15 @@
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
     // For Carousel deep linking
-    [config setAppGroupID:@"group.blueshift.app"];
+    [config setAppGroupID:@"group.blueshift.readsapp"];
     
     // BlueShiftDelegates is the class for handling BlueShiftPushDelegate delegate Callbacks
     BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
-    
     [config setBlueShiftPushDelegate:blueShiftDelegatge];
-
+    
+    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
+    [config setInAppNotificationDelegate:inappDelegate];
+    
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];
     //[BlueShift autoIntegration];
@@ -175,12 +181,8 @@
     [[BlueShift sharedInstance].appDelegate application:application handleRemoteNotification:userInfo];
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(nonnull UILocalNotification *)notification {
-    [[BlueShift sharedInstance].appDelegate application:application handleLocalNotification:notification];
-}
-
 - (void)application:(UIApplication *) application handleActionWithIdentifier: (NSString *) identifier forRemoteNotification: (NSDictionary *) notification
-  completionHandler: (void (^)()) completionHandler {
+  completionHandler: (void (^)(void)) completionHandler {
     if (![BlueShift sharedInstance].appDelegate) {
         [BlueShift sharedInstance].appDelegate = [[BlueShiftAppDelegate alloc] init];
         [BlueShift sharedInstance].appDelegate.oldDelegate = [UIApplication sharedApplication].delegate;
@@ -243,6 +245,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)actionButtonDidTapped:(NSDictionary *)payloadDictionary {
+    [self pushCartPage];
 }
 
 @end

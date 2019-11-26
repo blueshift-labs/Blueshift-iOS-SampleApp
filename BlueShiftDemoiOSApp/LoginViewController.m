@@ -31,6 +31,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    UIColor *placeHoldercolor = [UIColor darkGrayColor];
+    [self emailTextField].attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: placeHoldercolor}];
+    
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 }
 
@@ -48,7 +51,7 @@
     NSString *email = self.emailTextField.text;
     [[BlueShiftUserInfo sharedInstance] setEmail:email];
     //[[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:[NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]]];
-    NSString *customerID = [self md5HexDigest:self.emailTextField.text];
+    //NSString *customerID = [self md5HexDigest:self.emailTextField.text];
     //[[BlueShiftUserInfo sharedInstance] setRetailerCustomerID:customerID];
     [[BlueShiftUserInfo sharedInstance] setUnsubscribed:NO];
     [[BlueShiftUserInfo sharedInstance] save];

@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"Live Content";
     [self initUIComponents];
 }
 
@@ -40,6 +41,7 @@
     //self.slotTextField.text = @"Editors_Picks_Json";
     self.slotTextField.text = @"careinappmessagingslot";
     self.responseTextView.text = @"";
+    [self.responseTextView setBackgroundColor: [UIColor whiteColor]];
     [self.responseTextView setBorderColour:[UIColor lightGrayColor] andBorderWidth:1.0];
     [self.responseTextView setCornerRadius:10.0];
 }

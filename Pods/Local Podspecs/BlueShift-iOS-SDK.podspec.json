@@ -1,8 +1,8 @@
 {
   "name": "BlueShift-iOS-SDK",
-  "version": "0.4.2",
+  "version": "2.0.1",
   "summary": "iOS SDK for integrating push notification and analytics",
-  "description": "A longer description of BlueShift-iOS-SDK in Markdown format.\n\n* Think: Why did you write this? What is the focus? What does it do?\n* CocoaPods will be using this to generate tags, and improve search results.\n* Try to keep it short, snappy and to the point.\n* Finally, don't worry about the indent, CocoaPods strips it!",
+  "description": "A longer description of BlueShift-iOS-SDK in Markdown format.\n* Think: Why did you write this? What is the focus? What does it do?\n* CocoaPods will be using this to generate tags, and improve search results.\n* Try to keep it short, snappy and to the point.\n* Finally, don't worry about the indent, CocoaPods strips it!",
   "homepage": "https://github.com/blueshift-labs/Blueshift-iOS-SDK",
   "license": {
     "type": "MIT",
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/blueshift-labs/BlueShift-iOS-SDK.git",
-    "tag": "0.4.2"
+    "tag": "2.0.1"
   },
   "exclude_files": "Classes/Exclude",
   "default_subspecs": "Core",
@@ -25,12 +25,12 @@
   "subspecs": [
     {
       "name": "Core",
-      "source_files": "BlueShift-iOS-SDK/*.{h,m}",
+      "source_files": "BlueShift-iOS-SDK/**/*.{h,m}",
       "public_header_files": "BlueShift-iOS-SDK/**/*.h",
       "exclude_files": "Classes/Exclude",
-      "resources": "BlueShift-iOS-SDK/**/*.{xcdatamodeld,xcdatamodel}",
+      "resources": "BlueShift-iOS-SDK/**/*.{xcdatamodeld,xcdatamodel,png}",
       "resource_bundles": {
-        "BlueShiftBundle": "BlueShift-iOS-SDK/**/*.{xcdatamodeld,xcdatamodel}"
+        "BlueShiftBundle": "BlueShift-iOS-SDK/**/*.{xcdatamodeld,xcdatamodel,png}"
       }
     },
     {
