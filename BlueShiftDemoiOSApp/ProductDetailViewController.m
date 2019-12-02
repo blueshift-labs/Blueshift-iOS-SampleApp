@@ -66,9 +66,9 @@
    UIViewController *viewController = [self topViewController];
     printf("%s", viewController);
     
-    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^(void) {
-        [[BlueShift sharedInstance] displayInAppNotification];
-    }];
+//    //[[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^(void) {
+//        [[BlueShift sharedInstance] displayInAppNotification];
+//    }];
 }
 
 

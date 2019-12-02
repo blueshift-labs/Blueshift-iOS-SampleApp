@@ -51,10 +51,12 @@
     
     //[[BlueShift sharedInstance] triggerInAppNotification];
     //[[BlueShift sharedInstance] fetchInAppNotificationFromAPI];
-//    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^(void){
-//        [[BlueShift sharedInstance] displayInAppNotification];
-//    }];
-    [[BlueShift sharedInstance] displayInAppNotification];
+    
+    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^(){
+       [[BlueShift sharedInstance] displayInAppNotification];
+    } failure:^(NSError *error){
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
