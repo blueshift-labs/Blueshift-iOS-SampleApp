@@ -22,6 +22,7 @@
 		5828FACEC0FDDBF84CB570DC /* libPods-BlueShiftDemoiOSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61C27C5F30B2780AC6D1C841 /* libPods-BlueShiftDemoiOSApp.a */; };
 		5E48073B4D5E71DE32397999 /* libPods-BlueShiftPushService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B759AE62504CB4D631C40DB /* libPods-BlueShiftPushService.a */; };
 		AD28D4193EC4A8610B2E3BB0 /* libPods-BlueShiftPushContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C34A66E28F11FD659876B99 /* libPods-BlueShiftPushContent.a */; };
+		B7CA78E223A8B18200989D73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7CA78E123A8B18200989D73 /* GoogleService-Info.plist */; };
 		C202340F221970AF00F9A5E9 /* WebViewPopUpFull.xib in Resources */ = {isa = PBXBuildFile; fileRef = C202340E221970AF00F9A5E9 /* WebViewPopUpFull.xib */; };
 		C20234112219716A00F9A5E9 /* WebViewPopUpTop.xib in Resources */ = {isa = PBXBuildFile; fileRef = C20234102219716A00F9A5E9 /* WebViewPopUpTop.xib */; };
 		C2023413221971EB00F9A5E9 /* WebViewPopUpCenter.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2023412221971EB00F9A5E9 /* WebViewPopUpCenter.xib */; };
@@ -135,6 +136,7 @@
 		5DA73702B39C3A7FAC5C50C7 /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.debug.xcconfig"; path = "Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		61C27C5F30B2780AC6D1C841 /* libPods-BlueShiftDemoiOSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftDemoiOSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B759AE62504CB4D631C40DB /* libPods-BlueShiftPushService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftPushService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7CA78E123A8B18200989D73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C202340E221970AF00F9A5E9 /* WebViewPopUpFull.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewPopUpFull.xib; sourceTree = "<group>"; };
 		C20234102219716A00F9A5E9 /* WebViewPopUpTop.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewPopUpTop.xib; sourceTree = "<group>"; };
 		C2023412221971EB00F9A5E9 /* WebViewPopUpCenter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewPopUpCenter.xib; sourceTree = "<group>"; };
@@ -622,6 +624,7 @@
 		DC3D9EF51A8A14B000177ABD /* BlueShiftDemoiOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				B7CA78E123A8B18200989D73 /* GoogleService-Info.plist */,
 				C24C3FEC1EDEB5B8002F7DB8 /* BlueShift Reads.entitlements */,
 				550C02521D8AFE7400DEAB4F /* BlueShiftDemoiOSApp.entitlements */,
 				DC1B4B581A8BBFB900F2C579 /* Constants */,
@@ -836,6 +839,7 @@
 			files = (
 				DC3D9F021A8A14B000177ABD /* Main.storyboard in Resources */,
 				C20234152219723800F9A5E9 /* WebViewPopUpBottom.xib in Resources */,
+				B7CA78E223A8B18200989D73 /* GoogleService-Info.plist in Resources */,
 				DC3D9F071A8A14B000177ABD /* LaunchScreen.xib in Resources */,
 				C20234112219716A00F9A5E9 /* WebViewPopUpTop.xib in Resources */,
 				C267DE5E2022E036008EBF4C /* WebViewPopUp.xib in Resources */,

@@ -19,6 +19,7 @@ target 'BlueShiftDemoiOSApp' do
   #pod 'BlueShift-iOS-SDK', '~> 1.0.2-beta1'
   pod 'BlueShift-iOS-SDK'
   #pod 'BlueShift-iOS-SDK', :git => 'https://github.com/blueshift-labs/Blueshift-iOS-SDK', :branch => 'real_event_with_queue'
+  pod 'Firebase/Analytics'
 end
 
 target 'BlueShiftPushService' do
