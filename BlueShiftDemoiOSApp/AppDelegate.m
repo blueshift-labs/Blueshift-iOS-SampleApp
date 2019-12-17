@@ -16,6 +16,7 @@
 #import "Cart.h"
 #import "BlueShiftDelegates.h"
 #import "BlueshiftInAppDelegate.h"
+#import <Firebase/Firebase.h>
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -29,7 +30,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    [FIRApp configure];
     [Fabric with:@[CrashlyticsKit]];
     
     // Push Notification
