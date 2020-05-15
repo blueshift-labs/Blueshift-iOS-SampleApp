@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:ps.getblueshift.com</string>
+		<string>applinks:universallinks.blueshiftreads.com</string>
 		<string>applinks:www.ps.getblueshift.com</string>
 	</array>
 	<key>com.apple.security.application-groups</key>

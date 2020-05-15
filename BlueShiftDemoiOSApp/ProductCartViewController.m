@@ -48,15 +48,6 @@
     
     //self.products = @[product1, product2, product3];
     [self populateTableWithItems];
-    
-    //[[BlueShift sharedInstance] triggerInAppNotification];
-    //[[BlueShift sharedInstance] fetchInAppNotificationFromAPI];
-    
-    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^(){
-       [[BlueShift sharedInstance] displayInAppNotification];
-    } failure:^(NSError *error){
-        
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

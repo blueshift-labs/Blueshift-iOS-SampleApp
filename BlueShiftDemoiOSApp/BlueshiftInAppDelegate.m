@@ -11,7 +11,7 @@
 @implementation BlueshiftInAppDelegate
 
 - (void)actionButtonDidTapped:(NSDictionary *)payloadDictionary {
-    NSLog(@"inapp notification clicked");
+    NSLog(@"inapp notification clicked%@", payloadDictionary);
 }
 
 - (void)inAppNotificationWillAppear:(NSDictionary *)notificationDictionary {

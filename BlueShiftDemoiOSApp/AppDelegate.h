@@ -11,7 +11,7 @@
 #import "BlueshiftInAppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, BlueShiftPushDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, BlueShiftPushDelegate, BlueShiftInAppNotificationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

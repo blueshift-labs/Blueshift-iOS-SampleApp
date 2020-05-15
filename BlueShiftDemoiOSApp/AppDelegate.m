@@ -50,9 +50,9 @@
     
     // Set the applications launch Options for SDK to track ...
     [config setApplicationLaunchOptions:launchOptions];
-    //[config setUserNotificationDelegate:self];
+    [config setUserNotificationDelegate:self];
     // Disable BlueShift Push Notification
-    [config setEnablePushNotification:NO];
+    [config setEnablePushNotification:YES];
     [config setEnableInAppNotification: YES];
     [config setInAppManualTriggerEnabled: NO];
     [config setInAppBackgroundFetchEnabled: YES];
@@ -88,7 +88,6 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
     [[BlueShift sharedInstance].appDelegate registerForRemoteNotification:deviceToken];
-    
 }
 
 
@@ -152,6 +151,15 @@
 }
 
 
+- (void)pushProductDetails:(NSDictionary *)details {
+    //pushing cart page through deckview controller
+    
+    ProductDetailViewController *detailsViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+    detailsViewController.data = details;
+    [(UINavigationController *)self.window.rootViewController pushViewController:detailsViewController animated:YES];
+}
+
+
 -(void) buyCategoryPushClickedWithDetails:(NSDictionary *)details {
     [self pushCartPage];
 }
@@ -186,6 +194,41 @@
 
 - (void)actionButtonDidTapped:(NSDictionary *)payloadDictionary {
     [self pushCartPage];
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    [self pushCartPage];
+    
+    
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
+    if ([userActivity.activityType isEqualToString: NSUserActivityTypeBrowsingWeb]) {
+        NSURL *url = userActivity.webpageURL;
+        [[BlueShift sharedInstance] handleBlueshiftLink: url handler:^(NSURL *url){
+            if (url!= nil && [url absoluteString].length > 0  ) {
+                NSString *lastComponent = [url lastPathComponent];
+                if (lastComponent && ![lastComponent isEqualToString:@""]) {
+                    NSDictionary *data = [Cart fetchProduct: lastComponent];
+                    if (data) {
+                        double delayInSeconds = 0.5;
+                        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                            [self pushProductDetails: data];
+                        });
+                    }
+                    
+                }
+              
+            }
+        }];
+        
+        return  true;
+    }
+    
+     
+    return false;
 }
 
 @end

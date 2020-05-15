@@ -42,8 +42,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    [self customEvents];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -55,15 +53,6 @@
 - (void)registerForRemoteNotification {
     //[[SOME_CLASS sharedInstance].isRemotePushEnabled] = YES;
     [[BlueShift sharedInstance].appDelegate registerForNotification];
-}
-
-- (void)customEvents {
-    [[BlueShift sharedInstance] trackEventForEventName:@"first" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"second" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"third" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"fourth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"fifth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"sixth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
 }
 
 - (void)viewDidLayoutSubviews {
