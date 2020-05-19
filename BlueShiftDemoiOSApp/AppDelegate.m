@@ -68,7 +68,7 @@
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
     // For Carousel deep linking
-    [config setAppGroupID:@"group.blueshift.readsapp"];
+    [config setAppGroupID:@"group.blueshift.reads"];
     
     // BlueShiftDelegates is the class for handling BlueShiftPushDelegate delegate Callbacks
     BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
@@ -198,37 +198,21 @@
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     [self pushCartPage];
-    
-    
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
+ restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
     if ([userActivity.activityType isEqualToString: NSUserActivityTypeBrowsingWeb]) {
         NSURL *url = userActivity.webpageURL;
-        [[BlueShift sharedInstance] handleBlueshiftLink: url handler:^(NSURL *url){
-            if (url!= nil && [url absoluteString].length > 0  ) {
-                NSString *lastComponent = [url lastPathComponent];
-                if (lastComponent && ![lastComponent isEqualToString:@""]) {
-                    NSDictionary *data = [Cart fetchProduct: lastComponent];
-                    if (data) {
-                        double delayInSeconds = 0.5;
-                        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-                        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                            [self pushProductDetails: data];
-                        });
-                    }
-                    
-                }
-              
-            }
+        [[BlueShift sharedInstance] handleBlueshiftLink:url handler:^(NSURL *redirectURL){
+            NSLog(@"%@ redirect url", redirectURL.absoluteString);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication.sharedApplication openURL:redirectURL options: @{} completionHandler:nil];
+            });
         }];
-        
-        return  true;
     }
-    
-     
-    return false;
+    return YES;
 }
 
 @end
