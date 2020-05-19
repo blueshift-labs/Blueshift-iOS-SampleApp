@@ -28,7 +28,7 @@
     
     // Modify the notification content here...
     if([[BlueShiftPushNotification sharedInstance] isBlueShiftPushNotification:request]) {
-        self.bestAttemptContent.attachments = [[BlueShiftPushNotification sharedInstance] integratePushNotificationWithMediaAttachementsForRequest:request andAppGroupID:@"group.blueshift.readsapp"];
+        self.bestAttemptContent.attachments = [[BlueShiftPushNotification sharedInstance] integratePushNotificationWithMediaAttachementsForRequest:request andAppGroupID:@"group.blueshift.reads"];
     } else {
         // Your Custom code comes here
     }

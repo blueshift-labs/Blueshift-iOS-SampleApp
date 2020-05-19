@@ -7,11 +7,10 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>applinks:universallinks.blueshiftreads.com</string>
-		<string>applinks:www.ps.getblueshift.com</string>
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.blueshift.readsapp</string>
+		<string>group.blueshift.reads</string>
 	</array>
 </dict>
 </plist>

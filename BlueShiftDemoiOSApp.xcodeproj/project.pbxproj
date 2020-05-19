@@ -749,8 +749,8 @@
 				TargetAttributes = {
 					55BD2C0B1D91990F00422869 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = UJ5HGWR9W8;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 9YR8UTRCDU;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -762,8 +762,8 @@
 					};
 					55BD2C1B1D92983400422869 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = UJ5HGWR9W8;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 9YR8UTRCDU;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -775,8 +775,8 @@
 					};
 					DC3D9EF21A8A14B000177ABD = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = UJ5HGWR9W8;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 9YR8UTRCDU;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1118,22 +1118,22 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushService/BlueShiftPushService.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = UJ5HGWR9W8;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BlueShiftPushService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.readsapp.NotificationExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dac08a53-e4fd-4146-bbfd-ed7e7a590fd8";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Service Ext Developemnt Pro Pro";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1148,22 +1148,22 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushService/BlueShiftPushService.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = UJ5HGWR9W8;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BlueShiftPushService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.readsapp.NotificationExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8ff05cda-cbc6-4088-aff0-11c5d94f19cb";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Service Ext Developemnt Pro Pro";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1178,21 +1178,22 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushContent/BlueShiftPushContent.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = UJ5HGWR9W8;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BlueShiftPushContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.readsapp.BlueShiftPushContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e54b171e-7139-4571-9721-79ca2153ae4c";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Content Ext Developemnt Pro Pro";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1207,21 +1208,22 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_ENTITLEMENTS = BlueShiftPushContent/BlueShiftPushContent.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = UJ5HGWR9W8;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BlueShiftPushContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.readsapp.BlueShiftPushContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6bd5af09-5e84-4927-a4c2-6c8ad1d11d1a";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift Content Ext Developemnt Pro Pro";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1255,10 +1257,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = UJ5HGWR9W8;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1279,7 +1281,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "a4afda18-857f-448c-8a57-1809c73c9324";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1313,10 +1315,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = UJ5HGWR9W8;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1329,7 +1331,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "a4afda18-857f-448c-8a57-1809c73c9324";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1344,10 +1346,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "BlueShiftDemoiOSApp/BlueShift Reads.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = UJ5HGWR9W8;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1358,10 +1361,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.readsapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "BlueShift Reads";
-				PROVISIONING_PROFILE = "a4afda18-857f-448c-8a57-1809c73c9324";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift App Development Pro Pro";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Headers/**";
 			};
@@ -1375,10 +1378,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "BlueShiftDemoiOSApp/BlueShift Reads.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development: Noufal V S (6TGG3MQ234)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Noufal V S (6TGG3MQ234)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = UJ5HGWR9W8;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1389,10 +1393,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.readsapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "BlueShift Reads";
-				PROVISIONING_PROFILE = "dbdfbd80-4c91-41eb-abe7-e71c291922c0";
-				PROVISIONING_PROFILE_SPECIFIER = "BlueShift App Development Pro Pro";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Headers/**";
 			};

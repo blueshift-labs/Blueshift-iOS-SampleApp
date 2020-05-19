@@ -7,7 +7,7 @@ workspace 'BlueShiftDemoiOSApp.xcworkspace'
 
 # TODO: Set BSFT_IOS_SDK_PATH in your ~/.bashrc or ~/.bash_profile before 'pod install'
 # export BSFT_IOS_SDK_PATH=$HOME/Blueshift/Blueshift-iOS-SDK
-$bsftLocalPath = '/Users/noufal/Desktop/Projects/IOS/Blueshift/Blueshift-iOS-SDK'
+$bsftLocalPath = '/Users/administrator/Blueshift-iOS-SDK'
 $bsftVersion = '~> 2.0.1'
 $bsftGitURL = 'https://github.com/blueshift-labs/Blueshift-iOS-SDK'
 
