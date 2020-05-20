@@ -76,7 +76,9 @@
     
     BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
     [config setInAppNotificationDelegate:inappDelegate];
-    
+
+    [config setBlueShiftUniversalLinksDelegate:self];
+
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];
     //[BlueShift autoIntegration];
@@ -97,6 +99,18 @@
     }];
 }
 
+-(void)didReceiveBlueshiftAttributionData:(NSURL *)url {
+    NSLog(@"%@", url);
+    NSString *productURL = [[url.absoluteString componentsSeparatedByString:@"?"] firstObject];
+    NSArray* products = Cart.fetchProducts;
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.web_url = %@",productURL];
+    NSDictionary *details = [[products filteredArrayUsingPredicate:bPredicate] firstObject];
+    [self pushProductDetails:details];
+}
+
+- (void)didFailedToReceiveBlueshiftAttributionData:(NSError *)error {
+    NSLog(@"%@", error);
+}
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
     [[BlueShift sharedInstance].userNotificationDelegate handleUserNotification:center didReceiveNotificationResponse:response withCompletionHandler:^{
@@ -203,15 +217,8 @@
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
-    if ([userActivity.activityType isEqualToString: NSUserActivityTypeBrowsingWeb]) {
-        NSURL *url = userActivity.webpageURL;
-        [[BlueShift sharedInstance] handleBlueshiftLink:url handler:^(NSURL *redirectURL){
-            NSLog(@"%@ redirect url", redirectURL.absoluteString);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [UIApplication.sharedApplication openURL:redirectURL options: @{} completionHandler:nil];
-            });
-        }];
-    }
+    BOOL isBlueshiftURL = [[BlueShift sharedInstance].appDelegate continueUserActivity:userActivity];
+    NSLog(@"%@", isBlueshiftURL? @"YES" : @"NO");
     return YES;
 }
 

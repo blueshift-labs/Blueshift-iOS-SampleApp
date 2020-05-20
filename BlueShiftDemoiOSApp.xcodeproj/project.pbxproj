@@ -879,11 +879,10 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp-resources.sh",
-				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
-				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
-				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
 				"${PODS_CONFIGURATION_BUILD_DIR}/BlueShift-iOS-SDK/BlueShiftBundle.bundle",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -892,7 +891,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftBundle.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -929,9 +927,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent-resources.sh",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -973,9 +971,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService-resources.sh",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1358,7 +1356,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BlueShiftDemoiOSApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
@@ -1390,7 +1388,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BlueShiftDemoiOSApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
