@@ -217,7 +217,7 @@
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
-    BOOL isBlueshiftURL = [[BlueShift sharedInstance].appDelegate continueUserActivity:userActivity];
+    BOOL isBlueshiftURL = [[BlueShift sharedInstance].appDelegate handleBlueshiftUniversalLinks: userActivity];
     NSLog(@"%@", isBlueshiftURL? @"YES" : @"NO");
     return YES;
 }
