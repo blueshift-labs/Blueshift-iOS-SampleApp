@@ -17,12 +17,14 @@
 #import "BlueShiftDelegates.h"
 #import "BlueshiftInAppDelegate.h"
 #import <Firebase/Firebase.h>
+@import FirebasePerformance;
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 
 @interface AppDelegate ()
-
+@property UIActivityIndicatorView* activityIndicator;
+@property FIRTrace* trace;
 @end
 
 @implementation AppDelegate
@@ -97,19 +99,6 @@
     [[BlueShift sharedInstance].userNotificationDelegate handleUserNotificationCenter:center willPresentNotification:notification withCompletionHandler:^(UNNotificationPresentationOptions options) {
         completionHandler(options);
     }];
-}
-
--(void)didReceiveBlueshiftAttributionData:(NSURL *)url {
-    NSLog(@"%@", url);
-    NSString *productURL = [[url.absoluteString componentsSeparatedByString:@"?"] firstObject];
-    NSArray* products = Cart.fetchProducts;
-    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.web_url = %@",productURL];
-    NSDictionary *details = [[products filteredArrayUsingPredicate:bPredicate] firstObject];
-    [self pushProductDetails:details];
-}
-
-- (void)didFailedToReceiveBlueshiftAttributionData:(NSError *)error {
-    NSLog(@"%@", error);
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
@@ -217,9 +206,63 @@
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
-    BOOL isBlueshiftURL = [[BlueShift sharedInstance].appDelegate handleBlueshiftUniversalLinks: userActivity];
-    NSLog(@"%@", isBlueshiftURL? @"YES" : @"NO");
+    BOOL isBlueshiftURL = [[BlueShift sharedInstance].appDelegate handleBlueshiftUniversalLinksForActivity: userActivity];
     return YES;
 }
 
+-(void)didReceiveBlueshiftAttributionData:(NSURL *)url {
+    if ([url.absoluteString componentsSeparatedByString:@"?"].count > 1) {
+        [_trace setValue: @"/z/" forAttribute:@"UrlType"];
+    } else {
+        [_trace setValue: @"/trace" forAttribute:@"UrlType"];
+    }
+    [_trace setValue:@"success" forAttribute:@"Status"];
+    [_trace stop];
+
+    NSLog(@"end %f", [[NSDate date] timeIntervalSince1970]);
+    NSLog(@"%@", url);
+    NSString *productURL = [[[url.absoluteString componentsSeparatedByString:@"?"] firstObject] stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"];
+    NSArray* products = Cart.fetchProducts;
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.web_url = %@",productURL];
+    NSDictionary *details = [[products filteredArrayUsingPredicate:bPredicate] firstObject];
+    if (details != nil) {
+        [self pushProductDetails:details];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Product not found" message:url.absoluteString preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:cancel];
+        UIAlertAction* open = [UIAlertAction actionWithTitle:@"Open in Safari" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+            });
+        }];
+        [alertController addAction:open];
+        UIViewController *rootviewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+        [rootviewController presentViewController:alertController animated:YES completion:nil];
+    }
+    [_activityIndicator removeFromSuperview];
+}
+
+- (void)didFailedToReceiveBlueshiftAttributionData:(NSError *)error {
+    NSLog(@"%@", error);
+    [_activityIndicator removeFromSuperview];
+    [_trace setValue:@"fail" forAttribute:@"Status"];
+    [_trace stop];
+}
+
+-(void)didStartProcessingBlueshiftAttributionData {
+    _trace = [[FIRPerformance sharedInstance] traceWithName:@"universal_links_replay_url"];
+    [_trace start];
+    NSLog(@"start %f", [[NSDate date] timeIntervalSince1970]);
+    _activityIndicator = [[UIActivityIndicatorView alloc] init];
+    UIViewController *rootviewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+    _activityIndicator.center = [rootviewController.view center];
+    if (@available(iOS 13.0, *)) {
+        _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleLarge;
+    } else {
+        _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    }
+    [[rootviewController view] addSubview:_activityIndicator];
+    [_activityIndicator startAnimating];
+}
 @end
