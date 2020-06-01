@@ -217,7 +217,7 @@
     return YES;
 }
 
--(void)didReceiveBlueshiftAttributionData:(NSURL *)url {
+-(void)didCompleteLinkProcessing:(NSURL *)url {
     if ([url.absoluteString componentsSeparatedByString:@"?"].count > 1) {
         [_trace setValue: @"/z/" forAttribute:@"UrlType"];
     } else {
@@ -250,14 +250,14 @@
     [_activityIndicator removeFromSuperview];
 }
 
--(void)didFailedToReceiveBlueshiftAttributionData:(NSError *)error url:(NSURL *)url {
+-(void)didFailLinkProcessingWithError:(NSError *)error url:(NSURL *)url {
     NSLog(@"%@", error);
     [_activityIndicator removeFromSuperview];
     [_trace setValue:@"fail" forAttribute:@"Status"];
     [_trace stop];
 }
 
--(void)didStartProcessingBlueshiftAttributionData {
+-(void)didStartLinkProcessing {
     _trace = [[FIRPerformance sharedInstance] traceWithName:@"universal_links_replay_url"];
     [_trace start];
     NSLog(@"start %f", [[NSDate date] timeIntervalSince1970]);
