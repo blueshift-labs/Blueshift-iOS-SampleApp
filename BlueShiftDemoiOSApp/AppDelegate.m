@@ -73,11 +73,11 @@
     [config setAppGroupID:@"group.blueshift.reads"];
     
     // BlueShiftDelegates is the class for handling BlueShiftPushDelegate delegate Callbacks
-    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
-    [config setBlueShiftPushDelegate:blueShiftDelegatge];
+//    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
+//    [config setBlueShiftPushDelegate:blueShiftDelegatge];
     
-    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
-    [config setInAppNotificationDelegate:inappDelegate];
+//    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
+//    [config setInAppNotificationDelegate:inappDelegate];
 
     [config setBlueShiftUniversalLinksDelegate:self];
 
@@ -200,13 +200,20 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [self pushCartPage];
+    [[BlueShift sharedInstance].appDelegate handleBlueshiftUniversalLinksForURL:url];
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
-    BOOL isBlueshiftURL = [[BlueShift sharedInstance].appDelegate handleBlueshiftUniversalLinksForActivity: userActivity];
+    NSURL *url = userActivity.webpageURL;
+    if (url != nil) {
+        if ([[BlueShift sharedInstance] isBlueshiftUniversalLinkURL:url]) {
+            [[BlueShift sharedInstance].appDelegate handleBlueshiftUniversalLinksForURL:url];
+        } else {
+            
+        }
+    }
     return YES;
 }
 
@@ -243,7 +250,7 @@
     [_activityIndicator removeFromSuperview];
 }
 
-- (void)didFailedToReceiveBlueshiftAttributionData:(NSError *)error {
+-(void)didFailedToReceiveBlueshiftAttributionData:(NSError *)error url:(NSURL *)url {
     NSLog(@"%@", error);
     [_activityIndicator removeFromSuperview];
     [_trace setValue:@"fail" forAttribute:@"Status"];
