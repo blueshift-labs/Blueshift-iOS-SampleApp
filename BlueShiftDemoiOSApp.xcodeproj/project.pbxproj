@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		08A7CCB9236AC5D6002D5BAE /* BlueshiftInAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A7CCB8236AC5D6002D5BAE /* BlueshiftInAppDelegate.m */; };
+		16648448A2100ACA436B3352 /* libPods-BlueShiftPushContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DA1011A1819086B4616434 /* libPods-BlueShiftPushContent.a */; };
+		26BC66F2CE9470197B7CE27A /* libPods-BlueShiftDemoiOSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5EFCC9B7B5C5BBFE22F804 /* libPods-BlueShiftDemoiOSApp.a */; };
+		2761AE1493F2E3592E029040 /* libPods-BlueShiftPushService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD50D6FF6887516E2BC8446 /* libPods-BlueShiftPushService.a */; };
 		55BD2C101D91990F00422869 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BD2C0F1D91990F00422869 /* NotificationService.m */; };
 		55BD2C141D91990F00422869 /* BlueShiftPushService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 55BD2C0C1D91990F00422869 /* BlueShiftPushService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55BD2C1E1D92983400422869 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BD2C1D1D92983400422869 /* UserNotifications.framework */; };
@@ -19,9 +22,6 @@
 		55C957E01DAE7AF500073367 /* UIImage+BfImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C957DF1DAE7AF500073367 /* UIImage+BfImageHelpers.m */; };
 		55CBD3601E1F9CA60061C0CD /* CartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CBD35F1E1F9CA60061C0CD /* CartTableViewCell.m */; };
 		55CBD3631E1FDCA50061C0CD /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CBD3621E1FDCA50061C0CD /* Cart.m */; };
-		5828FACEC0FDDBF84CB570DC /* libPods-BlueShiftDemoiOSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61C27C5F30B2780AC6D1C841 /* libPods-BlueShiftDemoiOSApp.a */; };
-		5E48073B4D5E71DE32397999 /* libPods-BlueShiftPushService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B759AE62504CB4D631C40DB /* libPods-BlueShiftPushService.a */; };
-		AD28D4193EC4A8610B2E3BB0 /* libPods-BlueShiftPushContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C34A66E28F11FD659876B99 /* libPods-BlueShiftPushContent.a */; };
 		C202340F221970AF00F9A5E9 /* WebViewPopUpFull.xib in Resources */ = {isa = PBXBuildFile; fileRef = C202340E221970AF00F9A5E9 /* WebViewPopUpFull.xib */; };
 		C20234112219716A00F9A5E9 /* WebViewPopUpTop.xib in Resources */ = {isa = PBXBuildFile; fileRef = C20234102219716A00F9A5E9 /* WebViewPopUpTop.xib */; };
 		C2023413221971EB00F9A5E9 /* WebViewPopUpCenter.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2023412221971EB00F9A5E9 /* WebViewPopUpCenter.xib */; };
@@ -107,8 +107,8 @@
 /* Begin PBXFileReference section */
 		08A7CCB7236AC5D6002D5BAE /* BlueshiftInAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueshiftInAppDelegate.h; sourceTree = "<group>"; };
 		08A7CCB8236AC5D6002D5BAE /* BlueshiftInAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueshiftInAppDelegate.m; sourceTree = "<group>"; };
-		0C34A66E28F11FD659876B99 /* libPods-BlueShiftPushContent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftPushContent.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46EFA5A656C51B4913C2F91D /* Pods-BlueShiftDemoiOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.release.xcconfig"; path = "Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.release.xcconfig"; sourceTree = "<group>"; };
+		0A8C12FC57346A9DD340117E /* Pods-BlueShiftPushService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushService.release.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService.release.xcconfig"; sourceTree = "<group>"; };
+		25841E0AFB4D0B3C0707FDC3 /* Pods-BlueShiftDemoiOSApp.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.red.xcconfig"; path = "Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.red.xcconfig"; sourceTree = "<group>"; };
 		558357CC1DB4B7AB00CBA53E /* BlueShiftPushContent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueShiftPushContent.entitlements; sourceTree = "<group>"; };
 		558357CD1DB4B7F000CBA53E /* BlueShiftPushService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlueShiftPushService.entitlements; sourceTree = "<group>"; };
 		55BD2C0C1D91990F00422869 /* BlueShiftPushService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BlueShiftPushService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,10 +131,10 @@
 		55CBD3611E1FDCA50061C0CD /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
 		55CBD3621E1FDCA50061C0CD /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
 		55CBD3641E24BA130061C0CD /* CartDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartDelegate.h; sourceTree = "<group>"; };
-		583A5BAE8CFA2ABC518C0D22 /* Pods-BlueShiftPushContent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushContent.release.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent.release.xcconfig"; sourceTree = "<group>"; };
-		5DA73702B39C3A7FAC5C50C7 /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.debug.xcconfig"; path = "Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.debug.xcconfig"; sourceTree = "<group>"; };
-		61C27C5F30B2780AC6D1C841 /* libPods-BlueShiftDemoiOSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftDemoiOSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B759AE62504CB4D631C40DB /* libPods-BlueShiftPushService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftPushService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BD50D6FF6887516E2BC8446 /* libPods-BlueShiftPushService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftPushService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D6E1C9806F202B273237ABB /* Pods-BlueShiftPushService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushService.debug.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService.debug.xcconfig"; sourceTree = "<group>"; };
+		99F2BAEBFCA389C3A32A07FB /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.debug.xcconfig"; path = "Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B325A95BB4F9C6D83020D252 /* Pods-BlueShiftDemoiOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.release.xcconfig"; path = "Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.release.xcconfig"; sourceTree = "<group>"; };
 		C202340E221970AF00F9A5E9 /* WebViewPopUpFull.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewPopUpFull.xib; sourceTree = "<group>"; };
 		C20234102219716A00F9A5E9 /* WebViewPopUpTop.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewPopUpTop.xib; sourceTree = "<group>"; };
 		C2023412221971EB00F9A5E9 /* WebViewPopUpCenter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewPopUpCenter.xib; sourceTree = "<group>"; };
@@ -143,11 +143,12 @@
 		C267DE5D2022E036008EBF4C /* WebViewPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewPopUp.xib; sourceTree = "<group>"; };
 		C267DE602022E206008EBF4C /* WebViewPopUp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewPopUp.h; sourceTree = "<group>"; };
 		C267DE612022E206008EBF4C /* WebViewPopUp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewPopUp.m; sourceTree = "<group>"; };
-		C26C29EF08AAA6079782B42C /* Pods-BlueShiftPushContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushContent.debug.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent.debug.xcconfig"; sourceTree = "<group>"; };
 		C2E336362294602600F4B4DC /* BlueShiftDelegates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueShiftDelegates.h; sourceTree = "<group>"; };
 		C2E336372294602600F4B4DC /* BlueShiftDelegates.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueShiftDelegates.m; sourceTree = "<group>"; };
 		C38F1B942472727F00ACEBE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D7FFAE174FA5DE75405B2196 /* Pods-BlueShiftPushService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushService.release.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService.release.xcconfig"; sourceTree = "<group>"; };
+		C83958B4518B4DAB95A30CB6 /* Pods-BlueShiftPushService.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushService.red.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService.red.xcconfig"; sourceTree = "<group>"; };
+		CE9B243718D78A69F31A2B62 /* Pods-BlueShiftPushContent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushContent.release.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent.release.xcconfig"; sourceTree = "<group>"; };
+		CF31E1064C872D37BF8491E5 /* Pods-BlueShiftPushContent.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushContent.red.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent.red.xcconfig"; sourceTree = "<group>"; };
 		DC1B4B5C1A8BC22800F2C579 /* Routes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Routes.h; sourceTree = "<group>"; };
 		DC1B4B5D1A8BC28500F2C579 /* StatusCodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusCodes.h; sourceTree = "<group>"; };
 		DC1B4B5E1A8BC2D800F2C579 /* AppConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
@@ -227,7 +228,9 @@
 		DCC554561A9357A600DD234B /* ProductCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCartViewController.m; sourceTree = "<group>"; };
 		DCC5571A1A95E5C800DD234B /* ProductOrderCompletedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductOrderCompletedViewController.h; sourceTree = "<group>"; };
 		DCC5571B1A95E5C800DD234B /* ProductOrderCompletedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductOrderCompletedViewController.m; sourceTree = "<group>"; };
-		EA421B0D9E5545C52975B926 /* Pods-BlueShiftPushService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushService.debug.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService.debug.xcconfig"; sourceTree = "<group>"; };
+		E7DA1011A1819086B4616434 /* libPods-BlueShiftPushContent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftPushContent.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECA42F3E628846524445C8B0 /* Pods-BlueShiftPushContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushContent.debug.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent.debug.xcconfig"; sourceTree = "<group>"; };
+		FB5EFCC9B7B5C5BBFE22F804 /* libPods-BlueShiftDemoiOSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftDemoiOSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E48073B4D5E71DE32397999 /* libPods-BlueShiftPushService.a in Frameworks */,
+				2761AE1493F2E3592E029040 /* libPods-BlueShiftPushService.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +248,7 @@
 			files = (
 				55BD2C201D92983400422869 /* UserNotificationsUI.framework in Frameworks */,
 				55BD2C1E1D92983400422869 /* UserNotifications.framework in Frameworks */,
-				AD28D4193EC4A8610B2E3BB0 /* libPods-BlueShiftPushContent.a in Frameworks */,
+				16648448A2100ACA436B3352 /* libPods-BlueShiftPushContent.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +261,7 @@
 				DCC4136C1AA9BA0400A3E7C4 /* CoreLocation.framework in Frameworks */,
 				DCAE22571AA70C5300111C83 /* Crashlytics.framework in Frameworks */,
 				DCAE22581AA70C5300111C83 /* Fabric.framework in Frameworks */,
-				5828FACEC0FDDBF84CB570DC /* libPods-BlueShiftDemoiOSApp.a in Frameworks */,
+				26BC66F2CE9470197B7CE27A /* libPods-BlueShiftDemoiOSApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,12 +271,15 @@
 		3EC14D675F8F5FD07787C1CB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5DA73702B39C3A7FAC5C50C7 /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */,
-				46EFA5A656C51B4913C2F91D /* Pods-BlueShiftDemoiOSApp.release.xcconfig */,
-				C26C29EF08AAA6079782B42C /* Pods-BlueShiftPushContent.debug.xcconfig */,
-				583A5BAE8CFA2ABC518C0D22 /* Pods-BlueShiftPushContent.release.xcconfig */,
-				EA421B0D9E5545C52975B926 /* Pods-BlueShiftPushService.debug.xcconfig */,
-				D7FFAE174FA5DE75405B2196 /* Pods-BlueShiftPushService.release.xcconfig */,
+				99F2BAEBFCA389C3A32A07FB /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */,
+				B325A95BB4F9C6D83020D252 /* Pods-BlueShiftDemoiOSApp.release.xcconfig */,
+				ECA42F3E628846524445C8B0 /* Pods-BlueShiftPushContent.debug.xcconfig */,
+				CE9B243718D78A69F31A2B62 /* Pods-BlueShiftPushContent.release.xcconfig */,
+				8D6E1C9806F202B273237ABB /* Pods-BlueShiftPushService.debug.xcconfig */,
+				0A8C12FC57346A9DD340117E /* Pods-BlueShiftPushService.release.xcconfig */,
+				25841E0AFB4D0B3C0707FDC3 /* Pods-BlueShiftDemoiOSApp.red.xcconfig */,
+				CF31E1064C872D37BF8491E5 /* Pods-BlueShiftPushContent.red.xcconfig */,
+				C83958B4518B4DAB95A30CB6 /* Pods-BlueShiftPushService.red.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -286,9 +292,9 @@
 				DCC4136B1AA9BA0400A3E7C4 /* CoreLocation.framework */,
 				55BD2C1D1D92983400422869 /* UserNotifications.framework */,
 				55BD2C1F1D92983400422869 /* UserNotificationsUI.framework */,
-				61C27C5F30B2780AC6D1C841 /* libPods-BlueShiftDemoiOSApp.a */,
-				0C34A66E28F11FD659876B99 /* libPods-BlueShiftPushContent.a */,
-				7B759AE62504CB4D631C40DB /* libPods-BlueShiftPushService.a */,
+				FB5EFCC9B7B5C5BBFE22F804 /* libPods-BlueShiftDemoiOSApp.a */,
+				E7DA1011A1819086B4616434 /* libPods-BlueShiftPushContent.a */,
+				6BD50D6FF6887516E2BC8446 /* libPods-BlueShiftPushService.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -681,11 +687,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55BD2C171D91990F00422869 /* Build configuration list for PBXNativeTarget "BlueShiftPushService" */;
 			buildPhases = (
-				B53ADEE98B18BDA1126655A1 /* [CP] Check Pods Manifest.lock */,
+				CCB0C8338D8D52C05247080F /* [CP] Check Pods Manifest.lock */,
 				55BD2C081D91990F00422869 /* Sources */,
 				55BD2C091D91990F00422869 /* Frameworks */,
 				55BD2C0A1D91990F00422869 /* Resources */,
-				DB4F66BA96761A9226634EBC /* [CP] Copy Pods Resources */,
+				F45C89E46E87BF5243113C97 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -700,11 +706,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55BD2C2C1D92983500422869 /* Build configuration list for PBXNativeTarget "BlueShiftPushContent" */;
 			buildPhases = (
-				4F4952A30EBAE904B1B038B5 /* [CP] Check Pods Manifest.lock */,
+				E904E3747D1B0F5F6BCA7A42 /* [CP] Check Pods Manifest.lock */,
 				55BD2C181D92983400422869 /* Sources */,
 				55BD2C191D92983400422869 /* Frameworks */,
 				55BD2C1A1D92983400422869 /* Resources */,
-				89E80DDA4839158B6797A168 /* [CP] Copy Pods Resources */,
+				23756820CFFA8BD03951E01C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -719,13 +725,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC3D9F161A8A14B000177ABD /* Build configuration list for PBXNativeTarget "BlueShiftDemoiOSApp" */;
 			buildPhases = (
-				5F225A17C5502093FEEF18F5 /* [CP] Check Pods Manifest.lock */,
+				B43A9C05BABB5642DC5D0FA7 /* [CP] Check Pods Manifest.lock */,
 				DC3D9EEF1A8A14B000177ABD /* Sources */,
 				DC3D9EF01A8A14B000177ABD /* Frameworks */,
 				DC3D9EF11A8A14B000177ABD /* Resources */,
 				DCAE22541AA70B9500111C83 /* ShellScript */,
 				550C02631D8B072A00DEAB4F /* Embed App Extensions */,
-				557C2F62F34BD5AF7C0100DE /* [CP] Copy Pods Resources */,
+				20826F9D1BAA9B1903DE3F79 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -850,40 +856,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F4952A30EBAE904B1B038B5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BlueShiftPushContent-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		557C2F62F34BD5AF7C0100DE /* [CP] Copy Pods Resources */ = {
+		20826F9D1BAA9B1903DE3F79 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp-resources.sh",
-				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
-				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
-				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
 				"${PODS_CONFIGURATION_BUILD_DIR}/BlueShift-iOS-SDK/BlueShiftBundle.bundle",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -892,7 +875,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftBundle.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -900,7 +882,29 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5F225A17C5502093FEEF18F5 /* [CP] Check Pods Manifest.lock */ = {
+		23756820CFFA8BD03951E01C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent-resources.sh",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.momd",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B43A9C05BABB5642DC5D0FA7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -922,29 +926,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89E80DDA4839158B6797A168 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent-resources.sh",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.momd",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushContent/Pods-BlueShiftPushContent-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B53ADEE98B18BDA1126655A1 /* [CP] Check Pods Manifest.lock */ = {
+		CCB0C8338D8D52C05247080F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -966,28 +948,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DB4F66BA96761A9226634EBC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService-resources.sh",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
-				"${PODS_ROOT}/BlueShift-iOS-Extension-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.momd",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DCAE22541AA70B9500111C83 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1000,6 +960,50 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		E904E3747D1B0F5F6BCA7A42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlueShiftPushContent-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F45C89E46E87BF5243113C97 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService-resources.sh",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/../../Blueshift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.momd",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1111,7 +1115,7 @@
 /* Begin XCBuildConfiguration section */
 		55BD2C151D91990F00422869 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA421B0D9E5545C52975B926 /* Pods-BlueShiftPushService.debug.xcconfig */;
+			baseConfigurationReference = 8D6E1C9806F202B273237ABB /* Pods-BlueShiftPushService.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1141,7 +1145,7 @@
 		};
 		55BD2C161D91990F00422869 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7FFAE174FA5DE75405B2196 /* Pods-BlueShiftPushService.release.xcconfig */;
+			baseConfigurationReference = 0A8C12FC57346A9DD340117E /* Pods-BlueShiftPushService.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1171,7 +1175,7 @@
 		};
 		55BD2C2D1D92983500422869 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C26C29EF08AAA6079782B42C /* Pods-BlueShiftPushContent.debug.xcconfig */;
+			baseConfigurationReference = ECA42F3E628846524445C8B0 /* Pods-BlueShiftPushContent.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1201,7 +1205,7 @@
 		};
 		55BD2C2E1D92983500422869 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 583A5BAE8CFA2ABC518C0D22 /* Pods-BlueShiftPushContent.release.xcconfig */;
+			baseConfigurationReference = CE9B243718D78A69F31A2B62 /* Pods-BlueShiftPushContent.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1228,6 +1232,156 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
+		};
+		C37B3714248A0FC400AC3006 /* Red */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Red;
+		};
+		C37B3715248A0FC400AC3006 /* Red */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25841E0AFB4D0B3C0707FDC3 /* Pods-BlueShiftDemoiOSApp.red.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRed;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "BlueShiftDemoiOSApp/BlueShift Reads.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/BlueShiftDemoiOSApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red;
+				PRODUCT_NAME = "BlueShift Red";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Headers/**";
+			};
+			name = Red;
+		};
+		C37B3716248A0FC400AC3006 /* Red */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C83958B4518B4DAB95A30CB6 /* Pods-BlueShiftPushService.red.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = BlueShiftPushService/BlueShiftPushService.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BlueShiftPushService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.8;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red.notificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Red;
+		};
+		C37B3717248A0FC400AC3006 /* Red */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF31E1064C872D37BF8491E5 /* Pods-BlueShiftPushContent.red.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = BlueShiftPushContent/BlueShiftPushContent.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9YR8UTRCDU;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BlueShiftPushContent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.8;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red.notificationContent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Red;
 		};
 		DC3D9F141A8A14B000177ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1340,7 +1494,7 @@
 		};
 		DC3D9F171A8A14B000177ABD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DA73702B39C3A7FAC5C50C7 /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */;
+			baseConfigurationReference = 99F2BAEBFCA389C3A32A07FB /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1358,7 +1512,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BlueShiftDemoiOSApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
@@ -1372,7 +1526,7 @@
 		};
 		DC3D9F181A8A14B000177ABD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EFA5A656C51B4913C2F91D /* Pods-BlueShiftDemoiOSApp.release.xcconfig */;
+			baseConfigurationReference = B325A95BB4F9C6D83020D252 /* Pods-BlueShiftDemoiOSApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1390,7 +1544,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BlueShiftDemoiOSApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
@@ -1409,6 +1563,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55BD2C151D91990F00422869 /* Debug */,
+				C37B3716248A0FC400AC3006 /* Red */,
 				55BD2C161D91990F00422869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1418,6 +1573,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55BD2C2D1D92983500422869 /* Debug */,
+				C37B3717248A0FC400AC3006 /* Red */,
 				55BD2C2E1D92983500422869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1427,6 +1583,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC3D9F141A8A14B000177ABD /* Debug */,
+				C37B3714248A0FC400AC3006 /* Red */,
 				DC3D9F151A8A14B000177ABD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1436,6 +1593,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC3D9F171A8A14B000177ABD /* Debug */,
+				C37B3715248A0FC400AC3006 /* Red */,
 				DC3D9F181A8A14B000177ABD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

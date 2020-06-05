@@ -37,6 +37,11 @@
 
 - (void)initUIElements {
     self.borderColor = [UIColor colorWithRed:226.0f/255.0f green:226.0f/255.0f blue:226.0f/255.0f alpha:1.0f];
+    if ([[[NSBundle mainBundle] bundleIdentifier]  isEqual: @"com.blueshift.reads"]) {
+        self.navigationController.navigationBar.barTintColor = [UIColor colorNamed:@"appColor"];
+    } else {
+        self.navigationController.navigationBar.barTintColor = [UIColor colorNamed:@"appColorRed"];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

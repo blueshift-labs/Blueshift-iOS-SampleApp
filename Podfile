@@ -9,7 +9,7 @@ workspace 'BlueShiftDemoiOSApp.xcworkspace'
 # export BSFT_IOS_SDK_PATH=$HOME/Blueshift/Blueshift-iOS-SDK
 #$bsftLocalPath = '/Users/administrator/Blueshift-iOS-SDK'
 #$bsftVersion = '~> 2.0.1'
-#$bsftGitURL = 'https://github.com/blueshift-labs/Blueshift-iOS-SDK'
+$bsftGitURL = 'https://github.com/blueshift-labs/Blueshift-iOS-SDK'
 
 target 'BlueShiftDemoiOSApp' do
   pod 'SVProgressHUD'
@@ -19,6 +19,7 @@ target 'BlueShiftDemoiOSApp' do
   pod 'IQKeyboardManager'
   pod 'MJPopupViewController'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Performance'
 #  pod 'BlueShift-iOS-SDK', :path => $bsftLocalPath
 #  pod 'BlueShift-iOS-SDK', :git => $bsftGitURL
 #  pod 'BlueShift-iOS-SDK', $bsftVersion
