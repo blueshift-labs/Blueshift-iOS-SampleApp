@@ -79,7 +79,7 @@
 //    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
 //    [config setInAppNotificationDelegate:inappDelegate];
 
-    [config setBlueShiftUniversalLinksDelegate:self];
+    [config setBlueshiftUniversalLinksDelegate:self];
 
     // Initialize the configuration ...
     [BlueShift initWithConfiguration:config];

@@ -26,6 +26,11 @@
     // Do any additional setup after loading the view.
     [self updateTextfieldWithIcons];
     
+    if ([[[NSBundle mainBundle] bundleIdentifier]  isEqual: @"com.blueshift.reads"]) {
+        _TitleView.backgroundColor = [UIColor colorNamed:@"appColor"];
+    } else {
+        _TitleView.backgroundColor = [UIColor colorNamed:@"appColorRed"];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
