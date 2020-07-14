@@ -767,6 +767,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="wishListButtonPressed:" destination="8Fv-63-HzQ" eventType="touchUpInside" id="oVH-Sn-Wbg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWu-w7-Tns">
                                                 <rect key="frame" x="192.5" y="210" width="172.5" height="35"/>

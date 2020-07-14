@@ -32,14 +32,12 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductDetailViewController class])];
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductDetailViewController class])];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    
     [[BlueShift sharedInstance] unregisterForInAppMessage];
 }
 
@@ -168,6 +166,9 @@
     [self.quantityButton setTitle:[NSString stringWithFormat:@"Quanity:%ld", row + 1] forState:UIControlStateSelected];
     [self.quantityButton setTitle:[NSString stringWithFormat:@"Quanity:%ld", row + 1] forState:UIControlStateHighlighted];
     self.quantity = row + 1;
+}
+
+- (IBAction)wishListButtonPressed:(id)sender {
 }
 
 @end

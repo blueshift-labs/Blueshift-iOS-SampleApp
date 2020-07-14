@@ -32,9 +32,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [FIRApp configure];
+    NSString *configFileName =  [[NSString alloc]initWithFormat: @"%@-GoogleService-Info", [[NSBundle mainBundle]bundleIdentifier]];
+    FIROptions *options = [[FIROptions alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:configFileName ofType:@"plist"]];
+    [FIRApp configureWithOptions: options];
     [Fabric with:@[CrashlyticsKit]];
-    
     // Push Notification
 //        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
 //                                                        UIUserNotificationTypeBadge |
@@ -56,8 +57,8 @@
     // Disable BlueShift Push Notification
     [config setEnablePushNotification:YES];
     [config setEnableInAppNotification: YES];
-    [config setInAppManualTriggerEnabled: NO];
-    [config setInAppBackgroundFetchEnabled: YES];
+//    [config setInAppManualTriggerEnabled: YES];
+//    [config setInAppBackgroundFetchEnabled: YES];
     // Disable BlueShift Analytics accessing location
     //[config setEnableLocationAccess:NO];
     // Disable BlueShift Analytics
@@ -69,8 +70,20 @@
     //[config setEnableAppOpenTrackEvent:NO];
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
+    
     // For Carousel deep linking
     [config setAppGroupID:@"group.blueshift.reads"];
+    
+    // == Specify device ID source (Optional) ==
+    // SKD uses BlueshiftDeviceIdSourceIDFV by default if you do not include the following line of code. For more information, see:
+    [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFV];
+    
+    /*
+    * You can also use IDFVBundleID, which combination of IDFV and Bundle ID. Replace the above line with this:
+    *
+    * [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
+    *
+    */
     
     // BlueShiftDelegates is the class for handling BlueShiftPushDelegate delegate Callbacks
 //    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
@@ -81,17 +94,18 @@
 
     [config setBlueshiftUniversalLinksDelegate:self];
 
-    // Initialize the configuration ...
+    // Initialize    the configuration ...
     [BlueShift initWithConfiguration:config];
     //[BlueShift autoIntegration];
     
     [Cart sharedInstance];
-    
+
     return YES;
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
     [[BlueShift sharedInstance].appDelegate registerForRemoteNotification:deviceToken];
+    NSLog(@"device token %@", deviceToken);
 }
 
 
@@ -108,7 +122,7 @@
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
-    [[BlueShift sharedInstance].appDelegate failedToRegisterForRemoteNotificationWithError:error];
+        [[BlueShift sharedInstance].appDelegate failedToRegisterForRemoteNotificationWithError:error];
 }
 
 
@@ -228,6 +242,9 @@
 
     NSLog(@"end %f", [[NSDate date] timeIntervalSince1970]);
     NSLog(@"%@", url);
+    if (url == nil || [url.absoluteString isEqual: @""]) {
+        return;
+    }
     NSString *productURL = [[[url.absoluteString componentsSeparatedByString:@"?"] firstObject] stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"];
     NSArray* products = Cart.fetchProducts;
     NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.web_url = %@",productURL];
@@ -272,4 +289,5 @@
     [[rootviewController view] addSubview:_activityIndicator];
     [_activityIndicator startAnimating];
 }
+
 @end

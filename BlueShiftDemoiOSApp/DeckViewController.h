@@ -16,6 +16,8 @@
 - (void)showMailSubscription;
 - (void)showCancelReturn;
 - (void)showSubscriptionEvent;
+- (void)sendPushNotification;
+- (void)sendInAppNotification;
 - (void)logout;
 
 @end

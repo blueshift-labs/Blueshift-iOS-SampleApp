@@ -41,12 +41,20 @@
                               @"action":@"showSubscriptionEvent"
                               };
     NSDictionary *option5 = @{
+                              @"title":@"Send Push Notification",
+                              @"action":@"sendPushNotification"
+                              };
+    NSDictionary *option6 = @{
+                              @"title":@"Send In-app Notification",
+                              @"action":@"sendInAppNotification"
+                              };
+    NSDictionary *option7 = @{
                               @"title":@"Logout",
                               @"action":@"logout"
                               };
     
     self.options =  @[
-                      option1, option2, option3, option4, option5
+                      option1, option2, option3, option4, option5, option6, option7
                       ];
     /*
     self.menuTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];

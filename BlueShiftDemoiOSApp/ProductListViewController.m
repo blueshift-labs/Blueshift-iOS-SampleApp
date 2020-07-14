@@ -37,7 +37,7 @@
 //            [[NSUserDefaults standardUserDefaults]synchronize];
 //        }
     
-    [self registerForRemoteNotification];
+//    [self registerForRemoteNotification];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
