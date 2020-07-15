@@ -40,7 +40,7 @@
     if ([[[NSBundle mainBundle] bundleIdentifier]  isEqual: @"com.blueshift.reads"]) {
         self.navigationController.navigationBar.barTintColor = [UIColor colorNamed:@"appColor"];
     } else {
-        self.navigationController.navigationBar.barTintColor = [UIColor colorNamed:@"appColorRed"];
+        self.navigationController.navigationBar.barTintColor = [UIColor colorNamed:@"AppColorRed"];
     }
 }
 
