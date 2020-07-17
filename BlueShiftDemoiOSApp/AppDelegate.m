@@ -70,6 +70,7 @@
     //[config setEnableAppOpenTrackEvent:NO];
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
+    [config setBlueshiftInAppNotificationTimeInterval:30.0];
     
     // For Carousel deep linking
     [config setAppGroupID:@"group.blueshift.reads"];
@@ -214,7 +215,7 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [[BlueShift sharedInstance].appDelegate handleBlueshiftUniversalLinksForURL:url];
+    [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
     return YES;
 }
 
