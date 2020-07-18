@@ -169,6 +169,7 @@
 }
 
 - (IBAction)wishListButtonPressed:(id)sender {
+    [[BlueShift sharedInstance] displayInAppNotification];
 }
 
 @end

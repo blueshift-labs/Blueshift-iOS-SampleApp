@@ -70,14 +70,14 @@
     //[config setEnableAppOpenTrackEvent:NO];
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
-    [config setBlueshiftInAppNotificationTimeInterval:30.0];
+    [config setBlueshiftInAppNotificationTimeInterval:10.0];
     
     // For Carousel deep linking
     [config setAppGroupID:@"group.blueshift.reads"];
     
     // == Specify device ID source (Optional) ==
     // SKD uses BlueshiftDeviceIdSourceIDFV by default if you do not include the following line of code. For more information, see:
-    [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFV];
+    [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
     
     /*
     * You can also use IDFVBundleID, which combination of IDFV and Bundle ID. Replace the above line with this:
@@ -215,7 +215,7 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+    [self didCompleteLinkProcessing:url];
     return YES;
 }
 

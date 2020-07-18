@@ -61,14 +61,14 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductCartViewController class])];
+    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductCartViewController class])];
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
 
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-//    [[BlueShift sharedInstance] unregisterForInAppMessage];
+    [[BlueShift sharedInstance] unregisterForInAppMessage];
 }
 
 - (void)createBlueShiftProducts {

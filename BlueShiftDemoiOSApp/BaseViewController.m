@@ -32,7 +32,22 @@
         }
     }
     
+    if ([[[BlueShift sharedInstance] config] inAppManualTriggerEnabled]) {
+        UIBarButtonItem *showInApp = [[UIBarButtonItem alloc]
+                                       initWithTitle:@"ShowInApp"
+                                       style:UIBarButtonItemStylePlain
+                                       target:self
+                                       action:@selector(showInApp)];
+        self.navigationItem.rightBarButtonItem = showInApp;
+    }
+    
     [self initUIElements];
+}
+
+-(void)showInApp {
+    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^{
+        [[BlueShift sharedInstance]displayInAppNotification];
+    } failure:^(NSError *err) {}];
 }
 
 - (void)initUIElements {
