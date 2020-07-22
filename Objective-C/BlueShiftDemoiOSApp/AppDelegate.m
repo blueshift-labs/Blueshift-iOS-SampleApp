@@ -54,23 +54,11 @@
     //Enable Blueshift In-app notifications
     [config setEnableInAppNotification: YES];
     
-    //Set manual mode as ON to disable auto display of In-app messages
-    //[config setInAppManualTriggerEnabled: YES];
-    
-    //Set In-app background fetch OFF to disabe auto fetching of in-app messages
-    //[config setInAppBackgroundFetchEnabled: NO];
-
-    // Disable BlueShift Analytics accessing location
-    //[config setEnableLocationAccess:NO];
-
     //Optional: Set the Predefined DeepLinking URL'
     [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductDetailViewController"]];
     [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductCartViewController"]];
     [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/OfferViewController"]];
     
-    // Disable app open event
-    //[config setEnableAppOpenTrackEvent:NO];
-
     //Optional :Set batched events upload interval in seconds. By defult its 300 seconds.
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     

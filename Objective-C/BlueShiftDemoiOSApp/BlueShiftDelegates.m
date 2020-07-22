@@ -11,7 +11,7 @@
 @implementation BlueShiftDelegates
 
 -(void) promotionCategoryPushClickedWithDetails:(NSDictionary *)details {
-    NSLog(@"fuck me untill you fucked up!");
+    NSLog(@"promotionCategoryPushClickedWithDetails");
 }
 
 @end
