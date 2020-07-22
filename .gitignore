@@ -11,6 +11,9 @@
 */xcuserdata/*
 */xcshareddata/*
 
+#ignore pod lock file
+*/Podfile.lock
+
 Rewards App.xcworkspace/xcshareddata/
 
 
