@@ -3,7 +3,7 @@
 # git config --global core.excludesfile ~/.gitignore_global
 
 # Ignore bundler config
-Pods/Pods.xcodeproj/xcuserdata/
+*/Pods/Pods.xcodeproj/xcuserdata/
 
 # Ignore the default SQLite database.
 
@@ -18,7 +18,7 @@ Rewards App.xcworkspace/xcshareddata/
 
 # Ignore IDE files
 
-/coverage
-/Pods
+*/coverage
+*/Pods
 
 .DS_Store
