@@ -12,7 +12,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, BlueShiftPushDelegate, BlueShiftInAppNotificationDelegate, BlueshiftUniversalLinksDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, BlueshiftUniversalLinksDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

@@ -36,71 +36,73 @@
     FIROptions *options = [[FIROptions alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:configFileName ofType:@"plist"]];
     [FIRApp configureWithOptions: options];
     [Fabric with:@[CrashlyticsKit]];
-    // Push Notification
-//        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
-//                                                        UIUserNotificationTypeBadge |
-//                                                        UIUserNotificationTypeSound);
-//        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
-//                                                                                 categories:nil];
-//        [application registerUserNotificationSettings:settings];
-//        [application registerForRemoteNotifications];
     
-    // Obtain an instance of BlueShiftConfig ...
+    // Obtain an instance of BlueShiftConfig
     BlueShiftConfig *config = [BlueShiftConfig config];
     
-    // Set the api Key for the config ...
+    // Set the api Key for the config
     [config setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
     
-    // Set the applications launch Options for SDK to track ...
-    [config setApplicationLaunchOptions:launchOptions];
-    [config setUserNotificationDelegate:self];
-    // Disable BlueShift Push Notification
+    // Enable BlueShift Push Notification. By Default Push notfications are enabled.
     [config setEnablePushNotification:YES];
+    
+    //Set userNotificationDelegate for push notificaitons
+    [config setUserNotificationDelegate:self];
+
+    //Enable Blueshift In-app notifications
     [config setEnableInAppNotification: YES];
-//    [config setInAppManualTriggerEnabled: YES];
-//    [config setInAppBackgroundFetchEnabled: YES];
+    
+    //Set manual mode as ON to disable auto display of In-app messages
+    //[config setInAppManualTriggerEnabled: YES];
+    
+    //Set In-app background fetch OFF to disabe auto fetching of in-app messages
+    //[config setInAppBackgroundFetchEnabled: NO];
+
     // Disable BlueShift Analytics accessing location
     //[config setEnableLocationAccess:NO];
-    // Disable BlueShift Analytics
-    //[config setEnableAnalytics:NO];
-    // Set the Two Predefined DeepLinking URL's ...
+
+    //Optional: Set the Predefined DeepLinking URL'
     [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductDetailViewController"]];
     [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductCartViewController"]];
     [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/OfferViewController"]];
+    
+    // Disable app open event
     //[config setEnableAppOpenTrackEvent:NO];
+
+    //Optional :Set batched events upload interval in seconds. By defult its 300 seconds.
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
-    [config setBlueshiftInAppNotificationTimeInterval:10.0];
+    //Optional :Set time interval in seconds between two cosecutive In-app message displays staying on same screen. By default its 60 seconds.
+    [config setBlueshiftInAppNotificationTimeInterval:30.0];
     
-    // For Carousel deep linking
+    // Set app group id for Carousel deep linking
     [config setAppGroupID:@"group.blueshift.reads"];
     
     // == Specify device ID source (Optional) ==
     // SKD uses BlueshiftDeviceIdSourceIDFV by default if you do not include the following line of code. For more information, see:
     [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
-    
     /*
     * You can also use IDFVBundleID, which combination of IDFV and Bundle ID. Replace the above line with this:
     *
     * [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
     *
+    * [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceUUID];
     */
     
-    // BlueShiftDelegates is the class for handling BlueShiftPushDelegate delegate Callbacks
-//    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
-//    [config setBlueShiftPushDelegate:blueShiftDelegatge];
+    //Optional :Set BlueShiftDelegates class object for handling push notification events callbacks.
+    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
+    [config setBlueShiftPushDelegate:blueShiftDelegatge];
     
-//    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
-//    [config setInAppNotificationDelegate:inappDelegate];
+    //Optional :Set BlueshiftInAppDelegate class object for handling In-app notification event callbacks
+    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
+    [config setInAppNotificationDelegate:inappDelegate];
 
+    //Set universal links delegate to enable Blueshift Universal links
     [config setBlueshiftUniversalLinksDelegate:self];
 
-    // Initialize    the configuration ...
+    // Initialize the configuration
     [BlueShift initWithConfiguration:config];
-    //[BlueShift autoIntegration];
     
-    [Cart sharedInstance];
-
     return YES;
 }
 
@@ -123,7 +125,7 @@
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
-        [[BlueShift sharedInstance].appDelegate failedToRegisterForRemoteNotificationWithError:error];
+    [[BlueShift sharedInstance].appDelegate failedToRegisterForRemoteNotificationWithError:error];
 }
 
 
@@ -137,13 +139,8 @@
 
 - (void)application:(UIApplication *) application handleActionWithIdentifier: (NSString *) identifier forRemoteNotification: (NSDictionary *) notification
   completionHandler: (void (^)(void)) completionHandler {
-    if (![BlueShift sharedInstance].appDelegate) {
-        [BlueShift sharedInstance].appDelegate = [[BlueShiftAppDelegate alloc] init];
-        [BlueShift sharedInstance].appDelegate.oldDelegate = [UIApplication sharedApplication].delegate;
-    }
     [[BlueShift sharedInstance].appDelegate handleActionWithIdentifier:identifier forRemoteNotification:notification completionHandler:completionHandler];
 }
-
 
 
 - (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithIndex:(NSInteger)index withDetails:(NSDictionary *)details {
@@ -233,15 +230,6 @@
 }
 
 -(void)didCompleteLinkProcessing:(NSURL *)url {
-    if ([url.absoluteString componentsSeparatedByString:@"?"].count > 1) {
-        [_trace setValue: @"/z/" forAttribute:@"UrlType"];
-    } else {
-        [_trace setValue: @"/trace" forAttribute:@"UrlType"];
-    }
-    [_trace setValue:@"success" forAttribute:@"Status"];
-    [_trace stop];
-
-    NSLog(@"end %f", [[NSDate date] timeIntervalSince1970]);
     NSLog(@"%@", url);
     if (url == nil || [url.absoluteString isEqual: @""]) {
         return;
@@ -271,14 +259,9 @@
 -(void)didFailLinkProcessingWithError:(NSError *)error url:(NSURL *)url {
     NSLog(@"%@", error);
     [_activityIndicator removeFromSuperview];
-    [_trace setValue:@"fail" forAttribute:@"Status"];
-    [_trace stop];
 }
 
 -(void)didStartLinkProcessing {
-    _trace = [[FIRPerformance sharedInstance] traceWithName:@"universal_links_replay_url"];
-    [_trace start];
-    NSLog(@"start %f", [[NSDate date] timeIntervalSince1970]);
     _activityIndicator = [[UIActivityIndicatorView alloc] init];
     UIViewController *rootviewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
     _activityIndicator.center = [rootviewController.view center];
