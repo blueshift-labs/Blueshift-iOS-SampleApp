@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 #import "ProductCartViewController.h"
 #import "ProductDetailViewController.h"
 #import "ProductListViewController.h"
@@ -18,13 +16,13 @@
 #import "BlueshiftInAppDelegate.h"
 #import <Firebase/Firebase.h>
 @import FirebasePerformance;
+@import FirebaseAnalytics;
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 
 @interface AppDelegate ()
 @property UIActivityIndicatorView* activityIndicator;
-@property FIRTrace* trace;
 @end
 
 @implementation AppDelegate
@@ -32,10 +30,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSString *configFileName =  [[NSString alloc]initWithFormat: @"%@-GoogleService-Info", [[NSBundle mainBundle]bundleIdentifier]];
+    NSString *configFileName = @"";
+    if([[[NSBundle mainBundle]bundleIdentifier] isEqualToString: @"com.blueshift.reads"]) {
+        configFileName = [[NSString alloc]initWithFormat: @"GoogleService-Info"];
+    } else {
+        configFileName =  [[NSString alloc]initWithFormat: @"%@-GoogleService-Info", [[NSBundle mainBundle]bundleIdentifier]];
+    }
     FIROptions *options = [[FIROptions alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:configFileName ofType:@"plist"]];
     [FIRApp configureWithOptions: options];
-    [Fabric with:@[CrashlyticsKit]];
     
     // Obtain an instance of BlueShiftConfig
     BlueShiftConfig *config = [BlueShiftConfig config];
