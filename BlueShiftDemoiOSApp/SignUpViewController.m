@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Arjun K P. All rights reserved.
 //
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 #import "SignUpViewController.h"
 #import "AppConstants.h"
 #import "UIView+BfViewHelpers.h"
@@ -162,3 +165,5 @@
 */
 
 @end
+
+#pragma clang diagnostic pop

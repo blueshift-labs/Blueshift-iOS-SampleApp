@@ -14,12 +14,17 @@
 #import "ProductListViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "Cart.h"
+#import "BlueShiftDelegates.h"
+#import "BlueshiftInAppDelegate.h"
+#import <Firebase/Firebase.h>
+@import FirebasePerformance;
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 
 @interface AppDelegate ()
-
+@property UIActivityIndicatorView* activityIndicator;
+@property FIRTrace* trace;
 @end
 
 @implementation AppDelegate
@@ -27,120 +32,83 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    NSString *configFileName =  [[NSString alloc]initWithFormat: @"%@-GoogleService-Info", [[NSBundle mainBundle]bundleIdentifier]];
+    FIROptions *options = [[FIROptions alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:configFileName ofType:@"plist"]];
+    [FIRApp configureWithOptions: options];
     [Fabric with:@[CrashlyticsKit]];
     
-    // Push Notification
-//        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
-//                                                        UIUserNotificationTypeBadge |
-//                                                        UIUserNotificationTypeSound);
-//        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
-//                                                                                 categories:nil];
-//        [application registerUserNotificationSettings:settings];
-//        [application registerForRemoteNotifications];
-    
-    // Obtain an instance of BlueShiftConfig ...
+    // Obtain an instance of BlueShiftConfig
     BlueShiftConfig *config = [BlueShiftConfig config];
     
-    // Set the api Key for the config ...
-    [config setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
+    // Set the api Key for the config
+    [config setApiKey:@"API KEY"];
     
-    // Set the applications launch Options for SDK to track ...
-    [config setApplicationLaunchOptions:launchOptions];
-    //[config setUserNotificationDelegate:self];
-    // Disable BlueShift Push Notification
-    [config setEnablePushNotification:NO];
+    // Enable BlueShift Push Notification. By Default Push notfications are enabled.
+    [config setEnablePushNotification:YES];
+    
+    //Set userNotificationDelegate for push notificaitons
+    [config setUserNotificationDelegate:self];
+
+    //Enable Blueshift In-app notifications
+    [config setEnableInAppNotification: YES];
+    
+    //Set manual mode as ON to disable auto display of In-app messages
+    //[config setInAppManualTriggerEnabled: YES];
+    
+    //Set In-app background fetch OFF to disabe auto fetching of in-app messages
+    //[config setInAppBackgroundFetchEnabled: NO];
+
     // Disable BlueShift Analytics accessing location
     //[config setEnableLocationAccess:NO];
-    // Disable BlueShift Analytics
-    //[config setEnableAnalytics:NO];
-    [config setEnableIDFAFetch: NO];
-    // Set the Two Predefined DeepLinking URL's ...
+
+    //Optional: Set the Predefined DeepLinking URL'
     [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductDetailViewController"]];
     [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductCartViewController"]];
     [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/OfferViewController"]];
+    
+    // Disable app open event
     //[config setEnableAppOpenTrackEvent:NO];
+
+    //Optional :Set batched events upload interval in seconds. By defult its 300 seconds.
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
     
-    // For Carousel deep linking
-    [config setAppGroupID:@"group.blueshift.app"];
-
-    // Initialize the configuration ...
-    [BlueShift initWithConfiguration:config];
-    //[BlueShift autoIntegration];
+    //Optional :Set time interval in seconds between two cosecutive In-app message displays staying on same screen. By default its 60 seconds.
+    [config setBlueshiftInAppNotificationTimeInterval:30.0];
     
-    [Cart sharedInstance];
+    // Set app group id for Carousel deep linking
+    [config setAppGroupID:@"group.blueshift.reads"];
+    
+    // == Specify device ID source (Optional) ==
+    // SKD uses BlueshiftDeviceIdSourceIDFV by default if you do not include the following line of code. For more information, see:
+    [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
+    /*
+    * You can also use IDFVBundleID, which combination of IDFV and Bundle ID. Replace the above line with this:
+    *
+    * [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
+    *
+    * [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceUUID];
+    */
+    
+    //Optional :Set BlueShiftDelegates class object for handling push notification events callbacks.
+    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
+    [config setBlueShiftPushDelegate:blueShiftDelegatge];
+    
+    //Optional :Set BlueshiftInAppDelegate class object for handling In-app notification event callbacks
+    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
+    [config setInAppNotificationDelegate:inappDelegate];
+
+    //Set universal links delegate to enable Blueshift Universal links
+    [config setBlueshiftUniversalLinksDelegate:self];
+
+    // Initialize the configuration
+    [BlueShift initWithConfiguration:config];
     
     return YES;
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
     [[BlueShift sharedInstance].appDelegate registerForRemoteNotification:deviceToken];
-    
-    
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
-            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-            center.delegate = self;
-            [center setNotificationCategories: [[[BlueShift sharedInstance] userNotification] notificationCategories]];
-            [center requestAuthorizationWithOptions:([[[BlueShift sharedInstance] userNotification] notificationTypes]) completionHandler:^(BOOL granted, NSError * _Nullable error){
-                if(!error){
-                    dispatch_async(dispatch_get_main_queue(), ^(void) {
-                        [[UIApplication sharedApplication] registerForRemoteNotifications];
-                    });
-                }
-            }];
-        } else {
-            UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
-            [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-            [[UIApplication sharedApplication] registerForRemoteNotifications];
-        }
-    }
-    
-    
-    
-//    UIUserNotificationSettings* notificationSettings = [[[BlueShift sharedInstance] pushNotification] notificationSettings];
-//    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-//    [[UIApplication sharedApplication] registerForRemoteNotifications];
-    
-    // Creating custom category
-//    UIMutableUserNotificationAction *openAction;
-//    openAction = [[UIMutableUserNotificationAction alloc] init];
-//    [openAction setActivationMode:UIUserNotificationActivationModeForeground];
-//    [openAction setTitle:@"Open"];
-//    [openAction setIdentifier:@"open"];
-//    [openAction setDestructive:NO];
-//    [openAction setAuthenticationRequired:NO];
-//    
-//    UIMutableUserNotificationCategory *customCategory;
-//    customCategory = [[UIMutableUserNotificationCategory alloc] init];
-//    [customCategory setIdentifier:@"custom_category"];
-//    [customCategory setActions:@[openAction]
-//                      forContext:UIUserNotificationActionContextDefault];
-//    
-//    
-//    NSSet *categories = [[[BlueShift sharedInstance] pushNotification] notificationCategories];
-//    NSMutableSet *categoriesWithCustomCategory = [[NSMutableSet alloc] init];
-//    // Adding custom category to categories
-//    [categoriesWithCustomCategory addObject:customCategory];
-//    [categoriesWithCustomCategory unionSet:categories];
-//    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
-//    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categoriesWithCustomCategory];
-//    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-//    [[UIApplication sharedApplication] registerForRemoteNotifications];
-    
-//    UIMutableUserNotificationCategory *viewCartCategory = [[[BlueShift sharedInstance] pushNotification] viewCartCategory];
-//    UIMutableUserNotificationCategory *buyCategory = [[[BlueShift sharedInstance] pushNotification] buyCategory];
-//    UIMutableUserNotificationCategory *oneButtonAlertCategory = [[[BlueShift sharedInstance] pushNotification] oneButtonAlertCategory];
-//    UIMutableUserNotificationCategory *twoButtonAlertCategory = [[[BlueShift sharedInstance] pushNotification] twoButtonAlertCategory];
-//    UIMutableUserNotificationCategory *carouselCategory = [[[BlueShift sharedInstance] pushNotification] carouselCategory];
-//    UIMutableUserNotificationCategory *carouselAnimationCategory = [[[BlueShift sharedInstance] pushNotification] carouselAnimationCategory];
-//
-    NSSet *categories = [[NSSet alloc] init];
-    UIUserNotificationType types = [[[BlueShift sharedInstance] pushNotification] notificationTypes];
-    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
-    [[UIApplication sharedApplication] registerUserNotificationSettings: notificationSettings];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    NSLog(@"device token %@", deviceToken);
 }
 
 
@@ -149,7 +117,6 @@
         completionHandler(options);
     }];
 }
-
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
     [[BlueShift sharedInstance].userNotificationDelegate handleUserNotification:center didReceiveNotificationResponse:response withCompletionHandler:^{
@@ -170,19 +137,10 @@
     [[BlueShift sharedInstance].appDelegate application:application handleRemoteNotification:userInfo];
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(nonnull UILocalNotification *)notification {
-    [[BlueShift sharedInstance].appDelegate application:application handleLocalNotification:notification];
-}
-
 - (void)application:(UIApplication *) application handleActionWithIdentifier: (NSString *) identifier forRemoteNotification: (NSDictionary *) notification
-  completionHandler: (void (^)()) completionHandler {
-    if (![BlueShift sharedInstance].appDelegate) {
-        [BlueShift sharedInstance].appDelegate = [[BlueShiftAppDelegate alloc] init];
-        [BlueShift sharedInstance].appDelegate.oldDelegate = [UIApplication sharedApplication].delegate;
-    }
+  completionHandler: (void (^)(void)) completionHandler {
     [[BlueShift sharedInstance].appDelegate handleActionWithIdentifier:identifier forRemoteNotification:notification completionHandler:completionHandler];
 }
-
 
 
 - (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithIndex:(NSInteger)index withDetails:(NSDictionary *)details {
@@ -208,7 +166,20 @@
 }
 
 
+- (void)pushProductDetails:(NSDictionary *)details {
+    //pushing cart page through deckview controller
+    
+    ProductDetailViewController *detailsViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+    detailsViewController.data = details;
+    [(UINavigationController *)self.window.rootViewController pushViewController:detailsViewController animated:YES];
+}
+
+
 -(void) buyCategoryPushClickedWithDetails:(NSDictionary *)details {
+    [self pushCartPage];
+}
+
+-(void) promotionCategoryPushClickedWithDetails:(NSDictionary *)details {
     [self pushCartPage];
 }
 
@@ -234,6 +205,73 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)actionButtonDidTapped:(NSDictionary *)payloadDictionary {
+    [self pushCartPage];
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    [self didCompleteLinkProcessing:url];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
+ restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
+    NSURL *url = userActivity.webpageURL;
+    if (url != nil) {
+        if ([[BlueShift sharedInstance] isBlueshiftUniversalLinkURL:url]) {
+            [[BlueShift sharedInstance].appDelegate handleBlueshiftUniversalLinksForURL:url];
+        } else {
+            
+        }
+    }
+    return YES;
+}
+
+-(void)didCompleteLinkProcessing:(NSURL *)url {
+    NSLog(@"%@", url);
+    if (url == nil || [url.absoluteString isEqual: @""]) {
+        return;
+    }
+    NSString *productURL = [[[url.absoluteString componentsSeparatedByString:@"?"] firstObject] stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"];
+    NSArray* products = Cart.fetchProducts;
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF.web_url = %@",productURL];
+    NSDictionary *details = [[products filteredArrayUsingPredicate:bPredicate] firstObject];
+    if (details != nil) {
+        [self pushProductDetails:details];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Product not found" message:url.absoluteString preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:cancel];
+        UIAlertAction* open = [UIAlertAction actionWithTitle:@"Open in Safari" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+            });
+        }];
+        [alertController addAction:open];
+        UIViewController *rootviewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+        [rootviewController presentViewController:alertController animated:YES completion:nil];
+    }
+    [_activityIndicator removeFromSuperview];
+}
+
+-(void)didFailLinkProcessingWithError:(NSError *)error url:(NSURL *)url {
+    NSLog(@"%@", error);
+    [_activityIndicator removeFromSuperview];
+}
+
+-(void)didStartLinkProcessing {
+    _activityIndicator = [[UIActivityIndicatorView alloc] init];
+    UIViewController *rootviewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+    _activityIndicator.center = [rootviewController.view center];
+    if (@available(iOS 13.0, *)) {
+        _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleLarge;
+    } else {
+        _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    }
+    [[rootviewController view] addSubview:_activityIndicator];
+    [_activityIndicator startAnimating];
 }
 
 @end

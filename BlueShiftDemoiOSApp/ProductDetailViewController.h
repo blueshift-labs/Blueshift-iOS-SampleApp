@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <BlueShift-iOS-SDK/BlueShift.h>
 #import "BaseViewController.h"
 
 @interface ProductDetailViewController : BaseViewController<BlueShiftPushDelegate, UIGestureRecognizerDelegate>

@@ -15,6 +15,7 @@
 @property IBOutlet AttributedTextField *emailTextField;
 @property IBOutlet AttributedTextField *passwordTextField;
 @property CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UIView *TitleView;
 
 - (IBAction)signInPressed:(id)sender;
 - (IBAction)signUpPressed:(id)sender;

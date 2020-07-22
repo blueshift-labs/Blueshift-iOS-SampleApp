@@ -32,11 +32,31 @@
         }
     }
     
+    if ([[[BlueShift sharedInstance] config] inAppManualTriggerEnabled]) {
+        UIBarButtonItem *showInApp = [[UIBarButtonItem alloc]
+                                       initWithTitle:@"ShowInApp"
+                                       style:UIBarButtonItemStylePlain
+                                       target:self
+                                       action:@selector(showInApp)];
+        self.navigationItem.rightBarButtonItem = showInApp;
+    }
+    
     [self initUIElements];
+}
+
+-(void)showInApp {
+    [[BlueShift sharedInstance] fetchInAppNotificationFromAPI:^{
+        [[BlueShift sharedInstance]displayInAppNotification];
+    } failure:^(NSError *err) {}];
 }
 
 - (void)initUIElements {
     self.borderColor = [UIColor colorWithRed:226.0f/255.0f green:226.0f/255.0f blue:226.0f/255.0f alpha:1.0f];
+    if ([[[NSBundle mainBundle] bundleIdentifier]  isEqual: @"com.blueshift.reads"]) {
+        self.navigationController.navigationBar.barTintColor = [UIColor colorNamed:@"appColor"];
+    } else {
+        self.navigationController.navigationBar.barTintColor = [UIColor colorNamed:@"AppColorRed"];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -30,6 +30,40 @@
     [self createTapGesture];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
+    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductDetailViewController class])];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[BlueShift sharedInstance] unregisterForInAppMessage];
+}
+
+- (UIViewController*)topViewController {
+    return [self topViewControllerWithRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
+-(UIViewController*)topViewControllerWithRootViewController:(UIViewController*)viewController {
+    if ([self isKindOfClass:[UITabBarController class]]){
+        UITabBarController *tabBarController = (UITabBarController *)viewController;
+        return [self topViewControllerWithRootViewController:tabBarController.selectedViewController];
+    }
+    else if ([self isKindOfClass:[UINavigationController class]]){
+        UINavigationController *navigationController = (UINavigationController *)viewController;
+        return [self topViewControllerWithRootViewController: navigationController.visibleViewController];
+    }
+    else if (self.presentedViewController){
+        return [self topViewControllerWithRootViewController: viewController.presentedViewController];
+    }
+    else if (self.childViewControllers.count > 0){
+        return [self topViewControllerWithRootViewController: viewController.childViewControllers.lastObject];
+    }
+    
+    return viewController;
+}
+
 - (void)createTapGesture {
     self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGestureAction)];
     self.tapGesture.numberOfTapsRequired = 1;
@@ -53,14 +87,6 @@
 - (void)tapGestureAction {
     self.pickerView.hidden = true;
     self.tapGesture.enabled = false;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
-    //[[BlueShift sharedInstance] trackProductViewedWithSKU:@"PROM002" andCategoryID:10 canBatchThisEvent:YES];
-    //[[BlueShift sharedInstance] trackEventForEventName:@"test1" canBatchThisEvent:NO];
 }
 
 
@@ -140,6 +166,10 @@
     [self.quantityButton setTitle:[NSString stringWithFormat:@"Quanity:%ld", row + 1] forState:UIControlStateSelected];
     [self.quantityButton setTitle:[NSString stringWithFormat:@"Quanity:%ld", row + 1] forState:UIControlStateHighlighted];
     self.quantity = row + 1;
+}
+
+- (IBAction)wishListButtonPressed:(id)sender {
+
 }
 
 @end

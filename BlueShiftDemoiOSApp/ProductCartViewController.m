@@ -48,6 +48,10 @@
     
     //self.products = @[product1, product2, product3];
     [self populateTableWithItems];
+    
+    _emailTextField.text = [BlueShiftUserInfo sharedInstance].email;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,8 +61,14 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductCartViewController class])];
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
+
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[BlueShift sharedInstance] unregisterForInAppMessage];
 }
 
 - (void)createBlueShiftProducts {

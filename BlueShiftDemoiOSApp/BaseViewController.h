@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIView+BfViewHelpers.h"
+#import <BlueShift-iOS-SDK/BlueShift.h>
 
 @protocol BaseViewControllerDelegate <NSObject>
 

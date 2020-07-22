@@ -26,7 +26,6 @@
     self.navigationItem.title = @"Product List";
     [self addNavigationBarButtons];
     [self addSideMenuButtonToNavigationBar];
-    
     self.products =  [Cart fetchProducts];
     
 //        if ([[NSUserDefaults standardUserDefaults] integerForKey:@"FreshInstal"]==0) {
@@ -38,29 +37,23 @@
 //            [[NSUserDefaults standardUserDefaults]synchronize];
 //        }
     
-    [self registerForRemoteNotification];
+//    [self registerForRemoteNotification];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self customEvents];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [[BlueShift sharedInstance] unregisterForInAppMessage];
 }
 
 - (void)registerForRemoteNotification {
     //[[SOME_CLASS sharedInstance].isRemotePushEnabled] = YES;
     [[BlueShift sharedInstance].appDelegate registerForNotification];
 }
-
-- (void)customEvents {
-    [[BlueShift sharedInstance] trackEventForEventName:@"first" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"second" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"third" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"fourth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"fifth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-    [[BlueShift sharedInstance] trackEventForEventName:@"sixth" andParameters:@{@"one": @"one"} canBatchThisEvent:NO];
-}
-
-
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
@@ -117,6 +110,7 @@
     [self.navigationController setNavigationBarHidden:NO];
     [[BlueShift sharedInstance] trackScreenViewedForViewController:self canBatchThisEvent:YES];
     [self.productListTableView reloadData];
+    [[BlueShift sharedInstance] registerForInAppMessage: NSStringFromClass([ProductListViewController class])];
 }
 
 

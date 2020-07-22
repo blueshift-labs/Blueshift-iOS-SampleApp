@@ -80,6 +80,14 @@
     [self performTransitionUsingViewControllerStoryBoardIDArray:viewControllerStoryBoardIDArray];
 }
 
+- (void)sendPushNotification {
+    [[BlueShift sharedInstance] trackEventForEventName:@"bsft_send_me_push" canBatchThisEvent:NO];
+}
+
+- (void)sendInAppNotification {
+    [[BlueShift sharedInstance] trackEventForEventName:@"bsft_send_me_in_app" canBatchThisEvent:NO];
+}
+
 - (void)logout {
     [User logout:^(BOOL status) {
         if(status) {
