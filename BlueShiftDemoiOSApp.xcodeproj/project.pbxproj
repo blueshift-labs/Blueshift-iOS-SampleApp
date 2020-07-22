@@ -22,7 +22,7 @@
 		55C957E01DAE7AF500073367 /* UIImage+BfImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C957DF1DAE7AF500073367 /* UIImage+BfImageHelpers.m */; };
 		55CBD3601E1F9CA60061C0CD /* CartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CBD35F1E1F9CA60061C0CD /* CartTableViewCell.m */; };
 		55CBD3631E1FDCA50061C0CD /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CBD3621E1FDCA50061C0CD /* Cart.m */; };
-		91B4074724C869D5005B55D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91B4074624C869D5005B55D6 /* GoogleService-Info.plist */; };
+		91B4074924C86D31005B55D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91B4074824C86D31005B55D6 /* GoogleService-Info.plist */; };
 		C202340F221970AF00F9A5E9 /* WebViewPopUpFull.xib in Resources */ = {isa = PBXBuildFile; fileRef = C202340E221970AF00F9A5E9 /* WebViewPopUpFull.xib */; };
 		C20234112219716A00F9A5E9 /* WebViewPopUpTop.xib in Resources */ = {isa = PBXBuildFile; fileRef = C20234102219716A00F9A5E9 /* WebViewPopUpTop.xib */; };
 		C2023413221971EB00F9A5E9 /* WebViewPopUpCenter.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2023412221971EB00F9A5E9 /* WebViewPopUpCenter.xib */; };
@@ -132,7 +132,7 @@
 		55CBD3641E24BA130061C0CD /* CartDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartDelegate.h; sourceTree = "<group>"; };
 		6BD50D6FF6887516E2BC8446 /* libPods-BlueShiftPushService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlueShiftPushService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6E1C9806F202B273237ABB /* Pods-BlueShiftPushService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftPushService.debug.xcconfig"; path = "Target Support Files/Pods-BlueShiftPushService/Pods-BlueShiftPushService.debug.xcconfig"; sourceTree = "<group>"; };
-		91B4074624C869D5005B55D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		91B4074824C86D31005B55D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99F2BAEBFCA389C3A32A07FB /* Pods-BlueShiftDemoiOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.debug.xcconfig"; path = "Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B325A95BB4F9C6D83020D252 /* Pods-BlueShiftDemoiOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueShiftDemoiOSApp.release.xcconfig"; path = "Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp.release.xcconfig"; sourceTree = "<group>"; };
 		C202340E221970AF00F9A5E9 /* WebViewPopUpFull.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewPopUpFull.xib; sourceTree = "<group>"; };
@@ -623,7 +623,7 @@
 		DC3D9EF51A8A14B000177ABD /* BlueShiftDemoiOSApp */ = {
 			isa = PBXGroup;
 			children = (
-				91B4074624C869D5005B55D6 /* GoogleService-Info.plist */,
+				91B4074824C86D31005B55D6 /* GoogleService-Info.plist */,
 				C37B371A248A849300AC3006 /* com.blueshift.reads.red-GoogleService-Info.plist */,
 				C24C3FEC1EDEB5B8002F7DB8 /* BlueShift Reads.entitlements */,
 				DC1B4B581A8BBFB900F2C579 /* Constants */,
@@ -844,7 +844,7 @@
 				C267DE5E2022E036008EBF4C /* WebViewPopUp.xib in Resources */,
 				C202340F221970AF00F9A5E9 /* WebViewPopUpFull.xib in Resources */,
 				DC3D9F041A8A14B000177ABD /* Images.xcassets in Resources */,
-				91B4074724C869D5005B55D6 /* GoogleService-Info.plist in Resources */,
+				91B4074924C86D31005B55D6 /* GoogleService-Info.plist in Resources */,
 				C37B371B248A849300AC3006 /* com.blueshift.reads.red-GoogleService-Info.plist in Resources */,
 				C2023413221971EB00F9A5E9 /* WebViewPopUpCenter.xib in Resources */,
 			);

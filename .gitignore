@@ -9,13 +9,14 @@ Pods/Pods.xcodeproj/xcuserdata/
 
 # Ignore all logfiles and tempfiles.
 */xcuserdata/*
+*/xcshareddata/*
+
 Rewards App.xcworkspace/xcshareddata/
 
 
 # Index files
 
 # Ignore IDE files
-*.xcworkspace
 
 /coverage
 /Pods
