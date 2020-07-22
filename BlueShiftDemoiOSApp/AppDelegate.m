@@ -41,7 +41,7 @@
     BlueShiftConfig *config = [BlueShiftConfig config];
     
     // Set the api Key for the config
-    [config setApiKey:@"5dfe3c9aee8b375bcc616079b08156d9"];
+    [config setApiKey:@"API KEY"];
     
     // Enable BlueShift Push Notification. By Default Push notfications are enabled.
     [config setEnablePushNotification:YES];
