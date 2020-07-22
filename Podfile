@@ -5,12 +5,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 workspace 'BlueShiftDemoiOSApp.xcworkspace'
 
-# TODO: Set BSFT_IOS_SDK_PATH in your ~/.bashrc or ~/.bash_profile before 'pod install'
-# export BSFT_IOS_SDK_PATH=$HOME/Blueshift/Blueshift-iOS-SDK
-#$bsftLocalPath = '/Users/administrator/Blueshift-iOS-SDK'
-#$bsftVersion = '~> 2.0.1'
-$bsftGitURL = 'https://github.com/blueshift-labs/Blueshift-iOS-SDK'
-
 target 'BlueShiftDemoiOSApp' do
   pod 'SVProgressHUD'
   pod 'JSONModel'
@@ -20,22 +14,13 @@ target 'BlueShiftDemoiOSApp' do
   pod 'MJPopupViewController'
   pod 'Firebase/Analytics'
   pod 'Firebase/Performance'
-#  pod 'BlueShift-iOS-SDK', :path => $bsftLocalPath
-#  pod 'BlueShift-iOS-SDK', :git => $bsftGitURL
-#  pod 'BlueShift-iOS-SDK', $bsftVersion
   pod 'BlueShift-iOS-SDK'
 end
 
 target 'BlueShiftPushService' do
-#  pod 'BlueShift-iOS-Extension-SDK', :path => $bsftLocalPath
-#  pod 'BlueShift-iOS-Extension-SDK', :git => $bsftGitURL
-#  pod 'BlueShift-iOS-Extension-SDK', $bsftVersion
   pod 'BlueShift-iOS-Extension-SDK'
 end
 
 target 'BlueShiftPushContent' do
-#  pod 'BlueShift-iOS-Extension-SDK', :path => $bsftLocalPath
-#  pod 'BlueShift-iOS-Extension-SDK', :git => $bsftGitURL
-#  pod 'BlueShift-iOS-Extension-SDK', $bsftVersion
   pod 'BlueShift-iOS-Extension-SDK'
 end
