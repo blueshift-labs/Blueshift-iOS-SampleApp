@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = BlueShiftConfig()
 
         // Set the api Key for the config
-        config.apiKey = "5dfe3c9aee8b375bcc616079b08156d9"
+        config.apiKey = "ADD API KEY"
         
         //Enable push notifications
         config.enablePushNotification = true

@@ -16,7 +16,7 @@ class NotificationService: UNNotificationServiceExtension {
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
-        BlueShiftPushNotification.sharedInstance()?.apiKey = "5dfe3c9aee8b375bcc616079b08156d9"
+        BlueShiftPushNotification.sharedInstance()?.apiKey = "ADD API KEY"
         
         var appGroupID = ""
         if Bundle.main.bundleIdentifier == "com.blueshift.reads" {
