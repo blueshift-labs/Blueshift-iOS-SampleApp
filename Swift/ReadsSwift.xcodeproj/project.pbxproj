@@ -593,7 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "NotificationContent/NotificationContent-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -615,7 +615,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "NotificationContent/NotificationContent-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -748,7 +748,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "NotificationContent/NotificationContent-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -895,6 +895,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "Blueshift Reads";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WHITELABEL_TYPE = Blue;
