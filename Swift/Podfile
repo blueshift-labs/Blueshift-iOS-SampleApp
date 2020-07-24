@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+$bsftLocalPath = '/Users/ketanshikhare/Documents/Blueshift-Repository/Blueshift-iOS-SDK'
+#$bsftLocalPath = '/Users/ketanshikhare/Documents/Blueshift-Repository/SceneDelgate-SDK'
+
+use_frameworks!
+target 'ReadsSwift' do
+    pod 'BlueShift-iOS-SDK', :path => $bsftLocalPath
+    pod 'Kingfisher'
+    pod 'Firebase/Analytics'
+    pod 'Firebase/Performance'
+    pod 'Firebase/Crashlytics'
+    pod 'Fabric'
+end
+
+target 'NotificationService' do
+    pod 'BlueShift-iOS-Extension-SDK', :path => $bsftLocalPath
+end
+
+target 'NotificationContent' do
+    pod 'BlueShift-iOS-Extension-SDK', :path => $bsftLocalPath
+end
+

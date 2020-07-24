@@ -17,6 +17,7 @@
 #import <Firebase/Firebase.h>
 @import FirebasePerformance;
 @import FirebaseAnalytics;
+@import Fabric;
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -38,6 +39,7 @@
     }
     FIROptions *options = [[FIROptions alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:configFileName ofType:@"plist"]];
     [FIRApp configureWithOptions: options];
+    [[Fabric sharedSDK]setDebug:YES];
     
     // Obtain an instance of BlueShiftConfig
     BlueShiftConfig *config = [BlueShiftConfig config];
@@ -96,22 +98,10 @@
     return YES;
 }
 
+#pragma mark - remote notification delegate methods
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
     [[BlueShift sharedInstance].appDelegate registerForRemoteNotification:deviceToken];
     NSLog(@"device token %@", deviceToken);
-}
-
-
--(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
-    [[BlueShift sharedInstance].userNotificationDelegate handleUserNotificationCenter:center willPresentNotification:notification withCompletionHandler:^(UNNotificationPresentationOptions options) {
-        completionHandler(options);
-    }];
-}
-
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-    [[BlueShift sharedInstance].userNotificationDelegate handleUserNotification:center didReceiveNotificationResponse:response withCompletionHandler:^{
-        completionHandler();
-    }];
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
@@ -132,6 +122,18 @@
     [[BlueShift sharedInstance].appDelegate handleActionWithIdentifier:identifier forRemoteNotification:notification completionHandler:completionHandler];
 }
 
+#pragma mark - UserNotificationCenter delegate methods
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+    [[BlueShift sharedInstance].userNotificationDelegate handleUserNotificationCenter:center willPresentNotification:notification withCompletionHandler:^(UNNotificationPresentationOptions options) {
+        completionHandler(options);
+    }];
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    [[BlueShift sharedInstance].userNotificationDelegate handleUserNotification:center didReceiveNotificationResponse:response withCompletionHandler:^{
+        completionHandler();
+    }];
+}
 
 - (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithIndex:(NSInteger)index withDetails:(NSDictionary *)details {
     NSLog(@"index is %ld\n", (long)index);
@@ -140,6 +142,7 @@
 - (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithDetails:(NSDictionary *)detalis andDeepLinkURL:(NSString *)url {
     NSLog(@"url is %@", url);
 }
+
 
 - (void)pushCartPage {
     //pushing cart page through deckview controller
@@ -173,6 +176,11 @@
     [self pushCartPage];
 }
 
+- (void)actionButtonDidTapped:(NSDictionary *)payloadDictionary {
+    [self pushCartPage];
+}
+
+#pragma mark - application lifecycle methods
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -197,9 +205,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)actionButtonDidTapped:(NSDictionary *)payloadDictionary {
-    [self pushCartPage];
-}
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     [self didCompleteLinkProcessing:url];
@@ -219,8 +224,10 @@
     return YES;
 }
 
+#pragma mark - Universal link delegate methods
 -(void)didCompleteLinkProcessing:(NSURL *)url {
     NSLog(@"%@", url);
+    [_activityIndicator removeFromSuperview];
     if (url == nil || [url.absoluteString isEqual: @""]) {
         return;
     }
@@ -243,7 +250,6 @@
         UIViewController *rootviewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
         [rootviewController presentViewController:alertController animated:YES completion:nil];
     }
-    [_activityIndicator removeFromSuperview];
 }
 
 -(void)didFailLinkProcessingWithError:(NSError *)error url:(NSURL *)url {

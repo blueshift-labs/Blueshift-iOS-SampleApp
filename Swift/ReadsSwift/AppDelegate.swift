@@ -1,0 +1,192 @@
+//
+//  AppDelegate.swift
+//  ReadsSwift
+//
+//  Created by Ketan on 18/05/20.
+//
+
+import UIKit
+import BlueShift_iOS_SDK
+import FirebaseCore
+import Fabric
+
+@UIApplicationMain
+
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    let activityIndicator = UIActivityIndicatorView(style: .large)
+    var cartItems: [String: String] = [:]
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // configure firebase
+        var firbaseConfigFileName = ""
+        if let bundleId = Bundle.main.bundleIdentifier, bundleId == "com.blueshift.reads.red" {
+           firbaseConfigFileName = "\(bundleId)-GoogleService-Info"
+        } else {
+            firbaseConfigFileName = "GoogleService-Info"
+        }
+        if let path = Bundle.main.path(forResource: firbaseConfigFileName, ofType: "plist"),
+            let firebaseOptions = FirebaseOptions(contentsOfFile: path) {
+            FirebaseConfiguration.shared.setLoggerLevel(.min)
+            FirebaseApp.configure(options: firebaseOptions)
+            Fabric.sharedSDK().debug = true
+        }
+        
+
+        // Obtain an instance of BlueShiftConfig
+        let config = BlueShiftConfig()
+
+        // Set the api Key for the config
+        config.apiKey = "5dfe3c9aee8b375bcc616079b08156d9"
+        
+        //Enable push notifications
+        config.enablePushNotification = true
+
+        //Set user notification delegate
+        config.userNotificationDelegate = self
+
+        // For Carousel push notification deep linking
+        if Bundle.main.bundleIdentifier == "com.blueshift.reads" {
+            config.appGroupID = "group.blueshift.reads"
+        } else {
+            config.appGroupID = "group.blueshift.reads.red"
+        }
+        
+        //Enable In-app notifications
+        config.enableInAppNotification = true
+
+        //Optional: Set time interval in seconds between two In app notifications.
+        //If you do not add below line, SDK by default sets it to 60 seconds.
+        config.blueshiftInAppNotificationTimeInterval = 30
+
+        //Optional: Set Batch upload interval in seconds period in seconds.
+        //If you do not add below line, SDK by default sets it to 300 seconds.
+        BlueShiftBatchUploadConfig.sharedInstance()?.batchUploadTimer = 60
+
+        //Set universal links delegate to enable universal links
+        config.blueshiftUniversalLinksDelegate = self
+
+        //Optional: SDK uses IDFV by default if you do not include the following line of code.
+        //For more information, see: https://developer.blueshift.com/docs/include-configure-initialize-the-ios-sdk-in-the-app#specify-the-device-id-source
+        config.blueshiftDeviceIdSource = .idfvBundleID
+        
+        
+        // Initialize the configuration
+        BlueShift.initWithConfiguration(config)
+        
+        return true
+    }
+}
+
+extension AppDelegate {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        BlueShift.sharedInstance()?.appDelegate.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        BlueShift.sharedInstance()?.appDelegate.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        BlueShift.sharedInstance()?.appDelegate.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        BlueShift.sharedInstance()?.userNotificationDelegate.handleUserNotification(center, didReceive: response, withCompletionHandler: completionHandler)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        BlueShift.sharedInstance()?.userNotificationDelegate.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
+    }
+}
+
+extension AppDelegate {
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        if let url = userActivity.webpageURL {
+            if BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
+                BlueShift.sharedInstance()?.appDelegate.handleBlueshiftUniversalLinks(for: url)
+            }
+        }
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        return true
+    }
+}
+
+extension AppDelegate: BlueshiftUniversalLinksDelegate {
+    
+    func didCompleteLinkProcessing(_ url: URL?) {
+        //Process deeplink and show the respective screen
+        hideActivityIndicator()
+        guard let url = url else { return }
+        showProductDetail(animated: true, url: url)
+    }
+    
+    func didStartLinkProcessing() {
+        showActivityIndicator()
+    }
+    
+    func didFailLinkProcessingWithError(_ error: Error?, url: URL?) {
+        hideActivityIndicator()
+    }
+}
+
+extension AppDelegate {
+    func showActivityIndicator() {
+        let rootViewController = UIApplication.shared.windows.first?.rootViewController
+        activityIndicator.center = rootViewController?.view.center ?? CGPoint(x: 0,y: 0)
+        rootViewController?.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+    }
+    
+    func hideActivityIndicator() {
+        activityIndicator.removeFromSuperview()
+    }
+    
+    func showAlert(for url: URL) {
+        let rootViewController = UIApplication.shared.windows.first?.rootViewController
+        let alertController = UIAlertController(title: "Product not found", message: url.absoluteString, preferredStyle: .alert)
+        let open = UIAlertAction(title: "Open in Safari", style: .default) {
+            UIAlertAction in
+            DispatchQueue.main.async {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(open)
+        alertController.addAction(cancel)
+        rootViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showProductDetail(animated: Bool, url: URL) {
+        var newUrl = url.absoluteString.components(separatedBy: "?").first
+        newUrl = newUrl?.replacingOccurrences(of: "http://", with: "https://")
+        let products = Utils.shared.products.filter { (product) -> Bool in
+            return product["web_url"] == newUrl ? true : false
+        }
+        guard let product = products.first else {
+            showAlert(for: url)
+            return
+        }
+        
+        guard let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController else { return }
+        if navigationController.viewControllers.count > 2 {
+            for controller in navigationController.viewControllers {
+                if controller.isKind(of: ProductListViewController.self) {
+                    navigationController.popToViewController(controller, animated: false)
+                }
+            }
+        }
+        
+        let productDetailViewController: ProductDetailViewController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProductDetailViewController")
+        productDetailViewController.product = product
+        navigationController.pushViewController(productDetailViewController, animated: animated)
+    }
+}

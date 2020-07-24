@@ -8,13 +8,11 @@
 # Ignore the default SQLite database.
 
 # Ignore all logfiles and tempfiles.
-*/xcuserdata/*
-*/xcshareddata/*
+**xcshareddata**
+**xcuserdata**
 
 #ignore pod lock file
 */Podfile.lock
-
-Rewards App.xcworkspace/xcshareddata/
 
 
 # Index files

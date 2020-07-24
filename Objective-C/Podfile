@@ -18,6 +18,7 @@ target 'BlueShiftDemoiOSApp' do
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
   pod 'Firebase/Performance'
+  pod 'Fabric'
 end
 
 target 'BlueShiftPushService' do
