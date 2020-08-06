@@ -1,5 +1,5 @@
 //
-//  InAppNotificationEvents.swift
+//  BlueshiftInAppNotificationEvents.swift
 //  ReadsSwift
 //
 //  Created by Ketan Shikhare on 22/07/20.
@@ -8,7 +8,7 @@
 import Foundation
 import BlueShift_iOS_SDK
 
-class InAppNotificationEvents: NSObject, BlueShiftInAppNotificationDelegate {
+class BlueshiftInAppNotificationEvents: NSObject, BlueShiftInAppNotificationDelegate {
     
     func inAppNotificationWillAppear(_ notificationDictionary: [AnyHashable : Any]!) {
         //add custom logic here

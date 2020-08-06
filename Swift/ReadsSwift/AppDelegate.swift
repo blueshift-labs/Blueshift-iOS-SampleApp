@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // configure firebase
+//         configure firebase
         var firbaseConfigFileName = ""
         if let bundleId = Bundle.main.bundleIdentifier, bundleId == "com.blueshift.reads.red" {
            firbaseConfigFileName = "\(bundleId)-GoogleService-Info"
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //If you do not add below line, SDK by default sets it to 60 seconds.
         config.blueshiftInAppNotificationTimeInterval = 30
 
-        //Optional: Set Batch upload interval in seconds period in seconds.
+        //Optional: Set Batch upload interval in seconds.
         //If you do not add below line, SDK by default sets it to 300 seconds.
         BlueShiftBatchUploadConfig.sharedInstance()?.batchUploadTimer = 60
 
@@ -72,6 +72,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //For more information, see: https://developer.blueshift.com/docs/include-configure-initialize-the-ios-sdk-in-the-app#specify-the-device-id-source
         config.blueshiftDeviceIdSource = .idfvBundleID
         
+        //Optinal: Set push notification delegate to get the push events callback
+        let blueShiftPushDelegatge = BlueshiftPushNotificationEvents()
+        config.blueShiftPushDelegate = blueShiftPushDelegatge
+        
+        //Optinal: Set in-app notification degate to get the in-app events callback
+        let blueshiftInAppDelegate = BlueshiftInAppNotificationEvents()
+        config.inAppNotificationDelegate = blueshiftInAppDelegate
         
         // Initialize the configuration
         BlueShift.initWithConfiguration(config)
@@ -102,6 +109,17 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         BlueShift.sharedInstance()?.userNotificationDelegate.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
     }
+    
+}
+
+extension AppDelegate {
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        BlueShift.sharedInstance()?.appDelegate.appDidBecomeActive(application)
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        BlueShift.sharedInstance()?.appDelegate.appDidEnterBackground(application)
+    }
 }
 
 extension AppDelegate {
@@ -115,7 +133,7 @@ extension AppDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+        showProductDetail(animated: true, url: url)
         return true
     }
 }

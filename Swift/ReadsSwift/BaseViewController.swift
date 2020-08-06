@@ -40,6 +40,8 @@ class BaseViewController: UIViewController {
             themeColor = UIColor(named: "AppColorRed")
         }
         navigationController?.navigationBar.barTintColor = themeColor
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
 
 }
