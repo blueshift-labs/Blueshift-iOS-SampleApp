@@ -99,12 +99,6 @@ extension AppDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         BlueShift.sharedInstance()?.appDelegate.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     }
-    
-    func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [AnyHashable : Any], completionHandler: @escaping () -> Void) {
-        if let identifier = identifier {
-            BlueShift.sharedInstance()?.appDelegate.handleAction(withIdentifier: identifier, forRemoteNotification: userInfo, completionHandler: completionHandler)
-        }
-    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
