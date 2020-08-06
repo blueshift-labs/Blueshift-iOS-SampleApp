@@ -39,13 +39,16 @@ class SignInViewController: BaseViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        //Make an identify call with the signed in user
         BlueShiftUserInfo.sharedInstance()?.email = emailIdTextField.text
         BlueShiftUserInfo.sharedInstance()?.retailerCustomerID = "PROFILEID:" + (emailIdTextField.text ?? "")
         BlueShiftUserInfo.sharedInstance()?.unsubscribed = false
         BlueShiftUserInfo.sharedInstance()?.save()
         let dictionary = ["name": nameTextField.text ?? "", "profession":"Software developer"]
-        BlueShift.sharedInstance().identifyUser(withDetails:nil, canBatchThisEvent: false)
-        BlueShift.sharedInstance().trackEvent(forEventName: "signIn", andParameters: dictionary, canBatchThisEvent: false)
+        BlueShift.sharedInstance().identifyUser(withDetails:dictionary, canBatchThisEvent: false)
+        
+        //Add screen view event
+        BlueShift.sharedInstance().trackEvent(forEventName: "signIn", andParameters: nil, canBatchThisEvent: false)
         if let email = emailIdTextField.text {
             UserDefaults.standard.setValue(email, forKey: "BSFTemailId")
         }

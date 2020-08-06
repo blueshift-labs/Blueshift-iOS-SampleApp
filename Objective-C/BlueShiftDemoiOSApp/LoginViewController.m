@@ -60,6 +60,10 @@
     //[[BlueShiftUserInfo sharedInstance] setRetailerCustomerID:customerID];
     [[BlueShiftUserInfo sharedInstance] setUnsubscribed:NO];
     [[BlueShiftUserInfo sharedInstance] save];
+//    [[BlueShiftUserInfo sharedInstance] setGender: @"add gender"];
+//    [[BlueShiftUserInfo sharedInstance] setDateOfBirth: @"add DOB"];
+//    [[BlueShiftUserInfo sharedInstance] setFirstName: @"add first name"];
+//    [[BlueShiftUserInfo sharedInstance] setLastName: @"add last name" ];
     
     [[BlueShift sharedInstance] identifyUserWithEmail:[BlueShiftUserInfo sharedInstance].email andDetails:nil canBatchThisEvent:NO];
     
