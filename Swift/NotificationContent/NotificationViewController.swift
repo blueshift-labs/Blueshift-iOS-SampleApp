@@ -11,8 +11,6 @@ import UserNotificationsUI
 import BlueShift_iOS_Extension_SDK
 
 class NotificationViewController: BlueShiftCarousalViewController, UNNotificationContentExtension {
-
-    @IBOutlet var label: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +25,7 @@ class NotificationViewController: BlueShiftCarousalViewController, UNNotificatio
         if isBlueShiftCarouselPush(notification) {
             showCarousel(forNotfication: notification)
         } else {
-            //other
+            //handle notifications if not from Blueshift
         }
     }
 
@@ -37,7 +35,7 @@ class NotificationViewController: BlueShiftCarousalViewController, UNNotificatio
                 completion(option)
             }
         } else {
-            //other
+            //handle notifications if not from Blueshift
         }
     }
 }

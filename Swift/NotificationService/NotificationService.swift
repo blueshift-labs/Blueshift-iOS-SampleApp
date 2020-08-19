@@ -28,7 +28,7 @@ class NotificationService: UNNotificationServiceExtension {
         if BlueShiftPushNotification.sharedInstance()?.isBlueShiftPushNotification(request) == true, let attachments = BlueShiftPushNotification.sharedInstance()?.integratePushNotificationWithMediaAttachements(for: request, andAppGroupID: appGroupID) as? [UNNotificationAttachment] {
             bestAttemptContent?.attachments = attachments
         } else {
-            //other
+            //handle notifications if not from Blueshift
         }
         if let bestAttemptContent = bestAttemptContent {
             contentHandler(bestAttemptContent)

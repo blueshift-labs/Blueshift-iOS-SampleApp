@@ -89,15 +89,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        BlueShift.sharedInstance()?.appDelegate.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+        BlueShift.sharedInstance()?.appDelegate.register(forRemoteNotification: deviceToken)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        BlueShift.sharedInstance()?.appDelegate.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+        BlueShift.sharedInstance()?.appDelegate.failedToRegisterForRemoteNotificationWithError(error)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        BlueShift.sharedInstance()?.appDelegate.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+        BlueShift.sharedInstance()?.appDelegate.handleRemoteNotification(userInfo, for: application, fetchCompletionHandler: completionHandler)
     }
 }
 

@@ -239,13 +239,13 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FC-s1-de3">
                                 <rect key="frame" x="20" y="405" width="374" height="397"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut.
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut.
 
  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -359,24 +359,24 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                         <viewLayoutGuide key="safeArea" id="5nV-6D-ln9"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Cg2-0D-sxr"/>
                                 <exclude reference="5Br-QW-HeE"/>
                                 <exclude reference="hIQ-Vf-eEu"/>
                                 <exclude reference="unI-BL-FmE"/>
                                 <exclude reference="z0g-u5-cch"/>
+                                <exclude reference="Cg2-0D-sxr"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
                             <mask key="constraints">
                                 <exclude reference="aXg-H6-Et4"/>
-                                <exclude reference="0lc-FH-MYX"/>
-                                <include reference="Cg2-0D-sxr"/>
                                 <exclude reference="0bq-jG-xCr"/>
                                 <include reference="5Br-QW-HeE"/>
                                 <exclude reference="hIQ-Vf-eEu"/>
                                 <exclude reference="sqV-f5-hhX"/>
                                 <include reference="unI-BL-FmE"/>
                                 <include reference="z0g-u5-cch"/>
+                                <exclude reference="0lc-FH-MYX"/>
+                                <include reference="Cg2-0D-sxr"/>
                             </mask>
                         </variation>
                     </view>

@@ -28,5 +28,8 @@ class BlueshiftInAppNotificationEvents: NSObject, BlueShiftInAppNotificationDele
     
     func actionButtonDidTapped(_ notificationDictionary: [AnyHashable : Any]!) {
         //custom logic performed after clicking on in-app to be added here
+        if let notificationDictionary = notificationDictionary {
+            print("BlueshiftInAppNotificationEvents In App Clicked with details - ", notificationDictionary);
+        }
     }
 }

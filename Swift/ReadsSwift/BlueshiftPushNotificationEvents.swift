@@ -13,5 +13,8 @@ class BlueshiftPushNotificationEvents: NSObject, BlueShiftPushDelegate {
     func handlePushAction(forIdentifier identifier: String!, withDetails details: [AnyHashable : Any]!) {
         //add logic to handle push action
         //Dont handle navigation here if the deep link navigation is already handled in appDelegate openURL
+        if let details = details {
+            print("BlueshiftPushNotificationEvents Push Clicked with details - ", details);
+        }
     }
 }

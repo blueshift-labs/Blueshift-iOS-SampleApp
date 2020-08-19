@@ -51,7 +51,7 @@
 }
 
 - (void)registerForRemoteNotification {
-    //[[SOME_CLASS sharedInstance].isRemotePushEnabled] = YES;
+    [[[BlueShift sharedInstance]config] setEnablePushNotification: YES];
     [[BlueShift sharedInstance].appDelegate registerForNotification];
 }
 
