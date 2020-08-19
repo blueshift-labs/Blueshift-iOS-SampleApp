@@ -8,7 +8,12 @@
 import UIKit
 import BlueShift_iOS_SDK
 
+//This class must be inherited by all the ViewControllers
 class BaseViewController: UIViewController {
+    //variable registerForInApp is set to true by default, so every ViewController will be registered for in-app automatically
+    //after inheritiang this class
+    //You can set registerForInApp to false in the ViewControllers didLoad method to not to register for in-app
+    //This is one way to achieve this registration across the app, you can always customise it the way you want
     var registerForInApp: Bool = true
     var themeColor: UIColor?
     
@@ -30,6 +35,7 @@ class BaseViewController: UIViewController {
             BlueShift.sharedInstance()?.unregisterForInAppMessage()
     }
     
+    // Set color theme for different build configurations
     func setNavigationBarColor() {
         navigationController?.navigationBar.tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
