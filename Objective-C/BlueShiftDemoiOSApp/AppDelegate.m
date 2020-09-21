@@ -46,6 +46,8 @@
     
     // Set the api Key for the config
     [config setApiKey:@"API KEY"];
+    //Enabled deug info logs
+    [config setDebug:YES];
     
     // Enable BlueShift Push Notification. By Default Push notfications are enabled.
     [config setEnablePushNotification:YES];
@@ -57,7 +59,7 @@
     [config setEnableInAppNotification: YES];
     
     //Optional: Set the Predefined DeepLinking URL'
-    [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductDetailViewController"]];
+    [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/Produ ctListViewController/ProductDetailViewController"]];
     [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductCartViewController"]];
     [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/OfferViewController"]];
     
@@ -72,7 +74,12 @@
     
     // == Specify device ID source (Optional) ==
     // SKD uses BlueshiftDeviceIdSourceIDFV by default if you do not include the following line of code. For more information, see:
-    [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
+    
+    //Set deviceIDSource as custom
+    [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceCustom];
+    //Set the custom device id value
+    [config setCustomDeviceId: [UIDevice currentDevice].identifierForVendor.UUIDString];
+    
     /*
     * You can also use IDFVBundleID, which combination of IDFV and Bundle ID. Replace the above line with this:
     *

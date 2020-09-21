@@ -22,16 +22,24 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        title = "Sign In"
-        BlueShift.sharedInstance().trackEvent(forEventName: String(describing: SignInViewController.self), andParameters: nil, canBatchThisEvent: true)
-        self.registerForInApp = false
-        signInButton.backgroundColor = self.themeColor
+        setupUI()
+        setupEvents()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         BlueShift.sharedInstance()?.unregisterForInAppMessage()
+    }
+    
+    func setupUI() {
+        title = "Sign In"
+        signInButton.backgroundColor = self.themeColor
+        BlueShiftUserInfo.removeCurrentUserInfo()
+    }
+    
+    func setupEvents() {
+        self.registerForInApp = false
+        BlueShift.sharedInstance().trackEvent(forEventName: String(describing: SignInViewController.self), andParameters: nil, canBatchThisEvent: true)
     }
     
     @IBAction func dismissKeyBoard(_ sender: Any) {
@@ -42,6 +50,12 @@ class SignInViewController: BaseViewController {
         //Make an identify call with the signed in user
         BlueShiftUserInfo.sharedInstance()?.email = emailIdTextField.text
         BlueShiftUserInfo.sharedInstance()?.retailerCustomerID = "PROFILEID:" + (emailIdTextField.text ?? "")
+        //Set other user info as below. This info will be used for running personlised campaigns
+//        BlueShiftUserInfo.sharedInstance()?.firstName = "add first name"
+//        BlueShiftUserInfo.sharedInstance()?.lastName = "add last name"
+//        BlueShiftUserInfo.sharedInstance()?.gender = "add gender"
+//        BlueShiftUserInfo.sharedInstance()?.dateOfBirth = "add DOB"
+        
         BlueShiftUserInfo.sharedInstance()?.unsubscribed = false
         BlueShiftUserInfo.sharedInstance()?.save()
         let dictionary = ["name": nameTextField.text ?? "", "profession":"Software developer"]

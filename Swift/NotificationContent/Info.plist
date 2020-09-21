@@ -17,15 +17,13 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
 		<dict>
-			<key>UNNotificationExtensionInitialContentSizeRatio</key>
-			<real>1</real>
 			<key>UNNotificationExtensionCategory</key>
 			<array>
 				<string>carousel_animation</string>
@@ -33,6 +31,8 @@
 			</array>
 			<key>UNNotificationExtensionDefaultContentHidden</key>
 			<false/>
+			<key>UNNotificationExtensionInitialContentSizeRatio</key>
+			<real>1</real>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>
