@@ -12,25 +12,20 @@ import BlueShift_iOS_SDK
 class ProductListViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var locationManager: CLLocationManager?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 120
-        title = "Product List"
-        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
-        navigationItem.leftBarButtonItem = backButton
-        BlueShift.sharedInstance().trackEvent(forEventName: String(describing: ProductListViewController.self), andParameters: nil, canBatchThisEvent: true)
-        
-        //Disable push notifications in AppDelegate config and Enable & register for push notifications here if need to ask the push permission after the login
-//        BlueShift.sharedInstance()?.config.enablePushNotification = true
-//        BlueShift.sharedInstance()?.appDelegate.registerForNotification()
+        setupUI()
+        setupEvents()
+        registerForLocation()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
