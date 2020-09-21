@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        config.enableLocationAccess = false
         
         //Enable push notifications
-        config.enablePushNotification = false
+        config.enablePushNotification = true
 
         //Set user notification delegate
         config.userNotificationDelegate = self
