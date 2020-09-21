@@ -10,9 +10,8 @@ import BlueShift_iOS_SDK
 
 //This class must be inherited by all the ViewControllers
 class BaseViewController: UIViewController {
-    //variable registerForInApp is set to true by default, so every ViewController will be registered for in-app automatically
-    //after inheritiang this class
-    //You can set registerForInApp to false in the ViewControllers didLoad method to not to register for in-app
+    //variable registerForInApp is set to true by default, so every ViewController will be registered for receiving in-app automatically after inheritiang this class
+    //You can set registerForInApp to false in the ViewControllers "viewDidLoad" method to not to register for receiving in-app messages
     //This is one way to achieve this registration across the app, you can always customise it the way you want
     var registerForInApp: Bool = true
     var themeColor: UIColor?
@@ -20,8 +19,9 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarColor()
-    
+        setNavigationBarButtons()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if registerForInApp {
@@ -49,5 +49,18 @@ class BaseViewController: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
-
+    
+    func setNavigationBarButtons() {
+        if BlueShift.sharedInstance()?.config.inAppManualTriggerEnabled == true {
+            let showInAppButton = UIBarButtonItem(title: "Show InApp", style: .plain, target: self, action: #selector(showInApp));
+            navigationItem.rightBarButtonItem = showInAppButton
+        }
+    }
+    
+    @objc func showInApp() {
+        BlueShift.sharedInstance()?.fetchInAppNotification(fromAPI: {
+            BlueShift.sharedInstance()?.displayInAppNotification()
+        }, failure: { (errr) in
+        })
+    }
 }

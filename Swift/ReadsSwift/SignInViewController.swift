@@ -22,16 +22,24 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        title = "Sign In"
-        BlueShift.sharedInstance().trackEvent(forEventName: String(describing: SignInViewController.self), andParameters: nil, canBatchThisEvent: true)
-        self.registerForInApp = false
-        signInButton.backgroundColor = self.themeColor
+        setupUI()
+        setupEvents()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         BlueShift.sharedInstance()?.unregisterForInAppMessage()
+    }
+    
+    func setupUI() {
+        title = "Sign In"
+        signInButton.backgroundColor = self.themeColor
+        BlueShiftUserInfo.removeCurrentUserInfo()
+    }
+    
+    func setupEvents() {
+        self.registerForInApp = false
+        BlueShift.sharedInstance().trackEvent(forEventName: String(describing: SignInViewController.self), andParameters: nil, canBatchThisEvent: true)
     }
     
     @IBAction func dismissKeyBoard(_ sender: Any) {

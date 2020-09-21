@@ -14,11 +14,7 @@ class NotificationViewController: BlueShiftCarousalViewController, UNNotificatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Bundle.main.bundleIdentifier == "com.blueshift.reads" {
-            appGroupID = "group.blueshift.reads"
-        } else {
-            appGroupID = "group.blueshift.reads.red"
-        }
+        appGroupID = "group.blueshift.reads"
     }
     
     func didReceive(_ notification: UNNotification) {

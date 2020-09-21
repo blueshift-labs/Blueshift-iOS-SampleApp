@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//         configure firebase
+        //configure firebase for crashlytics
         var firbaseConfigFileName = ""
         if let bundleId = Bundle.main.bundleIdentifier, bundleId == "com.blueshift.reads.red" {
            firbaseConfigFileName = "\(bundleId)-GoogleService-Info"
@@ -33,26 +33,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             FirebaseApp.configure(options: firebaseOptions)
             Fabric.sharedSDK().debug = true
         }
-        
 
         // Obtain an instance of BlueShiftConfig
         let config = BlueShiftConfig()
 
+        //Set debug true to see Blueshift SDK info logs, by default its set as false.
+        config.debug = true;
+
         // Set the api Key for the config
         config.apiKey = "ADD API KEY"
+//        config.enableLocationAccess = false
         
         //Enable push notifications
-        config.enablePushNotification = true
+        config.enablePushNotification = false
 
         //Set user notification delegate
         config.userNotificationDelegate = self
 
-        // For Carousel push notification deep linking
-        if Bundle.main.bundleIdentifier == "com.blueshift.reads" {
-            config.appGroupID = "group.blueshift.reads"
-        } else {
-            config.appGroupID = "group.blueshift.reads.red"
-        }
+        // For Carousel push notification deep linking set appGroup ids for different configs
+        config.appGroupID = "group.blueshift.reads"
+        
+        //optinal: Disable inAppBackgroundFetchEnabled if you want to fetch in-apps manually via api
+//        config.inAppBackgroundFetchEnabled = false;
+//        
+//        //optinal: Disable inAppManualTriggerEnabled if you want to display in-apps manually
+//        config.inAppManualTriggerEnabled = true;
         
         //Enable In-app notifications
         config.enableInAppNotification = true
@@ -68,17 +73,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Set universal links delegate to enable universal links
         config.blueshiftUniversalLinksDelegate = self
 
-        //Optional: SDK uses IDFV by default if you do not include the following line of code.
-        //For more information, see: https://developer.blueshift.com/docs/include-configure-initialize-the-ios-sdk-in-the-app#specify-the-device-id-source
-        config.blueshiftDeviceIdSource = .idfvBundleID
+        //Set deviceIDSource as custom
+        config.blueshiftDeviceIdSource = .IDFV
+        //Set the custom device id value
+//        config.customDeviceId = UIDevice.current.identifierForVendor?.uuidString
         
-        //Optinal: Set push notification delegate to get the push events callback
-        let blueShiftPushDelegatge = BlueshiftPushNotificationEvents()
-        config.blueShiftPushDelegate = blueShiftPushDelegatge
-        
-        //Optinal: Set in-app notification degate to get the in-app events callback
-        let blueshiftInAppDelegate = BlueshiftInAppNotificationEvents()
-        config.inAppNotificationDelegate = blueshiftInAppDelegate
+//        //Optinal: Set push notification delegate to get the push events callback
+//        let blueShiftPushDelegatge = BlueshiftPushNotificationEvents()
+//        config.blueShiftPushDelegate = blueShiftPushDelegatge
+//
+//        //Optinal: Set in-app notification degate to get the in-app events callback
+//        let blueshiftInAppDelegate = BlueshiftInAppNotificationEvents()
+//        config.inAppNotificationDelegate = blueshiftInAppDelegate
         
         // Initialize the configuration
         BlueShift.initWithConfiguration(config)
