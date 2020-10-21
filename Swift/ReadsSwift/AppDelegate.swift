@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Set the api Key for the config
         config.apiKey = "ADD API KEY"
+        
 //      config.enableLocationAccess = false
         
         //Enable push notifications
@@ -209,6 +210,7 @@ extension AppDelegate {
         rootViewController?.present(alertController, animated: true, completion: nil)
     }
     
+    //Check for deep link and show rescpective screen/ perform respective action
     func showProductDetail(animated: Bool, url: URL) {
         if url.absoluteString == "" {
             return
