@@ -7,9 +7,17 @@
 
 import Foundation
 
+struct CartItem {
+    var sku: String?
+    var quantity: Int
+    var details: [String: String]?
+}
+
 class Utils {
     
     static let shared = Utils()
+    
+    var cartItems: [CartItem] = []
     
     let products:[[String: String]] = [[
     "sku": "9780140247732",
@@ -101,4 +109,10 @@ class Utils {
     ]]
     
     
+}
+
+extension String {
+    var boolValue: Bool {
+            return (self as NSString).boolValue
+    }
 }

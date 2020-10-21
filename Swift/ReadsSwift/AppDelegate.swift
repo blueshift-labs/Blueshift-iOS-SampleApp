@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set the api Key for the config
         config.apiKey = "ADD API KEY"
 //        config.enableLocationAccess = false
+//      config.enableLocationAccess = false
         
         //Enable push notifications
         config.enablePushNotification = true
@@ -103,19 +104,25 @@ extension AppDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        BlueShift.sharedInstance()?.appDelegate.handleRemoteNotification(userInfo, for: application, fetchCompletionHandler: completionHandler)
+        if BlueShift.sharedInstance()?.isBlueshiftPushNotification(userInfo) == true {
+            BlueShift.sharedInstance()?.appDelegate.handleRemoteNotification(userInfo, for: application, fetchCompletionHandler: completionHandler)
+        }
     }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        BlueShift.sharedInstance()?.userNotificationDelegate.handleUserNotification(center, didReceive: response, withCompletionHandler: completionHandler)
+        if BlueShift.sharedInstance()?.isBlueshiftPushNotification(response.notification.request.content.userInfo) == true {
+            BlueShift.sharedInstance()?.userNotificationDelegate.handleUserNotification(center, didReceive: response, withCompletionHandler: completionHandler)
+        }
     }
+        
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        BlueShift.sharedInstance()?.userNotificationDelegate.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
+        if BlueShift.sharedInstance()?.isBlueshiftPushNotification(notification.request.content.userInfo) == true {
+            BlueShift.sharedInstance()?.userNotificationDelegate.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
+        }
     }
-    
 }
 
 extension AppDelegate {
@@ -190,6 +197,13 @@ extension AppDelegate {
     }
     
     func showProductDetail(animated: Bool, url: URL) {
+        if url.absoluteString == "" {
+            return
+        } else if url.absoluteString == "//registerForNotification" {
+            BlueShift.sharedInstance()?.appDelegate.registerForNotification()
+            return
+        }
+        
         var newUrl = url.absoluteString.components(separatedBy: "?").first
         newUrl = newUrl?.replacingOccurrences(of: "http://", with: "https://")
         let products = Utils.shared.products.filter { (product) -> Bool in

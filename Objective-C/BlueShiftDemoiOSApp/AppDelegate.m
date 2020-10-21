@@ -89,12 +89,12 @@
     */
     
     //Optional :Set BlueShiftDelegates class object for handling push notification events callbacks.
-    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
-    [config setBlueShiftPushDelegate:blueShiftDelegatge];
+//    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
+//    [config setBlueShiftPushDelegate:blueShiftDelegatge];
     
     //Optional :Set BlueshiftInAppDelegate class object for handling In-app notification event callbacks
-    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
-    [config setInAppNotificationDelegate:inappDelegate];
+//    BlueshiftInAppDelegate *inappDelegate = [[BlueshiftInAppDelegate alloc] init];
+//    [config setInAppNotificationDelegate:inappDelegate];
 
     //Set universal links delegate to enable Blueshift Universal links
     [config setBlueshiftUniversalLinksDelegate:self];

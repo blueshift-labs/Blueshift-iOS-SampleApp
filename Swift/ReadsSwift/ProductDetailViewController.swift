@@ -24,7 +24,6 @@ class ProductDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setEvents()
     }
     
     func setupUI() {
@@ -40,20 +39,26 @@ class ProductDetailViewController: BaseViewController {
         safeAreaView.backgroundColor = self.themeColor
         goToCartButton.backgroundColor = self.themeColor
     }
-    
-    func setEvents() {
-        BlueShift.sharedInstance().trackEvent(forEventName: String(describing: ProductDetailViewController.self), andParameters: product, canBatchThisEvent: true)
-    }
-    
-    @IBAction func addToCart(_ sender: Any) {
         
+    @IBAction func addToCart(_ sender: Any) {
+        BlueShift.sharedInstance()?.trackAddToCart(withSKU: product?["sku"] ?? "", andQuantity: 1, andParameters: product, canBatchThisEvent: false)
+        for index in 0..<Utils.shared.cartItems.count {
+            if Utils.shared.cartItems[index].sku == product?["sku"] {
+                Utils.shared.cartItems[index].quantity += 1
+                return
+            }
+        }
+        
+        Utils.shared.cartItems.append(CartItem(sku: product?["sku"], quantity: 1, details: product))
     }
     
     @IBAction func addToWishList(_ sender: Any) {
-        
+        BlueShift.sharedInstance()?.trackEvent(forEventName: "add_to_wishlist", andParameters: product, canBatchThisEvent: false)
     }
     
     @IBAction func goToCart(_ sender: Any) {
-        
+        let cartViewController: CartViewController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CartViewController")
+        self.navigationController?.pushViewController(cartViewController, animated: true)
     }
 }
+

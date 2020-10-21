@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		065D0CCE00D8C7E83461CA8D /* Pods_NotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30ED828D5C3A85DA063F9A66 /* Pods_NotificationService.framework */; };
-		151026BB1E690782364F5B42 /* Pods_ReadsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0A7657181FA9A95D9489DC /* Pods_ReadsSwift.framework */; };
-		3FF85D72DFDDB431C3935C72 /* Pods_NotificationContent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33E57D68F270113BBCB86E0 /* Pods_NotificationContent.framework */; };
+		42A7A6508BD1B3C60A8C7091 /* Pods_NotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56B5B278F9FF4881C5220D5 /* Pods_NotificationService.framework */; };
 		913F9B92249264D10032CD4A /* com.blueshift.reads.red-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 913F9B90249264D10032CD4A /* com.blueshift.reads.red-GoogleService-Info.plist */; };
 		916AC4B924B4371000E13B82 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AC4B824B4371000E13B82 /* BaseViewController.swift */; };
 		91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */; };
 		91B4074D24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */; };
 		91B4075024C99E8A005B55D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91B4074F24C99E8A005B55D6 /* GoogleService-Info.plist */; };
 		91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4075124C9B6E2005B55D6 /* CartViewController.swift */; };
+		91F5C9BE25347598008C1C2A /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */; };
+		91F5CA52253581FA008C1C2A /* DebugTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */; };
+		91F5CA5725358208008C1C2A /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CA5625358208008C1C2A /* DebugViewController.swift */; };
+		91F5CA7B2535B118008C1C2A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91F5CA7A2535B118008C1C2A /* Settings.bundle */; };
 		C338CFCE2475477300DBBD21 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C338CFCD2475477300DBBD21 /* NotificationService.swift */; };
 		C338CFD22475477300DBBD21 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C338CFCB2475477300DBBD21 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C338CFDA24756AC300DBBD21 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C338CFD924756AC300DBBD21 /* Utils.swift */; };
@@ -32,6 +34,8 @@
 		C38F1BC02472B6D800ACEBE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38F1BBE2472B6D800ACEBE1 /* Main.storyboard */; };
 		C38F1BC22472B6D900ACEBE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38F1BC12472B6D900ACEBE1 /* Assets.xcassets */; };
 		C38F1BC52472B6D900ACEBE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38F1BC32472B6D900ACEBE1 /* LaunchScreen.storyboard */; };
+		E3B638BCCB6BCE8EEB56CF6B /* Pods_NotificationContent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEF3BE9F7AD7EBF7E5A3D6A /* Pods_NotificationContent.framework */; };
+		E5B4497EE608A1D16D96A067 /* Pods_ReadsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388ED1EBC1D1ECBC98D77F72 /* Pods_ReadsSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,13 +71,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		021AFFAA82A3A0A38E3B7BFF /* Pods-NotificationContent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.release.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.release.xcconfig"; sourceTree = "<group>"; };
-		133E42537007AC5F28258376 /* Pods-NotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.debug.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.debug.xcconfig"; sourceTree = "<group>"; };
-		1C0A7657181FA9A95D9489DC /* Pods_ReadsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		30ED828D5C3A85DA063F9A66 /* Pods_NotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A9C58E73B79A118DFF10508 /* Pods-ReadsSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.release.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.release.xcconfig"; sourceTree = "<group>"; };
-		5A3706BDBCF4AAB9F0FA861B /* Pods-ReadsSwift.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.red.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.red.xcconfig"; sourceTree = "<group>"; };
-		5FB1C981623DF081980F198A /* Pods-NotificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.debug.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.debug.xcconfig"; sourceTree = "<group>"; };
+		1E8D3600511FFCBBCAC4262B /* Pods-ReadsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.debug.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		388ED1EBC1D1ECBC98D77F72 /* Pods_ReadsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AA798B281ED285EDC39B078 /* Pods-ReadsSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.release.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.release.xcconfig"; sourceTree = "<group>"; };
+		7BEA12E0591AAFE890EDB898 /* Pods-NotificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.debug.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.debug.xcconfig"; sourceTree = "<group>"; };
 		913F9B90249264D10032CD4A /* com.blueshift.reads.red-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "com.blueshift.reads.red-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		916AC4B824B4371000E13B82 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueshiftInAppNotificationEvents.swift; sourceTree = "<group>"; };
@@ -81,10 +82,13 @@
 		91B4074F24C99E8A005B55D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91B4075124C9B6E2005B55D6 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		91F3521624AC8C460051D404 /* NotificationContent.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = NotificationContent.entitlements; sourceTree = "<group>"; };
-		93B6EE6F8D7E8C11ABB0D848 /* Pods-ReadsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.debug.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		95CCE53CEF5EA80000CB51FD /* Pods-NotificationService.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.red.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.red.xcconfig"; sourceTree = "<group>"; };
-		A67BD16C949CA1BDE1E1FD59 /* Pods-NotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.release.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.release.xcconfig"; sourceTree = "<group>"; };
-		AC91C48CAE2C1DFEE0AB21DF /* Pods-NotificationContent.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.red.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.red.xcconfig"; sourceTree = "<group>"; };
+		91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTableViewCell.swift; sourceTree = "<group>"; };
+		91F5CA5625358208008C1C2A /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		91F5CA7A2535B118008C1C2A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A66006DC2713EA7227E42F1B /* Pods-NotificationContent.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.red.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.red.xcconfig"; sourceTree = "<group>"; };
+		ABEF3BE9F7AD7EBF7E5A3D6A /* Pods_NotificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationContent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1A844AC88E1F8641C0FA06A /* Pods-NotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.debug.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.debug.xcconfig"; sourceTree = "<group>"; };
 		C338CFAF24752E8100DBBD21 /* ReadsSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReadsSwift.entitlements; sourceTree = "<group>"; };
 		C338CFB52475474100DBBD21 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C338CFB72475474100DBBD21 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
@@ -107,7 +111,11 @@
 		C38F1BC12472B6D900ACEBE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C38F1BC42472B6D900ACEBE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C38F1BC62472B6D900ACEBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F33E57D68F270113BBCB86E0 /* Pods_NotificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationContent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9BE518B875F9A53A02EDA50 /* Pods-NotificationService.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.red.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.red.xcconfig"; sourceTree = "<group>"; };
+		CB0C6DC6F44C00D1620DCC7A /* Pods-NotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.release.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.release.xcconfig"; sourceTree = "<group>"; };
+		D56B5B278F9FF4881C5220D5 /* Pods_NotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF6646B6B2678180D7B88AFD /* Pods-ReadsSwift.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.red.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.red.xcconfig"; sourceTree = "<group>"; };
+		FA55BD8878390D441BFB366F /* Pods-NotificationContent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.release.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065D0CCE00D8C7E83461CA8D /* Pods_NotificationService.framework in Frameworks */,
+				42A7A6508BD1B3C60A8C7091 /* Pods_NotificationService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +133,7 @@
 			files = (
 				C344A8BB2476CC730092650E /* UserNotificationsUI.framework in Frameworks */,
 				C344A8BA2476CC730092650E /* UserNotifications.framework in Frameworks */,
-				3FF85D72DFDDB431C3935C72 /* Pods_NotificationContent.framework in Frameworks */,
+				E3B638BCCB6BCE8EEB56CF6B /* Pods_NotificationContent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				151026BB1E690782364F5B42 /* Pods_ReadsSwift.framework in Frameworks */,
+				E5B4497EE608A1D16D96A067 /* Pods_ReadsSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,17 +151,28 @@
 		4D051839FEE5153F9B16422D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5FB1C981623DF081980F198A /* Pods-NotificationContent.debug.xcconfig */,
-				AC91C48CAE2C1DFEE0AB21DF /* Pods-NotificationContent.red.xcconfig */,
-				021AFFAA82A3A0A38E3B7BFF /* Pods-NotificationContent.release.xcconfig */,
-				133E42537007AC5F28258376 /* Pods-NotificationService.debug.xcconfig */,
-				95CCE53CEF5EA80000CB51FD /* Pods-NotificationService.red.xcconfig */,
-				A67BD16C949CA1BDE1E1FD59 /* Pods-NotificationService.release.xcconfig */,
-				93B6EE6F8D7E8C11ABB0D848 /* Pods-ReadsSwift.debug.xcconfig */,
-				5A3706BDBCF4AAB9F0FA861B /* Pods-ReadsSwift.red.xcconfig */,
-				4A9C58E73B79A118DFF10508 /* Pods-ReadsSwift.release.xcconfig */,
+				7BEA12E0591AAFE890EDB898 /* Pods-NotificationContent.debug.xcconfig */,
+				A66006DC2713EA7227E42F1B /* Pods-NotificationContent.red.xcconfig */,
+				FA55BD8878390D441BFB366F /* Pods-NotificationContent.release.xcconfig */,
+				C1A844AC88E1F8641C0FA06A /* Pods-NotificationService.debug.xcconfig */,
+				C9BE518B875F9A53A02EDA50 /* Pods-NotificationService.red.xcconfig */,
+				CB0C6DC6F44C00D1620DCC7A /* Pods-NotificationService.release.xcconfig */,
+				1E8D3600511FFCBBCAC4262B /* Pods-ReadsSwift.debug.xcconfig */,
+				DF6646B6B2678180D7B88AFD /* Pods-ReadsSwift.red.xcconfig */,
+				3AA798B281ED285EDC39B078 /* Pods-ReadsSwift.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		91B4A06D254010F100D689D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				91B4074F24C99E8A005B55D6 /* GoogleService-Info.plist */,
+				913F9B90249264D10032CD4A /* com.blueshift.reads.red-GoogleService-Info.plist */,
+				C38F1BC12472B6D900ACEBE1 /* Assets.xcassets */,
+				91F5CA7A2535B118008C1C2A /* Settings.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		AA92F5543A40F059C50E10C5 /* Frameworks */ = {
@@ -161,9 +180,9 @@
 			children = (
 				C338CFB52475474100DBBD21 /* UserNotifications.framework */,
 				C338CFB72475474100DBBD21 /* UserNotificationsUI.framework */,
-				F33E57D68F270113BBCB86E0 /* Pods_NotificationContent.framework */,
-				30ED828D5C3A85DA063F9A66 /* Pods_NotificationService.framework */,
-				1C0A7657181FA9A95D9489DC /* Pods_ReadsSwift.framework */,
+				ABEF3BE9F7AD7EBF7E5A3D6A /* Pods_NotificationContent.framework */,
+				D56B5B278F9FF4881C5220D5 /* Pods_NotificationService.framework */,
+				388ED1EBC1D1ECBC98D77F72 /* Pods_ReadsSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -217,20 +236,21 @@
 				C338CFAF24752E8100DBBD21 /* ReadsSwift.entitlements */,
 				C38F1BB82472B6D800ACEBE1 /* AppDelegate.swift */,
 				916AC4B824B4371000E13B82 /* BaseViewController.swift */,
+				91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */,
+				91F5CA5625358208008C1C2A /* DebugViewController.swift */,
 				C38F1BBC2472B6D800ACEBE1 /* SignInViewController.swift */,
 				C338CFDD24756FA400DBBD21 /* ProductListViewController.swift */,
 				C338CFDF24757D4F00DBBD21 /* ProductDetailViewController.swift */,
 				91B4075124C9B6E2005B55D6 /* CartViewController.swift */,
+				91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */,
 				C338CFDB24756F8A00DBBD21 /* ProductTableViewCell.swift */,
 				91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */,
 				91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */,
 				C338CFD924756AC300DBBD21 /* Utils.swift */,
 				C38F1BBE2472B6D800ACEBE1 /* Main.storyboard */,
 				C38F1BC32472B6D900ACEBE1 /* LaunchScreen.storyboard */,
-				91B4074F24C99E8A005B55D6 /* GoogleService-Info.plist */,
-				913F9B90249264D10032CD4A /* com.blueshift.reads.red-GoogleService-Info.plist */,
 				C38F1BC62472B6D900ACEBE1 /* Info.plist */,
-				C38F1BC12472B6D900ACEBE1 /* Assets.xcassets */,
+				91B4A06D254010F100D689D1 /* Resources */,
 			);
 			path = ReadsSwift;
 			sourceTree = "<group>";
@@ -242,7 +262,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C338CFD32475477300DBBD21 /* Build configuration list for PBXNativeTarget "NotificationService" */;
 			buildPhases = (
-				4348C59C462D4DCCF52DE29D /* [CP] Check Pods Manifest.lock */,
+				6EFB351A9FD96ED19CF05BBE /* [CP] Check Pods Manifest.lock */,
 				C338CFC72475477300DBBD21 /* Sources */,
 				C338CFC82475477300DBBD21 /* Frameworks */,
 				C338CFC92475477300DBBD21 /* Resources */,
@@ -260,7 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C344A8C62476CC730092650E /* Build configuration list for PBXNativeTarget "NotificationContent" */;
 			buildPhases = (
-				F2C60DD4F1C8C9C235E20524 /* [CP] Check Pods Manifest.lock */,
+				512BCB788D90BF4556E942F2 /* [CP] Check Pods Manifest.lock */,
 				C344A8B52476CC730092650E /* Sources */,
 				C344A8B62476CC730092650E /* Frameworks */,
 				C344A8B72476CC730092650E /* Resources */,
@@ -278,12 +298,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C38F1BC92472B6D900ACEBE1 /* Build configuration list for PBXNativeTarget "ReadsSwift" */;
 			buildPhases = (
-				E06FF6563B7B49B5818634D9 /* [CP] Check Pods Manifest.lock */,
+				67FF1F2E78D57DB9C237007F /* [CP] Check Pods Manifest.lock */,
 				C38F1BB12472B6D800ACEBE1 /* Sources */,
 				C38F1BB22472B6D800ACEBE1 /* Frameworks */,
 				C38F1BB32472B6D800ACEBE1 /* Resources */,
 				C338CFC62475474100DBBD21 /* Embed App Extensions */,
-				633ED3372C2B1B418DFBF316 /* [CP] Embed Pods Frameworks */,
+				E9DB0C5A2454301B9AC3C5A6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +380,7 @@
 				C38F1BC22472B6D900ACEBE1 /* Assets.xcassets in Resources */,
 				91B4075024C99E8A005B55D6 /* GoogleService-Info.plist in Resources */,
 				913F9B92249264D10032CD4A /* com.blueshift.reads.red-GoogleService-Info.plist in Resources */,
+				91F5CA7B2535B118008C1C2A /* Settings.bundle in Resources */,
 				C38F1BC02472B6D800ACEBE1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +388,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4348C59C462D4DCCF52DE29D /* [CP] Check Pods Manifest.lock */ = {
+		512BCB788D90BF4556E942F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -382,31 +403,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NotificationService-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-NotificationContent-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		633ED3372C2B1B418DFBF316 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E06FF6563B7B49B5818634D9 /* [CP] Check Pods Manifest.lock */ = {
+		67FF1F2E78D57DB9C237007F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -428,7 +432,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2C60DD4F1C8C9C235E20524 /* [CP] Check Pods Manifest.lock */ = {
+		6EFB351A9FD96ED19CF05BBE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -443,11 +447,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NotificationContent-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-NotificationService-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9DB0C5A2454301B9AC3C5A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -478,6 +499,9 @@
 				91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */,
 				C338CFE024757D4F00DBBD21 /* ProductDetailViewController.swift in Sources */,
 				C338CFDC24756F8A00DBBD21 /* ProductTableViewCell.swift in Sources */,
+				91F5CA52253581FA008C1C2A /* DebugTableViewCell.swift in Sources */,
+				91F5CA5725358208008C1C2A /* DebugViewController.swift in Sources */,
+				91F5C9BE25347598008C1C2A /* CartTableViewCell.swift in Sources */,
 				91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */,
 				916AC4B924B4371000E13B82 /* BaseViewController.swift in Sources */,
 				C338CFDE24756FA400DBBD21 /* ProductListViewController.swift in Sources */,
@@ -531,7 +555,7 @@
 /* Begin XCBuildConfiguration section */
 		C338CFD42475477300DBBD21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 133E42537007AC5F28258376 /* Pods-NotificationService.debug.xcconfig */;
+			baseConfigurationReference = C1A844AC88E1F8641C0FA06A /* Pods-NotificationService.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -553,7 +577,7 @@
 		};
 		C338CFD52475477300DBBD21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A67BD16C949CA1BDE1E1FD59 /* Pods-NotificationService.release.xcconfig */;
+			baseConfigurationReference = CB0C6DC6F44C00D1620DCC7A /* Pods-NotificationService.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -575,7 +599,7 @@
 		};
 		C344A8C72476CC730092650E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FB1C981623DF081980F198A /* Pods-NotificationContent.debug.xcconfig */;
+			baseConfigurationReference = 7BEA12E0591AAFE890EDB898 /* Pods-NotificationContent.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationContent/NotificationContent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -598,7 +622,7 @@
 		};
 		C344A8C82476CC730092650E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 021AFFAA82A3A0A38E3B7BFF /* Pods-NotificationContent.release.xcconfig */;
+			baseConfigurationReference = FA55BD8878390D441BFB366F /* Pods-NotificationContent.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationContent/NotificationContent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -669,7 +693,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -683,7 +707,7 @@
 		};
 		C37B37112488CA7700AC3006 /* Red */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A3706BDBCF4AAB9F0FA861B /* Pods-ReadsSwift.red.xcconfig */;
+			baseConfigurationReference = DF6646B6B2678180D7B88AFD /* Pods-ReadsSwift.red.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRed;
@@ -697,24 +721,24 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red;
 				PRODUCT_NAME = "Blueshift Red";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WHITELABEL_TYPE = Red;
 			};
 			name = Red;
 		};
 		C37B37122488CA7700AC3006 /* Red */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95CCE53CEF5EA80000CB51FD /* Pods-NotificationService.red.xcconfig */;
+			baseConfigurationReference = C9BE518B875F9A53A02EDA50 /* Pods-NotificationService.red.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -737,7 +761,7 @@
 		};
 		C37B37132488CA7700AC3006 /* Red */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC91C48CAE2C1DFEE0AB21DF /* Pods-NotificationContent.red.xcconfig */;
+			baseConfigurationReference = A66006DC2713EA7227E42F1B /* Pods-NotificationContent.red.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationContent/NotificationContent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -808,7 +832,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -864,7 +888,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -877,7 +901,7 @@
 		};
 		C38F1BCA2472B6D900ACEBE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93B6EE6F8D7E8C11ABB0D848 /* Pods-ReadsSwift.debug.xcconfig */;
+			baseConfigurationReference = 1E8D3600511FFCBBCAC4262B /* Pods-ReadsSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -892,26 +916,26 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "Blueshift Reads";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WHITELABEL_TYPE = Blue;
 			};
 			name = Debug;
 		};
 		C38F1BCB2472B6D900ACEBE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A9C58E73B79A118DFF10508 /* Pods-ReadsSwift.release.xcconfig */;
+			baseConfigurationReference = 3AA798B281ED285EDC39B078 /* Pods-ReadsSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -926,17 +950,17 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "Blueshift Reads";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WHITELABEL_TYPE = Blue;
 			};
 			name = Release;
