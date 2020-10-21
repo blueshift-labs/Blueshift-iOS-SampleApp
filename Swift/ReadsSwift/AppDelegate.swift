@@ -8,7 +8,6 @@
 import UIKit
 import BlueShift_iOS_SDK
 import FirebaseCore
-import Fabric
 
 @UIApplicationMain
 
@@ -31,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let firebaseOptions = FirebaseOptions(contentsOfFile: path) {
             FirebaseConfiguration.shared.setLoggerLevel(.min)
             FirebaseApp.configure(options: firebaseOptions)
-            Fabric.sharedSDK().debug = true
         }
 
         // Obtain an instance of BlueShiftConfig
