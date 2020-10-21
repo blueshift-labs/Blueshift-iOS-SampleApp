@@ -49,8 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.enablePushNotification = true
 
         //Set user notification delegate
-        config.userNotificationDelegate = self
-
+        if #available(iOS 10.0, *) {
+            config.userNotificationDelegate = self
+        }
+        
         // For Carousel push notification deep linking set appGroup ids for different configs
         config.appGroupID = "group.blueshift.reads"
         
