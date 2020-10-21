@@ -15,63 +15,66 @@ class SignInViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
-        if let _ = UserDefaults.standard.value(forKey: "BSFTemailId") {
+        if let _ = BlueShiftUserInfo.sharedInstance()?.email {
             showProductList(animated: false)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerForInApp = false
         setupUI()
-        setupEvents()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        BlueShift.sharedInstance()?.unregisterForInAppMessage()
     }
     
     func setupUI() {
         title = "Sign In"
         signInButton.backgroundColor = self.themeColor
-        BlueShiftUserInfo.removeCurrentUserInfo()
     }
-    
-    func setupEvents() {
-        self.registerForInApp = false
-        BlueShift.sharedInstance().trackEvent(forEventName: String(describing: SignInViewController.self), andParameters: nil, canBatchThisEvent: true)
-    }
-    
+        
     @IBAction func dismissKeyBoard(_ sender: Any) {
         view.endEditing(true)
     }
     
     @IBAction func signIn(_ sender: Any) {
-        //Make an identify call with the signed in user
+        if emailIdTextField.text == "" {
+            return
+        }
+        
+        //Set email and customer id user info in the Blueshift SDK
         BlueShiftUserInfo.sharedInstance()?.email = emailIdTextField.text
-        BlueShiftUserInfo.sharedInstance()?.retailerCustomerID = "PROFILEID:" + (emailIdTextField.text ?? "")
+        BlueShiftUserInfo.sharedInstance()?.retailerCustomerID = "PROFILEID:\(emailIdTextField.text ?? "")"
+        
         //Set other user info as below. This info will be used for running personlised campaigns
-//        BlueShiftUserInfo.sharedInstance()?.firstName = "add first name"
+        BlueShiftUserInfo.sharedInstance()?.firstName = nameTextField.text
 //        BlueShiftUserInfo.sharedInstance()?.lastName = "add last name"
 //        BlueShiftUserInfo.sharedInstance()?.gender = "add gender"
 //        BlueShiftUserInfo.sharedInstance()?.dateOfBirth = "add DOB"
         
-        BlueShiftUserInfo.sharedInstance()?.unsubscribed = false
+        //If want to store additional user information, you can create the dictionary and assign it to additionalUserInfo
+        BlueShiftUserInfo.sharedInstance()?.additionalUserInfo = ["profession":"Software engineer", "phone_number": "+919898989898"]
+        
         BlueShiftUserInfo.sharedInstance()?.save()
-        let dictionary = ["name": nameTextField.text ?? "", "profession":"Software developer"]
+        
+        //Set enablePush to true in case you have disabling it on the logout
+        //By default its set to true for fresh app install
+        BlueShiftAppData.current()?.enablePush = true
+        
+        //Add custom attributes to the identify call which will be shown against user profile in the dashboard
+        let dictionary = ["userType":"Premium"]
+        
         BlueShift.sharedInstance().identifyUser(withDetails:dictionary, canBatchThisEvent: false)
         
-        //Add screen view event
+        //Add successful signin event
         BlueShift.sharedInstance().trackEvent(forEventName: "signIn", andParameters: nil, canBatchThisEvent: false)
-        if let email = emailIdTextField.text {
-            UserDefaults.standard.setValue(email, forKey: "BSFTemailId")
-        }
         showProductList(animated: true)
     }
     
     func showProductList(animated: Bool) {
-        let productListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProductListViewController")
-        self.navigationController?.pushViewController(productListViewController, animated: animated)
-    }    
+        performSegue(withIdentifier: "showProductList", sender: nil)
+    }
 }
 
