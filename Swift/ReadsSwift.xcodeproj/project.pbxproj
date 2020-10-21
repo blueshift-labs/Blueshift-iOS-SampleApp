@@ -721,7 +721,7 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -916,7 +916,7 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -950,7 +950,7 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

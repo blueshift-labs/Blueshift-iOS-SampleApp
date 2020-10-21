@@ -40,6 +40,10 @@ class SignInViewController: BaseViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        if emailIdTextField.text == "" {
+            return
+        }
+        
         //Set email and customer id user info in the Blueshift SDK
         BlueShiftUserInfo.sharedInstance()?.email = emailIdTextField.text
         BlueShiftUserInfo.sharedInstance()?.retailerCustomerID = "PROFILEID:\(emailIdTextField.text ?? "")"
@@ -70,8 +74,7 @@ class SignInViewController: BaseViewController {
     }
     
     func showProductList(animated: Bool) {
-        let productListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProductListViewController")
-        self.navigationController?.pushViewController(productListViewController, animated: animated)
-    }    
+        performSegue(withIdentifier: "showProductList", sender: nil)
+    }
 }
 

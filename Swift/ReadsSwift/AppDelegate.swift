@@ -15,7 +15,7 @@ import Fabric
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let activityIndicator = UIActivityIndicatorView(style: .large)
+    var activityIndicator: UIActivityIndicatorView? = nil
     var cartItems: [String: String] = [:]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -111,6 +111,7 @@ extension AppDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if BlueShift.sharedInstance()?.isBlueshiftPushNotification(response.notification.request.content.userInfo) == true {
             BlueShift.sharedInstance()?.userNotificationDelegate.handleUserNotification(center, didReceive: response, withCompletionHandler: completionHandler)
@@ -118,6 +119,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
         
     
+    @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         if BlueShift.sharedInstance()?.isBlueshiftPushNotification(notification.request.content.userInfo) == true {
             BlueShift.sharedInstance()?.userNotificationDelegate.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
@@ -172,13 +174,21 @@ extension AppDelegate: BlueshiftUniversalLinksDelegate {
 extension AppDelegate {
     func showActivityIndicator() {
         let rootViewController = UIApplication.shared.windows.first?.rootViewController
-        activityIndicator.center = rootViewController?.view.center ?? CGPoint(x: 0,y: 0)
-        rootViewController?.view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
+        if #available(iOS 13.0, *) {
+            activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+            activityIndicator?.color = .gray
+        } else {
+            activityIndicator = UIActivityIndicatorView(style: .gray)
+        }
+        activityIndicator?.center = rootViewController?.view.center ?? CGPoint(x: 0,y: 0)
+        if let activityIndicator = activityIndicator {
+            rootViewController?.view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+        }
     }
     
     func hideActivityIndicator() {
-        activityIndicator.removeFromSuperview()
+        activityIndicator?.removeFromSuperview()
     }
     
     func showAlert(for url: URL) {
@@ -187,7 +197,9 @@ extension AppDelegate {
         let open = UIAlertAction(title: "Open in Safari", style: .default) {
             UIAlertAction in
             DispatchQueue.main.async {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
             }
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
@@ -223,8 +235,16 @@ extension AppDelegate {
             }
         }
         
-        let productDetailViewController: ProductDetailViewController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProductDetailViewController")
-        productDetailViewController.product = product
-        navigationController.pushViewController(productDetailViewController, animated: animated)
+        let productDetailViewController: ProductDetailViewController?
+        
+        if #available(iOS 13.0, *) {
+            productDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProductDetailViewController")
+        } else {
+            productDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController
+        }
+        if let productDetailViewController = productDetailViewController {
+            productDetailViewController.product = product
+            navigationController.pushViewController(productDetailViewController, animated: animated)
+        }
     }
 }

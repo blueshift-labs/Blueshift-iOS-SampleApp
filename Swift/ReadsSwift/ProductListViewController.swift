@@ -72,15 +72,20 @@ class ProductListViewController: BaseViewController {
         roundButton.heightAnchor.constraint(equalToConstant: 75)])
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showProductDetails" {
+            if let destinationVC = segue.destination as? ProductDetailViewController {
+                destinationVC.product = sender as? [String : String]
+            }
+        }
+    }
+    
     func showProductDetail(animated: Bool, product: [String: String]) {
-        let productDetailViewController: ProductDetailViewController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProductDetailViewController")
-        productDetailViewController.product = product
-        self.navigationController?.pushViewController(productDetailViewController, animated: animated)
+        performSegue(withIdentifier: "showProductDetails", sender: product)
     }
     
     @objc func showDebug() {
-        let debugViewController: DebugViewController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DebugViewController")
-        self.navigationController?.pushViewController(debugViewController, animated: true)
+        performSegue(withIdentifier: "showDebug", sender: nil)
     }
     
     func registerForLocation() {
@@ -150,3 +155,4 @@ extension ProductListViewController: CLLocationManagerDelegate {
         }
     }
 }
+

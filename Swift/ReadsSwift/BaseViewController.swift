@@ -53,10 +53,17 @@ extension BaseViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         if Bundle.main.bundleIdentifier == "com.blueshift.reads" {
-            themeColor = UIColor(named: "appColor")
-            
+            if #available(iOS 11.0, *) {
+                themeColor = UIColor(named: "appColor")
+            } else {
+                themeColor = .blue
+            }
         } else {
-            themeColor = UIColor(named: "AppColorRed")
+            if #available(iOS 11.0, *) {
+                themeColor = UIColor(named: "AppColorRed")
+            } else {
+                themeColor = .red
+            }
         }
         navigationController?.navigationBar.barTintColor = themeColor
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]

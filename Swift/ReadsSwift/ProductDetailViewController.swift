@@ -57,8 +57,7 @@ class ProductDetailViewController: BaseViewController {
     }
     
     @IBAction func goToCart(_ sender: Any) {
-        let cartViewController: CartViewController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CartViewController")
-        self.navigationController?.pushViewController(cartViewController, animated: true)
+        
     }
 }
 
