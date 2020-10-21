@@ -42,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Set the api Key for the config
         config.apiKey = "ADD API KEY"
-//        config.enableLocationAccess = false
 //      config.enableLocationAccess = false
         
         //Enable push notifications
