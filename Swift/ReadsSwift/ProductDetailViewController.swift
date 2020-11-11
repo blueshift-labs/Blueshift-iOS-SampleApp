@@ -24,6 +24,7 @@ class ProductDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupEvents()
     }
     
     func setupUI() {
@@ -38,6 +39,10 @@ class ProductDetailViewController: BaseViewController {
         addToWishListButton.backgroundColor = self.themeColor
         safeAreaView.backgroundColor = self.themeColor
         goToCartButton.backgroundColor = self.themeColor
+    }
+    
+    func setupEvents() {
+        BlueShift.sharedInstance()?.trackProductViewed(withSKU: product?["sku"] ?? "", andCategoryID: 0, canBatchThisEvent: false)
     }
         
     @IBAction func addToCart(_ sender: Any) {

@@ -72,7 +72,7 @@ extension BaseViewController {
     
     //Add navigation button when manual trigger is enabled to show inapp
     func setNavigationBarButtons() {
-        if BlueShift.sharedInstance()?.config.inAppManualTriggerEnabled == true {
+        if BlueShift.sharedInstance()?.config?.inAppManualTriggerEnabled == true {
             let showInAppButton = UIBarButtonItem(title: "Show InApp", style: .plain, target: self, action: #selector(showInApp));
             navigationItem.rightBarButtonItem = showInAppButton
         }

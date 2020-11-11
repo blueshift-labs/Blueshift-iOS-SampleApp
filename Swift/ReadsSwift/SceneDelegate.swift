@@ -8,14 +8,15 @@
 import UIKit
 import BlueShift_iOS_SDK
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
+        
         guard let _ = (scene as? UIWindowScene) else { return }
-        if let activity = connectionOptions.userActivities.first {
+        if let activity = connectionOptions.userActivities.first, let url = activity.webpageURL, BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
             BlueShift.sharedInstance()?.appDelegate.handleBlueshiftUniversalLinks(for: activity)
         }
     }
@@ -50,25 +51,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
-//        let skuUrl = "blueshiftreads://ch.blueshift.reads/ProductListViewController/ProductDetailViewController/9780140247732"
-            if url.absoluteString == "" {
-                return
-            }
-            if url.absoluteString.contains("/ProductListViewController/ProductDetailViewController/") {
-                let urlSKU = url.absoluteString.split(separator: "/").last ?? ""
-                let products = Utils.shared.products.filter { (product) -> Bool in
-                    if let productSKU = product["sku"], productSKU == urlSKU {
-                        return true
-                    }
-                    return false
-                }
-                (UIApplication.shared.delegate as? AppDelegate)?.showProductDetail( animated: true, product: products.first)
-            }
+            let appDeleagate = (UIApplication.shared.delegate as? AppDelegate)
+            appDeleagate?.showProductDetail( animated: true, url: url)
         }
     }
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        BlueShift.sharedInstance()?.appDelegate.handleBlueshiftUniversalLinks(for: userActivity)
+        if let url = userActivity.webpageURL, BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
+            BlueShift.sharedInstance()?.appDelegate.handleBlueshiftUniversalLinks(for: userActivity)
+        }
     }
     
     func scene(_ scene: UIScene, didFailToContinueUserActivityWithType userActivityType: String, error: Error) {
