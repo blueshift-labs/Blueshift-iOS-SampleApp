@@ -8,12 +8,12 @@
 import UIKit
 import BlueShift_iOS_SDK
 
-class DebugViewController: BaseViewController {
+class DebugViewController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var inAppRegisterSwitch: UISwitch!
     
-    //To execute these push/in-app sends for testing, you will need to setup event based campaigns on basis of below "bsft_send_me_*" keys. Then only this will work.
+    //To execute these push/in-app sends for testing, you will need to setup event based campaigns on basis of below "bsft_send_me_*" events. Then only this will work.
     let events: [[String:String]] = [["Send Slide-in in-app message":"bsft_send_me_in_app"],
                                      ["Send HTML in-app message":"bsft_send_me_in_app_html"],
                                      ["Send Modal in-app message":"bsft_send_me_in_app_modal"],
@@ -25,7 +25,6 @@ class DebugViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerForInApp = false
         setupUI()
     }
     
@@ -38,6 +37,10 @@ class DebugViewController: BaseViewController {
         inAppRegisterSwitch.isOn = false
     }
 
+    @IBAction func fetchInApps(_ sender: Any) {
+        BlueShift.sharedInstance()?.fetchInAppNotification(fromAPI: { }, failure: { (err) in
+        })
+    }
     @IBAction func registerForInApp(_ sender: Any) {
         guard let inAppSwitch = sender as? UISwitch else {
             return
