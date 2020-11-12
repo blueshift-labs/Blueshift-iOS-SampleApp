@@ -11,6 +11,7 @@ import BlueShift_iOS_SDK
 class DebugViewController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var inAppRegisterSwitch: UISwitch!
     
     //To execute these push/in-app sends for testing, you will need to setup event based campaigns on basis of below "bsft_send_me_*" events. Then only this will work.
@@ -31,7 +32,7 @@ class DebugViewController: UIViewController {
     func setupUI() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = footerView
         tableView.rowHeight = UITableView.automaticDimension
         title = "Debug"
         inAppRegisterSwitch.isOn = false
@@ -50,6 +51,10 @@ class DebugViewController: UIViewController {
         } else {
             BlueShift.sharedInstance()?.unregisterForInAppMessage()
         }
+    }
+    
+    @IBAction func showLiveContent(_ sender: Any) {
+        performSegue(withIdentifier: "showLiveContent", sender: nil)
     }
 }
 extension DebugViewController: UITableViewDataSource {
