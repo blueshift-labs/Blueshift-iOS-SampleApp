@@ -83,7 +83,8 @@ class CartViewController: BaseViewController {
             product.sku = item.sku
             products.append(product)
         }
-        BlueShift.sharedInstance()?.trackCheckOutCart(withProducts: products, andRevenue: amout, andDiscount: amout, andCoupon: "New User", canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.trackCheckOutCart(withProducts: products, andRevenue: amout, andDiscount: 0, andCoupon: "New User", canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.trackProductsPurchased(products, withOrderID: "order\(NSDate().timeIntervalSince1970)", andRevenue: amout, andShippingCost: 20, andDiscount: 0, andCoupon: "", canBatchThisEvent: false)
         Utils.shared.cartItems.removeAll()
         refreshTableView()
     }

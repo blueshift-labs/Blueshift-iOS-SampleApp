@@ -32,6 +32,7 @@ class LiveContentViewController: BaseViewController {
     }
     
     @IBAction func getLiveContent(_ sender: Any) {
+        view.endEditing(true)
         let context: [String:String] = ["seed_item_ids":"9780307273482"];
         contentTextView.text = ""
         switch idSegmentControl.selectedSegmentIndex {

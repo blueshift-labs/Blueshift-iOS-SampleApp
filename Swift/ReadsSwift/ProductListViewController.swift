@@ -54,7 +54,7 @@ class ProductListViewController: BaseViewController {
     func setupEvents() {
         //Disable push notifications in AppDelegate config and Enable & register for push notifications here if need to ask the push permission after the login
         //        BlueShift.sharedInstance()?.config.enablePushNotification = true
-        //        BlueShift.shxaredInstance()?.appDelegate.registerForNotification()
+        //        BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
     }
     
     func addFloatingButton() {

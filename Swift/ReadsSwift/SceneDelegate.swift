@@ -13,11 +13,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
+    // set SDK variables as optional variables
+    let blueshiftAppDelegate: BlueShiftAppDelegate? = BlueShift.sharedInstance()?.appDelegate
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let _ = (scene as? UIWindowScene) else { return }
         if let activity = connectionOptions.userActivities.first, let url = activity.webpageURL, BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
-            BlueShift.sharedInstance()?.appDelegate.handleBlueshiftUniversalLinks(for: activity)
+            blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: activity)
         }
     }
 
@@ -39,14 +42,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
+        blueshiftAppDelegate?.sceneWillEnterForeground(scene)
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
+        blueshiftAppDelegate?.sceneDidEnterBackground(scene)
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -58,7 +58,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
         if let url = userActivity.webpageURL, BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
-            BlueShift.sharedInstance()?.appDelegate.handleBlueshiftUniversalLinks(for: userActivity)
+            blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: userActivity)
         }
     }
     
