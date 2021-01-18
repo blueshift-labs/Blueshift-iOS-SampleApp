@@ -39,9 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = BlueShiftConfig()
 
         // v2.1.7 - Set debug true to see Blueshift SDK info logs, by default its set as false.
-//        #if DEBUG
+        #if DEBUG
             config.debug = true
-//        #endif
+        #endif
         // Set the api Key for the config
         config.apiKey = "ADD API KEY"
         
