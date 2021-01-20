@@ -48,6 +48,9 @@
     [config setApiKey:@"API KEY"];
     //Enabled deug info logs
     [config setDebug:YES];
+
+    // v2.1.12 - Set isSceneDelegateConfiguration to true if the app is using sceneDelegate configuration. By default it is set to false.
+//    [config setIsSceneDelegateConfiguration:YES];
     
     // Enable BlueShift Push Notification. By Default Push notfications are enabled.
     [config setEnablePushNotification:YES];
@@ -214,7 +217,9 @@
 
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [self didCompleteLinkProcessing:url];
+    if([options[@"source"]  isEqual: @"Blueshift"]) {
+        [self didCompleteLinkProcessing:url];
+    }
     return YES;
 }
 

@@ -8,19 +8,25 @@
 import UIKit
 import BlueShift_iOS_SDK
 
-class DebugViewController: UIViewController {
+class DebugViewController: BaseViewController {
         
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var inAppRegisterSwitch: UISwitch!
     
     //To execute these push/in-app sends for testing, you will need to setup event based campaigns on basis of below "bsft_send_me_*" events. Then only this will work.
-    let events: [[String:String]] = [["Send Slide-in in-app message":"bsft_send_me_in_app"],
+    let events: [[String:String]] = [
+                                     ["Fetch in-app notifications":"fetchInApp"],
+                                     ["Send Slide-in in-app message":"bsft_send_me_in_app"],
                                      ["Send HTML in-app message":"bsft_send_me_in_app_html"],
                                      ["Send Modal in-app message":"bsft_send_me_in_app_modal"],
                                      ["Send Title+Content push notification":"bsft_send_me_push"],
                                      ["Send Image push notification":"bsft_send_me_image_push"],
                                      ["Send Animated Carousel push notification":"bsft_send_me_animated_carousel_push"],
-                                     ["Send Non animated Carousel push notification":"bsft_send_me_nonanimated_carousel_push"]
+                                     ["Send Non animated Carousel push notification":"bsft_send_me_nonanimated_carousel_push"],
+                                     ["Fire Identify event":"identify"],
+                                     ["Fire app open event":"app_open"],
+                                     ["Fire 100 batched event": "fire_batched_events"]
                                     ]
 
     override func viewDidLoad() {
@@ -31,16 +37,13 @@ class DebugViewController: UIViewController {
     func setupUI() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = footerView
         tableView.rowHeight = UITableView.automaticDimension
         title = "Debug"
         inAppRegisterSwitch.isOn = false
+        self.registerForInApp = false
     }
 
-    @IBAction func fetchInApps(_ sender: Any) {
-        BlueShift.sharedInstance()?.fetchInAppNotification(fromAPI: { }, failure: { (err) in
-        })
-    }
     @IBAction func registerForInApp(_ sender: Any) {
         guard let inAppSwitch = sender as? UISwitch else {
             return
@@ -50,6 +53,10 @@ class DebugViewController: UIViewController {
         } else {
             BlueShift.sharedInstance()?.unregisterForInAppMessage()
         }
+    }
+    
+    @IBAction func showLiveContent(_ sender: Any) {
+        performSegue(withIdentifier: "showLiveContent", sender: nil)
     }
 }
 extension DebugViewController: UITableViewDataSource {
@@ -70,7 +77,21 @@ extension DebugViewController: UITableViewDataSource {
 extension DebugViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let event = events[indexPath.row].values.first {
-            BlueShift.sharedInstance()?.trackEvent(forEventName: event, canBatchThisEvent: false)
+            switch event {
+            case "app_open":
+                BlueShift.sharedInstance()?.appDelegate?.trackAppOpen(withParameters: nil)
+            case "identify":
+                BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
+            case "fetchInApp":
+                BlueShift.sharedInstance()?.fetchInAppNotification(fromAPI: { }, failure: { (err) in
+                })
+            case "fire_batched_events":
+                for index in 0...100 {
+                    BlueShift.sharedInstance()?.trackEvent(forEventName: "BatchedEvent_\(index)", canBatchThisEvent: true)
+                }
+            default:
+                BlueShift.sharedInstance()?.trackEvent(forEventName: event, canBatchThisEvent: false)
+            }
         }
     }
 }

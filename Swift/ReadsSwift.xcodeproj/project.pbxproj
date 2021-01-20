@@ -10,10 +10,12 @@
 		42A7A6508BD1B3C60A8C7091 /* Pods_NotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56B5B278F9FF4881C5220D5 /* Pods_NotificationService.framework */; };
 		913F9B92249264D10032CD4A /* com.blueshift.reads.red-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 913F9B90249264D10032CD4A /* com.blueshift.reads.red-GoogleService-Info.plist */; };
 		916AC4B924B4371000E13B82 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AC4B824B4371000E13B82 /* BaseViewController.swift */; };
+		917576DA255D17E000443635 /* LiveContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917576D9255D17E000443635 /* LiveContentViewController.swift */; };
 		91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */; };
 		91B4074D24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */; };
 		91B4075024C99E8A005B55D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91B4074F24C99E8A005B55D6 /* GoogleService-Info.plist */; };
 		91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4075124C9B6E2005B55D6 /* CartViewController.swift */; };
+		91BA9B1625B5BC6F0010E40D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BA9B1525B5BC6F0010E40D /* SceneDelegate.swift */; };
 		91F5C9BE25347598008C1C2A /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */; };
 		91F5CA52253581FA008C1C2A /* DebugTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */; };
 		91F5CA5725358208008C1C2A /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CA5625358208008C1C2A /* DebugViewController.swift */; };
@@ -77,10 +79,12 @@
 		7BEA12E0591AAFE890EDB898 /* Pods-NotificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.debug.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.debug.xcconfig"; sourceTree = "<group>"; };
 		913F9B90249264D10032CD4A /* com.blueshift.reads.red-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "com.blueshift.reads.red-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		916AC4B824B4371000E13B82 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		917576D9255D17E000443635 /* LiveContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentViewController.swift; sourceTree = "<group>"; };
 		91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueshiftInAppNotificationEvents.swift; sourceTree = "<group>"; };
 		91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueshiftPushNotificationEvents.swift; sourceTree = "<group>"; };
 		91B4074F24C99E8A005B55D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91B4075124C9B6E2005B55D6 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		91BA9B1525B5BC6F0010E40D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91F3521624AC8C460051D404 /* NotificationContent.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = NotificationContent.entitlements; sourceTree = "<group>"; };
 		91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTableViewCell.swift; sourceTree = "<group>"; };
@@ -235,9 +239,11 @@
 			children = (
 				C338CFAF24752E8100DBBD21 /* ReadsSwift.entitlements */,
 				C38F1BB82472B6D800ACEBE1 /* AppDelegate.swift */,
+				91BA9B1525B5BC6F0010E40D /* SceneDelegate.swift */,
 				916AC4B824B4371000E13B82 /* BaseViewController.swift */,
 				91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */,
 				91F5CA5625358208008C1C2A /* DebugViewController.swift */,
+				917576D9255D17E000443635 /* LiveContentViewController.swift */,
 				C38F1BBC2472B6D800ACEBE1 /* SignInViewController.swift */,
 				C338CFDD24756FA400DBBD21 /* ProductListViewController.swift */,
 				C338CFDF24757D4F00DBBD21 /* ProductDetailViewController.swift */,
@@ -519,11 +525,13 @@
 				91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */,
 				C338CFE024757D4F00DBBD21 /* ProductDetailViewController.swift in Sources */,
 				C338CFDC24756F8A00DBBD21 /* ProductTableViewCell.swift in Sources */,
+				91BA9B1625B5BC6F0010E40D /* SceneDelegate.swift in Sources */,
 				91F5CA52253581FA008C1C2A /* DebugTableViewCell.swift in Sources */,
 				91F5CA5725358208008C1C2A /* DebugViewController.swift in Sources */,
 				91F5C9BE25347598008C1C2A /* CartTableViewCell.swift in Sources */,
 				91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */,
 				916AC4B924B4371000E13B82 /* BaseViewController.swift in Sources */,
+				917576DA255D17E000443635 /* LiveContentViewController.swift in Sources */,
 				C338CFDE24756FA400DBBD21 /* ProductListViewController.swift in Sources */,
 				C338CFDA24756AC300DBBD21 /* Utils.swift in Sources */,
 				91B4074D24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift in Sources */,
@@ -747,7 +755,7 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -947,7 +955,7 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -981,7 +989,7 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

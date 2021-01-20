@@ -15,7 +15,10 @@ import FirebaseCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var activityIndicator: UIActivityIndicatorView? = nil
-    var cartItems: [String: String] = [:]
+    
+    // set SDK variables as optional variables
+    let blueshiftAppDelegate: BlueShiftAppDelegate? = BlueShift.sharedInstance()?.appDelegate
+    let blueshiftUserNotificationDelegate: BlueShiftUserNotificationCenterDelegate? = BlueShift.sharedInstance()?.userNotificationDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -35,9 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Obtain an instance of BlueShiftConfig
         let config = BlueShiftConfig()
 
-        //Set debug true to see Blueshift SDK info logs, by default its set as false.
-        config.debug = true;
-
+        // v2.1.7 - Set debug true to see Blueshift SDK info logs, by default its set as false.
+        #if DEBUG
+            config.debug = true
+        #endif
         // Set the api Key for the config
         config.apiKey = "ADD API KEY"
         
@@ -45,6 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Enable push notifications
         config.enablePushNotification = true
+
+        // v2.1.12 - SceneDelegate configuration
+        if #available(iOS 13.0, *) {
+            config.isSceneDelegateConfiguration = true
+        }
+        
+        if let launchOptions = launchOptions {
+            config.applicationLaunchOptions = launchOptions
+        }
 
         //Set user notification delegate
         if #available(iOS 10.0, *) {
@@ -71,10 +84,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //If you do not add below line, SDK by default sets it to 300 seconds.
         BlueShiftBatchUploadConfig.sharedInstance()?.batchUploadTimer = 60
 
-        //Set universal links delegate to enable universal links
+        // v2.1.0 - Set universal links delegate to enable universal links
         config.blueshiftUniversalLinksDelegate = self
+        
+//        config.enableAppOpenTrackEvent = false
 
-        //Set deviceIDSource as custom
+        // v2.1.3 - Set deviceIDSource as custom
         config.blueshiftDeviceIdSource = .IDFV
         //Set the custom device id value
 //        config.customDeviceId = UIDevice.current.identifierForVendor?.uuidString
@@ -87,25 +102,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let blueshiftInAppDelegate = BlueshiftInAppNotificationEvents()
 //        config.inAppNotificationDelegate = blueshiftInAppDelegate
         
-        // Initialize the configuration
+        // Initialize the configuration required to be executed on the main thread
         BlueShift.initWithConfiguration(config)
         
         return true
+    }
+    
+    // MARK: UISceneSession Lifecycle
+    @available(iOS 13.0, *)
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        // Called when a new scene session is being created.
+        // Use this method to select a configuration to create the new scene with.
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+
+    @available(iOS 13.0, *)
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+        // Called when the user discards a scene session.
+        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
 
 extension AppDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        BlueShift.sharedInstance()?.appDelegate.register(forRemoteNotification: deviceToken)
+        blueshiftAppDelegate?.register(forRemoteNotification: deviceToken)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        BlueShift.sharedInstance()?.appDelegate.failedToRegisterForRemoteNotificationWithError(error)
+        blueshiftAppDelegate?.failedToRegisterForRemoteNotificationWithError(error)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // v2.1.8 - Filter Blueshift notifications
         if BlueShift.sharedInstance()?.isBlueshiftPushNotification(userInfo) == true {
-            BlueShift.sharedInstance()?.appDelegate.handleRemoteNotification(userInfo, for: application, fetchCompletionHandler: completionHandler)
+            blueshiftAppDelegate?.handleRemoteNotification(userInfo, for: application, fetchCompletionHandler: completionHandler)
         }
     }
 }
@@ -113,27 +144,29 @@ extension AppDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate {
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // v2.1.8 - Filter Blueshift notifications
         if BlueShift.sharedInstance()?.isBlueshiftPushNotification(response.notification.request.content.userInfo) == true {
-            BlueShift.sharedInstance()?.userNotificationDelegate.handleUserNotification(center, didReceive: response, withCompletionHandler: completionHandler)
+            blueshiftUserNotificationDelegate?.handleUserNotification(center, didReceive: response, withCompletionHandler: completionHandler)
         }
     }
         
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // v2.1.8 - Filter Blueshift notifications
         if BlueShift.sharedInstance()?.isBlueshiftPushNotification(notification.request.content.userInfo) == true {
-            BlueShift.sharedInstance()?.userNotificationDelegate.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
+            blueshiftUserNotificationDelegate?.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
         }
     }
 }
 
 extension AppDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
-        BlueShift.sharedInstance()?.appDelegate.appDidBecomeActive(application)
+        blueshiftAppDelegate?.appDidBecomeActive(application)
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        BlueShift.sharedInstance()?.appDelegate.appDidEnterBackground(application)
+        blueshiftAppDelegate?.appDidEnterBackground(application)
     }
 }
 
@@ -141,14 +174,17 @@ extension AppDelegate {
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if let url = userActivity.webpageURL {
             if BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
-                BlueShift.sharedInstance()?.appDelegate.handleBlueshiftUniversalLinks(for: url)
+                blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: url)
             }
         }
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        showProductDetail(animated: true, url: url)
+        // v2.1.12 - Check if deep link url is from Blueshift.
+        if let source = options[UIApplication.OpenURLOptionsKey(rawValue: "source")] as? String, source == "Blueshift" {
+            showProductDetail(animated: true, url: url)
+        }
         return true
     }
 }
@@ -213,7 +249,7 @@ extension AppDelegate {
         if url.absoluteString == "" {
             return
         } else if url.absoluteString == "//registerForNotification" {
-            BlueShift.sharedInstance()?.appDelegate.registerForNotification()
+            blueshiftAppDelegate?.registerForNotification()
             return
         }
         
@@ -226,8 +262,15 @@ extension AppDelegate {
             showAlert(for: url)
             return
         }
-        
-        guard let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController else { return }
+        var navController: UINavigationController? = UIApplication.shared.windows.first?.rootViewController as? UINavigationController
+        if #available(iOS 13.0, *) {
+            // For sceneDelegate enabled apps, perform screen redirection in the keyWindow
+            if BlueShift.sharedInstance()?.config.isSceneDelegateConfiguration == true {
+                navController = BlueShiftInAppNotificationHelper.getApplicationKeyWindow().windowScene?.windows.first?.rootViewController as? UINavigationController
+            }
+        }
+                
+        guard let navigationController = navController else { return }
         if navigationController.viewControllers.count > 2 {
             for controller in navigationController.viewControllers {
                 if controller.isKind(of: ProductListViewController.self) {

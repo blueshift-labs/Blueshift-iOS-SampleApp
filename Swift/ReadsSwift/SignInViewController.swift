@@ -55,21 +55,21 @@ class SignInViewController: BaseViewController {
 //        BlueShiftUserInfo.sharedInstance()?.dateOfBirth = "add DOB"
         
         //If want to store additional user information, you can create the dictionary and assign it to additionalUserInfo
-        BlueShiftUserInfo.sharedInstance()?.additionalUserInfo = ["profession":"Software engineer", "phone_number": "+919898989898"]
+        BlueShiftUserInfo.sharedInstance()?.additionalUserInfo = ["profession":"Software engineer"]
         
         BlueShiftUserInfo.sharedInstance()?.save()
         
-        //Set enablePush to true in case you have disabling it on the logout
+        //Optional - Set enablePush to true in case you have disabling it on the logout
         //By default its set to true for fresh app install
         BlueShiftAppData.current()?.enablePush = true
         
-        //Add custom attributes to the identify call which will be shown against user profile in the dashboard
-        let dictionary = ["userType":"Premium"]
+        //Optional - Add custom attributes to the identify call which will be shown against user profile in the dashboard
+        let dictionary = ["userType":"Premium","phone_number":"+919665335973"]
         
-        BlueShift.sharedInstance().identifyUser(withDetails:dictionary, canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.identifyUser(withDetails:dictionary, canBatchThisEvent: false)
         
         //Add successful signin event
-        BlueShift.sharedInstance().trackEvent(forEventName: "signIn", andParameters: nil, canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.trackEvent(forEventName: "SignIn", andParameters: nil, canBatchThisEvent: false)
         showProductList(animated: true)
     }
     
