@@ -66,10 +66,10 @@ class SignInViewController: BaseViewController {
         //Optional - Add custom attributes to the identify call which will be shown against user profile in the dashboard
         let dictionary = ["userType":"Premium","phone_number":"+919665335973"]
         
-        BlueShift.sharedInstance()?.identifyUser(withDetails:dictionary, canBatchThisEvent: false)
+        Utils.shared?.blueshift?.identifyUser(withDetails:dictionary, canBatchThisEvent: false)
         
         //Add successful signin event
-        BlueShift.sharedInstance()?.trackEvent(forEventName: "SignIn", andParameters: nil, canBatchThisEvent: false)
+        Utils.shared?.blueshift?.trackEvent(forEventName: "SignIn", andParameters: nil, canBatchThisEvent: false)
         showProductList(animated: true)
     }
     

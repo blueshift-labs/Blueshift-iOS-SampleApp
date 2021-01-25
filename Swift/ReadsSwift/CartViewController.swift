@@ -37,7 +37,7 @@ class CartViewController: BaseViewController {
     }
     
     func checkCartEmpty() {
-        if Utils.shared.cartItems.count > 0 {
+        if Utils.shared?.cartItems.count ?? 0 > 0 {
             tableView.isHidden = false
             emptyCartLabel.isHidden = true
         } else {
@@ -47,14 +47,14 @@ class CartViewController: BaseViewController {
     }
     
     func removeItem(index: Int) {
-        Utils.shared.cartItems.remove(at: index)
+        Utils.shared?.cartItems.remove(at: index)
         refreshTableView()
     }
     
     func refreshCalculations() {
         var quantiy:Int = 0
         var amount:Double = 0
-        for item in Utils.shared.cartItems {
+        for item in Utils.shared?.cartItems ?? [] {
             quantiy += item.quantity
             if let amt = item.details?["price"] {
                 amount += Double(amt) ?? 0
@@ -73,7 +73,7 @@ class CartViewController: BaseViewController {
     @IBAction func checkout(_ sender: Any) {
         var products:[BlueShiftProduct] = []
         var amout:Float = 0.0
-        for item in Utils.shared.cartItems {
+        for item in Utils.shared?.cartItems ?? [] {
             let product = BlueShiftProduct()
             if let amt = item.details?["price"] {
                 product.price = Float(amt) ?? 0
@@ -83,29 +83,29 @@ class CartViewController: BaseViewController {
             product.sku = item.sku
             products.append(product)
         }
-        BlueShift.sharedInstance()?.trackCheckOutCart(withProducts: products, andRevenue: amout, andDiscount: 0, andCoupon: "New User", canBatchThisEvent: false)
-        BlueShift.sharedInstance()?.trackProductsPurchased(products, withOrderID: "order\(NSDate().timeIntervalSince1970)", andRevenue: amout, andShippingCost: 20, andDiscount: 0, andCoupon: "", canBatchThisEvent: false)
-        Utils.shared.cartItems.removeAll()
+        Utils.shared?.blueshift?.trackCheckOutCart(withProducts: products, andRevenue: amout, andDiscount: 0, andCoupon: "New User", canBatchThisEvent: false)
+        Utils.shared?.blueshift?.trackProductsPurchased(products, withOrderID: "order\(NSDate().timeIntervalSince1970)", andRevenue: amout, andShippingCost: 20, andDiscount: 0, andCoupon: "", canBatchThisEvent: false)
+        Utils.shared?.cartItems.removeAll()
         refreshTableView()
     }
 }
 
 extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Utils.shared.cartItems.count
+        return Utils.shared?.cartItems.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCellIdentifier", for: indexPath)  as? CartTableViewCell else {
             return UITableViewCell()
         }
-        cell.skuLabel.text = Utils.shared.cartItems[indexPath.row].sku
-        cell.priceLabel.text = "$" + (Utils.shared.cartItems[indexPath.row].details?["price"] ?? "")
-        cell.productLabel.text = Utils.shared.cartItems[indexPath.row].details?["name"]
-        if let url = Utils.shared.cartItems[indexPath.row].details?["image_url"], let imageUrl = URL(string: url)  {
+        cell.skuLabel.text = Utils.shared?.cartItems[indexPath.row].sku
+        cell.priceLabel.text = "$" + (Utils.shared?.cartItems[indexPath.row].details?["price"] ?? "")
+        cell.productLabel.text = Utils.shared?.cartItems[indexPath.row].details?["name"]
+        if let url = Utils.shared?.cartItems[indexPath.row].details?["image_url"], let imageUrl = URL(string: url)  {
             cell.imageView?.kf.setImage(with: imageUrl)
         }
-        cell.quantityLabel.text = "\(Utils.shared.cartItems[indexPath.row].quantity)"
+        cell.quantityLabel.text = String(describing: Utils.shared?.cartItems[indexPath.row].quantity)
         return cell;
     }
 }

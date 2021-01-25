@@ -21,7 +21,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //adding this screen tracking here will automatically track screen views for all the VCs who are inheriting BaseViewController
-        BlueShift.sharedInstance()?.trackScreenViewed(for: self, canBatchThisEvent: true)
+        Utils.shared?.blueshift?.trackScreenViewed(for: self, canBatchThisEvent: true)
         
         setupAppTheme()
     }
@@ -30,13 +30,13 @@ class BaseViewController: UIViewController {
         super.viewDidAppear(animated)
         if registerForInApp {
             let viewControllerName = String(describing: type(of: self))
-            BlueShift.sharedInstance()?.registerFor(inAppMessage: viewControllerName)
+            Utils.shared?.blueshift?.registerFor(inAppMessage: viewControllerName)
         }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        BlueShift.sharedInstance()?.unregisterForInAppMessage()
+        Utils.shared?.blueshift?.unregisterForInAppMessage()
     }
     
     //Custom theme UI setup
@@ -72,13 +72,13 @@ extension BaseViewController {
     
     //Add navigation button when manual trigger is enabled to show inapp
     func setNavigationBarButtons() {
-        if BlueShift.sharedInstance()?.config?.inAppManualTriggerEnabled == true {
+        if Utils.shared?.blueshift?.config?.inAppManualTriggerEnabled == true {
             let showInAppButton = UIBarButtonItem(title: "Show InApp", style: .plain, target: self, action: #selector(showInApp));
             navigationItem.rightBarButtonItem = showInAppButton
         }
     }
     
     @objc func showInApp() {
-        BlueShift.sharedInstance()?.displayInAppNotification()
+        Utils.shared?.blueshift?.displayInAppNotification()
     }
 }

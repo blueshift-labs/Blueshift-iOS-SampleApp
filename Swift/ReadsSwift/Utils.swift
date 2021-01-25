@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import BlueShift_iOS_SDK
 
 struct CartItem {
     var sku: String?
@@ -15,9 +16,14 @@ struct CartItem {
 
 class Utils {
     
-    static let shared = Utils()
+    static let shared: Utils? = Utils()
     
     var cartItems: [CartItem] = []
+    
+    // set SDK variables as optional variables
+    var blueshiftAppDelegate: BlueShiftAppDelegate? = BlueShift.sharedInstance()?.appDelegate
+    var blueshiftUserNotificationDelegate: BlueShiftUserNotificationCenterDelegate? = BlueShift.sharedInstance()?.userNotificationDelegate
+    var blueshift: BlueShift? = BlueShift.sharedInstance()
     
     let products:[[String: String]] = [[
     "sku": "9780140247732",

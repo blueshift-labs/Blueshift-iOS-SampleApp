@@ -53,8 +53,8 @@ class ProductListViewController: BaseViewController {
     
     func setupEvents() {
         //Disable push notifications in AppDelegate config and Enable & register for push notifications here if need to ask the push permission after the login
-        //        BlueShift.sharedInstance()?.config.enablePushNotification = true
-        //        BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
+        //        Utils.shared?.blueshift?.config.enablePushNotification = true
+        //        Utils.shared?.blueshift?.appDelegate?.registerForNotification()
     }
     
     func addFloatingButton() {
@@ -106,10 +106,10 @@ class ProductListViewController: BaseViewController {
     }
     
     func logout() {
-        BlueShift.sharedInstance()?.trackEvent(forEventName: "Logout", canBatchThisEvent: false)
+        Utils.shared?.blueshift?.trackEvent(forEventName: "Logout", canBatchThisEvent: false)
         //Set enablePush to false so that the app will not receive any push notificaiton after logout. Fire identify after setting enablePush.
         BlueShiftAppData.current()?.enablePush = false
-        BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
+        Utils.shared?.blueshift?.identifyUser(withDetails: nil, canBatchThisEvent: false)
         //Reset userinfo after logout
         BlueShiftUserInfo.removeCurrentUserInfo()
         self.navigationController?.popToRootViewController(animated: true)
@@ -118,18 +118,18 @@ class ProductListViewController: BaseViewController {
 
 extension ProductListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Utils.shared.products.count
+        return Utils.shared?.products.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let product = Utils.shared.products[indexPath.row]
+        let product = Utils.shared?.products[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCellIdentifier") as! ProductTableViewCell
-        if let url = product["image_url"], let imageUrl = URL(string: url) {
+        if let url = product?["image_url"], let imageUrl = URL(string: url) {
             cell.productImageView.kf.setImage(with: imageUrl)
         }
-        cell.productSKULabel.text = product["sku"]
-        cell.productPriceLabel.text = "$" + (product["price"] ?? "")
-        cell.productTitleLabel.text = product["name"]
+        cell.productSKULabel.text = product?["sku"]
+        cell.productPriceLabel.text = "$" + (product?["price"] ?? "")
+        cell.productTitleLabel.text = product?["name"]
         return cell
     }
     
@@ -137,7 +137,7 @@ extension ProductListViewController: UITableViewDataSource {
 
 extension ProductListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let product = Utils.shared.products[indexPath.row]
+        guard let product = Utils.shared?.products[indexPath.row]  else { return }
         showProductDetail(animated: true, product: product)
     }
 }
