@@ -12,15 +12,12 @@ import BlueShift_iOS_SDK
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    
-    // set SDK variables as optional variables
-    let blueshiftAppDelegate: BlueShiftAppDelegate? = BlueShift.sharedInstance()?.appDelegate
-    
+        
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let _ = (scene as? UIWindowScene) else { return }
-        if let activity = connectionOptions.userActivities.first, let url = activity.webpageURL, BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
-            blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: activity)
+        if let activity = connectionOptions.userActivities.first, let url = activity.webpageURL, Utils.shared?.blueshift?.isBlueshiftUniversalLinkURL(url) == true {
+            Utils.shared?.blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: activity)
         }
     }
 
@@ -42,23 +39,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        blueshiftAppDelegate?.sceneWillEnterForeground(scene)
+        Utils.shared?.blueshiftAppDelegate?.sceneWillEnterForeground(scene)
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        blueshiftAppDelegate?.sceneDidEnterBackground(scene)
+        Utils.shared?.blueshiftAppDelegate?.sceneDidEnterBackground(scene)
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        if let url = URLContexts.first?.url {
-            let appDeleagate = (UIApplication.shared.delegate as? AppDelegate)
-            appDeleagate?.showProductDetail( animated: true, url: url)
-        }
+//        if let url = URLContexts.first?.url {
+//            let appDeleagate = (UIApplication.shared.delegate as? AppDelegate)
+//            appDeleagate?.showProductDetail( animated: true, url: url)
+//        }
     }
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        if let url = userActivity.webpageURL, BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
-            blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: userActivity)
+        if let url = userActivity.webpageURL, Utils.shared?.blueshift?.isBlueshiftUniversalLinkURL(url) == true {
+            Utils.shared?.blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: userActivity)
         }
     }
     

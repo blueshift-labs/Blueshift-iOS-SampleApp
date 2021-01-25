@@ -42,23 +42,23 @@ class ProductDetailViewController: BaseViewController {
     }
     
     func setupEvents() {
-        BlueShift.sharedInstance()?.trackProductViewed(withSKU: product?["sku"] ?? "", andCategoryID: 0, canBatchThisEvent: false)
+        Utils.shared?.blueshift?.trackProductViewed(withSKU: product?["sku"] ?? "", andCategoryID: 0, canBatchThisEvent: false)
     }
         
     @IBAction func addToCart(_ sender: Any) {
-        BlueShift.sharedInstance()?.trackAddToCart(withSKU: product?["sku"] ?? "", andQuantity: 1, andParameters: product, canBatchThisEvent: false)
-        for index in 0..<Utils.shared.cartItems.count {
-            if Utils.shared.cartItems[index].sku == product?["sku"] {
-                Utils.shared.cartItems[index].quantity += 1
+        Utils.shared?.blueshift?.trackAddToCart(withSKU: product?["sku"] ?? "", andQuantity: 1, andParameters: product, canBatchThisEvent: false)
+        for index in 0..<(Utils.shared?.cartItems.count ?? 0) {
+            if Utils.shared?.cartItems[index].sku == product?["sku"] {
+                Utils.shared?.cartItems[index].quantity += 1
                 return
             }
         }
         
-        Utils.shared.cartItems.append(CartItem(sku: product?["sku"], quantity: 1, details: product))
+        Utils.shared?.cartItems.append(CartItem(sku: product?["sku"], quantity: 1, details: product))
     }
     
     @IBAction func addToWishList(_ sender: Any) {
-        BlueShift.sharedInstance()?.trackEvent(forEventName: "add_to_wishlist", andParameters: product, canBatchThisEvent: false)
+        Utils.shared?.blueshift?.trackEvent(forEventName: "add_to_wishlist", andParameters: product, canBatchThisEvent: false)
     }
     
     @IBAction func goToCart(_ sender: Any) {

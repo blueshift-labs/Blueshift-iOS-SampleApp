@@ -25,8 +25,9 @@ class DebugViewController: BaseViewController {
                                      ["Send Animated Carousel push notification":"bsft_send_me_animated_carousel_push"],
                                      ["Send Non animated Carousel push notification":"bsft_send_me_nonanimated_carousel_push"],
                                      ["Fire Identify event":"identify"],
-                                     ["Fire app open event":"app_open"],
-                                     ["Fire 100 batched event": "fire_batched_events"]
+                                     ["Fire app open event":"appOpen"],
+                                     ["Fire 100 batched event":"fireBatchedEvents"],
+                                     ["Register for remote notification":"registerForPush"]
                                     ]
 
     override func viewDidLoad() {
@@ -49,9 +50,9 @@ class DebugViewController: BaseViewController {
             return
         }
         if inAppSwitch.isOn {
-            BlueShift.sharedInstance()?.registerFor(inAppMessage:  String(describing: type(of: self)))
+            Utils.shared?.blueshift?.registerFor(inAppMessage:  String(describing: type(of: self)))
         } else {
-            BlueShift.sharedInstance()?.unregisterForInAppMessage()
+            Utils.shared?.blueshift?.unregisterForInAppMessage()
         }
     }
     
@@ -78,19 +79,21 @@ extension DebugViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let event = events[indexPath.row].values.first {
             switch event {
-            case "app_open":
-                BlueShift.sharedInstance()?.appDelegate?.trackAppOpen(withParameters: nil)
+            case "appOpen":
+                Utils.shared?.blueshift?.appDelegate?.trackAppOpen(withParameters: nil)
             case "identify":
-                BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
+                Utils.shared?.blueshift?.identifyUser(withDetails: nil, canBatchThisEvent: false)
             case "fetchInApp":
-                BlueShift.sharedInstance()?.fetchInAppNotification(fromAPI: { }, failure: { (err) in
+                Utils.shared?.blueshift?.fetchInAppNotification(fromAPI: { }, failure: { (err) in
                 })
-            case "fire_batched_events":
+            case "fireBatchedEvents":
                 for index in 0...100 {
-                    BlueShift.sharedInstance()?.trackEvent(forEventName: "BatchedEvent_\(index)", canBatchThisEvent: true)
+                    Utils.shared?.blueshift?.trackEvent(forEventName: "BatchedEvent_\(index)", canBatchThisEvent: true)
                 }
+            case "registerForPush":
+                Utils.shared?.blueshift?.appDelegate?.registerForNotification()
             default:
-                BlueShift.sharedInstance()?.trackEvent(forEventName: event, canBatchThisEvent: false)
+                Utils.shared?.blueshift?.trackEvent(forEventName: event, canBatchThisEvent: false)
             }
         }
     }
