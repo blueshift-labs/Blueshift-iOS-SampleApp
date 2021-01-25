@@ -105,7 +105,7 @@ extension CartViewController: UITableViewDataSource {
         if let url = Utils.shared?.cartItems[indexPath.row].details?["image_url"], let imageUrl = URL(string: url)  {
             cell.imageView?.kf.setImage(with: imageUrl)
         }
-        cell.quantityLabel.text = "\(Utils.shared?.cartItems[indexPath.row].quantity)"
+        cell.quantityLabel.text = String(describing: Utils.shared?.cartItems[indexPath.row].quantity)
         return cell;
     }
 }
