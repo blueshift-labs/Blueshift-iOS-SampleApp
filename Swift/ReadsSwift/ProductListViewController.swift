@@ -34,7 +34,7 @@ class ProductListViewController: BaseViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        addFloatingButton()
+//        addFloatingButton()
     }
     
     func setupUI() {
