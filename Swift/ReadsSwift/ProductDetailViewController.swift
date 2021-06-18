@@ -42,11 +42,11 @@ class ProductDetailViewController: BaseViewController {
     }
     
     func setupEvents() {
-        Utils.shared?.blueshift?.trackProductViewed(withSKU: product?["sku"] ?? "", andCategoryID: 0, canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.trackProductViewed(withSKU: product?["sku"] ?? "", andCategoryID: 0, canBatchThisEvent: false)
     }
         
     @IBAction func addToCart(_ sender: Any) {
-        Utils.shared?.blueshift?.trackAddToCart(withSKU: product?["sku"] ?? "", andQuantity: 1, andParameters: product, canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.trackAddToCart(withSKU: product?["sku"] ?? "", andQuantity: 1, andParameters: product, canBatchThisEvent: false)
         for index in 0..<(Utils.shared?.cartItems.count ?? 0) {
             if Utils.shared?.cartItems[index].sku == product?["sku"] {
                 Utils.shared?.cartItems[index].quantity += 1
@@ -58,7 +58,7 @@ class ProductDetailViewController: BaseViewController {
     }
     
     @IBAction func addToWishList(_ sender: Any) {
-        Utils.shared?.blueshift?.trackEvent(forEventName: "add_to_wishlist", andParameters: product, canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.trackEvent(forEventName: "add_to_wishlist", andParameters: product, canBatchThisEvent: false)
     }
     
     @IBAction func goToCart(_ sender: Any) {

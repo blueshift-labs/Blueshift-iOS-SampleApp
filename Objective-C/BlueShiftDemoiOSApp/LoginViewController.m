@@ -58,13 +58,18 @@
     //[[BlueShiftUserInfo sharedUserInfo] setRetailerCustomerID:[NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]]];
     //NSString *customerID = [self md5HexDigest:self.emailTextField.text];
     //[[BlueShiftUserInfo sharedInstance] setRetailerCustomerID:customerID];
-    [[BlueShiftUserInfo sharedInstance] setUnsubscribed:NO];
-    [[BlueShiftUserInfo sharedInstance] save];
 //    [[BlueShiftUserInfo sharedInstance] setGender: @"add gender"];
 //    [[BlueShiftUserInfo sharedInstance] setDateOfBirth: @"add DOB"];
 //    [[BlueShiftUserInfo sharedInstance] setFirstName: @"add first name"];
 //    [[BlueShiftUserInfo sharedInstance] setLastName: @"add last name" ];
     
+    [[BlueShiftUserInfo sharedInstance] setUnsubscribed:NO];
+    [[BlueShiftAppData currentAppData]setEnablePush:YES];
+    [[BlueShiftAppData currentAppData]setEnableInApp:YES];
+    [[BlueShiftUserInfo sharedInstance]
+     setExtras:@{@"userType":@"Premium",@"subExpiryDate":@"15-10-2021"}];
+    [[BlueShiftUserInfo sharedInstance] save];
+
     [[BlueShift sharedInstance] identifyUserWithEmail:[BlueShiftUserInfo sharedInstance].email andDetails:nil canBatchThisEvent:NO];
     
     if(self.emailTextField.text.length > 0) {

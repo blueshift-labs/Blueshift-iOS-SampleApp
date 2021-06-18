@@ -53,8 +53,8 @@ class ProductListViewController: BaseViewController {
     
     func setupEvents() {
         //Disable push notifications in AppDelegate config and Enable & register for push notifications here if need to ask the push permission after the login
-        //        Utils.shared?.blueshift?.config.enablePushNotification = true
-        //        Utils.shared?.blueshift?.appDelegate?.registerForNotification()
+        //        BlueShift.sharedInstance()?.config.enablePushNotification = true
+        //        BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
     }
     
     func addFloatingButton() {
@@ -106,10 +106,12 @@ class ProductListViewController: BaseViewController {
     }
     
     func logout() {
-        Utils.shared?.blueshift?.trackEvent(forEventName: "Logout", canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.trackEvent(forEventName: "Logout", canBatchThisEvent: false)
         //Set enablePush to false so that the app will not receive any push notificaiton after logout. Fire identify after setting enablePush.
         BlueShiftAppData.current()?.enablePush = false
-        Utils.shared?.blueshift?.identifyUser(withDetails: nil, canBatchThisEvent: false)
+        BlueShiftAppData.current()?.enableInApp = false
+        BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
+
         //Reset userinfo after logout
         BlueShiftUserInfo.removeCurrentUserInfo()
         self.navigationController?.popToRootViewController(animated: true)

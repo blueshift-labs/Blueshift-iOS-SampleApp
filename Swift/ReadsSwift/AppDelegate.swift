@@ -122,17 +122,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        Utils.shared?.blueshiftAppDelegate?.register(forRemoteNotification: deviceToken)
+        BlueShift.sharedInstance()?.appDelegate?.register(forRemoteNotification: deviceToken)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        Utils.shared?.blueshiftAppDelegate?.failedToRegisterForRemoteNotificationWithError(error)
+        BlueShift.sharedInstance()?.appDelegate?.failedToRegisterForRemoteNotificationWithError(error)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         // v2.1.8 - Filter Blueshift notifications
-        if Utils.shared?.blueshift?.isBlueshiftPushNotification(userInfo) == true {
-            Utils.shared?.blueshiftAppDelegate?.handleRemoteNotification(userInfo, for: application, fetchCompletionHandler: completionHandler)
+        if BlueShift.sharedInstance()?.isBlueshiftPushNotification(userInfo) == true {
+            BlueShift.sharedInstance()?.appDelegate?.handleRemoteNotification(userInfo, for: application, fetchCompletionHandler: completionHandler)
+        } else {
+            completionHandler(.noData)
         }
     }
 }
@@ -141,8 +143,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // v2.1.8 - Filter Blueshift notifications
-        if Utils.shared?.blueshift?.isBlueshiftPushNotification(response.notification.request.content.userInfo) == true {
-            Utils.shared?.blueshiftUserNotificationDelegate?.handleUserNotification(center, didReceive: response, withCompletionHandler: completionHandler)
+        if BlueShift.sharedInstance()?.isBlueshiftPushNotification(response.notification.request.content.userInfo) == true {
+            BlueShift.sharedInstance()?.userNotificationDelegate?.handleUserNotification(center, didReceive: response, withCompletionHandler: completionHandler)
+            //fire
+        } else {
+            completionHandler()
         }
     }
         
@@ -150,27 +155,29 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         // v2.1.8 - Filter Blueshift notifications
-        if Utils.shared?.blueshift?.isBlueshiftPushNotification(notification.request.content.userInfo) == true {
-            Utils.shared?.blueshiftUserNotificationDelegate?.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
+        if BlueShift.sharedInstance()?.isBlueshiftPushNotification(notification.request.content.userInfo) == true {
+            BlueShift.sharedInstance()?.userNotificationDelegate?.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
+        } else {
+            completionHandler([.alert, .sound, .badge])
         }
     }
 }
 
 extension AppDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
-        Utils.shared?.blueshiftAppDelegate?.appDidBecomeActive(application)
+        BlueShift.sharedInstance()?.appDelegate?.appDidBecomeActive(application)
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        Utils.shared?.blueshiftAppDelegate?.appDidEnterBackground(application)
+        BlueShift.sharedInstance()?.appDelegate?.appDidEnterBackground(application)
     }
 }
 
 extension AppDelegate {
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if let url = userActivity.webpageURL {
-            if Utils.shared?.blueshift?.isBlueshiftUniversalLinkURL(url) == true {
-                Utils.shared?.blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: url)
+            if BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
+                BlueShift.sharedInstance()?.appDelegate?.handleBlueshiftUniversalLinks(for: url)
             }
         }
         return true
@@ -245,7 +252,7 @@ extension AppDelegate {
         if url.absoluteString == "" {
             return
         } else if url.absoluteString == "//registerForNotification" {
-            Utils.shared?.blueshiftAppDelegate?.registerForNotification()
+            BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
             return
         }
         
@@ -261,7 +268,7 @@ extension AppDelegate {
         var navController: UINavigationController? = UIApplication.shared.windows.first?.rootViewController as? UINavigationController
         if #available(iOS 13.0, *) {
             // For sceneDelegate enabled apps, perform screen redirection in the keyWindow
-            if Utils.shared?.blueshift?.config?.isSceneDelegateConfiguration == true {
+            if BlueShift.sharedInstance()?.config?.isSceneDelegateConfiguration == true {
                 navController = BlueShiftInAppNotificationHelper.getApplicationKeyWindow().windowScene?.windows.first?.rootViewController as? UINavigationController
             }
         }

@@ -50,9 +50,9 @@ class DebugViewController: BaseViewController {
             return
         }
         if inAppSwitch.isOn {
-            Utils.shared?.blueshift?.registerFor(inAppMessage:  String(describing: type(of: self)))
+            BlueShift.sharedInstance()?.registerFor(inAppMessage:  String(describing: type(of: self)))
         } else {
-            Utils.shared?.blueshift?.unregisterForInAppMessage()
+            BlueShift.sharedInstance()?.unregisterForInAppMessage()
         }
     }
     
@@ -80,20 +80,20 @@ extension DebugViewController: UITableViewDelegate {
         if let event = events[indexPath.row].values.first {
             switch event {
             case "appOpen":
-                Utils.shared?.blueshift?.appDelegate?.trackAppOpen(withParameters: nil)
+                BlueShift.sharedInstance()?.appDelegate?.trackAppOpen(withParameters: nil)
             case "identify":
-                Utils.shared?.blueshift?.identifyUser(withDetails: nil, canBatchThisEvent: false)
+                BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
             case "fetchInApp":
-                Utils.shared?.blueshift?.fetchInAppNotification(fromAPI: { }, failure: { (err) in
+                BlueShift.sharedInstance()?.fetchInAppNotification(fromAPI: { }, failure: { (err) in
                 })
             case "fireBatchedEvents":
                 for index in 0...100 {
-                    Utils.shared?.blueshift?.trackEvent(forEventName: "BatchedEvent_\(index)", canBatchThisEvent: true)
+                    BlueShift.sharedInstance()?.trackEvent(forEventName: "BatchedEvent_\(index)", canBatchThisEvent: true)
                 }
             case "registerForPush":
-                Utils.shared?.blueshift?.appDelegate?.registerForNotification()
+                BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
             default:
-                Utils.shared?.blueshift?.trackEvent(forEventName: event, canBatchThisEvent: false)
+                BlueShift.sharedInstance()?.trackEvent(forEventName: event, canBatchThisEvent: false)
             }
         }
     }
