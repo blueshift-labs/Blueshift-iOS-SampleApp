@@ -83,8 +83,8 @@ class CartViewController: BaseViewController {
             product.sku = item.sku
             products.append(product)
         }
-        Utils.shared?.blueshift?.trackCheckOutCart(withProducts: products, andRevenue: amout, andDiscount: 0, andCoupon: "New User", canBatchThisEvent: false)
-        Utils.shared?.blueshift?.trackProductsPurchased(products, withOrderID: "order\(NSDate().timeIntervalSince1970)", andRevenue: amout, andShippingCost: 20, andDiscount: 0, andCoupon: "", canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.trackCheckOutCart(withProducts: products, andRevenue: amout, andDiscount: 0, andCoupon: "New User", canBatchThisEvent: false)
+        BlueShift.sharedInstance()?.trackProductsPurchased(products, withOrderID: "order\(NSDate().timeIntervalSince1970)", andRevenue: amout, andShippingCost: 20, andDiscount: 0, andCoupon: "", canBatchThisEvent: false)
         Utils.shared?.cartItems.removeAll()
         refreshTableView()
     }
@@ -105,7 +105,7 @@ extension CartViewController: UITableViewDataSource {
         if let url = Utils.shared?.cartItems[indexPath.row].details?["image_url"], let imageUrl = URL(string: url)  {
             cell.imageView?.kf.setImage(with: imageUrl)
         }
-        cell.quantityLabel.text = String(describing: Utils.shared?.cartItems[indexPath.row].quantity)
+        cell.quantityLabel.text = String(describing: Utils.shared?.cartItems[indexPath.row].quantity ?? 0)
         return cell;
     }
 }

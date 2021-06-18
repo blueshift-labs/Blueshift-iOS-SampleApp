@@ -42,4 +42,10 @@ class BlueshiftPushNotificationEvents: NSObject, BlueShiftPushDelegate {
             print("BlueshiftPushNotificationEvents customCategory with name - \(categroyName ?? ""), details - ", details);
         }
     }
+    
+    func pushNotificationDidClick(_ payload: [AnyHashable : Any]?) {
+        if let details = payload {
+            print("Push notification clicked ", details);
+        }
+    }
 }

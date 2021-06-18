@@ -33,24 +33,23 @@ class LiveContentViewController: BaseViewController {
     
     @IBAction func getLiveContent(_ sender: Any) {
         view.endEditing(true)
-        let context: [String:String] = ["seed_item_ids":"9780307273482"];
         contentTextView.text = ""
         switch idSegmentControl.selectedSegmentIndex {
         case 0:
-            BlueShiftLiveContent.fetch(byEmail: slotTextBox.text, withContext: context) { [self] (data) in
+            BlueShiftLiveContent.fetch(byEmail: slotTextBox.text) { [self] (data) in
                 self.showContentOnSuccess(data: data)
             } failure: { [self] (err) in
                 self.showContentOnFailure()
             }
 
         case 1:
-            BlueShiftLiveContent.fetch(byDeviceID: slotTextBox.text, withContext: context) { [self] (data) in
+            BlueShiftLiveContent.fetch(byDeviceID: slotTextBox.text) { [self] (data) in
                 self.showContentOnSuccess(data: data)
             } failure: { [self] (err) in
                 self.showContentOnFailure()
             }
         case 2:
-            BlueShiftLiveContent.fetch(byCustomerID: slotTextBox.text, withContext: context) { [self] (data) in
+            BlueShiftLiveContent.fetch(byCustomerID: slotTextBox.text) { [self] (data) in
                 self.showContentOnSuccess(data: data)
             } failure: { [self] (err) in
                 self.showContentOnFailure()

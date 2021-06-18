@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let _ = (scene as? UIWindowScene) else { return }
-        if let activity = connectionOptions.userActivities.first, let url = activity.webpageURL, Utils.shared?.blueshift?.isBlueshiftUniversalLinkURL(url) == true {
-            Utils.shared?.blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: activity)
+        if let activity = connectionOptions.userActivities.first, let url = activity.webpageURL, BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
+            BlueShift.sharedInstance()?.appDelegate?.handleBlueshiftUniversalLinks(for: activity)
         }
     }
 
@@ -39,11 +39,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        Utils.shared?.blueshiftAppDelegate?.sceneWillEnterForeground(scene)
+        BlueShift.sharedInstance()?.appDelegate?.sceneWillEnterForeground(scene)
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        Utils.shared?.blueshiftAppDelegate?.sceneDidEnterBackground(scene)
+        BlueShift.sharedInstance()?.appDelegate?.sceneDidEnterBackground(scene)
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -54,8 +54,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        if let url = userActivity.webpageURL, Utils.shared?.blueshift?.isBlueshiftUniversalLinkURL(url) == true {
-            Utils.shared?.blueshiftAppDelegate?.handleBlueshiftUniversalLinks(for: userActivity)
+        if let url = userActivity.webpageURL, BlueShift.sharedInstance()?.isBlueshiftUniversalLinkURL(url) == true {
+            BlueShift.sharedInstance()?.appDelegate?.handleBlueshiftUniversalLinks(for: userActivity)
         }
     }
     
