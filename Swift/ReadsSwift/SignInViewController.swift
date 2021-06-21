@@ -63,7 +63,7 @@ class SignInViewController: BaseViewController {
         BlueShiftAppData.current()?.enableInApp = true
         
         //Optional - Add custom attributes to the identify call which will be shown against user profile in the dashboard
-        let dictionary = ["userType":"Premium","phone_number":"+919665335973"]
+        let dictionary = ["userType":"Premium","phone_number":"+919999999999"]
         
         BlueShift.sharedInstance()?.identifyUser(withDetails:dictionary, canBatchThisEvent: false)
         
