@@ -55,7 +55,7 @@ class SignInViewController: BaseViewController {
 //        BlueShiftUserInfo.sharedInstance()?.dateOfBirth = Date()
 
         // set custom attributes which will be sent to server
-        BlueShiftUserInfo.sharedInstance()?.extras = ["userType":"Premium","phone_number":"+919665335973","last_location_timezone":"Asia/Dhaka"]
+        BlueShiftUserInfo.sharedInstance()?.extras = ["userType":"Premium","phone_number":"+919999999999"]
         BlueShiftUserInfo.sharedInstance()?.save()
         //Optional - Set enablePush to true in case you have disabling it on the logout
         //By default its set to true for fresh app install
@@ -63,7 +63,7 @@ class SignInViewController: BaseViewController {
         BlueShiftAppData.current()?.enableInApp = true
         
         //Optional - Add custom attributes to the identify call which will be shown against user profile in the dashboard
-        let dictionary = ["userType":"Premium","phone_number":"+919999999999"]
+        let dictionary = ["deviceTimezone":"Asia/Dhaka"]
         
         BlueShift.sharedInstance()?.identifyUser(withDetails:dictionary, canBatchThisEvent: false)
         
