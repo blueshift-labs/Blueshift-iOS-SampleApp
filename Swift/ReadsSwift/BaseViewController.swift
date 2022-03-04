@@ -28,6 +28,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // Check the registerForInApp flag and register for in-app notifications
         if registerForInApp {
             let viewControllerName = String(describing: type(of: self))
             BlueShift.sharedInstance()?.registerFor(inAppMessage: viewControllerName)
@@ -36,6 +37,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        // Unregister for the in-app notifications
         BlueShift.sharedInstance()?.unregisterForInAppMessage()
     }
     
@@ -65,9 +67,18 @@ extension BaseViewController {
                 themeColor = .red
             }
         }
-        navigationController?.navigationBar.barTintColor = themeColor
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = themeColor
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationController?.navigationBar.barTintColor = themeColor
+            let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            navigationController?.navigationBar.titleTextAttributes = textAttributes
+        }
     }
     
     //Add navigation button when manual trigger is enabled to show inapp

@@ -17,9 +17,9 @@ struct CartItem {
 class Utils {
     
     static let shared: Utils? = Utils()
-    
+    var deepLinkURL:URL?
     var cartItems: [CartItem] = []
-        
+    var productImages: [String:UIImage] = [:]
     let products:[[String: String]] = [[
     "sku": "9780140247732",
     "name": "Death of a Salesman",

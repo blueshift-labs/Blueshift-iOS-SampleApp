@@ -21,19 +21,18 @@
 
 
 - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
-    
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
-    [[BlueShiftPushNotification sharedInstance] setApiKey:@"API KEY"];
     
     // Modify the notification content here...
     if([[BlueShiftPushNotification sharedInstance] isBlueShiftPushNotification:request]) {
-        self.bestAttemptContent.attachments = [[BlueShiftPushNotification sharedInstance] integratePushNotificationWithMediaAttachementsForRequest:request andAppGroupID:@"group.blueshift.reads"];
+        self.bestAttemptContent.attachments = [[BlueShiftPushNotification sharedInstance] integratePushNotificationWithMediaAttachementsForRequest:request andAppGroupID:nil];
     } else {
         // Your Custom code comes here
     }
-    
-   self.contentHandler(self.bestAttemptContent);
+    if (self.bestAttemptContent) {
+        self.contentHandler(self.bestAttemptContent);
+    }
 }
 
 - (void)serviceExtensionTimeWillExpire {

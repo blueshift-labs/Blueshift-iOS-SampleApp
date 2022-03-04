@@ -7,6 +7,8 @@
 
 import UIKit
 import BlueShift_iOS_SDK
+import AdSupport
+import AppTrackingTransparency
 
 class SignInViewController: BaseViewController {
     @IBOutlet weak var emailIdTextField: UITextField!
@@ -15,15 +17,16 @@ class SignInViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
-        if let _ = BlueShiftUserInfo.sharedInstance()?.email {
+        if (BlueShiftUserInfo.sharedInstance()?.email != nil || BlueShiftUserInfo.sharedInstance()?.retailerCustomerID != nil) {
             showProductList(animated: false)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerForInApp = false
+        registerForInApp = true
         setupUI()
+//        requestIDFAPermission()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,7 +37,10 @@ class SignInViewController: BaseViewController {
         title = "Sign In"
         signInButton.backgroundColor = self.themeColor
     }
-        
+    @IBAction func skipSignIn(_ sender: Any) {
+        showProductList(animated: false)
+    }
+    
     @IBAction func dismissKeyBoard(_ sender: Any) {
         view.endEditing(true)
     }
@@ -44,6 +50,9 @@ class SignInViewController: BaseViewController {
             return
         }
         
+        //Add successful signin event
+        BlueShift.sharedInstance()?.trackEvent(forEventName: "SignIn", andParameters: nil, canBatchThisEvent: false)
+
         //Set email and customer id user info in the Blueshift SDK
         BlueShiftUserInfo.sharedInstance()?.email = emailIdTextField.text
         BlueShiftUserInfo.sharedInstance()?.retailerCustomerID = "PROFILEID:\(emailIdTextField.text ?? "")"
@@ -55,8 +64,9 @@ class SignInViewController: BaseViewController {
 //        BlueShiftUserInfo.sharedInstance()?.dateOfBirth = Date()
 
         // set custom attributes which will be sent to server
-        BlueShiftUserInfo.sharedInstance()?.extras = ["userType":"Premium","phone_number":"+919999999999"]
+        BlueShiftUserInfo.sharedInstance()?.extras = ["userType":"Premium","phone_number":"+919876543210"]
         BlueShiftUserInfo.sharedInstance()?.save()
+        
         //Optional - Set enablePush to true in case you have disabling it on the logout
         //By default its set to true for fresh app install
         BlueShiftAppData.current()?.enablePush = true
@@ -64,16 +74,27 @@ class SignInViewController: BaseViewController {
         
         //Optional - Add custom attributes to the identify call which will be shown against user profile in the dashboard
         let dictionary = ["deviceTimezone":"Asia/Dhaka"]
-        
         BlueShift.sharedInstance()?.identifyUser(withDetails:dictionary, canBatchThisEvent: false)
         
-        //Add successful signin event
-        BlueShift.sharedInstance()?.trackEvent(forEventName: "SignIn", andParameters: nil, canBatchThisEvent: false)
         showProductList(animated: true)
     }
     
     func showProductList(animated: Bool) {
         performSegue(withIdentifier: "showProductList", sender: nil)
+    }
+    
+    func requestIDFAPermission() {
+        if #available(iOS 14, *) {
+            DispatchQueue.main.async {
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                    if (status == .authorized) {
+                        BlueShiftDeviceData.current()?.deviceIDFA = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+                    } else {
+                        print("Failed to get IDFA")
+                    }
+                })
+            }
+        }
     }
 }
 
