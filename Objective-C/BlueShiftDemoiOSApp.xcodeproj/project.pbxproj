@@ -862,16 +862,16 @@
 				"${PODS_ROOT}/Target Support Files/Pods-BlueShiftDemoiOSApp/Pods-BlueShiftDemoiOSApp-resources.sh",
 				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld",
 				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 2.xcdatamodel",
+				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel 3.xcdatamodel",
 				"${PODS_ROOT}/BlueShift-iOS-SDK/BlueShift-iOS-SDK/BlueShiftSDKDataModel.xcdatamodeld/BlueShiftSDKDataModel.xcdatamodel",
-				"${PODS_CONFIGURATION_BUILD_DIR}/BlueShift-iOS-SDK/BlueShiftBundle.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.momd",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 2.mom",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel 3.mom",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftSDKDataModel.mom",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BlueShiftBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

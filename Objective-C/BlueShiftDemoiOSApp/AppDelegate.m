@@ -15,6 +15,7 @@
 #import "BlueShiftDelegates.h"
 #import "BlueshiftInAppDelegate.h"
 #import <Firebase/Firebase.h>
+@import AdSupport;
 @import FirebasePerformance;
 @import FirebaseAnalytics;
 @import Fabric;
@@ -46,14 +47,13 @@
     
     // Set the api Key for the config
     [config setApiKey:@"API KEY"];
+
     //Enabled deug info logs
     [config setDebug:YES];
-
-    // v2.1.12 - Set isSceneDelegateConfiguration to true if the app is using sceneDelegate configuration. By default it is set to false.
-//    [config setIsSceneDelegateConfiguration:YES];
     
-    // Enable BlueShift Push Notification. By Default Push notfications are enabled.
-    [config setEnablePushNotification:YES];
+    // By default flag is set as true to show push notification dialog immediately after launch
+    // Set this to false to delay the push permission dialog
+    [config setEnablePushNotification:NO];
     
     //Set userNotificationDelegate for push notificaitons
     [config setUserNotificationDelegate:self];
@@ -61,10 +61,20 @@
     //Enable Blueshift In-app notifications
     [config setEnableInAppNotification: YES];
     
-    //Optional: Set the Predefined DeepLinking URL'
-    [config setProductPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/Produ ctListViewController/ProductDetailViewController"]];
-    [config setCartPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/ProductCartViewController"]];
-    [config setOfferPageURL:[NSURL URLWithString:@"blueshiftdemo://ch.bullfin.BlueShiftDemo/ProductListViewController/OfferViewController"]];
+    // Optional (v2.2.3) - Set Blueshift Region, default region is US.
+    [config setRegion:BlueshiftRegionUS];
+   
+    // optional - Set this flag to false to disable the silent push registration
+//    [config setEnableSilentPushNotification:NO];
+    
+    // optional - Enable app open event, by default it is set to false.
+    [config setEnableAppOpenTrackEvent:true];
+    
+    //optional - Set app open time interval
+    [config setAutomaticAppOpenTimeInterval:60];
+
+    // optional v2.1.12 - Set isSceneDelegateConfiguration to true if the app is using sceneDelegate configuration. By default it is set to false.
+//    [config setIsSceneDelegateConfiguration:YES];
     
     //Optional :Set batched events upload interval in seconds. By defult its 300 seconds.
     [[BlueShiftBatchUploadConfig sharedInstance] setBatchUploadTimer:60.0];
@@ -75,21 +85,14 @@
     // Set app group id for Carousel deep linking
     [config setAppGroupID:@"group.blueshift.reads"];
     
-    // == Specify device ID source (Optional) ==
-    // SKD uses BlueshiftDeviceIdSourceIDFV by default if you do not include the following line of code. For more information, see:
+    // Optional - SDK uses BlueshiftDeviceIdSourceIDFV by default if you do not include the following line of code.
+    [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
     
-    //Set deviceIDSource as custom
-    [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceCustom];
-    //Set the custom device id value
-    [config setCustomDeviceId: [UIDevice currentDevice].identifierForVendor.UUIDString];
-    
-    /*
-    * You can also use IDFVBundleID, which combination of IDFV and Bundle ID. Replace the above line with this:
-    *
-    * [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
-    *
-    * [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceUUID];
-    */
+    //Optinal - Set custom Authorization Options. SDK sets [.alert, .badge, .sound] as default attributes.
+    config.customAuthorizationOptions = UNAuthorizationOptionAlert| UNAuthorizationOptionSound| UNAuthorizationOptionBadge| UNAuthorizationStatusProvisional;
+
+    //Optinal - Set custom push notification categories.
+//    config.customCategories = [self getCustomeCategories];
     
     //Optional :Set BlueShiftDelegates class object for handling push notification events callbacks.
 //    BlueShiftDelegates *blueShiftDelegatge = [[BlueShiftDelegates alloc] init];
@@ -143,51 +146,6 @@
     [[BlueShift sharedInstance].userNotificationDelegate handleUserNotification:center didReceiveNotificationResponse:response withCompletionHandler:^{
         completionHandler();
     }];
-}
-
-- (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithIndex:(NSInteger)index withDetails:(NSDictionary *)details {
-    NSLog(@"index is %ld\n", (long)index);
-}
-
-- (void)handleCarouselPushForCategory:(NSString *)categoryName clickedWithDetails:(NSDictionary *)detalis andDeepLinkURL:(NSString *)url {
-    NSLog(@"url is %@", url);
-}
-
-
-- (void)pushCartPage {
-    //pushing cart page through deckview controller
-    
-    ProductCartViewController *cartViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"ProductCartViewController"];
-    UINavigationController *navController = (UINavigationController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
-    if(navController != nil && [navController respondsToSelector:@selector(popToRootViewControllerAnimated:)]) {
-        [navController popToRootViewControllerAnimated:NO];
-        
-        NSMutableArray *viewControllers = [navController.viewControllers mutableCopy];
-        [viewControllers addObject:cartViewController];
-        navController.viewControllers = viewControllers;
-    }
-}
-
-
-- (void)pushProductDetails:(NSDictionary *)details {
-    //pushing cart page through deckview controller
-    
-    ProductDetailViewController *detailsViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
-    detailsViewController.data = details;
-    [(UINavigationController *)self.window.rootViewController pushViewController:detailsViewController animated:YES];
-}
-
-
--(void) buyCategoryPushClickedWithDetails:(NSDictionary *)details {
-    [self pushCartPage];
-}
-
--(void) promotionCategoryPushClickedWithDetails:(NSDictionary *)details {
-    [self pushCartPage];
-}
-
-- (void)actionButtonDidTapped:(NSDictionary *)payloadDictionary {
-    [self pushCartPage];
 }
 
 #pragma mark - application lifecycle methods
@@ -264,6 +222,14 @@
     }
 }
 
+- (void)pushProductDetails:(NSDictionary *)details {
+    //pushing cart page through deckview controller
+    
+    ProductDetailViewController *detailsViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+    detailsViewController.data = details;
+    [(UINavigationController *)self.window.rootViewController pushViewController:detailsViewController animated:YES];
+}
+
 -(void)didFailLinkProcessingWithError:(NSError *)error url:(NSURL *)url {
     NSLog(@"%@", error);
     [_activityIndicator removeFromSuperview];
@@ -279,7 +245,7 @@
         _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     }
     [[rootviewController view] addSubview:_activityIndicator];
-    [_activityIndicator startAnimating];
+    [_activityIndicator startAnimating];    
 }
 
 @end
