@@ -29,8 +29,21 @@ class ProductDetailViewController: BaseViewController {
     
     func setupUI() {
         title = product?["name"]
-        if let url = product?["image_url"], let imageUrl = URL(string: url)  {
-            productImageView.kf.setImage(with: imageUrl)
+        if let urlString = product?["image_url"] {
+            if let image = Utils.shared?.productImages[urlString] {
+                productImageView.image = image
+            } else if let imageUrl = URL(string: urlString) {
+                DispatchQueue.global().async {
+                    let data = NSData.init(contentsOf: imageUrl)
+                    if let data = data as Data? {
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            self.productImageView.image = image
+                        }
+                        Utils.shared?.productImages[urlString] = image
+                    }
+                }
+            }
         }
         productTitleLabel.text = product?["name"]
         productPriceLabel.text = "$" + (product?["price"] ?? "")

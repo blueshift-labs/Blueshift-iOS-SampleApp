@@ -16,9 +16,8 @@ class NotificationService: UNNotificationServiceExtension {
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
-        BlueShiftPushNotification.sharedInstance()?.apiKey = "ADD API KEY"
-        
-        if BlueShiftPushNotification.sharedInstance()?.isBlueShiftPushNotification(request) == true, let attachments = BlueShiftPushNotification.sharedInstance()?.integratePushNotificationWithMediaAttachements(for: request, andAppGroupID: "group.blueshift.reads") as? [UNNotificationAttachment] {
+
+        if BlueShiftPushNotification.sharedInstance()?.isBlueShiftPushNotification(request) == true, let attachments = BlueShiftPushNotification.sharedInstance()?.integratePushNotificationWithMediaAttachements(for: request, andAppGroupID: nil) as? [UNNotificationAttachment] {
             bestAttemptContent?.attachments = attachments
         } else {
             //handle notifications if not from Blueshift

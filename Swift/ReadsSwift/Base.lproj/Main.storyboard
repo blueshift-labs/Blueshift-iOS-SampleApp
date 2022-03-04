@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pK3-I9-oJj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pK3-I9-oJj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,6 +82,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpu-di-Kjk">
+                                <rect key="frame" x="167.5" y="585" width="79" height="30"/>
+                                <state key="normal" title="Skip sign in"/>
+                                <connections>
+                                    <action selector="skipSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SfO-cv-8YO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -90,6 +97,8 @@
                             <constraint firstItem="neO-F8-QXF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-50" id="UHp-Of-TPL"/>
                             <constraint firstItem="neO-F8-QXF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kuZ-eK-T8m"/>
                             <constraint firstItem="XbH-lI-y1e" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.75" id="spx-Xt-YnT"/>
+                            <constraint firstItem="kpu-di-Kjk" firstAttribute="top" secondItem="4vt-39-FD9" secondAttribute="bottom" constant="30" id="vqE-w0-bW8"/>
+                            <constraint firstItem="kpu-di-Kjk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xje-gh-BWi"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="3YT-LI-Hgh" appends="YES" id="9h5-zW-hef"/>
@@ -121,15 +130,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Seach" translatesAutoresizingMaskIntoConstraints="NO" id="OO0-r7-RAA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JHX-mE-hTq">
-                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="757"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductTableViewCellIdentifier" editingAccessoryType="detailButton" rowHeight="120" id="lLB-mb-Zzx" customClass="ProductTableViewCell" customModule="Blueshift_Reads" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lLB-mb-Zzx" id="9RF-uV-3wK">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -415,7 +424,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTableViewCellIdentifier" id="or8-TE-z8r" customClass="CartTableViewCell" customModule="Blueshift_Reads" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="95.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="95.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="or8-TE-z8r" id="gCg-G5-hkv">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="95.5"/>
@@ -673,7 +682,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-FB-R3R">
                                 <rect key="frame" x="0.0" y="88" width="414" height="713"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="NxM-HH-iIB">
-                                    <rect key="frame" x="0.0" y="123" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="134" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpZ-qX-r3b">
@@ -696,7 +705,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DebugTableViewCellIdentifier" rowHeight="67" id="oAI-2q-WeF" customClass="DebugTableViewCell" customModule="Blueshift_Reads" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="67"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oAI-2q-WeF" id="2Wh-1Y-NMu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 import BlueShift_iOS_SDK
 
 class CartViewController: BaseViewController {
@@ -103,7 +102,7 @@ extension CartViewController: UITableViewDataSource {
         cell.priceLabel.text = "$" + (Utils.shared?.cartItems[indexPath.row].details?["price"] ?? "")
         cell.productLabel.text = Utils.shared?.cartItems[indexPath.row].details?["name"]
         if let url = Utils.shared?.cartItems[indexPath.row].details?["image_url"], let imageUrl = URL(string: url)  {
-            cell.imageView?.kf.setImage(with: imageUrl)
+            cell.imageView?.image = Utils.shared?.productImages[url]
         }
         cell.quantityLabel.text = String(describing: Utils.shared?.cartItems[indexPath.row].quantity ?? 0)
         return cell;

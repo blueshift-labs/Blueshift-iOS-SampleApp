@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 import BlueShift_iOS_SDK
 
 class ProductListViewController: BaseViewController {
@@ -34,21 +33,38 @@ class ProductListViewController: BaseViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-//        addFloatingButton()
+//        setPositionForFloatingButton()
     }
     
     func setupUI() {
         tableView.rowHeight = 120
         title = "Product List"
-        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
-        navigationItem.leftBarButtonItem = backButton
-        let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(showLogoutConfirmation))
-        navigationItem.leftBarButtonItem = logoutButton
-        
+        addLogoutButton()
+        //addDebugButton()
+        openCachedDeepLink()
+    }
+    
+    func addDebugButton() {
         roundButton = UIButton(type: .custom)
         roundButton.setTitleColor(UIColor.orange, for: .normal)
         roundButton.addTarget(self, action: #selector(showDebug), for: UIControl.Event.touchUpInside)
         view.addSubview(roundButton)
+    }
+    
+    func addLogoutButton() {
+        if (BlueShiftUserInfo.sharedInstance()?.email != nil || BlueShiftUserInfo.sharedInstance()?.retailerCustomerID != nil) {
+            let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(showLogoutConfirmation))
+            navigationItem.leftBarButtonItem = logoutButton
+        }
+    }
+    
+    func openCachedDeepLink() {
+        if let url = Utils.shared?.deepLinkURL {
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                appDelegate.showProductDetail(animated: true, url: url)
+                Utils.shared?.deepLinkURL = nil
+            }
+        }
     }
     
     func setupEvents() {
@@ -57,7 +73,7 @@ class ProductListViewController: BaseViewController {
         //        BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
     }
     
-    func addFloatingButton() {
+    func setPositionForFloatingButton() {
         roundButton.layer.cornerRadius = 37.5
         roundButton.backgroundColor = themeColor
         roundButton.clipsToBounds = true
@@ -127,7 +143,15 @@ extension ProductListViewController: UITableViewDataSource {
         let product = Utils.shared?.products[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCellIdentifier") as! ProductTableViewCell
         if let url = product?["image_url"], let imageUrl = URL(string: url) {
-            cell.productImageView.kf.setImage(with: imageUrl)
+            DispatchQueue.global(qos: .userInteractive).async {
+                let data = NSData.init(contentsOf: imageUrl)
+                if let data = data as Data?, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        Utils.shared?.productImages[url] = image
+                        cell.productImageView.image = image
+                    }
+                }
+            }
         }
         cell.productSKULabel.text = product?["sku"]
         cell.productPriceLabel.text = "$" + (product?["price"] ?? "")
