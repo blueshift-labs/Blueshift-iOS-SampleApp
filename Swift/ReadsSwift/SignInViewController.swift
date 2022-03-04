@@ -73,7 +73,7 @@ class SignInViewController: BaseViewController {
         BlueShiftAppData.current()?.enableInApp = true
         
         //Optional - Add custom attributes to the identify call which will be shown against user profile in the dashboard
-        let dictionary = ["last_location_timezone":"Asia/Dhaka"]
+        let dictionary = ["deviceTimezone":"Asia/Dhaka"]
         BlueShift.sharedInstance()?.identifyUser(withDetails:dictionary, canBatchThisEvent: false)
         
         showProductList(animated: true)
