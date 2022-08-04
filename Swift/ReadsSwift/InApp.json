@@ -1,0 +1,77 @@
+{
+  "content": [
+    {
+      "data": {
+        "bsft_message_uuid": "$$$$",
+        "inapp": {
+            "type": "modal",
+            "expires_at": 2566325800000,
+            "trigger": "now",
+            "template_style": {
+              "margin": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "background_radius": "5",
+              "width": 0,
+              "height": 0,
+              "background_color": "#f0f0f0",
+              "position": "center",
+              "enable_background_action": false
+            },
+            "content_style": {
+              "title_color": "#212121",
+              "title_background_color": "",
+              "title_size": 18,
+              "message_color": "#212121",
+              "message_size": 14,
+              "message_align": "center",
+              "icon_size": 22,
+              "icon_color": "#FFFFFF",
+              "icon_background_color": "#006600",
+              "icon_background_radius": 5,
+              "actions_orientation": 1,
+              "banner_padding": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 10
+              },
+              "actions_padding": {
+                "left": 10,
+                "top": 10,
+                "right": 10,
+                "bottom": 10
+              }
+            },
+            "content": {
+              "title": "This is Title This is",
+              "message": "This is subtitle text for the in-app notification. ",
+              "sub_title": "This is subtitle text for the in-app notification. This is subtitle text for the in-app notification. This is subtitle text for the in-app notification.",
+              "banner": "https://picsum.photos/id/2/600/300",
+              "actions": [
+                {
+                  "text": "Share & Win",
+                  "text_color": "#fafafa",
+                  "type": "open",
+                  "background_color": "#00b0ff",
+                  "ios_link": "https://www.speedmagazine.ph/wp-content/uploads/2018/05/Google-Pixel-XL-main.jpg",
+                  "background_radius": 10
+                },
+                {
+                  "text": "Cancel",
+                  "text_color": "#fafafa",
+                  "type": "open",
+                  "background_color": "#00b0ff",
+                  "ios_link": "https://www.speedmagazine.ph/wp-content/uploads/2018/05/Google-Pixel-XL-main.jpg",
+                  "background_radius": 10
+                }
+              ]
+            }
+        }
+      }
+    }
+  ]
+}

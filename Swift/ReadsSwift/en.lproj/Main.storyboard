@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pK3-I9-oJj">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pK3-I9-oJj">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -695,7 +695,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.15076896549999999" green="0.30916276570000001" blue="0.56865543129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstItem="LpZ-qX-r3b" firstAttribute="top" secondItem="NxM-HH-iIB" secondAttribute="top" id="Ujd-B8-EjG"/>
                                         <constraint firstAttribute="trailing" secondItem="LpZ-qX-r3b" secondAttribute="trailing" constant="20" id="Uqu-jw-KjC"/>
@@ -842,18 +842,11 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                                     <segment title="DeviceId"/>
                                     <segment title="Custmer Id"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" red="0.15076896549999999" green="0.30916276570000001" blue="0.56865543129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="onSlotChange:" destination="7V0-SA-ueH" eventType="valueChanged" id="MWh-0M-ghL"/>
                                 </connections>
                             </segmentedControl>
-                            <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJd-jf-Fib">
-                                <rect key="frame" x="0.0" y="268" width="414" height="414"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QXO-4p-DlL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -861,9 +854,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                         <constraints>
                             <constraint firstItem="2y5-6I-DHs" firstAttribute="leading" secondItem="c63-gw-im7" secondAttribute="leading" id="13m-FY-dEf"/>
                             <constraint firstItem="QXO-4p-DlL" firstAttribute="trailing" secondItem="c63-gw-im7" secondAttribute="trailing" constant="20" id="AY2-ha-ixY"/>
-                            <constraint firstItem="xJd-jf-Fib" firstAttribute="centerY" secondItem="QXO-4p-DlL" secondAttribute="centerY" id="AYP-Pr-8td"/>
                             <constraint firstItem="gwj-W3-Yne" firstAttribute="top" secondItem="QXO-4p-DlL" secondAttribute="top" constant="20" id="COB-Mc-RKa"/>
-                            <constraint firstItem="xJd-jf-Fib" firstAttribute="centerX" secondItem="QXO-4p-DlL" secondAttribute="centerX" id="FB5-vb-gdV"/>
                             <constraint firstItem="QXO-4p-DlL" firstAttribute="bottom" secondItem="HhI-sM-v0h" secondAttribute="bottom" id="K4H-kn-YEG"/>
                             <constraint firstItem="2y5-6I-DHs" firstAttribute="trailing" secondItem="c63-gw-im7" secondAttribute="trailing" id="M6e-2D-zPL"/>
                             <constraint firstItem="QXO-4p-DlL" firstAttribute="trailing" secondItem="gwj-W3-Yne" secondAttribute="trailing" constant="20" id="MDk-OG-LQ9"/>
@@ -871,7 +862,6 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                             <constraint firstItem="va5-xu-WqO" firstAttribute="leading" secondItem="QXO-4p-DlL" secondAttribute="leading" constant="20" id="Uyl-11-NQq"/>
                             <constraint firstItem="c63-gw-im7" firstAttribute="leading" secondItem="gwj-W3-Yne" secondAttribute="leading" id="ZJq-rc-OKk"/>
                             <constraint firstItem="QXO-4p-DlL" firstAttribute="trailing" secondItem="HhI-sM-v0h" secondAttribute="trailing" constant="20" id="aHU-1n-mah"/>
-                            <constraint firstItem="xJd-jf-Fib" firstAttribute="height" secondItem="O7G-PR-EWi" secondAttribute="width" id="dOu-l1-34N"/>
                             <constraint firstItem="2y5-6I-DHs" firstAttribute="top" secondItem="c63-gw-im7" secondAttribute="bottom" constant="20" id="f7H-8S-4pP"/>
                             <constraint firstItem="HhI-sM-v0h" firstAttribute="leading" secondItem="i9c-Op-t6a" secondAttribute="leading" id="frp-j9-NiY"/>
                             <constraint firstItem="QXO-4p-DlL" firstAttribute="trailing" secondItem="va5-xu-WqO" secondAttribute="trailing" constant="20" id="g9u-E1-KHl"/>
@@ -880,7 +870,6 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                             <constraint firstItem="i9c-Op-t6a" firstAttribute="leading" secondItem="2y5-6I-DHs" secondAttribute="leading" id="rrY-Ab-aW3"/>
                             <constraint firstItem="i9c-Op-t6a" firstAttribute="trailing" secondItem="2y5-6I-DHs" secondAttribute="trailing" id="tVC-p5-UCO"/>
                             <constraint firstItem="c63-gw-im7" firstAttribute="top" secondItem="gwj-W3-Yne" secondAttribute="bottom" constant="20" id="uPp-xW-ARp"/>
-                            <constraint firstItem="xJd-jf-Fib" firstAttribute="width" secondItem="O7G-PR-EWi" secondAttribute="width" id="uQ6-mz-DfT"/>
                             <constraint firstItem="va5-xu-WqO" firstAttribute="top" secondItem="2y5-6I-DHs" secondAttribute="bottom" constant="20" id="y9L-Wb-zme"/>
                         </constraints>
                         <connections>
@@ -890,10 +879,10 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                     <navigationItem key="navigationItem" id="gy5-lx-Jx8"/>
                     <connections>
                         <outlet property="contentTextView" destination="HhI-sM-v0h" id="5Ec-Cn-Vbe"/>
+                        <outlet property="getLiveContentButton" destination="i9c-Op-t6a" id="ziX-lV-OnL"/>
                         <outlet property="idSegmentControl" destination="2y5-6I-DHs" id="Q4s-fG-x20"/>
                         <outlet property="idTextBox" destination="va5-xu-WqO" id="wFW-Hn-36H"/>
                         <outlet property="slotTextBox" destination="c63-gw-im7" id="cUM-uK-dWa"/>
-                        <outlet property="webView" destination="xJd-jf-Fib" id="w7r-gu-DVG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="db5-Wf-e0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

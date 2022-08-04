@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  ReadsSwift
+
+  Created by Ketan Shikhare on 27/06/22.
+  
+*/
+
+"BLUESHIFT_GOTOSETTING_ALERT_TITLE" = "Enable push notifications!!";
+"BLUESHIFT_GOTOSETTING_ALERT_TEXT" = "You have disabled Push notifications for your app, please go to settings to enable it.!!";
+"BLUESHIFT_GOTOSETTING_ALERT_OKAY_BUTTON" = "Settings!!";
+"BLUESHIFT_GOTOSETTING_ALERT_CANCEL_BUTTON" = "Not Now!!";

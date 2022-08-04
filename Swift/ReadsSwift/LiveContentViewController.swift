@@ -16,7 +16,8 @@ class LiveContentViewController: BaseViewController {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var idSegmentControl: UISegmentedControl!
     @IBOutlet weak var idTextBox: UITextField!
-    @IBOutlet weak var webView: WKWebView!
+    var webView: WKWebView!
+    @IBOutlet weak var getLiveContentButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +25,14 @@ class LiveContentViewController: BaseViewController {
     }
     
     func setupUI() {
+        webView = WKWebView(frame: CGRect(x: 0, y: 268, width: 414, height: 414))
+        view.addSubview(webView)
         registerForInApp = false
         slotTextBox.text = "careinappmessagingslot"
         contentTextView.text = ""
         idTextBox.text = BlueShiftUserInfo.sharedInstance()?.email
         webView.isHidden = true
+        getLiveContentButton.backgroundColor = self.themeColor
     }
     
     @IBAction func getLiveContent(_ sender: Any) {
