@@ -17,6 +17,7 @@ class DebugViewController: BaseViewController {
     
     //To execute these push/in-app sends for testing, you will need to setup event based campaigns on basis of below "bsft_send_me_*" events. Then only this will work.
     let events: [[String:String]] = [
+                                     ["Register for push notification":"registerForPush"],
                                      ["Fetch in-app notifications":"fetchInApp"],
                                      ["Send Slide-in in-app message":"bsft_send_me_in_app"],
                                      ["Send HTML in-app message":"bsft_send_me_in_app_html"],
@@ -30,7 +31,6 @@ class DebugViewController: BaseViewController {
                                      ["Fire app open event":"appOpen"],
                                      ["Fire multiple events":"fireMultipleEvents"],
                                      ["Fire 100 batched event":"fireBatchedEvents"],
-                                     ["Register for remote notification":"registerForPush"],
                                      ["Disable SDK tracking":"disableSDKTracking"],
                                      ["Disable SDK tracking without erase":"disableSDKTrackingNoErase"],
                                      ["Enable SDK tracking":"enableSDKTracking"],
@@ -38,7 +38,8 @@ class DebugViewController: BaseViewController {
                                      ["Test realtime events":"realtimeEvents"],
                                      ["Test custom event payload":"customEventPayload"],
                                      ["Unsubscribe Push":"unsubscribe"],
-                                     ["Send me email":"bsft_send_me_ul_email"]
+                                     ["Send me email":"bsft_send_me_ul_email"],
+                                     ["show Banner In App using Custom JSON":"showInAppWithCustomJSON"]
                                     ]
 
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class DebugViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = footerView
+        footerView.backgroundColor = self.themeColor
         tableView.rowHeight = UITableView.automaticDimension
         title = "Debug"
         inAppRegisterSwitch.isOn = false
@@ -138,6 +140,8 @@ extension DebugViewController: UITableViewDelegate {
             case "unsubscribe":
                 BlueShiftUserInfo.sharedInstance()?.unsubscribed = (BlueShiftUserInfo.sharedInstance()?.unsubscribed == true) ? false : true
                 BlueShiftUserInfo.sharedInstance()?.save()
+            case "showInAppWithCustomJSON":
+                showInAppWithCustomJSON()
             default:
                 BlueShift.sharedInstance()?.trackEvent(forEventName: event, canBatchThisEvent: false)
             }
@@ -155,37 +159,38 @@ extension DebugViewController: UITableViewDelegate {
         BlueShift.sharedInstance()?.trackEvent(forEventName: "realtimeEvent_7", canBatchThisEvent: false)
         BlueShift.sharedInstance()?.trackEvent(forEventName: "realtimeEvent_8", canBatchThisEvent: false)
         BlueShift.sharedInstance()?.trackEvent(forEventName: "realtimeEvent_9", canBatchThisEvent: false)
+        fireEvents()
     }
 }
 
 extension DebugViewController {
     func testInAppAPIPayload() {
-//        BlueShift.sharedInstance()?.getInAppNotificationAPIPayload(completionHandler: { (params) in
-//            let url = URL(string: kBaseURL + BlueShift_iOS_SDK.kInAppMessageURL)
-//            if let url = url, let payload = params {
-//                var request = URLRequest(url: url)
-//                let base64 = BlueShift.sharedInstance()?.config?.apiKey.data(using: .utf8)?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
-//                request.httpMethod = "POST"
-//                request.httpBody = try? JSONSerialization.data(withJSONObject: payload, options: [])
-//                let config = URLSessionConfiguration.default
-//                config.httpAdditionalHeaders = ["Authorization":base64 ?? "","Content-Type":"application/json"]
-//                let session = URLSession.init(configuration: config)
-//                let task = session.dataTask(with: request) { (data, response, error) in
-//                    if let data = data {
-//                        let dict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.init(rawValue: 0))
-//                        if let dictonary = dict as? [AnyHashable:Any] {
-//                        BlueShift.sharedInstance()?.handleInAppMessage(forAPIResponse: dictonary, withCompletionHandler: { (status) in
-//
-//                        })
-//                            BlueShift.sharedInstance()?.getInAppNotificationAPIPayload(completionHandler: { (payload) in
-//                                //do something
-//                            })
-//                        }
-//                    }
-//                }
-//                task.resume()
-//            }
-//        })
+        //        BlueShift.sharedInstance()?.getInAppNotificationAPIPayload(completionHandler: { (params) in
+        //            let url = URL(string: kBaseURL + BlueShift_iOS_SDK.kInAppMessageURL)
+        //            if let url = url, let payload = params {
+        //                var request = URLRequest(url: url)
+        //                let base64 = BlueShift.sharedInstance()?.config?.apiKey.data(using: .utf8)?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+        //                request.httpMethod = "POST"
+        //                request.httpBody = try? JSONSerialization.data(withJSONObject: payload, options: [])
+        //                let config = URLSessionConfiguration.default
+        //                config.httpAdditionalHeaders = ["Authorization":base64 ?? "","Content-Type":"application/json"]
+        //                let session = URLSession.init(configuration: config)
+        //                let task = session.dataTask(with: request) { (data, response, error) in
+        //                    if let data = data {
+        //                        let dict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.init(rawValue: 0))
+        //                        if let dictonary = dict as? [AnyHashable:Any] {
+        //                        BlueShift.sharedInstance()?.handleInAppMessage(forAPIResponse: dictonary, withCompletionHandler: { (status) in
+        //
+        //                        })
+        //                            BlueShift.sharedInstance()?.getInAppNotificationAPIPayload(completionHandler: { (payload) in
+        //                                //do something
+        //                            })
+        //                        }
+        //                    }
+        //                }
+        //                task.resume()
+        //            }
+        //        })
     }
     
     func fireEvents() {
@@ -194,43 +199,69 @@ extension DebugViewController {
         BlueShift.sharedInstance()?.trackScreenViewed(for: self, canBatchThisEvent: false)
         BlueShift.sharedInstance()?.trackProductViewed(withSKU: "JHBAHSDF622", andCategoryID:1234 , withParameter: nil, canBatchThisEvent: false)
         BlueShift.sharedInstance()?.trackAddToCart(withSKU: "JHBAHSDF622", andQuantity: 5, canBatchThisEvent: false)
-
+        
         let product1 = BlueShiftProduct()
         product1.sku = "PRM123"
         product1.price = 50
         product1.quantity = 2
-
+        
         let product2 = BlueShiftProduct()
         product2.sku = "PRM123"
         product2.price = 50
         product2.quantity = 2
-
+        
         let product3 = BlueShiftProduct()
         product3.sku = "PRM123"
         product3.price = 50
         product3.quantity = 2
-
+        
         let products = [product1, product2, product3]
+                
         BlueShift.sharedInstance()?.trackCheckOutCart(withProducts: products, andRevenue: 123, andDiscount: 1, andCoupon: "coupon", canBatchThisEvent: false)
         
         BlueShift.sharedInstance()?.trackProductsPurchased(products, withOrderID: "123123", andRevenue: 123, andShippingCost: 1, andDiscount: 1, andCoupon: "coupon", canBatchThisEvent: false)
-
+        
         BlueShift.sharedInstance()?.trackPurchaseCancel(forOrderID: "123123", canBatchThisEvent: false)
-
+        
         BlueShift.sharedInstance()?.trackPurchaseReturn(forOrderID: "123123", andProducts: products, canBatchThisEvent: false)
-
+        
         BlueShift.sharedInstance()?.trackProductSearch(withSkuArray: ["PRM123","PRM1234","PRM12345"], andNumberOfResults: 3, andPageNumber: 1, andQuery: "PRM", andParameters: nil, canBatchThisEvent: false)
-
+        
         BlueShift.sharedInstance()?.trackEmailListSubscription(forEmail: BlueShiftUserInfo.sharedInstance()?.email ?? "", canBatchThisEvent: false)
         
         BlueShift.sharedInstance()?.trackEmailListUnsubscription(forEmail: BlueShiftUserInfo.sharedInstance()?.email ?? "", canBatchThisEvent: false)
         
         BlueShift.sharedInstance()?.trackSubscriptionInitialization(for: BlueShiftSubscriptionStateStart, andCycleType: "Anual", andCycleLength: 1, andSubscriptionType: "premium", andPrice: 100, andStartDate: Date().timeIntervalSince1970, canBatchThisEvent: false)
-
+        
         BlueShift.sharedInstance()?.trackSubscriptionPause(withBatchThisEvent: false)
         
         BlueShift.sharedInstance()?.trackSubscriptionUnpause(withBatchThisEvent: false)
         
         BlueShift.sharedInstance()?.trackSubscriptionCancel(withBatchThisEvent: false)
     }
+    
+    func showInAppWithCustomJSON() {
+        guard let data = loadJson(filename: "InApp") else { return }
+        BlueShift.sharedInstance()?.handleInAppMessage(forAPIResponse: data, withCompletionHandler: { val in
+            
+        })
+    }
+    
+    func loadJson(filename fileName: String) -> [String: Any]? {
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                var jsonString = String(data: data, encoding: String.Encoding.utf8)
+                jsonString = jsonString?.replacingOccurrences(of: "$$$$", with: String(format:"%f", NSDate().timeIntervalSince1970))
+                let object = try JSONSerialization.jsonObject(with: jsonString?.data(using: String.Encoding.utf8) ?? Data(), options: .allowFragments)
+                if let dictionary = object as? [String: Any] {
+                    return dictionary
+                }
+            } catch {
+                print("Error!! Unable to parse  \(fileName).json")
+            }
+        }
+        return nil
+    }
 }
+

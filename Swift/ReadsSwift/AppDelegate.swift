@@ -60,11 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 10.0, *) {
             config.userNotificationDelegate = self
         }
-        
-        // Optional (v2.1.12) - If your app uses SceneDelegate configuration, then enble this flag.
-        if #available(iOS 13.0, *) {
-            config.isSceneDelegateConfiguration = true
-        }
 
         // optional - For Carousel push notification deep linking set appGroup id
         config.appGroupID = "group.blueshift.reads"
@@ -106,6 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let blueshiftInAppDelegate = BlueshiftInAppNotificationEvents()
         config.inAppNotificationDelegate = blueshiftInAppDelegate
 
+        // Optional: Change the SDK core data files location only if needed. The default location is the Document directory.
+        config.sdkCoreDataFilesLocation = .libraryDirectory
+        
         // Initialize the configuration required to be executed on the main thread
         BlueShift.initWithConfiguration(config)
     }
@@ -150,19 +148,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         if BlueShift.sharedInstance()?.isBlueshiftPushNotification(notification.request.content.userInfo) == true {
             BlueShift.sharedInstance()?.userNotificationDelegate?.handle(center, willPresent: notification, withCompletionHandler: completionHandler)
         } else {
-            completionHandler([.alert, .sound, .badge])
+            if #available(iOS 14.0, *) {
+                completionHandler([.banner, .list, .sound, .badge])
+            } else {
+                completionHandler([.alert, .sound, .badge])
+            }
         }
-    }
-}
-
-// lifecycle events for batch uploads
-extension AppDelegate {
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        BlueShift.sharedInstance()?.appDelegate?.appDidBecomeActive(application)
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        BlueShift.sharedInstance()?.appDelegate?.appDidEnterBackground(application)
     }
 }
  
@@ -195,7 +186,7 @@ extension AppDelegate: BlueshiftUniversalLinksDelegate {
         //Process deeplink and show the respective screen
         hideActivityIndicator()
         guard let url = url else { return }
-        showProductDetail(animated: true, url: url)
+        showProductDetail(animated: true, url: url )
     }
     
     func didStartLinkProcessing() {
@@ -282,9 +273,6 @@ extension AppDelegate {
     func showProductDetail(animated: Bool, url: URL) {
         if url.absoluteString == "" {
             return
-        } else if url.absoluteString == "//registerForNotification" {
-            BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
-            return
         }
         
         var newUrl = url.absoluteString.components(separatedBy: "?").first
@@ -299,9 +287,7 @@ extension AppDelegate {
         var navController: UINavigationController? = UIApplication.shared.windows.first?.rootViewController as? UINavigationController
         if #available(iOS 13.0, *) {
             // For sceneDelegate enabled apps, perform screen redirection in the keyWindow
-            if BlueShift.sharedInstance()?.config?.isSceneDelegateConfiguration == true {
-                navController = BlueShiftInAppNotificationHelper.getApplicationKeyWindow().windowScene?.windows.first?.rootViewController as? UINavigationController
-            }
+            navController = BlueShiftInAppNotificationHelper.getApplicationKeyWindow().windowScene?.windows.first?.rootViewController as? UINavigationController
         }
                 
         guard let navigationController = navController else {

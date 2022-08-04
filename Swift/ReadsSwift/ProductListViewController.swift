@@ -123,14 +123,29 @@ class ProductListViewController: BaseViewController {
     
     func logout() {
         BlueShift.sharedInstance()?.trackEvent(forEventName: "Logout", canBatchThisEvent: false)
-        //Set enablePush to false so that the app will not receive any push notificaiton after logout. Fire identify after setting enablePush.
-        BlueShiftAppData.current()?.enablePush = false
-        BlueShiftAppData.current()?.enableInApp = false
-        BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
 
-        //Reset userinfo after logout
-        BlueShiftUserInfo.removeCurrentUserInfo()
+        blueshiftLogout()
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func blueshiftLogout() {
+        //Set enablePush to false so that the app will not receive any push notificaiton after logout. Fire identify after setting enablePush.
+        BlueShiftAppData.current().enablePush = false
+        BlueShiftAppData.current().enableInApp = false
+        
+        // Send identify event with or without additonal details
+        BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
+ 
+        // Reset userinfo
+        BlueShiftUserInfo.removeCurrentUserInfo()
+        
+        // Reset device id and send identify, so that SDK will create a new device id.
+        BlueShiftDeviceData.current().resetDeviceUUID()
+ 
+        // Set enablePush and enableInApp to true for guest user and send identify
+        BlueShiftAppData.current().enablePush = true
+        BlueShiftAppData.current().enableInApp = true
+        BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
     }
 }
 

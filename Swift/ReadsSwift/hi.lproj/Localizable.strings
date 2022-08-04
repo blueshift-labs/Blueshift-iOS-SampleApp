@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  ReadsSwift
+
+  Created by Ketan Shikhare on 27/06/22.
+  
+*/
+"BLUESHIFT_GOTOSETTING_ALERT_TITLE" = "पुश सूचनाएं सक्षम करें";
+"BLUESHIFT_GOTOSETTING_ALERT_TEXT" = "आपने अपने ऐप के लिए पुश नोटिफिकेशन को अक्षम कर दिया है, कृपया इसे सक्षम करने के लिए सेटिंग में जाएं.";
+"BLUESHIFT_GOTOSETTING_ALERT_OKAY_BUTTON" = "सेटिंग";
+"BLUESHIFT_GOTOSETTING_ALERT_CANCEL_BUTTON" = "अभी नहीं";
