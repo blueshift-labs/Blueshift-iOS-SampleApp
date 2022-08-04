@@ -85,13 +85,18 @@
     // Set app group id for Carousel deep linking
     [config setAppGroupID:@"group.blueshift.reads"];
     
+    // Optional: Change the SDK core data files location only if needed. The default location is the Document directory.
     [config setSdkCoreDataFilesLocation:BlueshiftFilesLocationLibraryDirectory];
     
     // Optional - SDK uses BlueshiftDeviceIdSourceIDFV by default if you do not include the following line of code.
     [config setBlueshiftDeviceIdSource: BlueshiftDeviceIdSourceIDFVBundleID];
     
     //Optinal - Set custom Authorization Options. SDK sets [.alert, .badge, .sound] as default attributes.
-    config.customAuthorizationOptions = UNAuthorizationOptionAlert| UNAuthorizationOptionSound| UNAuthorizationOptionBadge| UNAuthorizationStatusProvisional;
+    if (@available(iOS 12.0, *)) {
+        config.customAuthorizationOptions = UNAuthorizationOptionAlert| UNAuthorizationOptionSound| UNAuthorizationOptionBadge| UNAuthorizationStatusProvisional;
+    } else {
+        config.customAuthorizationOptions = UNAuthorizationOptionAlert| UNAuthorizationOptionSound| UNAuthorizationOptionBadge;
+    }
 
     //Optinal - Set custom push notification categories.
 //    config.customCategories = [self getCustomeCategories];
@@ -125,7 +130,11 @@
 
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
-    [[BlueShift sharedInstance].appDelegate handleRemoteNotification:userInfo forApplication:application fetchCompletionHandler:handler];
+    if ([[BlueShift sharedInstance] isBlueshiftPushNotification: userInfo]) {
+        [[BlueShift sharedInstance].appDelegate handleRemoteNotification:userInfo forApplication:application fetchCompletionHandler:handler];
+    } else {
+        handler(UIBackgroundFetchResultNoData);
+    }
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo {
@@ -138,16 +147,28 @@
 }
 
 #pragma mark - UserNotificationCenter delegate methods
--(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
-    [[BlueShift sharedInstance].userNotificationDelegate handleUserNotificationCenter:center willPresentNotification:notification withCompletionHandler:^(UNNotificationPresentationOptions options) {
-        completionHandler(options);
-    }];
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+    if ([[BlueShift sharedInstance] isBlueshiftPushNotification:notification.request.content.userInfo]) {
+        [[BlueShift sharedInstance].userNotificationDelegate handleUserNotificationCenter:center willPresentNotification:notification withCompletionHandler:^(UNNotificationPresentationOptions options) {
+            completionHandler(options);
+        }];
+    } else {
+        if (@available(iOS 14.0, *)) {
+            completionHandler(UNNotificationPresentationOptionList | UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound);
+        } else {
+            completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound);
+        }
+    }
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-    [[BlueShift sharedInstance].userNotificationDelegate handleUserNotification:center didReceiveNotificationResponse:response withCompletionHandler:^{
+    if ([[BlueShift sharedInstance] isBlueshiftPushNotification: response.notification.request.content.userInfo]) {
+        [[BlueShift sharedInstance].userNotificationDelegate handleUserNotification:center didReceiveNotificationResponse:response withCompletionHandler:^{
+            completionHandler();
+        }];
+    } else {
         completionHandler();
-    }];
+    }
 }
 
 #pragma mark - Handle universal links and deep links 
