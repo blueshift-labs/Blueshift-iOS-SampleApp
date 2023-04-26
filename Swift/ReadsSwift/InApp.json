@@ -72,6 +72,198 @@
             }
         }
       }
-    }
+    },
+    {
+               "account_adapter_uuid": "fff35af7-aef1-4410-bcb3-1f7a07836b32",
+               "data": {
+                   "bsft_account_uuid": "5812062a-1bc3-4be0-9112-b8d6dfe35ed6",
+                   "bsft_message_uuid": "032e4c60-d610-4ee2-87c4-b1831d0b64a5",
+                   "inapp": {
+                       "content": {
+                           "actions": [
+                               {
+                                   "android_link": "",
+                                   "background_color": "#393759",
+                                   "background_radius": 0,
+                                   "ios_link": "",
+                                   "margin": {
+                                       "bottom": 5,
+                                       "left": 5,
+                                       "right": 5,
+                                       "top": 5
+                                   },
+                                   "text": "BUY",
+                                   "text_color": "#ffffff",
+                                   "type": "open"
+                               },
+                               {
+                                   "android_link": "",
+                                   "background_color": "#393759",
+                                   "background_radius": 0,
+                                   "ios_link": "",
+                                   "margin": {
+                                       "bottom": 5,
+                                       "left": 5,
+                                       "right": 5,
+                                       "top": 5
+                                   },
+                                   "text": "VIEW",
+                                   "text_color": "#ffffff",
+                                   "type": "open"
+                               }
+                           ],
+                           "message": "Sample content",
+                           "title": "MODAL TITLE\t"
+                       },
+                       "content_style": {
+                           "actions_margin": {
+                               "bottom": 0,
+                               "left": 0,
+                               "right": 0,
+                               "top": 0
+                           },
+                           "actions_padding": {
+                               "bottom": 5,
+                               "left": 5,
+                               "right": 5,
+                               "top": 0
+                           },
+                           "message_color": "#000000",
+                           "message_gravity": "center",
+                           "message_margin": {
+                               "bottom": 0,
+                               "left": 0,
+                               "right": 0,
+                               "top": 0
+                           },
+                           "message_padding": {
+                               "bottom": 20,
+                               "left": 6,
+                               "right": 6,
+                               "top": 20
+                           },
+                           "message_size": 14,
+                           "title_background_color": null,
+                           "title_color": "#000000",
+                           "title_gravity": "center",
+                           "title_margin": {
+                               "bottom": 0,
+                               "left": 0,
+                               "right": 0,
+                               "top": 0
+                           },
+                           "title_padding": {
+                               "bottom": 0,
+                               "left": 5,
+                               "right": 5,
+                               "top": 20
+                           },
+                           "title_size": 22
+                       },
+                       "content_style_dark": {
+                           "actions_margin": {
+                               "bottom": 0,
+                               "left": 0,
+                               "right": 0,
+                               "top": 0
+                           },
+                           "actions_padding": {
+                               "bottom": 5,
+                               "left": 5,
+                               "right": 5,
+                               "top": 0
+                           },
+                           "message_color": "#000000",
+                           "message_gravity": "center",
+                           "message_margin": {
+                               "bottom": 0,
+                               "left": 0,
+                               "right": 0,
+                               "top": 0
+                           },
+                           "message_padding": {
+                               "bottom": 20,
+                               "left": 6,
+                               "right": 6,
+                               "top": 20
+                           },
+                           "message_size": 14,
+                           "title_background_color": null,
+                           "title_color": "#000000",
+                           "title_gravity": "center",
+                           "title_margin": {
+                               "bottom": 0,
+                               "left": 0,
+                               "right": 0,
+                               "top": 0
+                           },
+                           "title_padding": {
+                               "bottom": 0,
+                               "left": 5,
+                               "right": 5,
+                               "top": 20
+                           },
+                           "title_size": 22
+                       },
+                       "display_on_android": null,
+                       "display_on_ios": null,
+                       "expires_at": 2566325800000,
+                       "template_style": {
+                           "background_color": "#ffffff",
+                           "background_image": null,
+                           "background_radius": 0,
+                           "close_button": {
+                               "background_color": "#000000",
+                               "code": "f00d",
+                               "show": false,
+                               "text": "",
+                               "text_color": "#ffffff"
+                           },
+                           "height": -1,
+                           "margin": {
+                               "bottom": 0,
+                               "left": 0,
+                               "right": 0,
+                               "top": 0
+                           },
+                           "width": -1
+                       },
+                       "template_style_dark": {
+                           "background_color": "#ffffff",
+                           "background_image": null,
+                           "background_radius": 0,
+                           "close_button": {
+                               "background_color": "#000000",
+                               "code": "f00d",
+                               "show": false,
+                               "text": "",
+                               "text_color": "#ffffff"
+                           },
+                           "height": -1,
+                           "margin": {
+                               "bottom": 0,
+                               "left": 0,
+                               "right": 0,
+                               "top": 0
+                           },
+                           "width": -1
+                       },
+                       "trigger": "now",
+                       "type": "modal"
+                   },
+                   "timestamp": "2022-11-30T08:58:12.392888Z"
+               },
+               "execution_context": {
+                   "context": {
+                       "account_uuid": "5842062a-1bc3-4be0-9112-b8d6dfe35ed6",
+                       "execution_key": "2022-11-30T08:58:12Z",
+                       "message_uuid": "03ee4c60-d610-4ee2-87c4-b1831d0b64a5",
+                       "template_uuid": "4498fcbb-2684-4cb9-95bc-04eb7d0ad684"
+                   },
+                   "mode": "test_send"
+               },
+               "nsq_dedupe_uuid": "04825009-aba2-4dd9-93e5-24e0bb24954b",
+               "user_uuid": "2497a5ec-3a16-4963-b930-3b95891e68da"
+           }
   ]
 }

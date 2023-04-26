@@ -13,6 +13,8 @@ class ProductListViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     var locationManager: CLLocationManager?
     var roundButton = UIButton()
+    var lblBadge: UILabel?
+    var token: NSObjectProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,27 +23,100 @@ class ProductListViewController: BaseViewController {
         registerForLocation()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //set initial badge count
+        BlueshiftInboxManager.getInboxUnreadMessagesCount({ status, count in
+            self.lblBadge?.text = "\(count)"
+        })
+        
+        //refersh badge count when on inbox data change
+        token = NotificationCenter.default.addObserver(forName: NSNotification.Name(kBSInboxUnreadMessageCountDidChange), object: nil, queue: OperationQueue.current) { Notification in
+            BlueshiftInboxManager.getInboxUnreadMessagesCount({ status, count in
+                self.lblBadge?.text = "\(count)"
+            })
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(token!)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setPositionForFloatingButton()
     }
         
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        openCachedDeepLink()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-//        setPositionForFloatingButton()
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     func setupUI() {
         tableView.rowHeight = 120
         title = "Product List"
         addLogoutButton()
-        //addDebugButton()
-        openCachedDeepLink()
+        addDebugButton()
+    }
+    
+    func addInboxButton() {
+        let filterBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 30, height: 30))
+        if #available(iOS 13.0, *) {
+            filterBtn.setImage(UIImage(systemName: "bell.fill"), for: .normal)
+        } else {
+            // Fallback on earlier versions
+        }
+        filterBtn.addTarget(self, action: #selector(openInbox), for: .touchUpInside)
+        
+        lblBadge = UILabel.init(frame: CGRect.init(x: 20, y: 0, width: 15, height: 15))
+        lblBadge?.backgroundColor = UIColor.white
+        lblBadge?.clipsToBounds = true
+        lblBadge?.layer.cornerRadius = 7
+        lblBadge?.textColor = UIColor.black
+        lblBadge?.adjustsFontSizeToFitWidth = true
+        lblBadge?.textAlignment = .center
+        lblBadge?.text = "0"
+        if let lbl = lblBadge {
+            filterBtn.addSubview(lbl)
+        }
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem.init(customView: filterBtn)]
+    }
+    
+    func showInboxNavigationVC() {
+        let inboxNavigationVC = BlueshiftInboxNavigationViewController(rootViewController: BlueshiftInboxViewController())
+        inboxNavigationVC.refreshControlColor = themeColor
+        inboxNavigationVC.unreadBadgeColor = themeColor
+        inboxNavigationVC.activityIndicatorColor = themeColor
+        inboxNavigationVC.inboxDelegate = MobileInboxDelegate()
+        inboxNavigationVC.noMessagesText = "No messages available \n Check again later!"
+        
+        inboxNavigationVC.title = "Mobile Inbox"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        inboxNavigationVC.navigationBar.titleTextAttributes = textAttributes
+        inboxNavigationVC.modalPresentationStyle = .fullScreen
+        inboxNavigationVC.navigationBar.tintColor = UIColor.white
+        
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = themeColor
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            inboxNavigationVC.navigationBar.standardAppearance = appearance
+            inboxNavigationVC.navigationBar.scrollEdgeAppearance = appearance
+        }
+        
+        self.present(inboxNavigationVC, animated:true, completion: nil)
+    }
+    
+    @objc func openInbox() {
+        showInboxNavigationVC()
     }
     
     func addDebugButton() {
@@ -61,13 +136,16 @@ class ProductListViewController: BaseViewController {
     func openCachedDeepLink() {
         if let url = Utils.shared?.deepLinkURL {
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                appDelegate.showProductDetail(animated: true, url: url)
+                appDelegate.showProductDetail(animated: true, url: url, options: [:])
                 Utils.shared?.deepLinkURL = nil
             }
         }
     }
     
     func setupEvents() {
+        if (BlueShift.sharedInstance()?.config?.enableMobileInbox == true) {
+            addInboxButton()
+        }
         //Disable push notifications in AppDelegate config and Enable & register for push notifications here if need to ask the push permission after the login
 //        BlueShift.sharedInstance()?.config?.enablePushNotification = true
 //        BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
@@ -135,14 +213,14 @@ class ProductListViewController: BaseViewController {
         
         // Send identify event with or without additonal details
         BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
- 
+        
         // Reset userinfo
         BlueShiftUserInfo.removeCurrentUserInfo()
         
         // Reset device id and send identify, so that SDK will create a new device id.
         BlueShiftDeviceData.current().resetDeviceUUID()
  
-        // Set enablePush and enableInApp to true for guest user and send identify
+//         Set enablePush and enableInApp to true for guest user and send identify
         BlueShiftAppData.current().enablePush = true
         BlueShiftAppData.current().enableInApp = true
         BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)

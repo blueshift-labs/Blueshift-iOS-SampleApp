@@ -9,3 +9,7 @@
 "BLUESHIFT_GOTOSETTING_ALERT_TEXT" = "आपने अपने ऐप के लिए पुश नोटिफिकेशन को अक्षम कर दिया है, कृपया इसे सक्षम करने के लिए सेटिंग में जाएं.";
 "BLUESHIFT_GOTOSETTING_ALERT_OKAY_BUTTON" = "सेटिंग";
 "BLUESHIFT_GOTOSETTING_ALERT_CANCEL_BUTTON" = "अभी नहीं";
+
+"BLUESHIFT_ALERT_OKAY_BUTTON" = "ओके";
+"BLUESHIFT_DEVICE_OFFLINE_ALERT_TITLE" = "उपकरण के ऑफ़लाइन होने पर किसी संदेश को हटाने की अनुमति नहीं है";
+"BLUESHIFT_DONE_BUTTON" = "बंद करें";

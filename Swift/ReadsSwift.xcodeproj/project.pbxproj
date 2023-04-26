@@ -14,11 +14,12 @@
 		915403922869B4340092FCC0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 915403942869B4340092FCC0 /* Localizable.strings */; };
 		916AC4B924B4371000E13B82 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AC4B824B4371000E13B82 /* BaseViewController.swift */; };
 		917576DA255D17E000443635 /* LiveContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917576D9255D17E000443635 /* LiveContentViewController.swift */; };
+		918F2969291E62D900EBC940 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F2968291E62D900EBC940 /* SceneDelegate.swift */; };
 		91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */; };
 		91B4074D24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */; };
 		91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4075124C9B6E2005B55D6 /* CartViewController.swift */; };
-		91BA9B1625B5BC6F0010E40D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BA9B1525B5BC6F0010E40D /* SceneDelegate.swift */; };
 		91DB299828994856007C9F51 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91DB299628994856007C9F51 /* MainInterface.storyboard */; };
+		91E498DF292638840073B7FB /* MobileInboxDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E498DE292638840073B7FB /* MobileInboxDelegate.swift */; };
 		91F5C9BE25347598008C1C2A /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */; };
 		91F5CA52253581FA008C1C2A /* DebugTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */; };
 		91F5CA5725358208008C1C2A /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CA5625358208008C1C2A /* DebugViewController.swift */; };
@@ -89,11 +90,12 @@
 		9160D74C2869C93100509097 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		916AC4B824B4371000E13B82 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		917576D9255D17E000443635 /* LiveContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentViewController.swift; sourceTree = "<group>"; };
+		918F2968291E62D900EBC940 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueshiftInAppNotificationEvents.swift; sourceTree = "<group>"; };
 		91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueshiftPushNotificationEvents.swift; sourceTree = "<group>"; };
 		91B4075124C9B6E2005B55D6 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		91BA9B1525B5BC6F0010E40D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91DB299728994856007C9F51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		91E498DE292638840073B7FB /* MobileInboxDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileInboxDelegate.swift; sourceTree = "<group>"; };
 		91F3521624AC8C460051D404 /* NotificationContent.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = NotificationContent.entitlements; sourceTree = "<group>"; };
 		91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTableViewCell.swift; sourceTree = "<group>"; };
@@ -240,7 +242,7 @@
 			children = (
 				C338CFAF24752E8100DBBD21 /* ReadsSwift.entitlements */,
 				C38F1BB82472B6D800ACEBE1 /* AppDelegate.swift */,
-				91BA9B1525B5BC6F0010E40D /* SceneDelegate.swift */,
+				918F2968291E62D900EBC940 /* SceneDelegate.swift */,
 				916AC4B824B4371000E13B82 /* BaseViewController.swift */,
 				91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */,
 				91F5CA5625358208008C1C2A /* DebugViewController.swift */,
@@ -252,6 +254,7 @@
 				91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */,
 				C338CFDB24756F8A00DBBD21 /* ProductTableViewCell.swift */,
 				91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */,
+				91E498DE292638840073B7FB /* MobileInboxDelegate.swift */,
 				91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */,
 				C338CFD924756AC300DBBD21 /* Utils.swift */,
 				C38F1BBE2472B6D800ACEBE1 /* Main.storyboard */,
@@ -310,7 +313,6 @@
 				C38F1BB22472B6D800ACEBE1 /* Frameworks */,
 				C38F1BB32472B6D800ACEBE1 /* Resources */,
 				C338CFC62475474100DBBD21 /* Embed App Extensions */,
-				91B4A11125403CDD00D689D1 /* ShellScript */,
 				BBEA40FD982D8B32A4676FB6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -345,7 +347,7 @@
 				};
 			};
 			buildConfigurationList = C38F1BB02472B6D800ACEBE1 /* Build configuration list for PBXProject "ReadsSwift" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -417,25 +419,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		91B4A11125403CDD00D689D1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)\n",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		B6A2B42A587FF1732C12548A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -526,8 +509,9 @@
 				91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */,
 				C338CFE024757D4F00DBBD21 /* ProductDetailViewController.swift in Sources */,
 				C338CFDC24756F8A00DBBD21 /* ProductTableViewCell.swift in Sources */,
-				91BA9B1625B5BC6F0010E40D /* SceneDelegate.swift in Sources */,
+				918F2969291E62D900EBC940 /* SceneDelegate.swift in Sources */,
 				91F5CA52253581FA008C1C2A /* DebugTableViewCell.swift in Sources */,
+				91E498DF292638840073B7FB /* MobileInboxDelegate.swift in Sources */,
 				91F5CA5725358208008C1C2A /* DebugViewController.swift in Sources */,
 				91F5C9BE25347598008C1C2A /* CartTableViewCell.swift in Sources */,
 				91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */,
@@ -597,16 +581,16 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -621,16 +605,16 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -645,16 +629,16 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationContent/NotificationContent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -670,16 +654,16 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationContent/NotificationContent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -741,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -762,7 +746,7 @@
 				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = ReadsSwift/ReadsSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				HEADER_SEARCH_PATHS = (
@@ -771,12 +755,12 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red;
 				PRODUCT_NAME = "Blueshift Red";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -792,16 +776,16 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red.notificationService;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -817,16 +801,16 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationContent/NotificationContent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -888,7 +872,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -940,13 +924,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -967,7 +952,7 @@
 				CODE_SIGN_ENTITLEMENTS = ReadsSwift/ReadsSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				HEADER_SEARCH_PATHS = (
@@ -976,12 +961,12 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "Blueshift Reads";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1003,20 +988,21 @@
 				CODE_SIGN_ENTITLEMENTS = ReadsSwift/ReadsSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "Blueshift Reads";
 				PROVISIONING_PROFILE_SPECIFIER = "";
