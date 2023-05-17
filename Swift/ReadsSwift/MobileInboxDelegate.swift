@@ -8,17 +8,17 @@
 import Foundation
 import BlueShift_iOS_SDK
 
-class MobileInboxDelegate: NSObject, BlueshiftInboxViewControllerDelegate {
-    var messageComparator: ((BlueshiftInboxMessage, BlueshiftInboxMessage) -> ComparisonResult)? = {msg1, msg2 in
+public class MobileInboxDelegate: NSObject, BlueshiftInboxViewControllerDelegate {
+//    public var messageComparator: ((BlueshiftInboxMessage, BlueshiftInboxMessage) -> ComparisonResult)? = {msg1, msg2 in
     //Show unread messages on top
-        if msg1.readStatus && !msg2.readStatus {
-            return .orderedDescending
-        } else {
-            return .orderedAscending
-        }
-    }
+//        if msg1.readStatus && !msg2.readStatus {
+//            return .orderedDescending
+//        } else {
+//            return .orderedAscending
+//        }
+//    }
     
-    func formatDate(_ message: BlueshiftInboxMessage) -> String? {
+    public func formatDate(_ message: BlueshiftInboxMessage) -> String? {
         guard let createdAt = message.createdAtDate else {
             return nil
         }
@@ -34,10 +34,12 @@ class MobileInboxDelegate: NSObject, BlueshiftInboxViewControllerDelegate {
     }
     
     // Handle deep link to show the deep link screen on inboxNavigationStack
-    func inboxNotificationActionTapped(withDeepLink deepLink: String?, inboxViewController inboxVC: BlueshiftInboxViewController?, options: [String : Any] = [:]) {
+    public func inboxNotificationActionTapped(withDeepLink deepLink: String?, inboxViewController inboxVC: BlueshiftInboxViewController?, options: [String : Any] = [:]) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         if let product = appDelegate?.getProductForURL(url: deepLink ?? "")?.first, let navController = inboxVC?.navigationController {
             appDelegate?.showProductUsing(navigationController: navController, product: product, animated: true)
+        } else {
+            appDelegate?.showAlert(for: "Deep link not found!", message: deepLink, viewController: inboxVC)
         }
     }
 }

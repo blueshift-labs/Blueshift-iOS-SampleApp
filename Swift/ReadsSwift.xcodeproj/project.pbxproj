@@ -14,7 +14,7 @@
 		915403922869B4340092FCC0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 915403942869B4340092FCC0 /* Localizable.strings */; };
 		916AC4B924B4371000E13B82 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AC4B824B4371000E13B82 /* BaseViewController.swift */; };
 		917576DA255D17E000443635 /* LiveContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917576D9255D17E000443635 /* LiveContentViewController.swift */; };
-		918F2969291E62D900EBC940 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F2968291E62D900EBC940 /* SceneDelegate.swift */; };
+		91B0964D2A12C1FB009AF459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0964C2A12C1FB009AF459 /* SceneDelegate.swift */; };
 		91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */; };
 		91B4074D24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */; };
 		91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4075124C9B6E2005B55D6 /* CartViewController.swift */; };
@@ -90,7 +90,7 @@
 		9160D74C2869C93100509097 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		916AC4B824B4371000E13B82 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		917576D9255D17E000443635 /* LiveContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentViewController.swift; sourceTree = "<group>"; };
-		918F2968291E62D900EBC940 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		91B0964C2A12C1FB009AF459 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueshiftInAppNotificationEvents.swift; sourceTree = "<group>"; };
 		91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueshiftPushNotificationEvents.swift; sourceTree = "<group>"; };
 		91B4075124C9B6E2005B55D6 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 			children = (
 				C338CFAF24752E8100DBBD21 /* ReadsSwift.entitlements */,
 				C38F1BB82472B6D800ACEBE1 /* AppDelegate.swift */,
-				918F2968291E62D900EBC940 /* SceneDelegate.swift */,
+				91B0964C2A12C1FB009AF459 /* SceneDelegate.swift */,
 				916AC4B824B4371000E13B82 /* BaseViewController.swift */,
 				91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */,
 				91F5CA5625358208008C1C2A /* DebugViewController.swift */,
@@ -509,9 +509,9 @@
 				91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */,
 				C338CFE024757D4F00DBBD21 /* ProductDetailViewController.swift in Sources */,
 				C338CFDC24756F8A00DBBD21 /* ProductTableViewCell.swift in Sources */,
-				918F2969291E62D900EBC940 /* SceneDelegate.swift in Sources */,
 				91F5CA52253581FA008C1C2A /* DebugTableViewCell.swift in Sources */,
 				91E498DF292638840073B7FB /* MobileInboxDelegate.swift in Sources */,
+				91B0964D2A12C1FB009AF459 /* SceneDelegate.swift in Sources */,
 				91F5CA5725358208008C1C2A /* DebugViewController.swift in Sources */,
 				91F5C9BE25347598008C1C2A /* CartTableViewCell.swift in Sources */,
 				91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */,
@@ -590,7 +590,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -614,7 +614,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -638,7 +638,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -663,7 +663,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -760,7 +760,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red;
 				PRODUCT_NAME = "Blueshift Red";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -785,7 +785,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red.notificationService;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -810,7 +810,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -966,7 +966,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "Blueshift Reads";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1002,7 +1002,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "Blueshift Reads";
 				PROVISIONING_PROFILE_SPECIFIER = "";

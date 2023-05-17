@@ -86,7 +86,7 @@ class CartViewController: BaseViewController {
         BlueShift.sharedInstance()?.trackProductsPurchased(products, withOrderID: "order\(NSDate().timeIntervalSince1970)", andRevenue: amout, andShippingCost: 20, andDiscount: 0, andCoupon: "", canBatchThisEvent: false)
         Utils.shared?.cartItems.removeAll()
         refreshTableView()
-        (UIApplication.shared.delegate as? AppDelegate)?.showAlert(for: "Order has been placed!", message: nil);
+        (UIApplication.shared.delegate as? AppDelegate)?.showAlert(for: "Order has been placed!", message: nil, viewController: self);
     }
 }
 

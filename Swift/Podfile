@@ -4,7 +4,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks! 
 target 'ReadsSwift' do
-    pod 'BlueShift-iOS-SDK'
+    pod 'BlueShift-iOS-SDK', '~> 2.4.0'
 end
 
 target 'NotificationService' do

@@ -64,9 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // optional - For Carousel push notification deep linking set appGroup id
         config.appGroupID = "group.blueshift.reads"
 
-        // Optinal - Disable inAppBackgroundFetchEnabled if you want to fetch in-apps manually via api
-//        config.inAppBackgroundFetchEnabled = false
-
        // Optinal - Disable inAppManualTriggerEnabled if you want to display in-apps manually
 //        config.inAppManualTriggerEnabled = true
 
@@ -93,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        config.automaticAppOpenTimeInterval = 60
 
         // Optional (v2.1.3):  - Set deviceIDSource, by default it is IDFV
-        config.blueshiftDeviceIdSource = .idfvBundleID
+        config.blueshiftDeviceIdSource = .UUID
         
         // Optinal: Set push notification delegate to get the push events callback
         let blueShiftPushDelegatge = BlueshiftPushNotificationEvents()
@@ -269,14 +266,15 @@ extension AppDelegate {
         activityIndicator?.removeFromSuperview()
     }
     
-    func showAlert(for titile: String?, message: String?) {
+    func showAlert(for titile: String?, message: String?, viewController: UIViewController?) {
         if #available(iOS 13.0, *) {
-            let navController = BlueShiftInAppNotificationHelper.getApplicationKeyWindow().windowScene?.windows.first?.rootViewController?.navigationController
+            
+            let vc = viewController ?? BlueShiftInAppNotificationHelper.getApplicationKeyWindow().windowScene?.windows.first?.rootViewController
             
             let alertController = UIAlertController(title: titile, message: message, preferredStyle: .alert)
             let okay = UIAlertAction(title: "Okay", style: .cancel)
             alertController.addAction(okay)
-            navController?.present(alertController, animated: true, completion: nil)
+            vc?.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -304,7 +302,7 @@ extension AppDelegate {
         
         //If product not found, show alert with deep link url.
         guard let product = getProductForURL(url: url.absoluteString)?.first else {
-            showAlert(for: "Product not found", message: url.absoluteString)
+            showAlert(for: "Product not found", message: url.absoluteString, viewController: nil)
             return
         }
         

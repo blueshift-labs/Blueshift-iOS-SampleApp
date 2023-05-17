@@ -26,14 +26,14 @@ class ProductListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //set initial badge count
-        BlueshiftInboxManager.getInboxUnreadMessagesCount({ status, count in
-            self.lblBadge?.text = "\(count)"
+        BlueshiftInboxManager.getInboxUnreadMessagesCount({ [weak self] status, count in
+            self?.lblBadge?.text = "\(count)"
         })
         
         //refersh badge count when on inbox data change
         token = NotificationCenter.default.addObserver(forName: NSNotification.Name(kBSInboxUnreadMessageCountDidChange), object: nil, queue: OperationQueue.current) { Notification in
-            BlueshiftInboxManager.getInboxUnreadMessagesCount({ status, count in
-                self.lblBadge?.text = "\(count)"
+            BlueshiftInboxManager.getInboxUnreadMessagesCount({[weak self] status, count in
+                self?.lblBadge?.text = "\(count)"
             })
         }
     }
@@ -147,8 +147,8 @@ class ProductListViewController: BaseViewController {
             addInboxButton()
         }
         //Disable push notifications in AppDelegate config and Enable & register for push notifications here if need to ask the push permission after the login
-//        BlueShift.sharedInstance()?.config?.enablePushNotification = true
-//        BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
+        BlueShift.sharedInstance()?.config?.enablePushNotification = true
+        BlueShift.sharedInstance()?.appDelegate?.registerForNotification()
     }
     
     func setPositionForFloatingButton() {

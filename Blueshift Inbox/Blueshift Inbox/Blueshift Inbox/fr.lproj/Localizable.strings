@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Blueshift Inbox
+
+  Created by Ketan Shikhare on 25/04/23.
+  
+*/
+
+"BLUESHIFT_ALERT_OKAY_BUTTON" = "d'accord";
+"BLUESHIFT_DEVICE_OFFLINE_ALERT_TITLE" = "La suppression d'un message n'est pas autorisée lorsque l'appareil est hors ligne";
+"BLUESHIFT_DONE_BUTTON" = "faite";
