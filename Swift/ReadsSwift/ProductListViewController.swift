@@ -45,7 +45,7 @@ class ProductListViewController: BaseViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        setPositionForFloatingButton()
+//        setPositionForFloatingButton()
     }
         
     override func viewDidAppear(_ animated: Bool) {
@@ -63,7 +63,7 @@ class ProductListViewController: BaseViewController {
         tableView.rowHeight = 120
         title = "Product List"
         addLogoutButton()
-        addDebugButton()
+//        addDebugButton()
     }
     
     func addInboxButton() {
