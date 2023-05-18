@@ -1,0 +1,186 @@
+{
+    "content": [
+        {
+            "created_at": 1681884454,
+            "data": {
+                "bsft_message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714e",
+                "inapp": {
+                    "content": {
+                        "html": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\r\n<\/head>\r\n<body>\r\n<h3>This is sample in-app notification 1 <\/h3>\r\n<a href=\"href:\/\/www.test.com\">This is a sample deep link<\/a>\r\n<br>\r\n<a href=\"blueshift:\/\/homeScreen\">home screen deep link<\/a>\r\n\r\n<\/body>\r\n<\/html>\r\n\r\n\r\n"
+                    },
+                    "expires_at": 1902997743,
+                    "scope": "inbox+inapp",
+                    "template_style": {
+                        "background_color": "#f0f0f0",
+                        "background_radius": 10,
+                        "margin": {
+                            "bottom": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0
+                        },
+                        "width": 90,
+                        "height": 90
+                    },
+                    "trigger": "now",
+                    "type": "html"
+                },
+                "inbox": {
+                    "details": "This is sample in-app notification detail 1.",
+                    "icon": "https://picsum.photos/id/1011/200/300",
+                    "title": "This is sample in-app notification title 1"
+                },
+                "timestamp": "2023-04-20T10:07:34.489223751Z"
+            },
+            "message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714e",
+            "status": "unread",
+            "user_uuid": "f42ec261-effc-4afc-a8f1-370dbab0f085"
+        },
+        {
+            "created_at": 1681894454,
+            "data": {
+                "bsft_message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714f",
+                "inapp": {
+                    "content": {
+                        "html": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\r\n<\/head>\r\n<body>\r\n<h3>This is sample in-app notification 2 <\/h3>\r\n<a href=\"href:\/\/www.test.com\">This is a sample deep link<\/a>\r\n<br>\r\n<a href=\"blueshift:\/\/homeScreen\">home screen deep link<\/a>\r\n\r\n<\/body>\r\n<\/html>\r\n\r\n\r\n"
+                    },
+                    "expires_at": 1902997743,
+                    "scope": "inbox+inapp",
+                    "template_style": {
+                        "background_color": "#f0f0f0",
+                        "background_radius": 10,
+                        "margin": {
+                            "bottom": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0
+                        },
+                        "width": 90,
+                        "height": 90
+                    },
+                    "trigger": "now",
+                    "type": "html"
+                },
+                "inbox": {
+                    "details": "This is sample in-app notification detail 2.",
+                    "icon": "https://picsum.photos/id/1012/200/300",
+                    "title": "This is sample in-app notification title 2"
+                },
+                "timestamp": "2023-04-20T12:07:34.489223751Z"
+            },
+            "message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714f",
+            "status": "unread",
+            "user_uuid": "f42ec261-effc-4afc-a8f1-370dbab0f085"
+        },
+        {
+            "created_at": 1681904454,
+            "data": {
+                "bsft_message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714g",
+                "inapp": {
+                    "content": {
+                        "html": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\r\n<\/head>\r\n<body>\r\n<h3>This is sample in-app notification 3 <\/h3>\r\n<a href=\"href:\/\/www.test.com\">This is a sample deep link<\/a>\r\n<br>\r\n<a href=\"blueshift:\/\/homeScreen\">home screen deep link<\/a>\r\n\r\n<\/body>\r\n<\/html>\r\n\r\n\r\n"
+                    },
+                    "expires_at": 1902997743,
+                    "scope": "inbox+inapp",
+                    "template_style": {
+                        "background_color": "#f0f0f0",
+                        "background_radius": 10,
+                        "margin": {
+                            "bottom": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0
+                        },
+                        "width": 90,
+                        "height": 90
+                    },
+                    "trigger": "now",
+                    "type": "html"
+                },
+                "inbox": {
+                    "details": "This is sample in-app notification detail 3.",
+                    "icon": "https://picsum.photos/id/1013/200/300",
+                    "title": "This is sample in-app notification title 3"
+                },
+                "timestamp": "2023-04-20T09:15:34.489223751Z"
+            },
+            "message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714g",
+            "status": "unread",
+            "user_uuid": "f42ec261-effc-4afc-a8f1-370dbab0f085"
+        },
+        {
+            "created_at": 1681914454,
+            "data": {
+                "bsft_message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714h",
+                "inapp": {
+                    "content": {
+                        "html": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\r\n<\/head>\r\n<body>\r\n<h3>This is sample in-app notification 4 <\/h3>\r\n<a href=\"href:\/\/www.test.com\">This is a sample deep link<\/a>\r\n<br>\r\n<a href=\"blueshift:\/\/homeScreen\">home screen deep link<\/a>\r\n\r\n<\/body>\r\n<\/html>\r\n\r\n\r\n"
+                    },
+                    "expires_at": 1902997743,
+                    "scope": "inbox+inapp",
+                    "template_style": {
+                        "background_color": "#f0f0f0",
+                        "background_radius": 10,
+                        "margin": {
+                            "bottom": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0
+                        },
+                        "width": 90,
+                        "height": 90
+                    },
+                    "trigger": "now",
+                    "type": "html"
+                },
+                "inbox": {
+                    "details": "This is sample in-app notification detail 4.",
+                    "icon": "https://picsum.photos/id/1014/200/300",
+                    "title": "This is sample in-app notification title 4"
+                },
+                "timestamp": "2023-04-22T15:07:34.489223751Z"
+            },
+            "message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714h",
+            "status": "unread",
+            "user_uuid": "f42ec261-effc-4afc-a8f1-370dbab0f085"
+        },
+        {
+            "created_at": 1681924454,
+            "data": {
+                "bsft_message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714i",
+                "inapp": {
+                    "content": {
+                        "html": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\r\n<\/head>\r\n<body>\r\n<h3>This is sample in-app notification 5 <\/h3>\r\n<a href=\"href:\/\/www.test.com\">This is a sample deep link<\/a>\r\n<br>\r\n<a href=\"blueshift:\/\/homeScreen\">home screen deep link<\/a>\r\n\r\n<\/body>\r\n<\/html>\r\n\r\n\r\n"
+                    },
+                    "expires_at": 1902997743,
+                    "scope": "inbox+inapp",
+                    "template_style": {
+                        "background_color": "#f0f0f0",
+                        "background_radius": 10,
+                        "margin": {
+                            "bottom": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0
+                        },
+                        "width": 90,
+                        "height": 90
+                    },
+                    "trigger": "now",
+                    "type": "html"
+                },
+                "inbox": {
+                    "details": "This is sample in-app notification detail 5.",
+                    "icon": "https://picsum.photos/id/1015/200/300",
+                    "title": "This is sample in-app notification title 5"
+                },
+                "timestamp": "2023-04-27T19:07:34.489223751Z"
+            },
+            "message_uuid": "9b5ac7af-f9a4-44be-8f92-fd5b3df0714i",
+            "status": "unread",
+            "user_uuid": "f42ec261-effc-4afc-a8f1-370dbab0f085"
+        }
+    ],
+    "status": "success"
+}
+

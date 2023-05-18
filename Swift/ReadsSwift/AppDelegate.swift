@@ -64,15 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // optional - For Carousel push notification deep linking set appGroup id
         config.appGroupID = "group.blueshift.reads"
 
-        // Optinal - Disable inAppBackgroundFetchEnabled if you want to fetch in-apps manually via api
-//        config.inAppBackgroundFetchEnabled = false
-
        // Optinal - Disable inAppManualTriggerEnabled if you want to display in-apps manually
 //        config.inAppManualTriggerEnabled = true
 
         // optional - Enable In-app notifications to use In-app notifications
         config.enableInAppNotification = true;
 
+        // optional - Enable mobile inbox functionality
+        config.enableMobileInbox = true
         // Optional: Set time interval in seconds between two In app notifications.
         // If you do not add below line, SDK by default sets it to 60 seconds.
 //        config.blueshiftInAppNotificationTimeInterval = 60
@@ -91,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        config.automaticAppOpenTimeInterval = 60
 
         // Optional (v2.1.3):  - Set deviceIDSource, by default it is IDFV
-        config.blueshiftDeviceIdSource = .idfvBundleID
+        config.blueshiftDeviceIdSource = .UUID
         
         // Optinal: Set push notification delegate to get the push events callback
         let blueShiftPushDelegatge = BlueshiftPushNotificationEvents()
@@ -107,9 +106,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize the configuration required to be executed on the main thread
         BlueShift.initWithConfiguration(config)
     }
+    
+     //MARK: UISceneSession Lifecycle
+    @available(iOS 13.0, *)
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        // Called when a new scene session is being created.
+        // Use this method to select a configuration to create the new scene with.
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+
+    @available(iOS 13.0, *)
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+        // Called when the user discards a scene session.
+        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
 }
 
-// device tokens and push integration
+/// device tokens and push integration
 extension AppDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         BlueShift.sharedInstance()?.appDelegate?.register(forRemoteNotification: deviceToken)
@@ -167,11 +181,11 @@ extension AppDelegate {
         }
         return true
     }
-    
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // v2.1.12 - Check if deep link url is from Blueshift.
         if let source = options[UIApplication.OpenURLOptionsKey(rawValue: "source")] as? String, source == "Blueshift" {
-            showProductDetail(animated: true, url: url)
+            showProductDetail(animated: true, url: url, options:options)
         } else {
             //handle it seperately
         }
@@ -186,7 +200,7 @@ extension AppDelegate: BlueshiftUniversalLinksDelegate {
         //Process deeplink and show the respective screen
         hideActivityIndicator()
         guard let url = url else { return }
-        showProductDetail(animated: true, url: url )
+        showProductDetail(animated: true, url: url, options:[:])
     }
     
     func didStartLinkProcessing() {
@@ -252,48 +266,46 @@ extension AppDelegate {
         activityIndicator?.removeFromSuperview()
     }
     
-    func showAlert(for url: URL) {
-        let rootViewController = UIApplication.shared.windows.first?.rootViewController
-        let alertController = UIAlertController(title: "Product not found", message: url.absoluteString, preferredStyle: .alert)
-        let open = UIAlertAction(title: "Open in Safari", style: .default) {
-            UIAlertAction in
-            DispatchQueue.main.async {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            }
+    func showAlert(for titile: String?, message: String?, viewController: UIViewController?) {
+        if #available(iOS 13.0, *) {
+            
+            let vc = viewController ?? BlueShiftInAppNotificationHelper.getApplicationKeyWindow().windowScene?.windows.first?.rootViewController
+            
+            let alertController = UIAlertController(title: titile, message: message, preferredStyle: .alert)
+            let okay = UIAlertAction(title: "Okay", style: .cancel)
+            alertController.addAction(okay)
+            vc?.present(alertController, animated: true, completion: nil)
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        alertController.addAction(open)
-        alertController.addAction(cancel)
-        rootViewController?.present(alertController, animated: true, completion: nil)
     }
     
     //Check for deep link and show rescpective screen/ perform respective action
-    func showProductDetail(animated: Bool, url: URL) {
+    func showProductDetail(animated: Bool, url: URL, options:[UIApplication.OpenURLOptionsKey : Any]) {
         if url.absoluteString == "" {
             return
         }
         
-        var newUrl = url.absoluteString.components(separatedBy: "?").first
-        newUrl = newUrl?.replacingOccurrences(of: "http://", with: "https://")
-        let products = Utils.shared?.products.filter { (product) -> Bool in
-            return product["web_url"] == newUrl ? true : false
-        }
-        guard let product = products?.first else {
-            showAlert(for: url)
-            return
-        }
+        //Get product for the given deep link
+        
+        //Get current navigation controller
         var navController: UINavigationController? = UIApplication.shared.windows.first?.rootViewController as? UINavigationController
         if #available(iOS 13.0, *) {
             // For sceneDelegate enabled apps, perform screen redirection in the keyWindow
             navController = BlueShiftInAppNotificationHelper.getApplicationKeyWindow().windowScene?.windows.first?.rootViewController as? UINavigationController
+            navController?.dismiss(animated: false)
         }
-                
+        
+        // If navigation controller not found, then cache the deep link url for later use
         guard let navigationController = navController else {
             Utils.shared?.deepLinkURL = url
             return
         }
+        
+        //If product not found, show alert with deep link url.
+        guard let product = getProductForURL(url: url.absoluteString)?.first else {
+            showAlert(for: "Product not found", message: url.absoluteString, viewController: nil)
+            return
+        }
+        
         if navigationController.viewControllers.count > 2 {
             for controller in navigationController.viewControllers {
                 if controller.isKind(of: ProductListViewController.self) {
@@ -306,7 +318,19 @@ extension AppDelegate {
             Utils.shared?.deepLinkURL = url
             return
         }
-        
+        showProductUsing(navigationController: navigationController, product: product, animated: true)
+    }
+    
+    func getProductForURL(url: String) -> [[String:String]]? {
+        var newUrl = url.components(separatedBy: "?").first
+        newUrl = newUrl?.replacingOccurrences(of: "http://", with: "https://")
+        let products = Utils.shared?.products.filter { (product) -> Bool in
+            return product["web_url"] == newUrl ? true : false
+        }
+        return products
+    }
+    
+    func showProductUsing(navigationController: UINavigationController, product: [String: String]?, animated: Bool) {
         let productDetailViewController: ProductDetailViewController?
         
         if #available(iOS 13.0, *) {
@@ -316,7 +340,7 @@ extension AppDelegate {
         }
         if let productDetailViewController = productDetailViewController {
             productDetailViewController.product = product
-            navigationController.pushViewController(productDetailViewController, animated: animated)
+            navigationController.show(productDetailViewController, sender: nil);
         }
     }
 }

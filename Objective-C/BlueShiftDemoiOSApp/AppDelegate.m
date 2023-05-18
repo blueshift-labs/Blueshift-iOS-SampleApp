@@ -144,6 +144,7 @@
 - (void)application:(UIApplication *) application handleActionWithIdentifier: (NSString *) identifier forRemoteNotification: (NSDictionary *) notification
   completionHandler: (void (^)(void)) completionHandler {
     [[BlueShift sharedInstance].appDelegate handleActionWithIdentifier:identifier forRemoteNotification:notification completionHandler:completionHandler];
+    completionHandler();
 }
 
 #pragma mark - UserNotificationCenter delegate methods

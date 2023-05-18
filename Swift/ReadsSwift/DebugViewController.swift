@@ -39,7 +39,11 @@ class DebugViewController: BaseViewController {
                                      ["Test custom event payload":"customEventPayload"],
                                      ["Unsubscribe Push":"unsubscribe"],
                                      ["Send me email":"bsft_send_me_ul_email"],
-                                     ["show Banner In App using Custom JSON":"showInAppWithCustomJSON"]
+                                     ["show Banner In App using Custom JSON":"showInAppWithCustomJSON"],
+                                     ["Reinitialise SDK":"reinitialisesdk"],
+                                     ["Toggle enableInApp status":"enableINAppToggle"],
+                                     ["Show in-app":"showInapp"],
+                                     ["Reset device id":"resetDeviceId"]
                                     ]
 
     override func viewDidLoad() {
@@ -112,11 +116,7 @@ extension DebugViewController: UITableViewDelegate {
             case "identify":
                 BlueShift.sharedInstance()?.identifyUser(withDetails: nil, canBatchThisEvent: false)
             case "fetchInApp":
-                BlueShift.sharedInstance()?.fetchInAppNotification(fromAPI: {
-                    
-                }, failure: { err in
-                        print("hello there \(String(describing: err))")
-                });
+                fetchInApps()
             case "fireBatchedEvents":
                 for index in 0...100 {
                     BlueShift.sharedInstance()?.trackEvent(forEventName: "BatchedEvent_\(index)", canBatchThisEvent: true)
@@ -142,6 +142,14 @@ extension DebugViewController: UITableViewDelegate {
                 BlueShiftUserInfo.sharedInstance()?.save()
             case "showInAppWithCustomJSON":
                 showInAppWithCustomJSON()
+            case "reinitialisesdk":
+                reinitialiseSDK()
+            case "enableINAppToggle":
+                BlueShiftAppData.current().enableInApp = !BlueShiftAppData.current().enableInApp
+            case "showInapp":
+                BlueShift.sharedInstance()?.displayInAppNotification()
+            case "resetDeviceId":
+                BlueShiftDeviceData.current().resetDeviceUUID()
             default:
                 BlueShift.sharedInstance()?.trackEvent(forEventName: event, canBatchThisEvent: false)
             }
@@ -262,6 +270,24 @@ extension DebugViewController {
             }
         }
         return nil
+    }
+    
+    func reinitialiseSDK() {
+        let isEUEnabled = UserDefaults.standard.string(forKey: "isEUEnabled")?.boolValue ?? false
+        UserDefaults.standard.setValue(NSNumber(booleanLiteral: !isEUEnabled), forKey: "isEUEnabled")
+        (UIApplication.shared.delegate as? AppDelegate)?.initialiseBlueshiftSDK(launchOptions: nil)
+    }
+    
+    func fetchInApps() {
+        if BlueShift.sharedInstance()?.config?.enableMobileInbox == true {
+            BlueshiftInboxManager.syncInboxMessages { }
+        } else {
+            BlueShift.sharedInstance()?.fetchInAppNotification(fromAPI: {
+                
+            }, failure: { err in
+                print("hello there \(String(describing: err))")
+            });
+        }
     }
 }
 

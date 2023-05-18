@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C394298753523772DB55C17 /* Pods_NotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE8F1B67811F707003E80EF /* Pods_NotificationService.framework */; };
-		727DDAAF5420D25BC0A97A8B /* Pods_NotificationContent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF1FE695061B13DFC561FC7 /* Pods_NotificationContent.framework */; };
-		904460F25264542056B939EC /* Pods_ReadsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B314DF579CAE8CB09551C99 /* Pods_ReadsSwift.framework */; };
+		4F497983BEE7B7D193EDBF41 /* Pods_ReadsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9180F072CEA18A4E049F4AB3 /* Pods_ReadsSwift.framework */; };
 		911A57C6281FB7CB000124A9 /* InApp.json in Resources */ = {isa = PBXBuildFile; fileRef = 911A57C5281FB7CB000124A9 /* InApp.json */; };
 		915403922869B4340092FCC0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 915403942869B4340092FCC0 /* Localizable.strings */; };
 		916AC4B924B4371000E13B82 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AC4B824B4371000E13B82 /* BaseViewController.swift */; };
 		917576DA255D17E000443635 /* LiveContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917576D9255D17E000443635 /* LiveContentViewController.swift */; };
+		91B0964D2A12C1FB009AF459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0964C2A12C1FB009AF459 /* SceneDelegate.swift */; };
 		91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */; };
 		91B4074D24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */; };
 		91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4075124C9B6E2005B55D6 /* CartViewController.swift */; };
-		91BA9B1625B5BC6F0010E40D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BA9B1525B5BC6F0010E40D /* SceneDelegate.swift */; };
 		91DB299828994856007C9F51 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91DB299628994856007C9F51 /* MainInterface.storyboard */; };
+		91E498DF292638840073B7FB /* MobileInboxDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E498DE292638840073B7FB /* MobileInboxDelegate.swift */; };
 		91F5C9BE25347598008C1C2A /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */; };
 		91F5CA52253581FA008C1C2A /* DebugTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */; };
 		91F5CA5725358208008C1C2A /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CA5625358208008C1C2A /* DebugViewController.swift */; };
@@ -38,6 +37,8 @@
 		C38F1BC02472B6D800ACEBE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38F1BBE2472B6D800ACEBE1 /* Main.storyboard */; };
 		C38F1BC22472B6D900ACEBE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38F1BC12472B6D900ACEBE1 /* Assets.xcassets */; };
 		C38F1BC52472B6D900ACEBE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38F1BC32472B6D900ACEBE1 /* LaunchScreen.storyboard */; };
+		CD5F5E97FE1C9095E4B33331 /* Pods_NotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374A7AEE2BEE4791FE87E87B /* Pods_NotificationService.framework */; };
+		E553761217475839E5AA323B /* Pods_NotificationContent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11465DDFF7171D7427903AB3 /* Pods_NotificationContent.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,15 +74,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0908F3BE39FC54F3A1DAABFA /* Pods-NotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.debug.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.debug.xcconfig"; sourceTree = "<group>"; };
-		19A508923FB96491E5E9D661 /* Pods-NotificationService.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.red.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.red.xcconfig"; sourceTree = "<group>"; };
-		1AE8F1B67811F707003E80EF /* Pods_NotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AF1FE695061B13DFC561FC7 /* Pods_NotificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationContent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D6641766767695054402B1A /* Pods-NotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.release.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.release.xcconfig"; sourceTree = "<group>"; };
-		4EEB2F981450EE39800DBDF1 /* Pods-ReadsSwift.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.red.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.red.xcconfig"; sourceTree = "<group>"; };
-		5B314DF579CAE8CB09551C99 /* Pods_ReadsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C613F740E0AD55CA34C0042 /* Pods-ReadsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.debug.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		7D69CE4BCCB0792E8A68C29F /* Pods-NotificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.debug.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.debug.xcconfig"; sourceTree = "<group>"; };
+		09495BBC7CD0085C0E42DAA8 /* Pods-NotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.release.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.release.xcconfig"; sourceTree = "<group>"; };
+		11465DDFF7171D7427903AB3 /* Pods_NotificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationContent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19D49C72C8D27D6855E9C69B /* Pods-NotificationService.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.red.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.red.xcconfig"; sourceTree = "<group>"; };
+		374A7AEE2BEE4791FE87E87B /* Pods_NotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5761FD9D7F403A941A4BA9FE /* Pods-NotificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.debug.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.debug.xcconfig"; sourceTree = "<group>"; };
 		911A57C5281FB7CB000124A9 /* InApp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InApp.json; sourceTree = "<group>"; };
 		915403932869B4340092FCC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9160D74A2869B48000509097 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -89,16 +86,20 @@
 		9160D74C2869C93100509097 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		916AC4B824B4371000E13B82 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		917576D9255D17E000443635 /* LiveContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContentViewController.swift; sourceTree = "<group>"; };
+		9180F072CEA18A4E049F4AB3 /* Pods_ReadsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B0964C2A12C1FB009AF459 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueshiftInAppNotificationEvents.swift; sourceTree = "<group>"; };
 		91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueshiftPushNotificationEvents.swift; sourceTree = "<group>"; };
 		91B4075124C9B6E2005B55D6 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		91BA9B1525B5BC6F0010E40D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91DB299728994856007C9F51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		91E498DE292638840073B7FB /* MobileInboxDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileInboxDelegate.swift; sourceTree = "<group>"; };
 		91F3521624AC8C460051D404 /* NotificationContent.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = NotificationContent.entitlements; sourceTree = "<group>"; };
 		91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTableViewCell.swift; sourceTree = "<group>"; };
 		91F5CA5625358208008C1C2A /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		91F5CA7A2535B118008C1C2A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A4F8B1D6D422A628E4FFEB93 /* Pods-ReadsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.debug.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		B47AC55186FDFACE528E9FC3 /* Pods-NotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationService.debug.xcconfig"; path = "Target Support Files/Pods-NotificationService/Pods-NotificationService.debug.xcconfig"; sourceTree = "<group>"; };
 		C338CFAF24752E8100DBBD21 /* ReadsSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReadsSwift.entitlements; sourceTree = "<group>"; };
 		C338CFB52475474100DBBD21 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C338CFB72475474100DBBD21 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
@@ -118,9 +119,10 @@
 		C38F1BBC2472B6D800ACEBE1 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C38F1BC12472B6D900ACEBE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C38F1BC62472B6D900ACEBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C74C79C45C31B708B6EA1905 /* Pods-ReadsSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.release.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.release.xcconfig"; sourceTree = "<group>"; };
-		CFA8FFA8C8B0AED56DA984C4 /* Pods-NotificationContent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.release.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.release.xcconfig"; sourceTree = "<group>"; };
-		F4D7099721AC05030A2D0B06 /* Pods-NotificationContent.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.red.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.red.xcconfig"; sourceTree = "<group>"; };
+		CC971913FDAE2B7E9411AA22 /* Pods-ReadsSwift.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.red.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.red.xcconfig"; sourceTree = "<group>"; };
+		D62EA290CADD84567430A36B /* Pods-NotificationContent.red.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.red.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.red.xcconfig"; sourceTree = "<group>"; };
+		F9D24514C1758172F72EC7C1 /* Pods-NotificationContent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationContent.release.xcconfig"; path = "Target Support Files/Pods-NotificationContent/Pods-NotificationContent.release.xcconfig"; sourceTree = "<group>"; };
+		FB1A31FF9104E7448D964C15 /* Pods-ReadsSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadsSwift.release.xcconfig"; path = "Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C394298753523772DB55C17 /* Pods_NotificationService.framework in Frameworks */,
+				CD5F5E97FE1C9095E4B33331 /* Pods_NotificationService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +140,7 @@
 			files = (
 				C344A8BB2476CC730092650E /* UserNotificationsUI.framework in Frameworks */,
 				C344A8BA2476CC730092650E /* UserNotifications.framework in Frameworks */,
-				727DDAAF5420D25BC0A97A8B /* Pods_NotificationContent.framework in Frameworks */,
+				E553761217475839E5AA323B /* Pods_NotificationContent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				904460F25264542056B939EC /* Pods_ReadsSwift.framework in Frameworks */,
+				4F497983BEE7B7D193EDBF41 /* Pods_ReadsSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,15 +158,15 @@
 		4D051839FEE5153F9B16422D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7D69CE4BCCB0792E8A68C29F /* Pods-NotificationContent.debug.xcconfig */,
-				F4D7099721AC05030A2D0B06 /* Pods-NotificationContent.red.xcconfig */,
-				CFA8FFA8C8B0AED56DA984C4 /* Pods-NotificationContent.release.xcconfig */,
-				0908F3BE39FC54F3A1DAABFA /* Pods-NotificationService.debug.xcconfig */,
-				19A508923FB96491E5E9D661 /* Pods-NotificationService.red.xcconfig */,
-				3D6641766767695054402B1A /* Pods-NotificationService.release.xcconfig */,
-				7C613F740E0AD55CA34C0042 /* Pods-ReadsSwift.debug.xcconfig */,
-				4EEB2F981450EE39800DBDF1 /* Pods-ReadsSwift.red.xcconfig */,
-				C74C79C45C31B708B6EA1905 /* Pods-ReadsSwift.release.xcconfig */,
+				5761FD9D7F403A941A4BA9FE /* Pods-NotificationContent.debug.xcconfig */,
+				D62EA290CADD84567430A36B /* Pods-NotificationContent.red.xcconfig */,
+				F9D24514C1758172F72EC7C1 /* Pods-NotificationContent.release.xcconfig */,
+				B47AC55186FDFACE528E9FC3 /* Pods-NotificationService.debug.xcconfig */,
+				19D49C72C8D27D6855E9C69B /* Pods-NotificationService.red.xcconfig */,
+				09495BBC7CD0085C0E42DAA8 /* Pods-NotificationService.release.xcconfig */,
+				A4F8B1D6D422A628E4FFEB93 /* Pods-ReadsSwift.debug.xcconfig */,
+				CC971913FDAE2B7E9411AA22 /* Pods-ReadsSwift.red.xcconfig */,
+				FB1A31FF9104E7448D964C15 /* Pods-ReadsSwift.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -185,9 +187,9 @@
 			children = (
 				C338CFB52475474100DBBD21 /* UserNotifications.framework */,
 				C338CFB72475474100DBBD21 /* UserNotificationsUI.framework */,
-				2AF1FE695061B13DFC561FC7 /* Pods_NotificationContent.framework */,
-				1AE8F1B67811F707003E80EF /* Pods_NotificationService.framework */,
-				5B314DF579CAE8CB09551C99 /* Pods_ReadsSwift.framework */,
+				11465DDFF7171D7427903AB3 /* Pods_NotificationContent.framework */,
+				374A7AEE2BEE4791FE87E87B /* Pods_NotificationService.framework */,
+				9180F072CEA18A4E049F4AB3 /* Pods_ReadsSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,7 +242,7 @@
 			children = (
 				C338CFAF24752E8100DBBD21 /* ReadsSwift.entitlements */,
 				C38F1BB82472B6D800ACEBE1 /* AppDelegate.swift */,
-				91BA9B1525B5BC6F0010E40D /* SceneDelegate.swift */,
+				91B0964C2A12C1FB009AF459 /* SceneDelegate.swift */,
 				916AC4B824B4371000E13B82 /* BaseViewController.swift */,
 				91F5CA51253581FA008C1C2A /* DebugTableViewCell.swift */,
 				91F5CA5625358208008C1C2A /* DebugViewController.swift */,
@@ -252,6 +254,7 @@
 				91F5C9BD25347598008C1C2A /* CartTableViewCell.swift */,
 				C338CFDB24756F8A00DBBD21 /* ProductTableViewCell.swift */,
 				91B4074A24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift */,
+				91E498DE292638840073B7FB /* MobileInboxDelegate.swift */,
 				91B4074C24C879A0005B55D6 /* BlueshiftPushNotificationEvents.swift */,
 				C338CFD924756AC300DBBD21 /* Utils.swift */,
 				C38F1BBE2472B6D800ACEBE1 /* Main.storyboard */,
@@ -269,7 +272,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C338CFD32475477300DBBD21 /* Build configuration list for PBXNativeTarget "NotificationService" */;
 			buildPhases = (
-				B6A2B42A587FF1732C12548A /* [CP] Check Pods Manifest.lock */,
+				B0E4030E68E5120D0863FA25 /* [CP] Check Pods Manifest.lock */,
 				C338CFC72475477300DBBD21 /* Sources */,
 				C338CFC82475477300DBBD21 /* Frameworks */,
 				C338CFC92475477300DBBD21 /* Resources */,
@@ -287,7 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C344A8C62476CC730092650E /* Build configuration list for PBXNativeTarget "NotificationContent" */;
 			buildPhases = (
-				BD2F269FFAABCE9E3015270C /* [CP] Check Pods Manifest.lock */,
+				A1488DA06D4291C0DC063092 /* [CP] Check Pods Manifest.lock */,
 				C344A8B52476CC730092650E /* Sources */,
 				C344A8B62476CC730092650E /* Frameworks */,
 				C344A8B72476CC730092650E /* Resources */,
@@ -305,13 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C38F1BC92472B6D900ACEBE1 /* Build configuration list for PBXNativeTarget "ReadsSwift" */;
 			buildPhases = (
-				2C8D7799FAD85F624B2D156C /* [CP] Check Pods Manifest.lock */,
+				FBBBB8DA0D20096660662C20 /* [CP] Check Pods Manifest.lock */,
 				C38F1BB12472B6D800ACEBE1 /* Sources */,
 				C38F1BB22472B6D800ACEBE1 /* Frameworks */,
 				C38F1BB32472B6D800ACEBE1 /* Resources */,
 				C338CFC62475474100DBBD21 /* Embed App Extensions */,
-				91B4A11125403CDD00D689D1 /* ShellScript */,
-				BBEA40FD982D8B32A4676FB6 /* [CP] Embed Pods Frameworks */,
+				BA70C7A6FC4AB0F805DAEDA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -345,7 +347,7 @@
 				};
 			};
 			buildConfigurationList = C38F1BB02472B6D800ACEBE1 /* Build configuration list for PBXProject "ReadsSwift" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -396,7 +398,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C8D7799FAD85F624B2D156C /* [CP] Check Pods Manifest.lock */ = {
+		A1488DA06D4291C0DC063092 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -411,33 +413,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReadsSwift-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-NotificationContent-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		91B4A11125403CDD00D689D1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)\n",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
-		};
-		B6A2B42A587FF1732C12548A /* [CP] Check Pods Manifest.lock */ = {
+		B0E4030E68E5120D0863FA25 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,7 +442,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BBEA40FD982D8B32A4676FB6 /* [CP] Embed Pods Frameworks */ = {
+		BA70C7A6FC4AB0F805DAEDA0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -476,7 +459,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReadsSwift/Pods-ReadsSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BD2F269FFAABCE9E3015270C /* [CP] Check Pods Manifest.lock */ = {
+		FBBBB8DA0D20096660662C20 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,7 +474,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NotificationContent-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ReadsSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -526,8 +509,9 @@
 				91B4075224C9B6E2005B55D6 /* CartViewController.swift in Sources */,
 				C338CFE024757D4F00DBBD21 /* ProductDetailViewController.swift in Sources */,
 				C338CFDC24756F8A00DBBD21 /* ProductTableViewCell.swift in Sources */,
-				91BA9B1625B5BC6F0010E40D /* SceneDelegate.swift in Sources */,
 				91F5CA52253581FA008C1C2A /* DebugTableViewCell.swift in Sources */,
+				91E498DF292638840073B7FB /* MobileInboxDelegate.swift in Sources */,
+				91B0964D2A12C1FB009AF459 /* SceneDelegate.swift in Sources */,
 				91F5CA5725358208008C1C2A /* DebugViewController.swift in Sources */,
 				91F5C9BE25347598008C1C2A /* CartTableViewCell.swift in Sources */,
 				91B4074B24C87870005B55D6 /* BlueshiftInAppNotificationEvents.swift in Sources */,
@@ -593,20 +577,20 @@
 /* Begin XCBuildConfiguration section */
 		C338CFD42475477300DBBD21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0908F3BE39FC54F3A1DAABFA /* Pods-NotificationService.debug.xcconfig */;
+			baseConfigurationReference = B47AC55186FDFACE528E9FC3 /* Pods-NotificationService.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -617,20 +601,20 @@
 		};
 		C338CFD52475477300DBBD21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D6641766767695054402B1A /* Pods-NotificationService.release.xcconfig */;
+			baseConfigurationReference = 09495BBC7CD0085C0E42DAA8 /* Pods-NotificationService.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -641,20 +625,20 @@
 		};
 		C344A8C72476CC730092650E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D69CE4BCCB0792E8A68C29F /* Pods-NotificationContent.debug.xcconfig */;
+			baseConfigurationReference = 5761FD9D7F403A941A4BA9FE /* Pods-NotificationContent.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationContent/NotificationContent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -666,20 +650,20 @@
 		};
 		C344A8C82476CC730092650E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFA8FFA8C8B0AED56DA984C4 /* Pods-NotificationContent.release.xcconfig */;
+			baseConfigurationReference = F9D24514C1758172F72EC7C1 /* Pods-NotificationContent.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationContent/NotificationContent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -741,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -755,14 +739,14 @@
 		};
 		C37B37112488CA7700AC3006 /* Red */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EEB2F981450EE39800DBDF1 /* Pods-ReadsSwift.red.xcconfig */;
+			baseConfigurationReference = CC971913FDAE2B7E9411AA22 /* Pods-ReadsSwift.red.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRed;
 				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = ReadsSwift/ReadsSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				HEADER_SEARCH_PATHS = (
@@ -771,12 +755,12 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red;
 				PRODUCT_NAME = "Blueshift Red";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -788,20 +772,20 @@
 		};
 		C37B37122488CA7700AC3006 /* Red */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19A508923FB96491E5E9D661 /* Pods-NotificationService.red.xcconfig */;
+			baseConfigurationReference = 19D49C72C8D27D6855E9C69B /* Pods-NotificationService.red.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red.notificationService;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -813,20 +797,20 @@
 		};
 		C37B37132488CA7700AC3006 /* Red */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4D7099721AC05030A2D0B06 /* Pods-NotificationContent.red.xcconfig */;
+			baseConfigurationReference = D62EA290CADD84567430A36B /* Pods-NotificationContent.red.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationContent/NotificationContent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads.red.notificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -888,7 +872,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -940,13 +924,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -959,7 +944,7 @@
 		};
 		C38F1BCA2472B6D900ACEBE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C613F740E0AD55CA34C0042 /* Pods-ReadsSwift.debug.xcconfig */;
+			baseConfigurationReference = A4F8B1D6D422A628E4FFEB93 /* Pods-ReadsSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -967,7 +952,7 @@
 				CODE_SIGN_ENTITLEMENTS = ReadsSwift/ReadsSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
 				HEADER_SEARCH_PATHS = (
@@ -976,12 +961,12 @@
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "Blueshift Reads";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -995,7 +980,7 @@
 		};
 		C38F1BCB2472B6D900ACEBE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C74C79C45C31B708B6EA1905 /* Pods-ReadsSwift.release.xcconfig */;
+			baseConfigurationReference = FB1A31FF9104E7448D964C15 /* Pods-ReadsSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1003,20 +988,21 @@
 				CODE_SIGN_ENTITLEMENTS = ReadsSwift/ReadsSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YR8UTRCDU;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/BlueShift-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = ReadsSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueshift.reads;
 				PRODUCT_NAME = "Blueshift Reads";
 				PROVISIONING_PROFILE_SPECIFIER = "";
