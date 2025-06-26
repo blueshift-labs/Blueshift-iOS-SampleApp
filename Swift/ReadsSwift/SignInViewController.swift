@@ -24,7 +24,7 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerForInApp = true
+        registerForInApp = false
         setupUI()
 //        requestIDFAPermission()
     }
